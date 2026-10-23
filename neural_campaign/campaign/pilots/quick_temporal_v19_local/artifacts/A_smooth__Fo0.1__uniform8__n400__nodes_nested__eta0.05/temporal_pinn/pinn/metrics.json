@@ -1,0 +1,43 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+  "method": "pinn",
+  "variant": "calibrated_hard_physics_v12",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "budget_timeout",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0011884324,
+  "D_const": 0.273423335540499,
+  "rms_const_over_sigma": 2.868012214608188,
+  "rms_replay_over_sigma": 2.856848760941453,
+  "rms_unet_over_sigma": 2.2014866364440127,
+  "wall_s": 122.28200000000652,
+  "adam_completed": 50,
+  "optimizer_diagnostics": [],
+  "history": [],
+  "final_parts": {
+    "data": 6.898807057795857e-06,
+    "pde": 1.9263391039194396e-06,
+    "reg": 3.244417698270348e-10
+  },
+  "objective": 8.825470603485124e-06,
+  "function_evaluations": 109,
+  "initial_coefficient_sha256": "a632f38b4c38a3d0a6e2424d542ed03f051505ea4fe4265ae06acaad4f786041",
+  "gamma": 8.896555846034532e-10,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.492385217377766e-07,
+  "settings": {
+    "data": "datasets_v2_density_extended",
+    "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+    "out": "campaign\\pilots\\quick_temporal_v19_local\\artifacts\\A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05\\temporal_pinn",
+    "method": "pinn",
+    "device": "cpu",
+    "budget": 120.0,
+    "adam": 50,
+    "outer": 1,
+    "inner": 50,
+    "n_pde": 4096
+  },
+  "parameter_count": 4514
+}

@@ -1,0 +1,76 @@
+{
+  "key": "E_grf__Fo0.1__uniform8__n3200__nodes_nested__eta0.1",
+  "sigma": 0.0025424867,
+  "n_readings": 25600,
+  "rms_replay_over_sigma": 0.9974730745139903,
+  "alpha": 25.6,
+  "flag": "reached_sigma",
+  "D_const": 0.2565101389113867,
+  "rms_const_over_sigma": 1.199217070484383,
+  "n_evals": 283,
+  "wall_s": 49.655342900019605,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.09150519711155389,
+  "rmse_logD": 0.08825710043001013,
+  "rel_L2_D_high_sensitivity": 0.05022098262172828,
+  "rel_L2_D_low_sensitivity": 0.10826942012104479,
+  "rel_L2_D_constant_guess": 0.33178937991655605,
+  "rms_vs_clean_over_sigma": 0.06482359754357075,
+  "alpha_selection": "discrepancy_path",
+  "method": "grid",
+  "seed": 42,
+  "shared_setup_s": 0.6965106999850832,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 25600.0,
+      "rms": 0.002940039543544075,
+      "rms_over_sigma": 1.15636378492917,
+      "iters": 33
+    },
+    {
+      "alpha": 8095.430810031051,
+      "rms": 0.002852404927688103,
+      "rms_over_sigma": 1.121895712448802,
+      "iters": 25
+    },
+    {
+      "alpha": 2560.0,
+      "rms": 0.002749353151302641,
+      "rms_over_sigma": 1.0813638282955977,
+      "iters": 22
+    },
+    {
+      "alpha": 809.543081003105,
+      "rms": 0.002651128305763466,
+      "rms_over_sigma": 1.0427304519482703,
+      "iters": 21
+    },
+    {
+      "alpha": 256.0,
+      "rms": 0.00257923067278881,
+      "rms_over_sigma": 1.0144519823009537,
+      "iters": 29
+    },
+    {
+      "alpha": 80.95430810031051,
+      "rms": 0.0025463667460339278,
+      "rms_over_sigma": 1.0015260831193051,
+      "iters": 39
+    },
+    {
+      "alpha": 25.6,
+      "rms": 0.002536062025559929,
+      "rms_over_sigma": 0.9974730745139903,
+      "iters": 52
+    }
+  ],
+  "parameter_count": 256,
+  "dtype": "float64",
+  "coefficient_config": null,
+  "chi2_red_solver": 0.9949525343803923,
+  "rms_replay": 0.002536062025559929,
+  "rms_replay_relative_signal": 0.12071788656960414
+}

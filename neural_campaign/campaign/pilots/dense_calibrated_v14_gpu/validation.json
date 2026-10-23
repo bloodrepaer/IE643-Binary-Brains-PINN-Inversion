@@ -1,0 +1,129 @@
+{
+  "updated": "2026-10-20T01:38:56.122926+00:00",
+  "validation_seed": 20261019,
+  "selection_uses_true_D": false,
+  "results": [
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "artifact": "results\\n3969\\pinn\\metrics.json",
+      "variant": "dense_calibrated_v14",
+      "ic_relative_L2": 2.492385217377766e-07,
+      "replay_sigma": 2.474626639849624,
+      "replay_metric_difference": -1.3322676295501878e-15,
+      "sensor_fit_sigma": 2.2595559429124266,
+      "D_spatial_std": 0.08428299202105154,
+      "D_mean": 0.2736199514701545,
+      "D_fitted_constant": 0.26580310412588964,
+      "constant_replay_sigma": 2.9544122043800756,
+      "training_seconds": 3091.8556825349997,
+      "bc_rms": 2.288380990581692e-18,
+      "bc_rms_over_sensor_sigma": 1.925545778272026e-15,
+      "pinn_v0_replay_sigma": null,
+      "adjoint_nn_v0_replay_sigma": 1.0321043426874597,
+      "replay_improvement_over_constant_percent": 16.23962843841301,
+      "consistency_screen_passed": false
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+      "artifact": "results\\n400\\pinn\\metrics.json",
+      "variant": "dense_calibrated_v14",
+      "ic_relative_L2": 2.492385217377766e-07,
+      "replay_sigma": 2.521991277890435,
+      "replay_metric_difference": -3.9968028886505635e-15,
+      "sensor_fit_sigma": 2.2664985285138894,
+      "D_spatial_std": 0.06650729011485479,
+      "D_mean": 0.270049376722669,
+      "D_fitted_constant": 0.27342333554050013,
+      "constant_replay_sigma": 2.8680122146081812,
+      "training_seconds": 2954.4449118680004,
+      "bc_rms": 2.222892540094306e-18,
+      "bc_rms_over_sensor_sigma": 1.870440876649194e-15,
+      "pinn_v0_replay_sigma": null,
+      "adjoint_nn_v0_replay_sigma": 1.0263059466773337,
+      "replay_improvement_over_constant_percent": 12.064834834220484,
+      "consistency_screen_passed": false
+    }
+  ],
+  "time_bins": [
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "artifact": "results\\n3969\\pinn\\metrics.json",
+      "variant": "dense_calibrated_v14",
+      "tau_low": 0,
+      "tau_high": 0.001,
+      "pde_rms": 0.0007309300140193769,
+      "pde_max_abs": 0.004090449968528809
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "artifact": "results\\n3969\\pinn\\metrics.json",
+      "variant": "dense_calibrated_v14",
+      "tau_low": 0.001,
+      "tau_high": 0.01,
+      "pde_rms": 0.0014258106825563606,
+      "pde_max_abs": 0.012662994988276055
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "artifact": "results\\n3969\\pinn\\metrics.json",
+      "variant": "dense_calibrated_v14",
+      "tau_low": 0.01,
+      "tau_high": 0.1,
+      "pde_rms": 0.03264887911053974,
+      "pde_max_abs": 0.6743385193300873
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "artifact": "results\\n3969\\pinn\\metrics.json",
+      "variant": "dense_calibrated_v14",
+      "tau_low": 0.1,
+      "tau_high": 1,
+      "pde_rms": 0.009010611958187045,
+      "pde_max_abs": 0.26194805130291926
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+      "artifact": "results\\n400\\pinn\\metrics.json",
+      "variant": "dense_calibrated_v14",
+      "tau_low": 0,
+      "tau_high": 0.001,
+      "pde_rms": 0.0006741881673327892,
+      "pde_max_abs": 0.003770236943864802
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+      "artifact": "results\\n400\\pinn\\metrics.json",
+      "variant": "dense_calibrated_v14",
+      "tau_low": 0.001,
+      "tau_high": 0.01,
+      "pde_rms": 0.0010925431917443052,
+      "pde_max_abs": 0.014477885625448633
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+      "artifact": "results\\n400\\pinn\\metrics.json",
+      "variant": "dense_calibrated_v14",
+      "tau_low": 0.01,
+      "tau_high": 0.1,
+      "pde_rms": 0.03631864854885797,
+      "pde_max_abs": 0.9419729955039944
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+      "artifact": "results\\n400\\pinn\\metrics.json",
+      "variant": "dense_calibrated_v14",
+      "tau_low": 0.1,
+      "tau_high": 1,
+      "pde_rms": 0.0064422893564322695,
+      "pde_max_abs": 0.22034208423598797
+    }
+  ],
+  "coverage_complete": true,
+  "consistency_screen_passed": false,
+  "decision": "Hold broad PINN migration: at least one IC, boundary or replay consistency screen fails.",
+  "screening_limits": {
+    "ic_relative_L2": 1e-06,
+    "replay_sigma": 1.1,
+    "bc_rms_over_sensor_sigma": 1
+  }
+}

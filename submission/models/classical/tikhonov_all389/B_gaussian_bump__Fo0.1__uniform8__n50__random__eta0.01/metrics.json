@@ -1,0 +1,41 @@
+{
+  "key": "B_gaussian_bump__Fo0.1__uniform8__n50__random__eta0.01",
+  "sigma": 0.0003075543,
+  "n_readings": 400,
+  "rms_replay_over_sigma": 0.9619206338793713,
+  "alpha": 40.0,
+  "flag": "reached_sigma",
+  "D_const": 0.11150347311568032,
+  "rms_const_over_sigma": 14.110654801221514,
+  "n_evals": 181,
+  "wall_s": 82.67214679999961,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.11914177618638587,
+  "rmse_logD": 0.05919781882255109,
+  "rel_L2_D_high_sensitivity": 0.06643905551156284,
+  "rel_L2_D_low_sensitivity": 0.14703232060669555,
+  "rel_L2_D_constant_guess": 0.5845160998495261,
+  "rms_vs_clean_over_sigma": 0.40393967145131565,
+  "alpha_path": [
+    {
+      "alpha": 400.0,
+      "rms": 0.00044544953155574197,
+      "rms_over_sigma": 1.4483606034958443,
+      "iters": 38
+    },
+    {
+      "alpha": 126.49110640673517,
+      "rms": 0.0003307219176155456,
+      "rms_over_sigma": 1.0753285439857143,
+      "iters": 44
+    },
+    {
+      "alpha": 40.0,
+      "rms": 0.00029584282720832635,
+      "rms_over_sigma": 0.9619206338793713,
+      "iters": 65
+    }
+  ]
+}

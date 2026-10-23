@@ -1,0 +1,32 @@
+[
+  {
+    "key": "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "initial_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+    "uses_true_D": false,
+    "supplied_input_reconstruction_exact": true
+  },
+  {
+    "key": "B_gaussian_bump__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "initial_sha256": "f01d76aa33d18c9ffd367b0305f55ba6a1afb5185c4dc99f8120441aa4979a20",
+    "uses_true_D": false,
+    "supplied_input_reconstruction_exact": true
+  },
+  {
+    "key": "D_layered__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "initial_sha256": "1925fd4712d5fb54c6fbf59bb486716c5d4d54daacd5d915c4c9d49a3736c27e",
+    "uses_true_D": false,
+    "supplied_input_reconstruction_exact": true
+  },
+  {
+    "key": "E_grf__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "initial_sha256": "53a50ddd6f562ad6eaa5a69d84b6cac609e8bd14b4cf33f8b02ca70db17869f9",
+    "uses_true_D": false,
+    "supplied_input_reconstruction_exact": true
+  },
+  {
+    "key": "F_defects__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "initial_sha256": "625b85760844c31464836ce2d139439890fb80090d6a9175e1bae4ecc021f3cc",
+    "uses_true_D": false,
+    "supplied_input_reconstruction_exact": true
+  }
+]

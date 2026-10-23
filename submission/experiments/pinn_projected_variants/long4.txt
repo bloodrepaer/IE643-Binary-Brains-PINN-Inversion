@@ -1,0 +1,4 @@
+A_smooth__Fo0.1__uniform8__n50__random__eta0.05
+E_grf__Fo0.1__uniform8__n50__random__eta0.05
+C_inclusion__Fo0.1__uniform8__n5__random__eta0.01
+E_grf__Fo0.1__uniform8__n50__random__eta0.1

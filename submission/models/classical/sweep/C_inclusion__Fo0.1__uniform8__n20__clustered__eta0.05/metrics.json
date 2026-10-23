@@ -1,0 +1,41 @@
+{
+  "key": "C_inclusion__Fo0.1__uniform8__n20__clustered__eta0.05",
+  "sigma": 0.001585453,
+  "n_readings": 160,
+  "rms_replay_over_sigma": 0.9147914858378242,
+  "alpha": 16.0,
+  "flag": "reached_sigma",
+  "D_const": 0.09341234232331286,
+  "rms_const_over_sigma": 2.9930363503407644,
+  "n_evals": 337,
+  "wall_s": 49.96588789500038,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tv",
+  "rel_L2_D": 0.5267287399641647,
+  "rmse_logD": 0.3238858623179938,
+  "rel_L2_D_high_sensitivity": 0.5468033278488791,
+  "rel_L2_D_low_sensitivity": 0.5217244367870856,
+  "rel_L2_D_constant_guess": 0.7421688404740375,
+  "rms_vs_clean_over_sigma": 0.3276421718024801,
+  "alpha_path": [
+    {
+      "alpha": 160.0,
+      "rms": 0.001900524763407462,
+      "rms_over_sigma": 1.1987266499905467,
+      "iters": 104
+    },
+    {
+      "alpha": 50.59644256269407,
+      "rms": 0.0015899757198610581,
+      "rms_over_sigma": 1.0028526357205532,
+      "iters": 98
+    },
+    {
+      "alpha": 16.0,
+      "rms": 0.0014503589055960358,
+      "rms_over_sigma": 0.9147914858378242,
+      "iters": 99
+    }
+  ]
+}

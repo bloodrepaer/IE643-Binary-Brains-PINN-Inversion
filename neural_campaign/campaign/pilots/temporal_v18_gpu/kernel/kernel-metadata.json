@@ -1,0 +1,15 @@
+{
+  "id": "mihirgune123/ie643-temporal-consistency-five-dense-fields",
+  "title": "IE643 temporal consistency five dense fields",
+  "code_file": "temporal_dense_kernel.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "dataset_sources": [
+    "mihirgune123/ie643-temporal-dense-data"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

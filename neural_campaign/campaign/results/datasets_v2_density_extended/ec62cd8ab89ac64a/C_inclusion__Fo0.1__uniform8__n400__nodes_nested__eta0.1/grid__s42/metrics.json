@@ -1,0 +1,76 @@
+{
+  "key": "C_inclusion__Fo0.1__uniform8__n400__nodes_nested__eta0.1",
+  "sigma": 0.0031709061,
+  "n_readings": 3200,
+  "rms_replay_over_sigma": 0.9994229054229207,
+  "alpha": 3.2,
+  "flag": "reached_sigma",
+  "D_const": 0.08699347637453936,
+  "rms_const_over_sigma": 1.3524437703017749,
+  "n_evals": 278,
+  "wall_s": 52.97295279998798,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.3672947448976115,
+  "rmse_logD": 0.21559041093040615,
+  "rel_L2_D_high_sensitivity": 0.38902856814124864,
+  "rel_L2_D_low_sensitivity": 0.36162845071806915,
+  "rel_L2_D_constant_guess": 0.7498696392082771,
+  "rms_vs_clean_over_sigma": 0.15246324431610445,
+  "alpha_selection": "discrepancy_path",
+  "method": "grid",
+  "seed": 42,
+  "shared_setup_s": 0.9130514999851584,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 3200.0,
+      "rms": 0.003982076790081423,
+      "rms_over_sigma": 1.2558166859880913,
+      "iters": 28
+    },
+    {
+      "alpha": 1011.9288512538814,
+      "rms": 0.0037395937725601468,
+      "rms_over_sigma": 1.179345478745065,
+      "iters": 24
+    },
+    {
+      "alpha": 320.0,
+      "rms": 0.003524616286949389,
+      "rms_over_sigma": 1.1115486160089665,
+      "iters": 21
+    },
+    {
+      "alpha": 101.19288512538813,
+      "rms": 0.0033809098776061064,
+      "rms_over_sigma": 1.0662283180211822,
+      "iters": 21
+    },
+    {
+      "alpha": 32.0,
+      "rms": 0.0032786017448067375,
+      "rms_over_sigma": 1.0339636814873634,
+      "iters": 26
+    },
+    {
+      "alpha": 10.119288512538814,
+      "rms": 0.003210020766849469,
+      "rms_over_sigma": 1.012335485699015,
+      "iters": 38
+    },
+    {
+      "alpha": 3.2,
+      "rms": 0.0031690761872852622,
+      "rms_over_sigma": 0.9994229054229207,
+      "iters": 54
+    }
+  ],
+  "parameter_count": 256,
+  "dtype": "float64",
+  "coefficient_config": null,
+  "chi2_red_solver": 0.9988461438839923,
+  "rms_replay": 0.0031690761872852622,
+  "rms_replay_relative_signal": 0.1247784956706104
+}

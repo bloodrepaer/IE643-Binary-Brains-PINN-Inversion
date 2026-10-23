@@ -1,0 +1,76 @@
+{
+  "key": "D_layered__Fo0.1__uniform8__n800__nodes_nested__eta0.1",
+  "sigma": 0.0038757977,
+  "n_readings": 6400,
+  "rms_replay_over_sigma": 0.993043943089709,
+  "alpha": 6.4,
+  "flag": "reached_sigma",
+  "D_const": 0.23337674914267706,
+  "rms_const_over_sigma": 3.603523905843025,
+  "n_evals": 426,
+  "wall_s": 83.9338291999884,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.15799686370365318,
+  "rmse_logD": 0.28940522084632686,
+  "rel_L2_D_high_sensitivity": 0.17518341296194087,
+  "rel_L2_D_low_sensitivity": 0.14850387310770832,
+  "rel_L2_D_constant_guess": 0.6198346731936295,
+  "rms_vs_clean_over_sigma": 0.16066653282459542,
+  "alpha_selection": "discrepancy_path",
+  "method": "grid",
+  "seed": 42,
+  "shared_setup_s": 0.7072234000079334,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 6400.0,
+      "rms": 0.007080166203115142,
+      "rms_over_sigma": 1.826763611298686,
+      "iters": 44
+    },
+    {
+      "alpha": 2023.8577025077627,
+      "rms": 0.005402485397138538,
+      "rms_over_sigma": 1.3939028337672366,
+      "iters": 34
+    },
+    {
+      "alpha": 640.0,
+      "rms": 0.004500559959970469,
+      "rms_over_sigma": 1.161195786862268,
+      "iters": 31
+    },
+    {
+      "alpha": 202.38577025077626,
+      "rms": 0.004132050164163031,
+      "rms_over_sigma": 1.066116057647444,
+      "iters": 33
+    },
+    {
+      "alpha": 64.0,
+      "rms": 0.003971100500812736,
+      "rms_over_sigma": 1.0245892092904476,
+      "iters": 49
+    },
+    {
+      "alpha": 20.23857702507763,
+      "rms": 0.003889200901304466,
+      "rms_over_sigma": 1.0034581787652297,
+      "iters": 67
+    },
+    {
+      "alpha": 6.4,
+      "rms": 0.003848837430626025,
+      "rms_over_sigma": 0.993043943089709,
+      "iters": 97
+    }
+  ],
+  "parameter_count": 256,
+  "dtype": "float64",
+  "coefficient_config": null,
+  "chi2_red_solver": 0.9861362729071572,
+  "rms_replay": 0.003848837430626025,
+  "rms_replay_relative_signal": 0.1424112776119793
+}

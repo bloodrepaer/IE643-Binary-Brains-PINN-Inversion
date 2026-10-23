@@ -1,0 +1,15 @@
+{
+  "updated": "2026-10-22T07:51:37.367620+00:00",
+  "validation_seed": 20261019,
+  "selection_uses_true_D": false,
+  "results": [],
+  "time_bins": [],
+  "coverage_complete": false,
+  "consistency_screen_passed": false,
+  "decision": "Hold broad PINN migration: pilot coverage incomplete.",
+  "screening_limits": {
+    "ic_relative_L2": 1e-06,
+    "replay_sigma": 1.1,
+    "bc_rms_over_sensor_sigma": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "experiment": "IC state-model v1 pilot",
+  "kernel": "mihirgune123/ie643-neural-ic-pilot",
+  "collections": [
+    "A_smooth",
+    "B_gaussian_bump",
+    "E_grf"
+  ],
+  "state_model": "gaussian_ic",
+  "coefficient_network_unchanged": true,
+  "adam_steps": 15000,
+  "lbfgs_steps": 750,
+  "n_collocation": 2048,
+  "physics_weight": 1000,
+  "condition_weight": 1000,
+  "pinn_alpha": 1,
+  "seed": 42,
+  "dtype": "float64",
+  "source_sha256": "84f5327d3ffa7914e7af28cc90b69601a7c59ba6a5717c91eb377a03c0ed879c",
+  "selection_criteria": "Known IC consistency, held-out PDE/BC residuals, CN replay; no true D for model selection",
+  "status": "complete_validated_hold",
+  "kernel_version": 1,
+  "last_checked": "2026-10-18T21:35:21.576027+00:00",
+  "numerical_tests_passed": 7,
+  "cpu_pipeline_smoke": "complete",
+  "validation": "validation.json",
+  "validation_decision": "IC passes; BC and replay fail noise-level consistency; no broad migration.",
+  "followup_pilot": "campaign\\pilots\\ic_constraints_v2_gpu\\pilot.json"
+}

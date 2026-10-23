@@ -1,0 +1,25 @@
+{
+  "archive_sha256": "346d2d1666432e5b687d8fecb4bd01d19efe154fec49e24c407a1268b4214361",
+  "crc_pass": true,
+  "path_symlink_conflict_checks": true,
+  "entries": [
+    "3969_adjoint_nn.log",
+    "400_adjoint_nn.log",
+    "job_status.json",
+    "400_pinn.log",
+    "3969_pinn.log",
+    "environment.json",
+    "results/n3969/pinn/metrics.json",
+    "results/n3969/pinn/model.pt",
+    "results/n3969/pinn/D_hat.npz",
+    "results/n3969/adjoint_nn/metrics.json",
+    "results/n3969/adjoint_nn/model.pt",
+    "results/n3969/adjoint_nn/D_hat.npz",
+    "results/n400/pinn/metrics.json",
+    "results/n400/pinn/model.pt",
+    "results/n400/pinn/D_hat.npz",
+    "results/n400/adjoint_nn/metrics.json",
+    "results/n400/adjoint_nn/model.pt",
+    "results/n400/adjoint_nn/D_hat.npz"
+  ]
+}

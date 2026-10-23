@@ -1,0 +1,18 @@
+{
+  "uses_true_D": false,
+  "results": [
+    {
+      "arm": "pde4096_control",
+      "coefficient_and_state_tensors_bitwise_equal": true,
+      "D_array_bitwise_equal": true,
+      "objective_histories_equal": true
+    },
+    {
+      "arm": "adjoint_control",
+      "coefficient_and_state_tensors_bitwise_equal": true,
+      "D_array_bitwise_equal": true,
+      "objective_histories_equal": true
+    }
+  ],
+  "caveat": "Same observations and seed, not independent initialization/noise confirmation."
+}

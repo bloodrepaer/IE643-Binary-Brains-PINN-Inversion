@@ -1,0 +1,32 @@
+{
+  "complete": true,
+  "smokes_not_results": true,
+  "coefficient_truth_used": false,
+  "full_readings": 8000,
+  "n_sensors": 1000,
+  "shared_initial_sha_gamma_scale": [
+    "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+    3.558622338413813e-10,
+    0.99610137
+  ],
+  "results": [
+    {
+      "arm": "temporal_pinn",
+      "gradient_errors": [
+        1.0994186903476482e-09,
+        8.406896197244037e-11
+      ],
+      "pipeline": "PASS",
+      "checkpoint_reproduction": "PASS"
+    },
+    {
+      "arm": "be_adjoint_nn",
+      "gradient_errors": [
+        3.7598485505676277e-08,
+        9.92434450380013e-09
+      ],
+      "pipeline": "PASS",
+      "checkpoint_reproduction": "PASS"
+    }
+  ]
+}

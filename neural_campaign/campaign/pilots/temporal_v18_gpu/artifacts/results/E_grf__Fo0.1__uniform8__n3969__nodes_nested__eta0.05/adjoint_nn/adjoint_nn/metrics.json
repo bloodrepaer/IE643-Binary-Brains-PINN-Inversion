@@ -1,0 +1,213 @@
+{
+  "key": "E_grf__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+  "method": "adjoint_nn",
+  "variant": "temporal_density_v18",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0012712434,
+  "D_const": 0.2566943192596839,
+  "rms_const_over_sigma": 1.6785913637008754,
+  "rms_replay_over_sigma": 0.9855728427973479,
+  "rms_unet_over_sigma": 0.9855728427973479,
+  "wall_s": 3797.9529999999795,
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.626747445069284e-06,
+      "gradient_max_abs": 2.6489314158215723e-08,
+      "resets": 1,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 844
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.621216479230633e-06,
+      "gradient_max_abs": 3.6899578701091246e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 760
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.6163971991592718e-06,
+      "gradient_max_abs": 1.829500056822303e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 785
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.6107812439507614e-06,
+      "gradient_max_abs": 4.5440521909629654e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 773
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.6050026743175984e-06,
+      "gradient_max_abs": 3.647716669038986e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 760
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.601470670667264e-06,
+      "gradient_max_abs": 3.916693711721909e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 755
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.59876234015118e-06,
+      "gradient_max_abs": 5.770181192063293e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 760
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.5966220741161656e-06,
+      "gradient_max_abs": 3.535204011561603e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 739
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.5953685597080772e-06,
+      "gradient_max_abs": 1.0753747836356529e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 704
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.594402040158795e-06,
+      "gradient_max_abs": 6.367202415129185e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 661
+    }
+  ],
+  "history": [
+    {
+      "data": 1.6257914744064028e-06,
+      "pde": 0.0,
+      "reg": 9.559706628812901e-10
+    },
+    {
+      "data": 1.619779046726817e-06,
+      "pde": 0.0,
+      "reg": 1.4374325038159546e-09
+    },
+    {
+      "data": 1.6139823796002665e-06,
+      "pde": 0.0,
+      "reg": 2.414819559005331e-09
+    },
+    {
+      "data": 1.6066651702435665e-06,
+      "pde": 0.0,
+      "reg": 4.116073707194922e-09
+    },
+    {
+      "data": 1.5986623606360356e-06,
+      "pde": 0.0,
+      "reg": 6.3403136815627934e-09
+    },
+    {
+      "data": 1.5933850537081341e-06,
+      "pde": 0.0,
+      "reg": 8.085616959129832e-09
+    },
+    {
+      "data": 1.5893002676880053e-06,
+      "pde": 0.0,
+      "reg": 9.462072463174737e-09
+    },
+    {
+      "data": 1.5859172521252154e-06,
+      "pde": 0.0,
+      "reg": 1.0704821990950163e-08
+    },
+    {
+      "data": 1.5838645437200343e-06,
+      "pde": 0.0,
+      "reg": 1.150401598804278e-08
+    },
+    {
+      "data": 1.5820776808268632e-06,
+      "pde": 0.0,
+      "reg": 1.2324359331931816e-08
+    }
+  ],
+  "final_parts": {
+    "data": 1.5820776808268632e-06,
+    "pde": 0.0,
+    "reg": 1.2324359331931816e-08
+  },
+  "objective": 1.594402040158795e-06,
+  "function_evaluations": 8541,
+  "initial_coefficient_sha256": "53a50ddd6f562ad6eaa5a69d84b6cac609e8bd14b4cf33f8b02ca70db17869f9",
+  "gamma": 1.0259099863143909e-10,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.492385217377766e-07,
+  "settings": {
+    "data": "C:\\Users\\gunem\\mihir_projects\\IE643courseproject\\v2\\campaign\\pilots\\temporal_v18_gpu\\supplied_data",
+    "key": "E_grf__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "out": "C:\\Users\\gunem\\mihir_projects\\IE643courseproject\\v2\\campaign\\pilots\\temporal_v18_gpu\\local_results\\E_grf__Fo0.1__uniform8__n3969__nodes_nested__eta0.05\\adjoint_nn",
+    "method": "adjoint_nn",
+    "device": "cpu",
+    "budget": 7200.0,
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096
+  },
+  "parameter_count": 2241,
+  "arm": "adjoint_nn",
+  "n_sensors": 3969,
+  "n_pde": 4096,
+  "optimizer": "ssb",
+  "time_step_tau": 0.01,
+  "physics_measure": "uniform tau0 in [0,0.99], uniform space",
+  "physics_loss": "hard_discrete_state",
+  "interpretation": "Adapted temporal-consistency loss test, not a full reproduction of Thakur architecture/training. All outcomes retained; capped/partial fits are not converged optima or method losses."
+}

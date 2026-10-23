@@ -1,0 +1,5 @@
+arm,optimizer,method,key,n_sensors,n_pde,rel_L2_D,replay_sigma,sensor_fit_sigma,status,wall_s,adam_completed,quasi_newton_iterations,capped_rounds,optimizer_failures,function_evaluations,gamma
+lbfgsb_adjoint,lbfgsb,adjoint_nn,A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,3969,4096,0.052328760726926965,0.9949339530354531,0.9949339530354531,complete,1745.6276752019994,1000,4000,10,0,5355,8.966042676779573e-11
+lbfgsb_pinn,lbfgsb,pinn,A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,3969,16384,0.37873958509955935,2.9449050748659698,2.9272662308151625,complete,855.7031396589996,1000,4000,10,0,5328,8.966042676779573e-11
+ssb_adjoint,ssb,adjoint_nn,A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,3969,4096,0.20008054758853025,0.9806585987534586,0.9806585987534586,complete,2988.7562618600004,1000,4000,10,0,8085,8.966042676779573e-11
+ssb_pinn,ssb,pinn,A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,3969,16384,0.3574234807215786,2.036014497620444,2.0245580300109407,complete,3341.094304519,1000,4000,10,0,8663,8.966042676779573e-11

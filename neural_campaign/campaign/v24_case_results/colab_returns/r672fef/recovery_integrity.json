@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-21T20:18:45.381935+00:00",
+  "archive": "campaign\\pilots\\noise_density_v24_1000_7500\\colab_returns\\20261021T201715_672fef\\IE643_Colab_results_20261021T201715_672fef.zip",
+  "archive_sha256": "7744813d08ba87f4da34b45d71af3a3e9e37617fe17a069d934d405ba8fb740c",
+  "manifest_files": 65,
+  "all_export_hashes_pass": true,
+  "notebook_changed_source_cells": [],
+  "status": "complete_locally_validated_evaluated",
+  "evaluated_utc": "2026-10-21T20:20:58.494877+00:00",
+  "coefficient_truth_accessed_only_after_all_supplied_checks": true
+}

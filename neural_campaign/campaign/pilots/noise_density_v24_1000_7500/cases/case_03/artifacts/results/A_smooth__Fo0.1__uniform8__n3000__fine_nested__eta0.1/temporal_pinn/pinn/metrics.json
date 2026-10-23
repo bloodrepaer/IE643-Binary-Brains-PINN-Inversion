@@ -1,0 +1,218 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.1",
+  "method": "pinn",
+  "variant": "noise_density_temporal_v24_1000_7500",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0023768648,
+  "D_const": 0.2658031041258034,
+  "rms_const_over_sigma": 1.6988059121670218,
+  "rms_replay_over_sigma": 1.8578984235003009,
+  "rms_unet_over_sigma": 0.9785707949655768,
+  "wall_s": 6382.96373815,
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 6.306856821186483e-06,
+      "gradient_max_abs": 1.4106772773635533e-05,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 808
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.758868070763094e-06,
+      "gradient_max_abs": 2.3663381692248284e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 740
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.691169310386547e-06,
+      "gradient_max_abs": 7.379992439398429e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 724
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.65191698474198e-06,
+      "gradient_max_abs": 2.497392894830172e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 703
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.618382844890454e-06,
+      "gradient_max_abs": 4.620764929073904e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 688
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.599239711978967e-06,
+      "gradient_max_abs": 2.002313981108789e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 655
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.568362745373739e-06,
+      "gradient_max_abs": 1.7905591550975052e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 623
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.562704582627585e-06,
+      "gradient_max_abs": 3.1647078493161935e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 696
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.5392754681045425e-06,
+      "gradient_max_abs": 2.523231022025853e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 662
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.51539580597343e-06,
+      "gradient_max_abs": 6.253093433659321e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 672
+    }
+  ],
+  "history": [
+    {
+      "data": 5.762292791774361e-06,
+      "pde": 5.426531124326457e-07,
+      "reg": 1.9109169794759894e-09
+    },
+    {
+      "data": 5.6597812688735856e-06,
+      "pde": 9.667627085604257e-08,
+      "reg": 2.4105310334661587e-09
+    },
+    {
+      "data": 5.621852471838928e-06,
+      "pde": 6.648418615832307e-08,
+      "reg": 2.8326523892961452e-09
+    },
+    {
+      "data": 5.597739963208802e-06,
+      "pde": 5.025343482610254e-08,
+      "reg": 3.923586707075468e-09
+    },
+    {
+      "data": 5.575449149586536e-06,
+      "pde": 3.8435028884827434e-08,
+      "reg": 4.498666419090042e-09
+    },
+    {
+      "data": 5.553168392606327e-06,
+      "pde": 4.114591245901978e-08,
+      "reg": 4.925406913620588e-09
+    },
+    {
+      "data": 5.520427899402192e-06,
+      "pde": 4.2491447168038075e-08,
+      "reg": 5.4433988035087265e-09
+    },
+    {
+      "data": 5.505244750300361e-06,
+      "pde": 5.133138374959807e-08,
+      "reg": 6.128448577627115e-09
+    },
+    {
+      "data": 5.480118315419076e-06,
+      "pde": 5.2658056686128437e-08,
+      "reg": 6.499095999337572e-09
+    },
+    {
+      "data": 5.452383361385485e-06,
+      "pde": 5.5728899436306406e-08,
+      "reg": 7.283545151638635e-09
+    }
+  ],
+  "final_parts": {
+    "data": 5.452383361385485e-06,
+    "pde": 5.5728899436306406e-08,
+    "reg": 7.283545151638635e-09
+  },
+  "objective": 5.51539580597343e-06,
+  "function_evaluations": 7971,
+  "initial_coefficient_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+  "gamma": 4.74482978455175e-10,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.492385217377766e-07,
+  "settings": {
+    "data": "data",
+    "key": "A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.1",
+    "out": "results/A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.1/temporal_pinn",
+    "method": "pinn",
+    "device": "cpu",
+    "budget": 12600.0,
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096
+  },
+  "parameter_count": 4514,
+  "arm": "temporal_pinn",
+  "n_sensors": 3000,
+  "n_readings": 24000,
+  "eta": 0.1,
+  "n_pde": 4096,
+  "time_step_tau": 0.01,
+  "optimizer": "ssb",
+  "time_integrator": "soft_backward_euler",
+  "sensor_fit_rms": 0.0023259304768616968,
+  "common_cn_replay_sigma": 1.8578984235003009,
+  "common_cn_replay_rms": 0.004415973364793358,
+  "common_be_replay_sigma": 1.9312436751661155,
+  "common_be_replay_rms": 0.004590305111724974
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "arm": "random_control",
+    "initial_sha": "b88e254e048252c2160b134b6288cb2de910423379501d7509b08fbad85fd741",
+    "status": "complete"
+  },
+  {
+    "arm": "sobol",
+    "initial_sha": "b88e254e048252c2160b134b6288cb2de910423379501d7509b08fbad85fd741",
+    "status": "complete"
+  },
+  {
+    "arm": "adjoint_control",
+    "initial_sha": "b88e254e048252c2160b134b6288cb2de910423379501d7509b08fbad85fd741",
+    "status": "complete"
+  }
+]

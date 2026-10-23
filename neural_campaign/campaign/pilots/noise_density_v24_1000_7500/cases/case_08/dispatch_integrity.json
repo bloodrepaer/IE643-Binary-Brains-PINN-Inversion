@@ -1,0 +1,9 @@
+{
+  "verified_utc": "2026-10-21T21:09:43.771244+00:00",
+  "scientific_sources_unchanged": true,
+  "runner_matches_validated_template_except_predeclared_key": true,
+  "prior_sha_format": "UTF8 normalized LF text; actual staged file has CRLF",
+  "runner_exact_bytes_sha256": "529d0f5244d56814be2c24d071b105f06d0bae77d1a1ec45a831f45124df87e0",
+  "all_existing_validation_proofs_retained": true,
+  "key": "A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.05"
+}

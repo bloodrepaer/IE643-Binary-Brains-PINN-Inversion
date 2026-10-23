@@ -1,0 +1,16 @@
+{
+  "finished_utc": "2026-10-22T08:15:52.585523+00:00",
+  "scope": "12-cell one-field noise/density comparison only; broader held campaign not declared complete",
+  "all_24_fits_complete_and_capped": true,
+  "figures_reviewed": true,
+  "report_files_sha256": {
+    "SWEEP_REPORT.md": "9c0cf3e13803bfc765c7025268cc60cbb9dccc87d9f06a39ee5fbabe80820268",
+    "primary_matched_neural_comparison.csv": "453fc63d0cca138c0b0cdba5fa65ad9f0c38eb316ccb7aa1b525599e397545bd",
+    "paired_cell_summary.csv": "c69996695dd797d1376e5ed995354c1ab15c6eeaeb0f9e2f86aee5cef229c22b",
+    "density_trend.png": "c592b5f4c898c104eacf9093ea04a349de0e9e22d1151016bc7965cc78284b5b",
+    "noise_trend.png": "51e4387a7b00a3d2e6c8779b7192207f07094cf1527f265df9c4051d10080f8e",
+    "report_coverage.json": "237753e0f193851a530f1b9c49aba4537104b76f690fb37cd364bdcab052f51e"
+  },
+  "no_active_experiments_or_new_dispatch": true,
+  "monitor_action": "Delete completed scoped sweep automation; all other holds remain"
+}

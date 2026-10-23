@@ -1,0 +1,46 @@
+[
+  {
+    "arm": "temporal_pinn",
+    "status": "exited",
+    "returncode": 0,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "dense10000_pair.py",
+      "--data",
+      "data",
+      "--key",
+      "A_smooth__Fo0.1__uniform8__n10000__fine_nested__eta0.05",
+      "--out",
+      "results",
+      "--arm",
+      "temporal_pinn",
+      "--device",
+      "cuda",
+      "--budget",
+      "4200"
+    ]
+  },
+  {
+    "arm": "be_adjoint_nn",
+    "status": "exited",
+    "returncode": 0,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "dense10000_pair.py",
+      "--data",
+      "data",
+      "--key",
+      "A_smooth__Fo0.1__uniform8__n10000__fine_nested__eta0.05",
+      "--out",
+      "results",
+      "--arm",
+      "be_adjoint_nn",
+      "--device",
+      "cpu",
+      "--budget",
+      "4200"
+    ]
+  }
+]

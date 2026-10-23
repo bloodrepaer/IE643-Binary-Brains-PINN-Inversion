@@ -1,0 +1,76 @@
+{
+  "key": "E_grf__Fo0.1__uniform8__n200__nodes_nested__eta0.1",
+  "sigma": 0.0025424867,
+  "n_readings": 1600,
+  "rms_replay_over_sigma": 0.9872610445824959,
+  "alpha": 1.6,
+  "flag": "reached_sigma",
+  "D_const": 0.2583454168605937,
+  "rms_const_over_sigma": 1.2660294017790774,
+  "n_evals": 297,
+  "wall_s": 52.755717399995774,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.16973090728778453,
+  "rmse_logD": 0.1703714139187637,
+  "rel_L2_D_high_sensitivity": 0.1341336950065131,
+  "rel_L2_D_low_sensitivity": 0.18476695249630443,
+  "rel_L2_D_constant_guess": 0.330691772637999,
+  "rms_vs_clean_over_sigma": 0.18710433913569371,
+  "alpha_selection": "discrepancy_path",
+  "method": "grid",
+  "seed": 42,
+  "shared_setup_s": 0.6473663999931887,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 1600.0,
+      "rms": 0.0030983637690152784,
+      "rms_over_sigma": 1.2186351924732894,
+      "iters": 32
+    },
+    {
+      "alpha": 505.9644256269407,
+      "rms": 0.002983075397398602,
+      "rms_over_sigma": 1.1732904629938092,
+      "iters": 27
+    },
+    {
+      "alpha": 160.0,
+      "rms": 0.0028417177637163737,
+      "rms_over_sigma": 1.1176922828018623,
+      "iters": 21
+    },
+    {
+      "alpha": 50.596442562694065,
+      "rms": 0.002707917431923279,
+      "rms_over_sigma": 1.065066508282336,
+      "iters": 23
+    },
+    {
+      "alpha": 16.0,
+      "rms": 0.002611073491024549,
+      "rms_over_sigma": 1.0269762634449766,
+      "iters": 30
+    },
+    {
+      "alpha": 5.059644256269407,
+      "rms": 0.00255103117985995,
+      "rms_over_sigma": 1.0033606782918274,
+      "iters": 40
+    },
+    {
+      "alpha": 1.6,
+      "rms": 0.0025100980752791025,
+      "rms_over_sigma": 0.9872610445824959,
+      "iters": 57
+    }
+  ],
+  "parameter_count": 256,
+  "dtype": "float64",
+  "coefficient_config": null,
+  "chi2_red_solver": 0.9746843701501209,
+  "rms_replay": 0.0025100980752791025,
+  "rms_replay_relative_signal": 0.12406523840318438
+}

@@ -1,0 +1,61 @@
+{
+  "key": "F_defects__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+  "method": "adjoint_nn",
+  "variant": "calibrated_hard_physics_v12",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0013268946,
+  "D_const": 0.24297680435863905,
+  "rms_const_over_sigma": 1.4768488660334773,
+  "rms_replay_over_sigma": 1.2109774570335856,
+  "rms_unet_over_sigma": 1.2109774570335856,
+  "wall_s": 89.48499999998603,
+  "adam_completed": 50,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 50,
+      "requested_iterations": 50,
+      "reason": "iteration_cap",
+      "loss": 2.6023414206618156e-06,
+      "gradient_max_abs": 3.122521170471751e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 144
+    }
+  ],
+  "history": [
+    {
+      "data": 2.602183361959931e-06,
+      "pde": 0.0,
+      "reg": 1.5805870188453898e-10
+    }
+  ],
+  "final_parts": {
+    "data": 2.602183361959931e-06,
+    "pde": 0.0,
+    "reg": 1.5805870188453898e-10
+  },
+  "objective": 2.6023414206618156e-06,
+  "function_evaluations": 194,
+  "initial_coefficient_sha256": "625b85760844c31464836ce2d139439890fb80090d6a9175e1bae4ecc021f3cc",
+  "gamma": 1.1176985519444094e-10,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.492385217377766e-07,
+  "settings": {
+    "data": "datasets_v2_density_extended",
+    "key": "F_defects__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "out": "campaign\\pilots\\quick_temporal_v19_local\\artifacts\\F_defects__Fo0.1__uniform8__n3969__nodes_nested__eta0.05\\adjoint_nn",
+    "method": "adjoint_nn",
+    "device": "cpu",
+    "budget": 120.0,
+    "adam": 50,
+    "outer": 1,
+    "inner": 50,
+    "n_pde": 4096
+  },
+  "parameter_count": 2241
+}

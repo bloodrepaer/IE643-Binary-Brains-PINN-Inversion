@@ -1,0 +1,12 @@
+[1/1] C_inclusion__Fo0.1__uniform8__n20__boundary__eta0.05  (160 readings, sigma=1.59e-03)
+    alpha=1.600e+02  RMS/sigma=  1.199  iters=43
+    alpha=5.060e+01  RMS/sigma=  1.191  iters=41
+    alpha=1.600e+01  RMS/sigma=  1.150  iters=61
+    alpha=5.060e+00  RMS/sigma=  1.103  iters=94
+    alpha=1.600e+00  RMS/sigma=  1.040  iters=150
+    alpha=5.060e-01  RMS/sigma=  1.009  iters=150
+    alpha=1.600e-01  RMS/sigma=  0.992  iters=150
+    -> RMS_replay/σ=0.992  flag=reached_sigma  120s, 760 PDE solves
+       relL2(D)=1.529  (constant guess 0.752)  high/low sensitivity 0.959/2.024
+
+Results in /home/claude/sweep/adj/  (summary.csv, one folder per dataset)

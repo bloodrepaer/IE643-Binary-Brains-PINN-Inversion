@@ -1,0 +1,135 @@
+{
+  "protocol": {
+    "states": [
+      "ssb_pinn",
+      "lbfgsb_pinn"
+    ],
+    "coefficients": [
+      "ssb_pinn",
+      "lbfgsb_pinn",
+      "ssb_adjoint",
+      "lbfgsb_adjoint"
+    ],
+    "combinations": 8,
+    "uses_true_D": false,
+    "refitting": false,
+    "accepted_optimizer_steps": 0,
+    "collocation": "Each retained state uses its own unchanged final training cloud for every coefficient.",
+    "scope": "Evaluate every Cartesian combination, preserving the local-D coupled base. No best combination selected.",
+    "limitations": "Frozen-state compatibility test, not conditional state representability, a new inverse solution, an optimization trajectory, a converged optimum or a unique-cause test."
+  },
+  "checkpoint_sha256": {
+    "ssb_pinn": "1bac4ce3c1788ae0eb07c572caa12c577cb26075226f4142af0e6f9132ad3b98",
+    "lbfgsb_pinn": "51d217fd226ee90f2db0a0670e61c7328cb2b7aee22d0ec6af01a2996df6ad2f",
+    "ssb_adjoint": "eeb3ef352cd014c2e7c5de2accf31dd483658a73d91bc534a26e306d2f111da8",
+    "lbfgsb_adjoint": "543615ec3ff87f07311b7f5090dcd35ab18b5fad6b94afa2d25ddbffb09915c6"
+  },
+  "checkpoints_unchanged": true,
+  "source_sha256": "a0c74a0eae15550e6fb375055fa5e852fb1bb43e18fd30fa40005f3cea2c700d",
+  "results": [
+    {
+      "state_arm": "ssb_pinn",
+      "coefficient_arm": "ssb_pinn",
+      "objective_parts": {
+        "data": 5.834482625709092e-06,
+        "pde": 8.593534114222151e-07,
+        "reg": 4.561088094641795e-10
+      },
+      "objective": 6.694292145940771e-06,
+      "state_sensor_fit_sigma": 2.0245580300109407,
+      "coefficient_common_CN_replay_sigma": 2.036014497620443,
+      "state_common_CN_sensor_gap_sigma": 0.035756644298058644
+    },
+    {
+      "state_arm": "lbfgsb_pinn",
+      "coefficient_arm": "ssb_pinn",
+      "objective_parts": {
+        "data": 1.3855738238558023e-05,
+        "pde": 0.003602405155575715,
+        "reg": 4.561088094641795e-10
+      },
+      "objective": 0.0036162613499230827,
+      "state_sensor_fit_sigma": 3.1199230959728523,
+      "coefficient_common_CN_replay_sigma": 2.036014497620443,
+      "state_common_CN_sensor_gap_sigma": 2.4464515861109155
+    },
+    {
+      "state_arm": "ssb_pinn",
+      "coefficient_arm": "lbfgsb_pinn",
+      "objective_parts": {
+        "data": 1.9616919678338506e-05,
+        "pde": 0.005101650820736123,
+        "reg": 2.2021915215669933e-14
+      },
+      "objective": 0.0051212677404364835,
+      "state_sensor_fit_sigma": 3.7123119294914746,
+      "coefficient_common_CN_replay_sigma": 2.944905074865966,
+      "state_common_CN_sensor_gap_sigma": 2.457630191641644
+    },
+    {
+      "state_arm": "lbfgsb_pinn",
+      "coefficient_arm": "lbfgsb_pinn",
+      "objective_parts": {
+        "data": 1.2197373911659356e-05,
+        "pde": 1.1680542707829469e-07,
+        "reg": 2.2021915215669933e-14
+      },
+      "objective": 1.2314179360759566e-05,
+      "state_sensor_fit_sigma": 2.9272662308151625,
+      "coefficient_common_CN_replay_sigma": 2.944905074865966,
+      "state_common_CN_sensor_gap_sigma": 0.04455567789631669
+    },
+    {
+      "state_arm": "ssb_pinn",
+      "coefficient_arm": "ssb_adjoint",
+      "objective_parts": {
+        "data": 3.2063021971054175e-05,
+        "pde": 42.13048078163114,
+        "reg": 1.180260241149805e-08
+      },
+      "objective": 42.13051285645572,
+      "state_sensor_fit_sigma": 4.746038756159416,
+      "coefficient_common_CN_replay_sigma": 0.9806585987534586,
+      "state_common_CN_sensor_gap_sigma": 4.6456211227516295
+    },
+    {
+      "state_arm": "lbfgsb_pinn",
+      "coefficient_arm": "ssb_adjoint",
+      "objective_parts": {
+        "data": 4.691048000808903e-05,
+        "pde": 42.13155805256987,
+        "reg": 1.180260241149805e-08
+      },
+      "objective": 42.131604974852486,
+      "state_sensor_fit_sigma": 5.7406886394200285,
+      "coefficient_common_CN_replay_sigma": 0.9806585987534586,
+      "state_common_CN_sensor_gap_sigma": 5.658164674838947
+    },
+    {
+      "state_arm": "ssb_pinn",
+      "coefficient_arm": "lbfgsb_adjoint",
+      "objective_parts": {
+        "data": 2.4576780755533586e-05,
+        "pde": 0.05766147230472978,
+        "reg": 1.1145909961696853e-09
+      },
+      "objective": 0.05768605020007631,
+      "state_sensor_fit_sigma": 4.1551963582414775,
+      "coefficient_common_CN_replay_sigma": 0.9949339530354531,
+      "state_common_CN_sensor_gap_sigma": 4.035915390426827
+    },
+    {
+      "state_arm": "lbfgsb_pinn",
+      "coefficient_arm": "lbfgsb_adjoint",
+      "objective_parts": {
+        "data": 3.9701334691128265e-05,
+        "pde": 0.06050817007036808,
+        "reg": 1.1145909961696853e-09
+      },
+      "objective": 0.0605478725196502,
+      "state_sensor_fit_sigma": 5.281187755038155,
+      "coefficient_common_CN_replay_sigma": 0.9949339530354531,
+      "state_common_CN_sensor_gap_sigma": 5.187437643836024
+    }
+  ]
+}

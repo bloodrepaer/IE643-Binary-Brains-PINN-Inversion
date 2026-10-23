@@ -1,0 +1,71 @@
+{
+  "key": "A_smooth__Fo0.02__final1__n50__random__eta0.05",
+  "sigma": 0.0021590154,
+  "n_readings": 50,
+  "rms_replay_over_sigma": 0.8736447351309758,
+  "alpha": 1.5811388300841895,
+  "flag": "reached_sigma",
+  "D_const": 0.27304795564003775,
+  "rms_const_over_sigma": 2.2782084292029054,
+  "n_evals": 694,
+  "wall_s": 154.79143720000866,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.2757299701590913,
+  "rmse_logD": 0.3636818014449411,
+  "rel_L2_D_high_sensitivity": 0.10496271885968333,
+  "rel_L2_D_low_sensitivity": 0.37882720564444977,
+  "rel_L2_D_constant_guess": 0.37865145955743157,
+  "rms_vs_clean_over_sigma": 0.6061455931572004,
+  "alpha_selection": "discrepancy_path",
+  "method": "adjoint_nn",
+  "seed": 42,
+  "shared_setup_s": 0.7197153999877628,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 50.0,
+      "rms": 0.0037418041039126724,
+      "rms_over_sigma": 1.7331067225887655,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 15.811388300841896,
+      "rms": 0.0027686810469101522,
+      "rms_over_sigma": 1.2823813331346097,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 5.0,
+      "rms": 0.0021686948814931004,
+      "rms_over_sigma": 1.0044832850627654,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 1.5811388300841895,
+      "rms": 0.0018862124372766979,
+      "rms_over_sigma": 0.8736447351309758,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    }
+  ],
+  "parameter_count": 2241,
+  "dtype": "float64",
+  "coefficient_config": {
+    "width": 32,
+    "depth": 3,
+    "d_min": 0.001,
+    "d_max": 10.0
+  },
+  "chi2_red_solver": 0.7632551232220729,
+  "rms_replay": 0.0018862124372766979,
+  "rms_replay_relative_signal": 0.06662106129433404
+}

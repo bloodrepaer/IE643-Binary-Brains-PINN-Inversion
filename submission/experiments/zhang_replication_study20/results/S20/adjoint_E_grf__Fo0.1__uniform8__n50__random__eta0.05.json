@@ -1,0 +1,16 @@
+{
+ "key": "E_grf__Fo0.1__uniform8__n50__random__eta0.05",
+ "method": "adjoint",
+ "alpha": 12.649110640673516,
+ "flag": "reached_sigma",
+ "wall_s": 31.205312170999605,
+ "n_evals": 152,
+ "eps_u_solver": 0.002376836868273208,
+ "sigma": 0.0012712434,
+ "n_readings": 400,
+ "peak_rss_gb": 0.2452850341796875,
+ "eps_D": 0.20679348887624818,
+ "rmse_logD": 0.21380932014734375,
+ "rms_replay_over_sigma": 0.9533469187743453,
+ "eps_u": 0.03302961914016495
+}

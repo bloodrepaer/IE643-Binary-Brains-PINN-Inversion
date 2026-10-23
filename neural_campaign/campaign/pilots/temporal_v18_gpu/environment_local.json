@@ -1,0 +1,8 @@
+{
+  "python": "3.12.7",
+  "cpu_model": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "parallel_workers": 1,
+  "torch_cpu_threads_per_arm": 2,
+  "uses_cuda": false,
+  "note": "First local fit overlapped final loader packaging checks for first few minutes; no unqualified timing comparison with remote GPU arms"
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "arm": "random_control",
+    "status": "exited",
+    "returncode": 0,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "sampling_neural_pair.py",
+      "--data",
+      "data",
+      "--key",
+      "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+      "--out",
+      "results",
+      "--arm",
+      "random_control",
+      "--device",
+      "cuda",
+      "--budget",
+      "6500"
+    ]
+  },
+  {
+    "arm": "sobol",
+    "status": "exited",
+    "returncode": 0,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "sampling_neural_pair.py",
+      "--data",
+      "data",
+      "--key",
+      "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+      "--out",
+      "results",
+      "--arm",
+      "sobol",
+      "--device",
+      "cuda",
+      "--budget",
+      "6500"
+    ]
+  },
+  {
+    "arm": "adjoint_control",
+    "status": "exited",
+    "returncode": 0,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "sampling_neural_pair.py",
+      "--data",
+      "data",
+      "--key",
+      "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+      "--out",
+      "results",
+      "--arm",
+      "adjoint_control",
+      "--device",
+      "cpu",
+      "--budget",
+      "6500"
+    ]
+  }
+]

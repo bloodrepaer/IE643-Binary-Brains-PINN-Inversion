@@ -1,0 +1,79 @@
+{
+  "key": "D_layered__Fo0.02__log8__n50__random__eta0.05",
+  "sigma": 0.0037809899,
+  "n_readings": 400,
+  "rms_replay_over_sigma": 0.9474770161298095,
+  "alpha": 4.0,
+  "flag": "reached_sigma",
+  "D_const": 0.22864381315339335,
+  "rms_const_over_sigma": 5.826623593990954,
+  "n_evals": 862,
+  "wall_s": 330.10894930001814,
+  "n_steps": 400,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.28754896262082513,
+  "rmse_logD": 0.5417149566318908,
+  "rel_L2_D_high_sensitivity": 0.2126535299162197,
+  "rel_L2_D_low_sensitivity": 0.3538575321771285,
+  "rel_L2_D_constant_guess": 0.6241421451471085,
+  "rms_vs_clean_over_sigma": 0.3706344565204344,
+  "alpha_selection": "discrepancy_path",
+  "method": "adjoint_nn",
+  "seed": 42,
+  "shared_setup_s": 0.9845939999795519,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 400.0,
+      "rms": 0.009392668620630809,
+      "rms_over_sigma": 2.4841824149360483,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 126.49110640673517,
+      "rms": 0.006611036512535819,
+      "rms_over_sigma": 1.7484935658082077,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 40.0,
+      "rms": 0.004570916080224668,
+      "rms_over_sigma": 1.2089204682151273,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 12.649110640673516,
+      "rms": 0.003788815617977205,
+      "rms_over_sigma": 1.002069753737561,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 4.0,
+      "rms": 0.003582401028468947,
+      "rms_over_sigma": 0.9474770161298095,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    }
+  ],
+  "parameter_count": 2241,
+  "dtype": "float64",
+  "coefficient_config": {
+    "width": 32,
+    "depth": 3,
+    "d_min": 0.001,
+    "d_max": 10.0
+  },
+  "chi2_red_solver": 0.8977126960942473,
+  "rms_replay": 0.003582401028468947,
+  "rms_replay_relative_signal": 0.03147847640862409
+}

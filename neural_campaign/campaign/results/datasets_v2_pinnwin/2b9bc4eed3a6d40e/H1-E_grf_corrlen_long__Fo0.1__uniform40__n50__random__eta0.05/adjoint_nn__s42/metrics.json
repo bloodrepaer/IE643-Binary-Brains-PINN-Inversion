@@ -1,0 +1,71 @@
+{
+  "key": "H1-E_grf_corrlen_long__Fo0.1__uniform40__n50__random__eta0.05",
+  "sigma": 0.001394479,
+  "n_readings": 2000,
+  "rms_replay_over_sigma": 0.9855729825631517,
+  "alpha": 63.245553203367585,
+  "flag": "reached_sigma",
+  "D_const": 0.2508091204666812,
+  "rms_const_over_sigma": 2.3055133396482983,
+  "n_evals": 700,
+  "wall_s": 239.78104839997832,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.1341376432434961,
+  "rmse_logD": 0.1315347091476616,
+  "rel_L2_D_high_sensitivity": 0.0444408357227929,
+  "rel_L2_D_low_sensitivity": 0.1645723629509939,
+  "rel_L2_D_constant_guess": 0.3432115730910911,
+  "rms_vs_clean_over_sigma": 0.1884825220877457,
+  "alpha_selection": "discrepancy_path",
+  "method": "adjoint_nn",
+  "seed": 42,
+  "shared_setup_s": 1.4703008999931626,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 2000.0,
+      "rms": 0.0019410265762316514,
+      "rms_over_sigma": 1.3919367564743905,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 632.4555320336759,
+      "rms": 0.0015925421338384505,
+      "rms_over_sigma": 1.1420337874134,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 200.0,
+      "rms": 0.001430474417699363,
+      "rms_over_sigma": 1.0258128072917292,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 63.245553203367585,
+      "rms": 0.0013743608271516812,
+      "rms_over_sigma": 0.9855729825631517,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    }
+  ],
+  "parameter_count": 2241,
+  "dtype": "float64",
+  "coefficient_config": {
+    "width": 32,
+    "depth": 3,
+    "d_min": 0.001,
+    "d_max": 10.0
+  },
+  "chi2_red_solver": 0.9713541039584266,
+  "rms_replay": 0.0013743608271516812,
+  "rms_replay_relative_signal": 0.04660590870193296
+}

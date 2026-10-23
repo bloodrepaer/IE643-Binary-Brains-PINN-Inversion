@@ -1,0 +1,40 @@
+{
+  "updated": "2026-10-19T22:05:35.776783+00:00",
+  "uses_true_D": false,
+  "validation_seed": 20261023,
+  "results": [
+    {
+      "pilot": "sampling_v13_gpu",
+      "key": "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+      "artifact": "results\\random_control\\pinn\\model.pt",
+      "arm": "random_control",
+      "variant": "sampling_random_v13",
+      "heldout_points": 16384,
+      "heldout_rms": 0.009355834791016369,
+      "heldout_max": 0.4330780737699685,
+      "top_one_percent_energy": 0.8925001638949746,
+      "replay_sigma": 1.7642777911615706,
+      "sensor_fit_sigma": 1.6491566894427008,
+      "training_points": 4096,
+      "training_rms": 0.0007360745788894586,
+      "heldout_to_training_rms": 12.710444103547012
+    },
+    {
+      "pilot": "sampling_v13_gpu",
+      "key": "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+      "artifact": "results\\sobol\\pinn\\model.pt",
+      "arm": "sobol",
+      "variant": "sampling_sobol_v13",
+      "heldout_points": 16384,
+      "heldout_rms": 0.006262017672776551,
+      "heldout_max": 0.2358936421517589,
+      "top_one_percent_energy": 0.9192418632961142,
+      "replay_sigma": 2.0598364620250633,
+      "sensor_fit_sigma": 1.9792455233300137,
+      "training_points": 4096,
+      "training_rms": 0.0006140288828197721,
+      "heldout_to_training_rms": 10.198246121615357
+    }
+  ],
+  "scope": "All retained PINN arms, identical independent probe; per-artifact reports and outliers preserve every arm."
+}

@@ -1,0 +1,61 @@
+{
+  "updated": "2026-10-19T00:34:14.593828+00:00",
+  "validation_seed": 20261019,
+  "selection_uses_true_D": false,
+  "results": [
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+      "ic_relative_L2": 2.492385217377766e-07,
+      "replay_sigma": 2.8763521471870215,
+      "replay_metric_difference": 2.220446049250313e-15,
+      "sensor_fit_sigma": 1.0829327529481834,
+      "D_spatial_std": 0.010816504268385093,
+      "D_mean": 0.26264585704035415,
+      "D_fitted_constant": 0.2696131593826259,
+      "constant_replay_sigma": 2.8067433876909242,
+      "training_seconds": 1479.1595862939998,
+      "bc_rms": 2.2146307242162814e-18,
+      "bc_rms_over_sensor_sigma": 1.8634890164693264e-15,
+      "pinn_v0_replay_sigma": 7.298396846260903,
+      "adjoint_nn_v0_replay_sigma": 0.941967490048654,
+      "replay_improvement_over_constant_percent": -2.4800542793248948
+    }
+  ],
+  "time_bins": [
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+      "tau_low": 0,
+      "tau_high": 0.001,
+      "pde_rms": 0.01232985947996918,
+      "pde_max_abs": 0.08731897422388357
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+      "tau_low": 0.001,
+      "tau_high": 0.01,
+      "pde_rms": 0.013760465423360551,
+      "pde_max_abs": 0.060173464372183696
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+      "tau_low": 0.01,
+      "tau_high": 0.1,
+      "pde_rms": 0.04687218927944832,
+      "pde_max_abs": 0.6957664624099216
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+      "tau_low": 0.1,
+      "tau_high": 1,
+      "pde_rms": 0.035150994439399355,
+      "pde_max_abs": 0.5853066399776872
+    }
+  ],
+  "consistency_screen_passed": false,
+  "decision": "Hold broad PINN migration: at least one IC, boundary or replay consistency screen fails.",
+  "screening_limits": {
+    "ic_relative_L2": 1e-06,
+    "replay_sigma": 1.1,
+    "bc_rms_over_sensor_sigma": 1
+  }
+}

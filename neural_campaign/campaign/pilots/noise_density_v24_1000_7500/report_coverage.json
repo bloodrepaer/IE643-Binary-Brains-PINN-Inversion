@@ -1,0 +1,12 @@
+{
+  "expected_cells": 12,
+  "available_complete_cells": 12,
+  "complete_fit_outputs": 24,
+  "missing_cells": [],
+  "coverage_complete": true,
+  "agent_scope_complete": true,
+  "pinn_consistency_qualified_advantage_cells": 1,
+  "adjoint_consistency_qualified_advantage_cells": 4,
+  "all_available_fits_full_but_capped": true,
+  "coefficient_truth_used_for_training_or_selection": false
+}

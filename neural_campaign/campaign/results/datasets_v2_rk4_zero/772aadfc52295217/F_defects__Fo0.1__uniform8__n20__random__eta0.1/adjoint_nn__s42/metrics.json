@@ -1,0 +1,104 @@
+{
+  "key": "F_defects__Fo0.1__uniform8__n20__random__eta0.1",
+  "sigma": 0.0026537891,
+  "n_readings": 160,
+  "rms_replay_over_sigma": 0.9571779481110089,
+  "alpha": 16.0,
+  "flag": "reached_sigma",
+  "D_const": 0.23865305162219266,
+  "rms_const_over_sigma": 1.1363551542541865,
+  "n_evals": 517,
+  "wall_s": 178.85624370002188,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.22251929894916112,
+  "rmse_logD": 0.1945810194780889,
+  "rel_L2_D_high_sensitivity": 0.297810464013931,
+  "rel_L2_D_low_sensitivity": 0.09374177906608697,
+  "rel_L2_D_constant_guess": 0.24286103260793293,
+  "rms_vs_clean_over_sigma": 0.42452849300599127,
+  "defect_dice": 0.0,
+  "defects_detected": 1,
+  "n_defects": 3,
+  "D0_hat": 0.24328111311765058,
+  "D0_true": 0.25,
+  "background_rel_err": 0.07628657596338688,
+  "defects": [
+    {
+      "cx": 0.7623789921901029,
+      "cy": 0.6039114508947928,
+      "r": 0.07,
+      "factor": 0.3333333333333333,
+      "type": "low",
+      "contrast_recovery": 0.25111286600847293,
+      "detected": true,
+      "localisation_error_in_radii": 0.28756274357391315,
+      "sensitivity_rel": 27.357769199048064
+    },
+    {
+      "cx": 0.43651273612613517,
+      "cy": 0.30289116621637197,
+      "r": 0.07,
+      "factor": 3.0,
+      "type": "high",
+      "contrast_recovery": 0.14061003509146178,
+      "detected": false,
+      "localisation_error_in_radii": 0.41704986729073124,
+      "sensitivity_rel": 14.657933046927319
+    },
+    {
+      "cx": 0.22465228604105478,
+      "cy": 0.538979584104161,
+      "r": 0.07,
+      "factor": 0.3333333333333333,
+      "type": "low",
+      "contrast_recovery": 0.08487729500485089,
+      "detected": false,
+      "localisation_error_in_radii": 0.6756714212334025,
+      "sensitivity_rel": 1.5177473103098738
+    }
+  ],
+  "alpha_selection": "discrepancy_path",
+  "method": "adjoint_nn",
+  "seed": 42,
+  "shared_setup_s": 0.49409810005454347,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 160.0,
+      "rms": 0.002856458917084093,
+      "rms_over_sigma": 1.0763699787161283,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 50.59644256269407,
+      "rms": 0.002690667090907938,
+      "rms_over_sigma": 1.0138963532964764,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 16.0,
+      "rms": 0.002540148405457361,
+      "rms_over_sigma": 0.9571779481110089,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    }
+  ],
+  "parameter_count": 2241,
+  "dtype": "float64",
+  "coefficient_config": {
+    "width": 32,
+    "depth": 3,
+    "d_min": 0.001,
+    "d_max": 10.0
+  },
+  "chi2_red_solver": 0.9161896243500012,
+  "rms_replay": 0.002540148405457361,
+  "rms_replay_relative_signal": 0.11225793122852852
+}

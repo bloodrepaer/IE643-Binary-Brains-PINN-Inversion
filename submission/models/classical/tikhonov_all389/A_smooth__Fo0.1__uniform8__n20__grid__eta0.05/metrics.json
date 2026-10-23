@@ -1,0 +1,53 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n20__grid__eta0.05",
+  "sigma": 0.0011884324,
+  "n_readings": 160,
+  "rms_replay_over_sigma": 0.9361498320299404,
+  "alpha": 1.6,
+  "flag": "reached_sigma",
+  "D_const": 0.26602490814878516,
+  "rms_const_over_sigma": 3.74915906903232,
+  "n_evals": 264,
+  "wall_s": 191.32156099999975,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.13493580849253212,
+  "rmse_logD": 0.15364853467887574,
+  "rel_L2_D_high_sensitivity": 0.10100501078931781,
+  "rel_L2_D_low_sensitivity": 0.154655823974653,
+  "rel_L2_D_constant_guess": 0.37979763681420814,
+  "rms_vs_clean_over_sigma": 0.34183472176650487,
+  "alpha_path": [
+    {
+      "alpha": 160.0,
+      "rms": 0.002334797846159541,
+      "rms_over_sigma": 1.9646029897531747,
+      "iters": 31
+    },
+    {
+      "alpha": 50.59644256269407,
+      "rms": 0.0016910266069615017,
+      "rms_over_sigma": 1.422905170678199,
+      "iters": 29
+    },
+    {
+      "alpha": 16.0,
+      "rms": 0.0013501812431726047,
+      "rms_over_sigma": 1.1361026871806967,
+      "iters": 37
+    },
+    {
+      "alpha": 5.059644256269406,
+      "rms": 0.0011894295305353811,
+      "rms_over_sigma": 1.0008390300831425,
+      "iters": 49
+    },
+    {
+      "alpha": 1.6,
+      "rms": 0.001112550791638939,
+      "rms_over_sigma": 0.9361498320299404,
+      "iters": 71
+    }
+  ]
+}

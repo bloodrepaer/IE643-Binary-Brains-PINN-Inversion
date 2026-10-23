@@ -1,0 +1,82 @@
+{
+  "key": "D_layered__Fo0.1__uniform8__n1600__nodes_nested__eta0.1",
+  "sigma": 0.0038757977,
+  "n_readings": 12800,
+  "rms_replay_over_sigma": 1.0149733635554403,
+  "alpha": 40.47715405015526,
+  "flag": "floor_above_sigma",
+  "D_const": 0.23259371014917785,
+  "rms_const_over_sigma": 3.5745411814438124,
+  "n_evals": 543,
+  "wall_s": 110.59646910001175,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.16009642363874516,
+  "rmse_logD": 0.30873506735595474,
+  "rel_L2_D_high_sensitivity": 0.1755676715734533,
+  "rel_L2_D_low_sensitivity": 0.1513584348376628,
+  "rel_L2_D_constant_guess": 0.6205329651704897,
+  "rms_vs_clean_over_sigma": 0.19938773382777888,
+  "alpha_selection": "discrepancy_path",
+  "method": "grid",
+  "seed": 42,
+  "shared_setup_s": 0.8926657999982126,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 12800.0,
+      "rms": 0.0071010325444561175,
+      "rms_over_sigma": 1.8321473652910516,
+      "iters": 45
+    },
+    {
+      "alpha": 4047.7154050155254,
+      "rms": 0.005473905081434894,
+      "rms_over_sigma": 1.4123299266715839,
+      "iters": 33
+    },
+    {
+      "alpha": 1280.0,
+      "rms": 0.004554112646841489,
+      "rms_over_sigma": 1.1750129907042075,
+      "iters": 31
+    },
+    {
+      "alpha": 404.7715405015525,
+      "rms": 0.004171989517653786,
+      "rms_over_sigma": 1.0764208662525874,
+      "iters": 33
+    },
+    {
+      "alpha": 128.0,
+      "rms": 0.004011114844638104,
+      "rms_over_sigma": 1.0349133662569912,
+      "iters": 47
+    },
+    {
+      "alpha": 40.47715405015526,
+      "rms": 0.00393383142802944,
+      "rms_over_sigma": 1.0149733635554403,
+      "iters": 64
+    },
+    {
+      "alpha": 12.8,
+      "rms": 0.0038986013162142126,
+      "rms_over_sigma": 1.0058835929992458,
+      "iters": 87
+    },
+    {
+      "alpha": 4.047715405015525,
+      "rms": 0.0038820817899621646,
+      "rms_over_sigma": 1.0016213668639529,
+      "iters": 119
+    }
+  ],
+  "parameter_count": 256,
+  "dtype": "float64",
+  "coefficient_config": null,
+  "chi2_red_solver": 1.030170928727044,
+  "rms_replay": 0.00393383142802944,
+  "rms_replay_relative_signal": 0.14564410340497097
+}

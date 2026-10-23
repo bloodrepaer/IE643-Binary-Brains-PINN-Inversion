@@ -1,0 +1,22 @@
+{
+  "all_four_updated": true,
+  "results": [
+    {
+      "path": "campaign\\pilots\\conditional_state_v17_gpu\\pipeline_smoke\\lbfgsb_adjoint\\pinn\\model.pt",
+      "state_updated": true
+    },
+    {
+      "path": "campaign\\pilots\\conditional_state_v17_gpu\\pipeline_smoke\\lbfgsb_pinn\\pinn\\model.pt",
+      "state_updated": true
+    },
+    {
+      "path": "campaign\\pilots\\conditional_state_v17_gpu\\pipeline_smoke\\ssb_adjoint\\pinn\\model.pt",
+      "state_updated": true
+    },
+    {
+      "path": "campaign\\pilots\\conditional_state_v17_gpu\\pipeline_smoke\\ssb_pinn\\pinn\\model.pt",
+      "state_updated": true
+    }
+  ],
+  "note": "Independent post-pipeline check of actual state updates; no scientific outcomes"
+}

@@ -1,0 +1,16 @@
+{
+ "key": "B_gaussian_bump__Fo0.1__late8__n50__random__eta0.05",
+ "method": "adjoint",
+ "alpha": 12.649110640673516,
+ "flag": "reached_sigma",
+ "wall_s": 61.748662320999756,
+ "n_evals": 140,
+ "eps_u_solver": 0.001451270803291546,
+ "sigma": 0.0015377715,
+ "n_readings": 400,
+ "peak_rss_gb": 0.34816741943359375,
+ "eps_D": 0.3961804376038582,
+ "rmse_logD": 0.24949024158319918,
+ "rms_replay_over_sigma": 0.9687800147647505,
+ "eps_u": 0.08448868664457378
+}

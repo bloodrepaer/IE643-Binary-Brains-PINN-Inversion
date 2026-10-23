@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "arm": "adjoint_control",
+      "checkpoint_difference": 1.2878587085651816e-14,
+      "replay_sigma": 0.9806585987534586
+    },
+    {
+      "arm": "pde16384",
+      "checkpoint_difference": 1.7763568394002505e-15,
+      "replay_sigma": 2.036014497620443
+    },
+    {
+      "arm": "pde4096_control",
+      "checkpoint_difference": 1.1102230246251565e-15,
+      "replay_sigma": 2.474626639849624
+    }
+  ],
+  "coefficient_truth_used": false,
+  "shared_initialization_objective_verified": true,
+  "coverage_complete": true
+}

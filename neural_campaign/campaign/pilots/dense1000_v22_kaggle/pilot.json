@@ -1,0 +1,91 @@
+{
+  "created": "2026-10-21T16:15:53.111118+00:00",
+  "status": "complete_evaluated",
+  "cases": [
+    "A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.05"
+  ],
+  "variants": [
+    "dense1000_matched_temporal_v22"
+  ],
+  "arms": [
+    "temporal_pinn",
+    "be_adjoint_nn"
+  ],
+  "data_collection": "datasets_v2_dense1000",
+  "n_sensors": 1000,
+  "n_readings": 8000,
+  "eta": 0.05,
+  "seed": 42,
+  "adam": 1000,
+  "outer": 10,
+  "inner": 400,
+  "n_pde": 4096,
+  "time_step_tau": 0.01,
+  "initial_coefficient_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+  "input_dataset": "mihirgune123/ie643-dense1000-matched-data",
+  "kernel": null,
+  "per_arm_internal_s": 4200,
+  "per_arm_external_s": 4400,
+  "total_internal_s": 8400,
+  "total_external_s": 8800,
+  "pay_to_scale": false,
+  "truth_used_for_settings": false,
+  "initialization_note": "Unchanged parent3969sensor-fittednetwork,sharedbybothnewarms",
+  "density_limitation": "Subset includes fine-grid locations; fixed alpha implies gamma changes with N",
+  "fairness": "Separate Kaggle sessions: PINNCUDA+CPUcurvature and BECPU,2threads; accuracy only, no equal-host timing claim",
+  "source_sha256": {
+    "adjoint_inversion.py": "7004400e7832bb30db42c607caf323eadcb599b30f3678af90cfcbe63de41b95",
+    "adjoint_nn.py": "5d0dc868b2a39bc42f4fc42793a9dd46121c465eda017e29ee6afdf061fa75b7",
+    "calibrated_neural_pair.py": "6f4c420ee402e0f9375fa27bd66fcd5ea698e9ce0c84db94dd015435fff42c82",
+    "compare_neural.py": "43cc6e0a32ae15fd417d0773c8e9bb1bc9e2e916e61b455d46545385e6a82e81",
+    "integrators.py": "74c161c22f7d9289fbe8787cdf82ec866e399e5d86bc32ad5f1d97ba7301c10b",
+    "neural_diffusivity.py": "d4102584f213e2047ab84dc4e99168dbf518891b4ab77a9539e3fc8376cb7f57",
+    "pinn_papers.py": "895739b0e3c541cdb7bc3449d8bb445ce8277c2858e86e6f01db992e1996ede0",
+    "pinn_zhang_transfer.py": "1cd154938a8fa3bbddc88f037385bd35cf0e16627306e5d80bc522d78aaf0dfd",
+    "temporal_density_pair.py": "29821f4a3b816e5adcc2fc3187d131e62ba86e9616cf1808569beb1755a9d583",
+    "matched_temporal_adjoint.py": "481e31d27c8d0c16e228a423b880f9a8c3d2d631eb242b182f93bbffcb45a18d",
+    "dense1000_pair.py": "a4b6d4f29d7cc4f3c779d5996861fa13492060455904bbbd9ee5d4342b2f8075"
+  },
+  "kernel_version": 1,
+  "input_dataset_version": 1,
+  "input_dataset_status": "ready",
+  "validation": "Full8000reading2directiongradientmax3.76e-8/bothoneAdam-oneSSB/checkpointreproduction/ALL4ZIPexpandedarms/independentICBC-PDE-CNthenown2armBE-CNvalidate-onlyfixturePASSbeforetruth",
+  "last_kernel_status": "COMPLETE",
+  "coverage_complete": true,
+  "kernels": {
+    "temporal_pinn": {
+      "kernel": "mihirgune123/ie643-dense1000-temporal-pinn",
+      "gpu": true,
+      "version": 1,
+      "status": "COMPLETE",
+      "runner_sha256": "41d7ec1763afdf682d56ebf8bf19fbdde258d4b325eb42c76fc4007a543f13ad",
+      "submitted_utc": "2026-10-21T16:21:54.194577+00:00",
+      "last_status_checked": "2026-10-21T17:24:55.911810+00:00",
+      "fit_status": "complete",
+      "adam_completed": 1000,
+      "completed_rounds": 10,
+      "recovered_utc": "2026-10-21T17:24:55.911810+00:00"
+    },
+    "be_adjoint_nn": {
+      "kernel": "mihirgune123/ie643-dense1000-be-adjoint",
+      "gpu": false,
+      "version": 1,
+      "status": "COMPLETE",
+      "runner_sha256": "c3e44683058d12a13a9a0835b06009d73f3d897c082382301c728d2c2e4d3a36",
+      "submitted_utc": "2026-10-21T16:21:54.194577+00:00",
+      "last_status_checked": "2026-10-21T16:54:05.682427+00:00",
+      "recovered_utc": "2026-10-21T16:54:05.682427+00:00",
+      "fit_status": "complete",
+      "adam_completed": 1000,
+      "completed_rounds": 10
+    }
+  },
+  "gamma": 3.558622338413813e-10,
+  "gpu_session_bound_s": 4500,
+  "sessions_note": "Separate private GPU PINN and CPU BE jobs; CPU job consumes no GPU quota. Both single-arm kernel budgets4200internal/4400external;4500session loop budget.",
+  "prepared_utc": "2026-10-21T16:19:48.377255+00:00",
+  "submitted_utc": "2026-10-21T16:21:54.194577+00:00",
+  "last_status_checked": "2026-10-21T17:24:55.911810+00:00",
+  "evaluated_utc": "2026-10-21T17:24:55.911810+00:00",
+  "scientific_outcome": "Adjoint lower coefficient error and passes both replays; temporal PINN fails both replay screens. Single case, all rounds capped."
+}

@@ -1,0 +1,112 @@
+{
+  "protocol": {
+    "uses_true_D": false,
+    "training": false,
+    "checkpoint_selection": false,
+    "checkpoint_sha256": "1bac4ce3c1788ae0eb07c572caa12c577cb26075226f4142af0e6f9132ad3b98",
+    "steps": [
+      1e-08,
+      1e-07,
+      1e-06
+    ],
+    "directions": [
+      "joint",
+      "state_only",
+      "coefficient_only"
+    ],
+    "measure": "Saved final training cloud, original full-data/unit-PDE/gamma objective",
+    "caveat": "All probes retained; no accepted step or fitted model. Local profiles do not prove long-run convergence or an optimal optimizer."
+  },
+  "baseline_objective": 6.694292145940771e-06,
+  "baseline_parts": {
+    "data": 5.834482625709092e-06,
+    "pde": 8.593534114222151e-07,
+    "reg": 4.561088094641795e-10
+  },
+  "gradient_l2": 0.00023484021471668683,
+  "results": [
+    {
+      "direction": "joint",
+      "step": 1e-08,
+      "objective": 6.694289804833603e-06,
+      "relative_objective_change": -3.497169106525533e-07,
+      "data": 5.834484846388402e-06,
+      "pde": 8.593488496413694e-07,
+      "reg": 4.561088038314693e-10
+    },
+    {
+      "direction": "joint",
+      "step": 1e-07,
+      "objective": 6.694269391417319e-06,
+      "relative_objective_change": -3.399093280620491e-06,
+      "data": 5.8345048482050985e-06,
+      "pde": 8.593084344590831e-07,
+      "reg": 4.5610875313708925e-10
+    },
+    {
+      "direction": "joint",
+      "step": 1e-06,
+      "objective": 6.694130255582696e-06,
+      "relative_objective_change": -2.418334224818519e-05,
+      "data": 5.834706420964909e-06,
+      "pde": 8.589677263715927e-07,
+      "reg": 4.5610824619445364e-10
+    },
+    {
+      "direction": "state_only",
+      "step": 1e-08,
+      "objective": 6.694289841796655e-06,
+      "relative_objective_change": -3.4419533323504226e-07,
+      "data": 5.8344848450305505e-06,
+      "pde": 8.593488879566405e-07,
+      "reg": 4.561088094641795e-10
+    },
+    {
+      "direction": "state_only",
+      "step": 1e-07,
+      "objective": 6.694269776646638e-06,
+      "relative_objective_change": -3.3415473429387887e-06,
+      "data": 5.834504835252433e-06,
+      "pde": 8.593088325847405e-07,
+      "reg": 4.561088094641795e-10
+    },
+    {
+      "direction": "state_only",
+      "step": 1e-06,
+      "objective": 6.694135667734693e-06,
+      "relative_objective_change": -2.3374869615233607e-05,
+      "data": 5.834706354026104e-06,
+      "pde": 8.589732048991251e-07,
+      "reg": 4.561088094641795e-10
+    },
+    {
+      "direction": "coefficient_only",
+      "step": 1e-08,
+      "objective": 6.694291732082433e-06,
+      "relative_objective_change": -6.18225689530405e-08,
+      "data": 5.834482830628183e-06,
+      "pde": 8.593527926767333e-07,
+      "reg": 4.5610877751696193e-10
+    },
+    {
+      "direction": "coefficient_only",
+      "step": 1e-07,
+      "objective": 6.6942880249504355e-06,
+      "relative_objective_change": -6.15597623432329e-07,
+      "data": 5.834484675097626e-06,
+      "pde": 8.593472413628177e-07,
+      "reg": 4.5610848999238336e-10
+    },
+    {
+      "direction": "coefficient_only",
+      "step": 1e-06,
+      "objective": 6.694252695366441e-06,
+      "relative_objective_change": -5.893165919479415e-06,
+      "data": 5.834503139353483e-06,
+      "pde": 8.592934503981736e-07,
+      "reg": 4.5610561478415694e-10
+    }
+  ],
+  "checkpoint_unchanged": true,
+  "no_probe_selected": true
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "arm": "ssb_pinn",
+    "status": "exited",
+    "returncode": 0,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "dense_optimizer_pair.py",
+      "--data",
+      "data",
+      "--key",
+      "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "--out",
+      "results",
+      "--arm",
+      "ssb_pinn",
+      "--device",
+      "cuda",
+      "--budget",
+      "9000"
+    ]
+  },
+  {
+    "arm": "lbfgsb_pinn",
+    "status": "exited",
+    "returncode": 0,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "dense_optimizer_pair.py",
+      "--data",
+      "data",
+      "--key",
+      "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "--out",
+      "results",
+      "--arm",
+      "lbfgsb_pinn",
+      "--device",
+      "cuda",
+      "--budget",
+      "9000"
+    ]
+  },
+  {
+    "arm": "ssb_adjoint",
+    "status": "exited",
+    "returncode": 0,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "dense_optimizer_pair.py",
+      "--data",
+      "data",
+      "--key",
+      "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "--out",
+      "results",
+      "--arm",
+      "ssb_adjoint",
+      "--device",
+      "cpu",
+      "--budget",
+      "9000"
+    ]
+  },
+  {
+    "arm": "lbfgsb_adjoint",
+    "status": "exited",
+    "returncode": 0,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "dense_optimizer_pair.py",
+      "--data",
+      "data",
+      "--key",
+      "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "--out",
+      "results",
+      "--arm",
+      "lbfgsb_adjoint",
+      "--device",
+      "cpu",
+      "--budget",
+      "9000"
+    ]
+  }
+]

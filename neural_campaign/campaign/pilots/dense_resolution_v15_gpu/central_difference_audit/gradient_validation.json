@@ -1,0 +1,14 @@
+[
+  {
+    "epsilon": 1e-08,
+    "central_directional_derivative": -0.00023484021619730197,
+    "AD_directional_derivative": -0.00023484021471668683,
+    "relative_error": 6.304776757421599e-09
+  },
+  {
+    "epsilon": 1e-07,
+    "central_directional_derivative": -0.00023484021414748224,
+    "AD_directional_derivative": -0.00023484021471668683,
+    "relative_error": 2.4237952441556364e-09
+  }
+]

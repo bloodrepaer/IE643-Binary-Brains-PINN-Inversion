@@ -1,0 +1,5 @@
+key,artifact,variant,tau_low,tau_high,pde_rms,pde_max_abs
+A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05,results\A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05\temporal_pinn\pinn\metrics.json,noise_density_temporal_v24_1000_7500,0.0,0.001,0.7774402557877126,5.727841833603842
+A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05,results\A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05\temporal_pinn\pinn\metrics.json,noise_density_temporal_v24_1000_7500,0.001,0.01,0.7364325093048435,5.177638273901611
+A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05,results\A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05\temporal_pinn\pinn\metrics.json,noise_density_temporal_v24_1000_7500,0.01,0.1,0.2875869161524729,4.511761877908707
+A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05,results\A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05\temporal_pinn\pinn\metrics.json,noise_density_temporal_v24_1000_7500,0.1,1.0,0.009744594594804756,0.10336466681301215

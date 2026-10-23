@@ -1,0 +1,213 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+  "method": "pinn",
+  "variant": "temporal_density_v18",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0011884324,
+  "D_const": 0.2658031041258034,
+  "rms_const_over_sigma": 2.9544122043800756,
+  "rms_replay_over_sigma": 1.3255290921021583,
+  "rms_unet_over_sigma": 0.9802081644934533,
+  "wall_s": 3009.191102698,
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.5560217482426833e-06,
+      "gradient_max_abs": 2.5445351776558055e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 734
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4582362013354784e-06,
+      "gradient_max_abs": 1.6532551196332391e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 723
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4199863094870604e-06,
+      "gradient_max_abs": 2.2977667407872776e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 692
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4018633229530487e-06,
+      "gradient_max_abs": 1.215991488239883e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 661
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.3953627587427613e-06,
+      "gradient_max_abs": 1.186790498421436e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 643
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.391891341106766e-06,
+      "gradient_max_abs": 1.1985946525014542e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 693
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.3872426025114376e-06,
+      "gradient_max_abs": 1.0532975632675852e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 662
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.3847219259702153e-06,
+      "gradient_max_abs": 5.395432522109305e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 638
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.3808567917925963e-06,
+      "gradient_max_abs": 8.361717316938755e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 645
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.379453395899751e-06,
+      "gradient_max_abs": 8.277011590684096e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 650
+    }
+  ],
+  "history": [
+    {
+      "data": 1.4301473077959425e-06,
+      "pde": 1.2556908516864762e-07,
+      "reg": 3.0535527809336697e-10
+    },
+    {
+      "data": 1.4130010646028413e-06,
+      "pde": 4.4766092764653284e-08,
+      "reg": 4.69043967983901e-10
+    },
+    {
+      "data": 1.4006646590324037e-06,
+      "pde": 1.8625676735557687e-08,
+      "reg": 6.959737190989609e-10
+    },
+    {
+      "data": 1.3915555771593293e-06,
+      "pde": 9.514350005144058e-09,
+      "reg": 7.933957885753549e-10
+    },
+    {
+      "data": 1.3863329639395175e-06,
+      "pde": 8.177117836852298e-09,
+      "reg": 8.526769663913755e-10
+    },
+    {
+      "data": 1.3825121259310465e-06,
+      "pde": 8.453866570538563e-09,
+      "reg": 9.253486051810079e-10
+    },
+    {
+      "data": 1.3776698125940769e-06,
+      "pde": 8.58705062985664e-09,
+      "reg": 9.857392875039648e-10
+    },
+    {
+      "data": 1.3741258125472254e-06,
+      "pde": 9.52055995463935e-09,
+      "reg": 1.0755534683506753e-09
+    },
+    {
+      "data": 1.3698396296289345e-06,
+      "pde": 9.879520937491082e-09,
+      "reg": 1.1376412261706525e-09
+    },
+    {
+      "data": 1.3676611897986995e-06,
+      "pde": 1.0634627404110875e-08,
+      "reg": 1.1575786969406531e-09
+    }
+  ],
+  "final_parts": {
+    "data": 1.3676611897986995e-06,
+    "pde": 1.0634627404110875e-08,
+    "reg": 1.1575786969406531e-09
+  },
+  "objective": 1.379453395899751e-06,
+  "function_evaluations": 7741,
+  "initial_coefficient_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+  "gamma": 8.966042676779573e-11,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.4923852173792347e-07,
+  "settings": {
+    "data": "data",
+    "key": "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "out": "results/A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05/scaled_pde_pinn",
+    "method": "pinn",
+    "device": "cuda",
+    "budget": 3600.0,
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096
+  },
+  "parameter_count": 4514,
+  "arm": "scaled_pde_pinn",
+  "n_sensors": 3969,
+  "n_pde": 4096,
+  "optimizer": "ssb",
+  "time_step_tau": 0.01,
+  "physics_measure": "uniform tau0 in [0,0.99], uniform space",
+  "physics_loss": "h_squared_continuous_residual",
+  "interpretation": "Adapted temporal-consistency loss test, not a full reproduction of Thakur architecture/training. All outcomes retained; capped/partial fits are not converged optima or method losses."
+}

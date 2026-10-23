@@ -1,0 +1,3 @@
+method,key,rel_L2_D,replay_sigma,sensor_fit_sigma,status,wall_s,adam_completed,quasi_newton_iterations,function_evaluations,hardware
+neural_adjoint_zhang,A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,0.38124839550580114,2.725312693912853,2.725312693912853,complete,3061.3589999999967,1000,4000,9437,"Local CPU1thread, concurrent broad CPU workers"
+neural_pinn_zhang,A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,1.0,106.10228664105603,1.3874507633383673,complete,2403.977410083,1000,4000,6117,Kaggle CUDAresidual/CPUcurvature2threads

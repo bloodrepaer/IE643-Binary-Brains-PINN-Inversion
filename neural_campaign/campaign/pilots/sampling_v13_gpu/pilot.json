@@ -1,0 +1,74 @@
+{
+  "cases": [
+    "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05"
+  ],
+  "data_collection": "datasets_v2_density_extended",
+  "seed": 42,
+  "alpha": 1,
+  "gamma": 7.117244676827626e-09,
+  "regularization": "Identical discrete .5sum link(logDdiff)^2, gamma=2sigma_w^2/(N*U^2) converts fixedalpha1 sum likelihood to normalized mean data objective",
+  "coefficient": "Same boundedlogD3x32 tanh,float64, D in[.001,10], same supplied-sensor-fitted constant initialization",
+  "state": "PINN32x3 coupled supplied Gaussian image hardICBC base; adjoint CN/Rannacher state",
+  "loss": "mean((u-y)/U)^2 + gamma R, PINN adds unit mean((u_tau-TdivDgradu)/U)^2",
+  "collocation": "4096; half uniform tau,half loguniform tau1e-4..1; intentionally early-weighted measure,refreshed every100Adam steps and eachouterSSBround; identical shared samplerstream",
+  "adam_steps": 1000,
+  "outer_rounds": 10,
+  "inner_iterations": 400,
+  "optimizer": "SSBroyden same tested implementation/line search,Hessian symmetry/Cholesky policy,CPU dense curvature; Adam1e-3 halved every250",
+  "experiment": "v13 controlled PINN sampling and matched neural-adjoint control",
+  "kernel": "mihirgune123/ie643-sampling-neural-pair",
+  "status": "complete_independently_evaluated",
+  "created": "2026-10-19T19:35:42.459384+00:00",
+  "variants": [
+    "sampling_random_v13",
+    "sampling_sobol_v13"
+  ],
+  "arms": [
+    "random_control",
+    "sobol",
+    "adjoint_control"
+  ],
+  "single_factor": "PINN collocation generator only: original random versus independently scrambled Sobol4096; same half uniform/half log-time measure, same refresh schedule. Adjoint objective unchanged.",
+  "rationale": "v12 train/heldout PDE gap12.7 and highly concentrated residual; fixed-checkpoint sampler audit inconclusive. Test a single factor with fresh matched controls, not assume Sobol helps.",
+  "no_true_D_selection": true,
+  "answer_keys_uploaded": false,
+  "per_arm_internal_seconds": 6500,
+  "per_arm_external_seconds": 6900,
+  "total_internal_seconds": 20000,
+  "external_seconds": 21600,
+  "scope": "One supplied A50nested5%case,seed42; all3arms retained,extra research compute outside1510. Not broad migration.",
+  "limitations": [
+    "Four-replicate frozen-model sampler audit is not a training prediction",
+    "Order/random versusSobol sampling changes finite point clouds, not nominal measure; nonconvex optimization and single initialization limit generalization",
+    "BothPINNs useCUDAresidual+CPU2threadcurvature; adjointCPU2threads. Same sequential host; hardware-qualified timings only",
+    "All budgets/iteration caps/partial results disclosed; no method loss inferred from missing arm"
+  ],
+  "source_sha256": {
+    "adjoint_inversion.py": "7004400e7832bb30db42c607caf323eadcb599b30f3678af90cfcbe63de41b95",
+    "adjoint_nn.py": "5d0dc868b2a39bc42f4fc42793a9dd46121c465eda017e29ee6afdf061fa75b7",
+    "calibrated_neural_pair.py": "6f4c420ee402e0f9375fa27bd66fcd5ea698e9ce0c84db94dd015435fff42c82",
+    "compare_neural.py": "43cc6e0a32ae15fd417d0773c8e9bb1bc9e2e916e61b455d46545385e6a82e81",
+    "integrators.py": "74c161c22f7d9289fbe8787cdf82ec866e399e5d86bc32ad5f1d97ba7301c10b",
+    "neural_diffusivity.py": "d4102584f213e2047ab84dc4e99168dbf518891b4ab77a9539e3fc8376cb7f57",
+    "pinn_papers.py": "895739b0e3c541cdb7bc3449d8bb445ce8277c2858e86e6f01db992e1996ede0",
+    "pinn_zhang_transfer.py": "1cd154938a8fa3bbddc88f037385bd35cf0e16627306e5d80bc522d78aaf0dfd"
+  },
+  "adapter_sha256": "0b75af3902e8558dcf88a9f4f59c022d7d045d4c33b736fb9ef7020acdddb15f",
+  "runner_sha256": "50066889c072a106c46817ac9d96ebc0680df6c4202d1b53a190f04988ed9803",
+  "input_dataset": "mihirgune123/ie643-calibrated-neural-pair-data",
+  "input_dataset_version": 1,
+  "reuses_existing_private_input": true,
+  "packaging_failure": "Initial isolated packaging smoke hit Windows duplicate OpenMP runtime because new adapter imported torch before MKL_THREADING_LAYER default. Failure logs/archive retained under packaging_smoke. Corrected early SEQUENTIAL import in adapter/runner, no KMP_DUPLICATE_LIB_OK and no numerical algorithm change.",
+  "packaging_validation": "Repaired isolated runner zero-step all3arms complete; independent ICBC/replay validator coversbothPINNs; evaluate_sampling_pair smoke verifies allthreeD/checkpoint/commonCN/sharedSHA/gamma before local smoke answer-key score. Smoke outcomes are not scientific fits.",
+  "evaluation_sha256": "138e01050ed942f12054700817d818d5e2bc18e1eb1e4dd74f67f4a3b3015bea",
+  "kernel_version": 1,
+  "submitted": "2026-10-19T19:42:24.583938+00:00",
+  "last_status": "COMPLETE",
+  "last_status_check": "2026-10-19T22:05:28.155395+00:00",
+  "decision": "No PINN win. Both PINNs passICBC but failcommonreplay;Sobolworsenscoefficienterrorandreplayversusrandomcontrol. All3completefullbudget,capped4000.",
+  "coverage": "all3arms1000Adam+4000SSB,nobudgettimeouts",
+  "recovery_sha256": {
+    "ie643-sampling-neural-pair.log": "7b71c1a1d5c58350a3cf9916f78e3cfe9312ef1038069ef32a86976697a86da7",
+    "sampling_pair_results.zip": "6dc4da25b89b9898a337ddf2f14cdc55f024e786a98d4c526579d34b223c56c9"
+  }
+}

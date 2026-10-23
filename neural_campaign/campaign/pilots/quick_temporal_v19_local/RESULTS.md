@@ -1,0 +1,5 @@
+Short ten-dataset temporal screen - COMPLETE, exploratory only
+
+All20outputs passed independent checkpoint/bounds/common replay/shared initialization checks before coefficient truth scoring. Ten neural adjoints completed50Adam+50SSB; all ten temporal PINNs hit120s internal cap after50Adam withzero completed SSB rounds (last completed Adam checkpoint restored). All ten PINN checkpoints failed common replay1.1sigma screen. No eligible completed pairs and no verified PINN win. This is an equal-training-budget early performance screen, not ten converged method losses. PINNs had higher retained coefficient error in all ten cases, but unfinished schedules and sparse optimization limit interpretation. All outcomes/provenance remain retained; no truth-selected settings/retries.
+
+Continuous PDE heldout probes, IC/BC checks, percase errors/resources/caps are in validation_before_truth.json and screen_results.json. Timing excludes some startup/evaluation costs and is qualified by CPU2thread local resources. Main long v18 experiment remains separate.

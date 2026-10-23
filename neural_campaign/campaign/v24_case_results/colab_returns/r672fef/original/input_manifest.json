@@ -1,0 +1,23 @@
+{
+  "manifest.json": "83fd01a98702dea95fbdcfb5ee133eec128af79c4b9e9552ebc10aa691b0db4a",
+  "initial/A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.05.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.1.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.01.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.1.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.01.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.05.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.1.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "problem/A_smooth__Fo0.1.json": "2da3bae039085aadc975f5bc21161d16f33e77de9eb21f0151332fec8853df39",
+  "problem/A_smooth__Fo0.1__ic.csv": "5b7360b1f99ccc1b86cfe400ae21a193089c3a2efa72b3cad14ff472ff5cdb0c",
+  "sensors/A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01.csv": "3007326c29f2f40dcb25e385a93bd7249fb01d689c782d9fc09c74f153791c26",
+  "sensors/A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.05.csv": "8ad059ead6255a4be5bb9e7a5c059f9e71a60f4dbf1e309a4c6567119d7a0f23",
+  "sensors/A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.1.csv": "b6449ffe2667a2092751a6f5d9a4a1679987377d36db0f26e45a017667343c9b",
+  "sensors/A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.01.csv": "a92149b3214823407c6dfe39e618c383f2726fde4e8f1b926cde40c71c325f01",
+  "sensors/A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05.csv": "0fa6edaae0c492d6ea7ccfa3a96c648bc1f218bdfe3246e44015b362756707c9",
+  "sensors/A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.1.csv": "b75a9756e4ec57277940141c82c403b01cf73002007cbaecd2f6baf7ef7d09ac",
+  "sensors/A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.01.csv": "f7e75170205ecb42d656f0c55e11f6fdb2526a70d24cfe6f0fa5167796590e85",
+  "sensors/A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.05.csv": "7424336e9537e360c3754b027359450c498e4d79b94151eca72dede2a27ff19f",
+  "sensors/A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.1.csv": "db8f8feb6d4792d2f3ec042ffe6e72e65aeb8166d21ff5c9e1538bb42d07f9c1"
+}

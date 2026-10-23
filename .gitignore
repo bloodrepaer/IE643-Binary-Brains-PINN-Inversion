@@ -1,0 +1,7 @@
+submission/datasets_v2_rk4_zero/
+neural_campaign/datasets_v2_rk4_zero
+__pycache__/
+*.pyc
+.venv/
+neural_campaign/campaign/v24_case_results/colab_returns/*/original/prechecks/
+**/SMOKE_DO_NOT_SCORE/

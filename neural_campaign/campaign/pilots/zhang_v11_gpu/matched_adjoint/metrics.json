@@ -1,0 +1,192 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+  "method": "adjoint_nn_zhang_matched",
+  "status": "complete",
+  "seed": 42,
+  "gamma": 0.1,
+  "objective": 1.0491265466966784e-05,
+  "parts": {
+    "data": 1.049014871085825e-05,
+    "reg": 1.116756108533205e-09,
+    "replay_sigma": 2.72531269391286
+  },
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.0491279208465606e-05,
+      "gradient_max_abs": 1.0310065873717306e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 825
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.0491258174994267e-05,
+      "gradient_max_abs": 1.652393911949463e-09,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 874
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.0491258548867152e-05,
+      "gradient_max_abs": 1.6314261514833524e-09,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 808
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.0491278105701942e-05,
+      "gradient_max_abs": 1.2477624117847297e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 801
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.049125549977639e-05,
+      "gradient_max_abs": 3.810747204661784e-09,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 884
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.049125904510415e-05,
+      "gradient_max_abs": 1.16165984794794e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 903
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.049126878454368e-05,
+      "gradient_max_abs": 5.437560466596428e-09,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 838
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.0491271764355208e-05,
+      "gradient_max_abs": 1.354967432903963e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 826
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.0491266206298152e-05,
+      "gradient_max_abs": 1.222761694007939e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 807
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.0491265466966784e-05,
+      "gradient_max_abs": 6.15537797182235e-09,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 871
+    }
+  ],
+  "history": [
+    {
+      "data": 1.0490174218833842e-05,
+      "reg": 1.104989631764545e-09,
+      "replay_sigma": 2.725316007362904
+    },
+    {
+      "data": 1.0490134580808226e-05,
+      "reg": 1.1235941860396008e-09,
+      "replay_sigma": 2.725310858437562
+    },
+    {
+      "data": 1.0490135790452585e-05,
+      "reg": 1.1227584145671902e-09,
+      "replay_sigma": 2.7253110155688542
+    },
+    {
+      "data": 1.0490174697475498e-05,
+      "reg": 1.1034082264443064e-09,
+      "replay_sigma": 2.725316069537741
+    },
+    {
+      "data": 1.0490130023963657e-05,
+      "reg": 1.1254758127339408e-09,
+      "replay_sigma": 2.725310266509058
+    },
+    {
+      "data": 1.0490134775822477e-05,
+      "reg": 1.124269281674579e-09,
+      "replay_sigma": 2.7253108837696707
+    },
+    {
+      "data": 1.0490155298546925e-05,
+      "reg": 1.1134859967534884e-09,
+      "replay_sigma": 2.725313549644711
+    },
+    {
+      "data": 1.0490162160636074e-05,
+      "reg": 1.1096037191341328e-09,
+      "replay_sigma": 2.725314441020527
+    },
+    {
+      "data": 1.0490150206523409e-05,
+      "reg": 1.11599977474369e-09,
+      "replay_sigma": 2.7253128881977653
+    },
+    {
+      "data": 1.049014871085825e-05,
+      "reg": 1.116756108533205e-09,
+      "replay_sigma": 2.72531269391286
+    }
+  ],
+  "function_evaluations": 9437,
+  "wall_s": 3061.3589999999967,
+  "n_steps": 200,
+  "settings": {
+    "data": "C:\\Users\\gunem\\mihir_projects\\IE643courseproject\\v2\\campaign\\pilots\\zhang_v11_gpu\\dataset\\data",
+    "key": "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+    "out": "C:\\Users\\gunem\\mihir_projects\\IE643courseproject\\v2\\campaign\\pilots\\zhang_v11_gpu\\matched_adjoint",
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 20000,
+    "budget": 6500.0
+  },
+  "rms_replay_over_sigma": 2.72531269391286
+}

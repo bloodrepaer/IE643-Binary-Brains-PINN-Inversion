@@ -1,0 +1,197 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+  "sigma": 0.0011884324,
+  "n_readings": 400,
+  "rms_replay_over_sigma": 2.6055991736026147,
+  "alpha": 1.0,
+  "flag": "fixed_alpha_budget",
+  "D_const": 0.2696131593826259,
+  "rms_const_over_sigma": 2.8067433876909242,
+  "n_evals": 1,
+  "wall_s": 1978.6991718989998,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.3170230728425883,
+  "rmse_logD": 0.42281393074999646,
+  "rel_L2_D_high_sensitivity": 0.3611372814073317,
+  "rel_L2_D_low_sensitivity": 0.24862760245138452,
+  "rel_L2_D_constant_guess": 0.3790283296047642,
+  "rms_vs_clean_over_sigma": 2.4474647081285053,
+  "rms_unet_over_sigma": 0.7536677176014512,
+  "loss_history": [
+    {
+      "stage": "adam",
+      "step": 1,
+      "total": 1577.7341208813561,
+      "data": 1577.7341208811936,
+      "pde": 5.501545891924297e-29,
+      "ic": 1.6261236175250663e-13,
+      "bc": 1.2665744364338217e-33,
+      "reg": 0.0
+    },
+    {
+      "stage": "adam",
+      "step": 1500,
+      "total": 408.957014734731,
+      "data": 292.24524064164086,
+      "pde": 0.11647696053752386,
+      "ic": 1.6261236175250663e-13,
+      "bc": 5.541745880380162e-34,
+      "reg": 0.23481355540366466
+    },
+    {
+      "stage": "adam",
+      "step": 3000,
+      "total": 322.4798518549574,
+      "data": 203.42499177959854,
+      "pde": 0.11872990817321721,
+      "ic": 1.6261236175250663e-13,
+      "bc": 1.1835437575374297e-33,
+      "reg": 0.3249519019790538
+    },
+    {
+      "stage": "adam",
+      "step": 4500,
+      "total": 323.79681056625986,
+      "data": 191.59262691481243,
+      "pde": 0.13168559699525645,
+      "ic": 1.6261236175250663e-13,
+      "bc": 4.490016230917719e-34,
+      "reg": 0.5185866560284018
+    },
+    {
+      "stage": "adam",
+      "step": 6000,
+      "total": 297.6846270972898,
+      "data": 168.30817910706702,
+      "pde": 0.1287439537777043,
+      "ic": 1.6261236175250663e-13,
+      "bc": 8.50113826692828e-34,
+      "reg": 0.6324942123557998
+    },
+    {
+      "stage": "adam",
+      "step": 7500,
+      "total": 387.5741711721464,
+      "data": 197.78837623725622,
+      "pde": 0.18905185470201738,
+      "ic": 1.6261236175250663e-13,
+      "bc": 6.6953796902309195e-34,
+      "reg": 0.7339402327101653
+    },
+    {
+      "stage": "adam",
+      "step": 9000,
+      "total": 284.0315916398467,
+      "data": 156.19429255029274,
+      "pde": 0.12703508513847056,
+      "ic": 1.6261236175250663e-13,
+      "bc": 8.389527639656904e-34,
+      "reg": 0.802213950920733
+    },
+    {
+      "stage": "adam",
+      "step": 10500,
+      "total": 282.7163238286678,
+      "data": 150.97754109698786,
+      "pde": 0.1308261356082803,
+      "ic": 1.6261236175250663e-13,
+      "bc": 7.102056581948778e-34,
+      "reg": 0.9126471232369829
+    },
+    {
+      "stage": "adam",
+      "step": 12000,
+      "total": 262.42569307677,
+      "data": 140.02300651250852,
+      "pde": 0.12146002922501165,
+      "ic": 1.6261236175250663e-13,
+      "bc": 1.2111125070704921e-33,
+      "reg": 0.942657339087221
+    },
+    {
+      "stage": "adam",
+      "step": 13500,
+      "total": 243.15643560315448,
+      "data": 131.17340290326183,
+      "pde": 0.11092865375978526,
+      "ic": 1.6261236175250663e-13,
+      "bc": 1.5990842755958872e-33,
+      "reg": 1.0543789399447687
+    },
+    {
+      "stage": "adam",
+      "step": 15000,
+      "total": 277.27914861286695,
+      "data": 129.42255036635814,
+      "pde": 0.14673736310902888,
+      "ic": 1.6261236175250663e-13,
+      "bc": 1.0548391176361251e-33,
+      "reg": 1.1192351373172948
+    },
+    {
+      "stage": "lbfgs",
+      "total": 200.79066447824837,
+      "round": 1,
+      "requested_iterations": 750,
+      "iterations": 750,
+      "function_evaluations": 820,
+      "gradient_max_abs": 327.02690078909563,
+      "temperature_gradient_norm": 876.1074894192428,
+      "coefficient_gradient_norm": 70.0653979707293,
+      "data": 113.60300571091616,
+      "pde": 0.08601796613751031,
+      "ic": 1.6261236175250663e-13,
+      "bc": 9.56423775244442e-34,
+      "reg": 1.1696926296592967
+    }
+  ],
+  "physics_weight": 1000.0,
+  "condition_weight": 1000.0,
+  "alpha_selection": "fixed_cli",
+  "device": "cuda",
+  "device_name": "Tesla T4",
+  "state_model": "gaussian_ic_bc_locald",
+  "pde_sampler": "mixed",
+  "sampling_history": [],
+  "lbfgs_rounds": 1,
+  "optimizer_diagnostics": [
+    {
+      "round": 1,
+      "requested_iterations": 750,
+      "iterations": 750,
+      "function_evaluations": 820,
+      "gradient_max_abs": 327.02690078909563,
+      "temperature_gradient_norm": 876.1074894192428,
+      "coefficient_gradient_norm": 70.0653979707293
+    }
+  ],
+  "warm_start_sha256": null,
+  "initial_condition_relative_L2": 2.4923852173792347e-07,
+  "initial_condition_rms": 2.8403072235707186e-08,
+  "adam_steps": 15000,
+  "lbfgs_steps": 750,
+  "method": "pinn",
+  "seed": 42,
+  "shared_setup_s": 1.0072277040000017,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 1.0,
+      "rms": 0.003096578479322572,
+      "rms_over_sigma": 2.6055991736026147
+    }
+  ],
+  "parameter_count": 2241,
+  "dtype": "float64",
+  "coefficient_config": {
+    "width": 32,
+    "depth": 3,
+    "d_min": 0.001,
+    "d_max": 10.0
+  },
+  "chi2_red_solver": 6.7891470534786285,
+  "rms_replay": 0.003096578479322572,
+  "rms_replay_relative_signal": 0.1631599400497981
+}

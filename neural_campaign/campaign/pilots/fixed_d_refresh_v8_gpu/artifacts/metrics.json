@@ -1,0 +1,130 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+  "experiment": "fixed-adjoint-D forward state only",
+  "uses_true_D": false,
+  "training_uses_sensors": false,
+  "training_uses_CN": false,
+  "coefficient_unchanged": true,
+  "reference_sha256": "14a508193700a97f4781da5b5ad2f45059b9c6ff284400c304e925a00cef3e67",
+  "ic_relative_L2": 2.4923852173792347e-07,
+  "bc_rms": 2.8717307800741332e-18,
+  "sensor_fit_sigma": 1.2593393875922494,
+  "fixed_coefficient_CN_sensor_sigma": 0.9419674900486539,
+  "state_vs_CN_sensor_sigma": 0.773712948673965,
+  "training_pde_rms": 0.024775297018154785,
+  "heldout_pde_rms": 0.04548994251804939,
+  "heldout_pde_max": 0.667790007091341,
+  "adam_steps": 15000,
+  "lbfgs_steps": 750,
+  "lbfgs_rounds": 5,
+  "optimizer_diagnostics": {
+    "round": 5,
+    "requested_iterations": 150,
+    "iterations": 150,
+    "function_evaluations": 167,
+    "gradient_max_abs": 318.5127707506855,
+    "loss": 123.72591101527719
+  },
+  "optimizer_rounds": [
+    {
+      "round": 1,
+      "requested_iterations": 150,
+      "iterations": 150,
+      "function_evaluations": 160,
+      "gradient_max_abs": 365.6150158892032,
+      "loss": 109.9055918246281
+    },
+    {
+      "round": 2,
+      "requested_iterations": 150,
+      "iterations": 150,
+      "function_evaluations": 163,
+      "gradient_max_abs": 351.30610158413754,
+      "loss": 110.06494339325214
+    },
+    {
+      "round": 3,
+      "requested_iterations": 150,
+      "iterations": 150,
+      "function_evaluations": 165,
+      "gradient_max_abs": 544.6824936716644,
+      "loss": 156.0969063159114
+    },
+    {
+      "round": 4,
+      "requested_iterations": 150,
+      "iterations": 150,
+      "function_evaluations": 164,
+      "gradient_max_abs": 404.3549397096977,
+      "loss": 120.54761227162467
+    },
+    {
+      "round": 5,
+      "requested_iterations": 150,
+      "iterations": 150,
+      "function_evaluations": 167,
+      "gradient_max_abs": 318.5127707506855,
+      "loss": 123.72591101527719
+    }
+  ],
+  "history": [
+    {
+      "stage": "adam",
+      "step": 1,
+      "loss": 9025.132355772088
+    },
+    {
+      "stage": "adam",
+      "step": 1500,
+      "loss": 1724.4321465670191
+    },
+    {
+      "stage": "adam",
+      "step": 3000,
+      "loss": 1812.1464109891692
+    },
+    {
+      "stage": "adam",
+      "step": 4500,
+      "loss": 1271.3986716261145
+    },
+    {
+      "stage": "adam",
+      "step": 6000,
+      "loss": 1072.0757330955491
+    },
+    {
+      "stage": "adam",
+      "step": 7500,
+      "loss": 806.6884486312215
+    },
+    {
+      "stage": "adam",
+      "step": 9000,
+      "loss": 657.8500175452839
+    },
+    {
+      "stage": "adam",
+      "step": 10500,
+      "loss": 540.9757142044812
+    },
+    {
+      "stage": "adam",
+      "step": 12000,
+      "loss": 403.49417051746065
+    },
+    {
+      "stage": "adam",
+      "step": 13500,
+      "loss": 500.9963645084033
+    },
+    {
+      "stage": "adam",
+      "step": 15000,
+      "loss": 493.81363758728213
+    }
+  ],
+  "training_seconds": 1586.8149162470002,
+  "device": "cuda",
+  "device_name": "Tesla T4"
+}

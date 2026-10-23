@@ -1,0 +1,15 @@
+{
+  "id": "mihirgune123/ie643-dense-optimizer-pair",
+  "title": "IE643 dense optimizer pair",
+  "code_file": "dense_optimizer_kernel.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "dataset_sources": [
+    "mihirgune123/ie643-dense-calibrated-data"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

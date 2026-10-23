@@ -1,0 +1,46 @@
+[
+  {
+    "arm": "temporal_pinn",
+    "status": "exited",
+    "returncode": 0,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "noise_density_1000_7500_pair.py",
+      "--data",
+      "data",
+      "--key",
+      "A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.1",
+      "--out",
+      "results",
+      "--arm",
+      "temporal_pinn",
+      "--device",
+      "cpu",
+      "--budget",
+      "12600"
+    ]
+  },
+  {
+    "arm": "be_adjoint_nn",
+    "status": "exited",
+    "returncode": 0,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "noise_density_1000_7500_pair.py",
+      "--data",
+      "data",
+      "--key",
+      "A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.1",
+      "--out",
+      "results",
+      "--arm",
+      "be_adjoint_nn",
+      "--device",
+      "cpu",
+      "--budget",
+      "12600"
+    ]
+  }
+]

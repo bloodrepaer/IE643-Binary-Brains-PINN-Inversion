@@ -1,0 +1,20 @@
+[
+  {
+    "arm": "pde4096_control",
+    "n_pde": 4096,
+    "status": "complete",
+    "initial_sha": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b"
+  },
+  {
+    "arm": "pde16384",
+    "n_pde": 16384,
+    "status": "complete",
+    "initial_sha": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b"
+  },
+  {
+    "arm": "adjoint_control",
+    "n_pde": 4096,
+    "status": "complete",
+    "initial_sha": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b"
+  }
+]

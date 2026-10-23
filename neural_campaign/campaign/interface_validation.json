@@ -1,0 +1,43 @@
+{
+  "inference_checks": [
+    {
+      "version": "Frozen",
+      "method": "adjoint_nn",
+      "D_max_difference": 0.0
+    },
+    {
+      "version": "Frozen",
+      "method": "pinn",
+      "D_max_difference": 2.7755575615628914e-17
+    },
+    {
+      "version": "Density v10",
+      "method": "adjoint_nn",
+      "D_max_difference": 8.326672684688674e-17
+    },
+    {
+      "version": "Density v10",
+      "method": "pinn",
+      "D_max_difference": 0.0
+    },
+    {
+      "version": "zhang_v11_gpu",
+      "method": "adjoint_nn",
+      "D_max_difference": 0.0
+    },
+    {
+      "version": "zhang_v11_gpu",
+      "method": "pinn",
+      "D_max_difference": 3.9317585197286667e-66
+    }
+  ],
+  "coupled_pinn_supplied_IC_relative_error": 1.1084309087403672e-07,
+  "catalog_pairs": 11,
+  "domain_rejection": true,
+  "ui_initial_run": "passed",
+  "ui_saved_adjoint_text_points_evaluation": "passed",
+  "ui_coupled_pinn_text_points_evaluation": "passed",
+  "ui_failed_pilot_selection": "passed",
+  "health_endpoint": "ok",
+  "browser_visual_check": "CUA unavailable: failed to write kernel assets; AppTest and HTTP checks completed"
+}

@@ -1,0 +1,218 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.05",
+  "method": "adjoint_nn",
+  "variant": "noise_density_temporal_v24_1000_7500",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 100,
+  "sigma": 0.0011884324,
+  "D_const": 0.2658031041258034,
+  "rms_const_over_sigma": 2.910064830607419,
+  "rms_replay_over_sigma": 0.9935785262735338,
+  "rms_unet_over_sigma": 0.9935785262735338,
+  "wall_s": 2133.5015063460005,
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4369830764057794e-06,
+      "gradient_max_abs": 6.279239201709576e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 730
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4299003072527085e-06,
+      "gradient_max_abs": 4.666628714887516e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 770
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4252981918562767e-06,
+      "gradient_max_abs": 4.362887339262718e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 731
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.422182586009003e-06,
+      "gradient_max_abs": 3.00021105982858e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 736
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4197079034896536e-06,
+      "gradient_max_abs": 2.9580427159071528e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 746
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4177785097790847e-06,
+      "gradient_max_abs": 3.06508087853113e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 743
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.416279845009789e-06,
+      "gradient_max_abs": 4.9308192207466244e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 712
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.415184706361217e-06,
+      "gradient_max_abs": 7.47738834334112e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 680
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4143408359622387e-06,
+      "gradient_max_abs": 3.049901326564712e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 654
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4135872253279017e-06,
+      "gradient_max_abs": 3.6996828130093555e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 681
+    }
+  ],
+  "history": [
+    {
+      "data": 1.4363225927983261e-06,
+      "pde": 0.0,
+      "reg": 6.604836074533257e-10
+    },
+    {
+      "data": 1.4280414559653284e-06,
+      "pde": 0.0,
+      "reg": 1.858851287380177e-09
+    },
+    {
+      "data": 1.4220150301236528e-06,
+      "pde": 0.0,
+      "reg": 3.2831617326238902e-09
+    },
+    {
+      "data": 1.418048565463108e-06,
+      "pde": 0.0,
+      "reg": 4.134020545894975e-09
+    },
+    {
+      "data": 1.41465588358754e-06,
+      "pde": 0.0,
+      "reg": 5.052019902113547e-09
+    },
+    {
+      "data": 1.4117507337988754e-06,
+      "pde": 0.0,
+      "reg": 6.02777598020929e-09
+    },
+    {
+      "data": 1.409530803175406e-06,
+      "pde": 0.0,
+      "reg": 6.749041834383222e-09
+    },
+    {
+      "data": 1.4076749557450669e-06,
+      "pde": 0.0,
+      "reg": 7.509750616150121e-09
+    },
+    {
+      "data": 1.4063503359389897e-06,
+      "pde": 0.0,
+      "reg": 7.990500023249057e-09
+    },
+    {
+      "data": 1.4052263518659075e-06,
+      "pde": 0.0,
+      "reg": 8.360873461994233e-09
+    }
+  ],
+  "final_parts": {
+    "data": 1.4052263518659075e-06,
+    "pde": 0.0,
+    "reg": 8.360873461994233e-09
+  },
+  "objective": 1.4135872253279017e-06,
+  "function_evaluations": 8183,
+  "initial_coefficient_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+  "gamma": 4.74482978455175e-11,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.492385217377766e-07,
+  "settings": {
+    "data": "data",
+    "key": "A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.05",
+    "out": "results/A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.05/be_adjoint_nn",
+    "method": "adjoint_nn",
+    "device": "cpu",
+    "budget": 12600.0,
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096
+  },
+  "parameter_count": 2241,
+  "arm": "be_adjoint_nn",
+  "n_sensors": 7500,
+  "n_readings": 60000,
+  "eta": 0.05,
+  "n_pde": 4096,
+  "time_step_tau": 0.01,
+  "optimizer": "ssb",
+  "time_integrator": "backward_euler",
+  "sensor_fit_rms": 0.001180800912567719,
+  "common_cn_replay_sigma": 1.098443057539421,
+  "common_cn_replay_rms": 0.0013054253191349123,
+  "common_be_replay_sigma": 0.9935785262735338,
+  "common_be_replay_rms": 0.001180800912567719
+}

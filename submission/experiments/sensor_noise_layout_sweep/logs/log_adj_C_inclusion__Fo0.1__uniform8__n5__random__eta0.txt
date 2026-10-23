@@ -1,0 +1,18 @@
+[1/1] C_inclusion__Fo0.1__uniform8__n5__random__eta0  (40 readings, sigma=0.00e+00)
+    alpha=4.000e+01  RMS/sigma=  0.470  iters=150
+    alpha=1.265e+01  RMS/sigma=  0.236  iters=150
+    alpha=4.000e+00  RMS/sigma=  0.149  iters=150
+    alpha=1.265e+00  RMS/sigma=  0.106  iters=150
+    alpha=4.000e-01  RMS/sigma=  0.064  iters=150
+    alpha=1.265e-01  RMS/sigma=  0.054  iters=150
+    alpha=4.000e-02  RMS/sigma=  0.047  iters=150
+    alpha=1.265e-02  RMS/sigma=  0.042  iters=150
+    alpha=4.000e-03  RMS/sigma=  0.039  iters=150
+    alpha=1.265e-03  RMS/sigma=  0.035  iters=150
+    alpha=4.000e-04  RMS/sigma=  0.033  iters=150
+    alpha=1.265e-04  RMS/sigma=  0.031  iters=150
+    alpha=4.000e-05  RMS/sigma=  0.030  iters=150
+    -> RMS_replay/σ=0.030  flag=noise_free  441s, 2131 PDE solves
+       relL2(D)=0.594  (constant guess 0.746)  high/low sensitivity 0.560/0.616
+
+Results in /home/claude/sweep/adj/  (summary.csv, one folder per dataset)

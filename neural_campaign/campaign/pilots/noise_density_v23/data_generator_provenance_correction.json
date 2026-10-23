@@ -1,0 +1,13 @@
+{
+  "checked_utc": "2026-10-21T17:26:24.104745+00:00",
+  "source_collection": "datasets_v2_rk4_zero",
+  "extended_generator": "extend_sensor_density.py",
+  "source_ground_truth": "datasets_v2_density_extended\\ground_truth\\A_smooth__Fo0.1.npz",
+  "metadata": {
+    "integrator": "rk4",
+    "dt": 3.787878787878788e-05,
+    "n_steps": 9600
+  },
+  "source_sha256": "be9a1b8ed797ca85e4d521554c952699b28ce38ff88fe43978bbea9550924b76",
+  "correction": "Earlier conversational CN-generated label was incorrect. No data/training/result changed; CN is inverse/replay solver."
+}

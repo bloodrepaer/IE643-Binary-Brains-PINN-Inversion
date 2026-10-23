@@ -1,0 +1,15 @@
+{
+  "id": "mihirgune123/ie643-fixed-d-refreshed-forward-diagnostic",
+  "title": "IE643 fixed D refreshed forward diagnostic",
+  "code_file": "forward_state_diagnostic.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "dataset_sources": [
+    "mihirgune123/ie643-neural-forward-diagnostic"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

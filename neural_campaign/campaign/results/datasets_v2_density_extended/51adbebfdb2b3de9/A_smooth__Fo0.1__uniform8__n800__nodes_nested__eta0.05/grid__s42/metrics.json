@@ -1,0 +1,64 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n800__nodes_nested__eta0.05",
+  "sigma": 0.0011884324,
+  "n_readings": 6400,
+  "rms_replay_over_sigma": 0.9963442603218853,
+  "alpha": 64.0,
+  "flag": "reached_sigma",
+  "D_const": 0.27143496557368063,
+  "rms_const_over_sigma": 2.8237272468280343,
+  "n_evals": 245,
+  "wall_s": 44.04625399998622,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.08326305063642679,
+  "rmse_logD": 0.1265417174896843,
+  "rel_L2_D_high_sensitivity": 0.041678923118306094,
+  "rel_L2_D_low_sensitivity": 0.10096893278850975,
+  "rel_L2_D_constant_guess": 0.37878454826093716,
+  "rms_vs_clean_over_sigma": 0.16736000059335943,
+  "alpha_selection": "discrepancy_path",
+  "method": "grid",
+  "seed": 42,
+  "shared_setup_s": 0.7836459999962244,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 6400.0,
+      "rms": 0.0023313680344282522,
+      "rms_over_sigma": 1.9617169932662994,
+      "iters": 30
+    },
+    {
+      "alpha": 2023.8577025077627,
+      "rms": 0.0017323141182597776,
+      "rms_over_sigma": 1.4576463232235821,
+      "iters": 25
+    },
+    {
+      "alpha": 640.0,
+      "rms": 0.0013620777447633605,
+      "rms_over_sigma": 1.1461129339484184,
+      "iters": 33
+    },
+    {
+      "alpha": 202.38577025077626,
+      "rms": 0.0012235962107756849,
+      "rms_over_sigma": 1.0295883979397438,
+      "iters": 45
+    },
+    {
+      "alpha": 64.0,
+      "rms": 0.001184087800520563,
+      "rms_over_sigma": 0.9963442603218853,
+      "iters": 50
+    }
+  ],
+  "parameter_count": 256,
+  "dtype": "float64",
+  "coefficient_config": null,
+  "chi2_red_solver": 0.9927018850763647,
+  "rms_replay": 0.001184087800520563,
+  "rms_replay_relative_signal": 0.058190040188042524
+}

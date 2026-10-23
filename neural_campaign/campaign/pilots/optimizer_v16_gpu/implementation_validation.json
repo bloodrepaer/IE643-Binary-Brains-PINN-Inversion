@@ -1,0 +1,21 @@
+{
+  "uses_true_D": false,
+  "coupled_quadratic_solution_error": 2.7755575615628914e-17,
+  "lbfgsb_result_contract": true,
+  "inherited_unchanged_v15_full_data_gradient_validation": {
+    "uses_true_D": false,
+    "full_observation_rows": 31752,
+    "pde_points": 16384,
+    "perturbed_state_and_coefficient": true,
+    "directional_gradient_relative_errors": [
+      3.841215708761686e-11,
+      1.0252099552828745e-10
+    ],
+    "control_points_weights_objective_gradient_exact": true,
+    "initial_sha_shared": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+    "gamma": 8.966042676779573e-11
+  },
+  "both_SSB_full_count_Adam_and_round_controls_bitwise_exact": true,
+  "both_PINN_final_full_count_clouds_bitwise_equal": true,
+  "local_scipy_version": "1.13.1"
+}

@@ -1,0 +1,60 @@
+{
+  "key": "F_defects_single__Fo0.1__uniform8__n50__random__eta0.05",
+  "sigma": 0.0014283221,
+  "n_readings": 400,
+  "rms_replay_over_sigma": 0.975315678765295,
+  "alpha": 40.0,
+  "flag": "reached_sigma",
+  "D_const": 0.2425702892080863,
+  "rms_const_over_sigma": 1.2006190486612007,
+  "n_evals": 192,
+  "wall_s": 55.46178172499998,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tv",
+  "rel_L2_D": 0.05543424165538301,
+  "rmse_logD": 0.08544549889011818,
+  "rel_L2_D_high_sensitivity": 0.07697071875441264,
+  "rel_L2_D_low_sensitivity": 0.023622389904457856,
+  "rel_L2_D_constant_guess": 0.08142621395104445,
+  "rms_vs_clean_over_sigma": 0.16128919768292158,
+  "defect_dice": 0.2,
+  "defects_detected": 1,
+  "n_defects": 1,
+  "D0_hat": 0.24863062079472617,
+  "D0_true": 0.25,
+  "background_rel_err": 0.035153971255481364,
+  "defects": [
+    {
+      "cx": 0.7623789921901029,
+      "cy": 0.6039114508947928,
+      "r": 0.07,
+      "factor": 0.3333333333333333,
+      "type": "low",
+      "contrast_recovery": 0.3734921445720845,
+      "detected": true,
+      "localisation_error_in_radii": 0.49948158587487795,
+      "sensitivity_rel": 28.981421498395957
+    }
+  ],
+  "alpha_path": [
+    {
+      "alpha": 400.0,
+      "rms": 0.0015652486377946253,
+      "rms_over_sigma": 1.095865307828413,
+      "iters": 45
+    },
+    {
+      "alpha": 126.49110640673517,
+      "rms": 0.0014382036531246875,
+      "rms_over_sigma": 1.0069182946372444,
+      "iters": 62
+    },
+    {
+      "alpha": 40.0,
+      "rms": 0.0013930649384569715,
+      "rms_over_sigma": 0.975315678765295,
+      "iters": 59
+    }
+  ]
+}

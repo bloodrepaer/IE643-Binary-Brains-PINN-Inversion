@@ -1,0 +1,6 @@
+{
+  "answer_key_use": "Post-fit scoring only, after independent consistency checks",
+  "scores_all_retained_cases": true,
+  "checkpoint_or_setting_selection": false,
+  "training": false
+}

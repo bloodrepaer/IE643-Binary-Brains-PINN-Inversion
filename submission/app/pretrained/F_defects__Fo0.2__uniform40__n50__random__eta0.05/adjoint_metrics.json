@@ -1,0 +1,16 @@
+{
+ "key": "F_defects__Fo0.2__uniform40__n50__random__eta0.05",
+ "method": "adjoint",
+ "alpha": 6.324555320336759,
+ "flag": "floor_above_sigma",
+ "wall_s": 153.6121320250004,
+ "n_evals": 625,
+ "eps_u_solver": 0.003336453328580212,
+ "sigma": 0.00089998419,
+ "n_readings": 2000,
+ "peak_rss_gb": 0.26031494140625,
+ "eps_D": 0.11150704217828933,
+ "rmse_logD": 0.12086996119599404,
+ "rms_replay_over_sigma": 1.0183546809474706,
+ "eps_u": 0.02156386767522466
+}

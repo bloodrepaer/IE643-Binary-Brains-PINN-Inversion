@@ -1,0 +1,19 @@
+{
+  "manifest.json": "66930c1fa96f5276fc8ede3e21a00efa5c89b9b37d46f1cdafc8a1c821206032",
+  "initial/A_smooth__Fo0.1__uniform8__n10000__fine_nested__eta0.01.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n10000__fine_nested__eta0.1.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.01.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.1.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n3969__fine_nested__eta0.01.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n3969__fine_nested__eta0.05.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "initial/A_smooth__Fo0.1__uniform8__n3969__fine_nested__eta0.1.pt": "0b4b1dce55d5c7589025289b77425796c61916274dd15e5f8eafe5fc59b7f01c",
+  "problem/A_smooth__Fo0.1.json": "2da3bae039085aadc975f5bc21161d16f33e77de9eb21f0151332fec8853df39",
+  "problem/A_smooth__Fo0.1__ic.csv": "5b7360b1f99ccc1b86cfe400ae21a193089c3a2efa72b3cad14ff472ff5cdb0c",
+  "sensors/A_smooth__Fo0.1__uniform8__n10000__fine_nested__eta0.01.csv": "cc7f725cb05c3c975fa761b8e708181f7898bd4bf7a7eeaeb3d4635aed197b3c",
+  "sensors/A_smooth__Fo0.1__uniform8__n10000__fine_nested__eta0.1.csv": "f8592a8b489d7d6f745d49d11f980d18d22e2f2f8e199b84967422e7e1535588",
+  "sensors/A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.01.csv": "1770872b3bec915236f0c16474d199a572df05b73981ec1262184c471d51f555",
+  "sensors/A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.1.csv": "69a17bc8cd01014b0fe7381da00d789e9c3ac0e540d69fd1b7148e3cbf233546",
+  "sensors/A_smooth__Fo0.1__uniform8__n3969__fine_nested__eta0.01.csv": "cdd2b32d72217e443a7b469dd9535ca93e264f2c0d80b911e9bb815011ccf8e2",
+  "sensors/A_smooth__Fo0.1__uniform8__n3969__fine_nested__eta0.05.csv": "baf64b81836dbe31c111508445f85bc3eecf13b7c447182a46a4bd73553a9a39",
+  "sensors/A_smooth__Fo0.1__uniform8__n3969__fine_nested__eta0.1.csv": "904ec3d6d347cf7701c082d416ade6a1653978b066b31a2a8bc670f182cfcf60"
+}

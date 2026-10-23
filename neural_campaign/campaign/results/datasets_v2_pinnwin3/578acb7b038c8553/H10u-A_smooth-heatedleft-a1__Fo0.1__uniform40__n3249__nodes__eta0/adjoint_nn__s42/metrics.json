@@ -1,0 +1,71 @@
+{
+  "key": "H10u-A_smooth-heatedleft-a1__Fo0.1__uniform40__n3249__nodes__eta0",
+  "sigma": 0.0,
+  "n_readings": 129960,
+  "rms_replay_over_sigma": null,
+  "alpha": 41096.96047154826,
+  "flag": "noise_free",
+  "D_const": 0.07096837780525138,
+  "rms_const_over_sigma": 754.9594515737333,
+  "n_evals": 724,
+  "wall_s": 294.58166760002496,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 11.619245675055163,
+  "rmse_logD": 3.495151046709389,
+  "rel_L2_D_high_sensitivity": 4.20566363509044,
+  "rel_L2_D_low_sensitivity": 18.52022830848708,
+  "rel_L2_D_constant_guess": 0.7841545757651053,
+  "rms_vs_clean_over_sigma": null,
+  "alpha_selection": "discrepancy_path",
+  "method": "adjoint_nn",
+  "seed": 42,
+  "shared_setup_s": 0.9433902999735437,
+  "physics_mode": "assumed_zero",
+  "alpha_path": [
+    {
+      "alpha": 129960.0,
+      "rms": 0.1426840731471661,
+      "rms_over_sigma": 485.20479283617254,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 41096.96047154826,
+      "rms": 0.13952044368579344,
+      "rms_over_sigma": 474.4467022969958,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 12996.0,
+      "rms": 0.13881338509883248,
+      "rms_over_sigma": 472.0423119004896,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 4109.6960471548255,
+      "rms": 0.13850065038849546,
+      "rms_over_sigma": 470.9788408557203,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    }
+  ],
+  "parameter_count": 2241,
+  "dtype": "float64",
+  "coefficient_config": {
+    "width": 32,
+    "depth": 3,
+    "d_min": 0.001,
+    "d_max": 10.0
+  },
+  "chi2_red_solver": null,
+  "rms_replay": 0.13952044368579344,
+  "rms_replay_relative_signal": 0.4744467022969958
+}

@@ -1,0 +1,218 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.01",
+  "method": "pinn",
+  "variant": "noise_density_temporal_v23",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.00023768648,
+  "D_const": 0.2658031041258034,
+  "rms_const_over_sigma": 13.860141009328364,
+  "rms_replay_over_sigma": 2.968371509658592,
+  "rms_unet_over_sigma": 0.9548989932842752,
+  "wall_s": 4831.297348239,
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 6.369809839840392e-07,
+      "gradient_max_abs": 1.7880082888231792e-05,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 747
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.47578191866729e-07,
+      "gradient_max_abs": 3.075500306342312e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 681
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.104945549594622e-07,
+      "gradient_max_abs": 6.882892470272856e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 667
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 7.147238030794512e-08,
+      "gradient_max_abs": 1.0122850761572804e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 712
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 6.261334342918338e-08,
+      "gradient_max_abs": 1.103963975822268e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 680
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.8238298329200385e-08,
+      "gradient_max_abs": 8.994320791181423e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 712
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.5963730275492825e-08,
+      "gradient_max_abs": 2.2708133216641858e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 682
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.560973074168846e-08,
+      "gradient_max_abs": 2.950754610866731e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 649
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.439430185193531e-08,
+      "gradient_max_abs": 1.3704101817367645e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 695
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.377647396570513e-08,
+      "gradient_max_abs": 4.3788300652217966e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 717
+    }
+  ],
+  "history": [
+    {
+      "data": 1.4402256587186065e-07,
+      "pde": 4.928975674731055e-07,
+      "reg": 6.085063907296572e-11
+    },
+    {
+      "data": 7.292495436856815e-08,
+      "pde": 7.459059216825756e-08,
+      "reg": 6.264532990328285e-11
+    },
+    {
+      "data": 6.740796567602988e-08,
+      "pde": 4.299146340915048e-08,
+      "reg": 9.51258742818478e-11
+    },
+    {
+      "data": 5.908015277217225e-08,
+      "pde": 1.2288590106264868e-08,
+      "reg": 1.0363742950801017e-10
+    },
+    {
+      "data": 5.602677273071338e-08,
+      "pde": 6.462178553099472e-09,
+      "reg": 1.2439214537052117e-10
+    },
+    {
+      "data": 5.4186424554692445e-08,
+      "pde": 3.911326015281313e-09,
+      "reg": 1.4054775922662642e-10
+    },
+    {
+      "data": 5.3150688861604326e-08,
+      "pde": 2.66446788962224e-09,
+      "reg": 1.485735242662536e-10
+    },
+    {
+      "data": 5.2953801650501284e-08,
+      "pde": 2.5031054616148854e-09,
+      "reg": 1.5282362957228596e-10
+    },
+    {
+      "data": 5.234470146822115e-08,
+      "pde": 1.894116683802988e-09,
+      "reg": 1.5548369991117738e-10
+    },
+    {
+      "data": 5.1917856560261085e-08,
+      "pde": 1.6928550096757843e-09,
+      "reg": 1.657623957682579e-10
+    }
+  ],
+  "final_parts": {
+    "data": 5.1917856560261085e-08,
+    "pde": 1.6928550096757843e-09,
+    "reg": 1.657623957682579e-10
+  },
+  "objective": 5.377647396570513e-08,
+  "function_evaluations": 7942,
+  "initial_coefficient_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+  "gamma": 1.423448935365525e-11,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.492385217377766e-07,
+  "settings": {
+    "data": "data",
+    "key": "A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.01",
+    "out": "results/A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.01/temporal_pinn",
+    "method": "pinn",
+    "device": "cpu",
+    "budget": 12600.0,
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096
+  },
+  "parameter_count": 4514,
+  "arm": "temporal_pinn",
+  "n_sensors": 1000,
+  "n_readings": 8000,
+  "eta": 0.01,
+  "n_pde": 4096,
+  "time_step_tau": 0.01,
+  "optimizer": "ssb",
+  "time_integrator": "soft_backward_euler",
+  "sensor_fit_rms": 0.00022696658046928301,
+  "common_cn_replay_sigma": 2.968371509658592,
+  "common_cn_replay_rms": 0.0007055417754630367,
+  "common_be_replay_sigma": 1.7073352786774307,
+  "common_be_replay_rms": 0.0004058105125686576
+}

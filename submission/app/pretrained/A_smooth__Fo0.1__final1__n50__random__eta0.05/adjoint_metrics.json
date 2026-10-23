@@ -1,0 +1,16 @@
+{
+ "key": "A_smooth__Fo0.1__final1__n50__random__eta0.05",
+ "method": "adjoint",
+ "alpha": 1.5811388300841895,
+ "flag": "reached_sigma",
+ "wall_s": 30.93304962000002,
+ "n_evals": 131,
+ "eps_u_solver": 0.00264883130648632,
+ "sigma": 0.0011884324,
+ "n_readings": 50,
+ "peak_rss_gb": 0.24469375610351562,
+ "eps_D": 0.27092244163475004,
+ "rmse_logD": 0.3403054331664252,
+ "rms_replay_over_sigma": 0.9181436405610909,
+ "eps_u": 0.11954853080818525
+}

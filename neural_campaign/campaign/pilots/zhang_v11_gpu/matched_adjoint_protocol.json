@@ -1,0 +1,57 @@
+{
+  "created": "2026-10-19T08:36:20.290114+00:00",
+  "case": "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+  "paired_pinn": "pilot.json",
+  "source_hashes": {
+    "adjoint_inversion.py": "7004400e7832bb30db42c607caf323eadcb599b30f3678af90cfcbe63de41b95",
+    "adjoint_nn.py": "5d0dc868b2a39bc42f4fc42793a9dd46121c465eda017e29ee6afdf061fa75b7",
+    "compare_neural.py": "43cc6e0a32ae15fd417d0773c8e9bb1bc9e2e916e61b455d46545385e6a82e81",
+    "integrators.py": "74c161c22f7d9289fbe8787cdf82ec866e399e5d86bc32ad5f1d97ba7301c10b",
+    "neural_diffusivity.py": "d4102584f213e2047ab84dc4e99168dbf518891b4ab77a9539e3fc8376cb7f57",
+    "pinn_papers.py": "895739b0e3c541cdb7bc3449d8bb445ce8277c2858e86e6f01db992e1996ede0",
+    "pinn_zhang_transfer.py": "1cd154938a8fa3bbddc88f037385bd35cf0e16627306e5d80bc522d78aaf0dfd",
+    "zhang_adjoint_transfer.py": "f925f1d49c4536f8d9e6f2f4fd2785d27c93d00dff2ea2a6d3c79937c9f950b5"
+  },
+  "command": [
+    "C:\\Users\\gunem\\anaconda3\\python.exe",
+    "-u",
+    "C:\\Users\\gunem\\mihir_projects\\IE643courseproject\\v2\\campaign\\pilots\\zhang_v11_gpu\\matched_code\\zhang_adjoint_transfer.py",
+    "--data",
+    "C:\\Users\\gunem\\mihir_projects\\IE643courseproject\\v2\\campaign\\pilots\\zhang_v11_gpu\\dataset\\data",
+    "--key",
+    "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+    "--out",
+    "C:\\Users\\gunem\\mihir_projects\\IE643courseproject\\v2\\campaign\\pilots\\zhang_v11_gpu\\matched_adjoint",
+    "--budget",
+    "6500"
+  ],
+  "scope": "Separate fixed-data neural adjoint/PINN paper transfer, not frozen1510 fits",
+  "shared": [
+    "Same unboundedexp physical logD MLP32x3, seed42, exact initial weights",
+    "Mean sensor squared error, gamma.1 H1 regularizer, identical spatial quadrature draw stream",
+    "1000Adam same schedule;10x400SSBroyden with same line search/outer refresh/Hessian policy",
+    "Same suppliedIC/BC/source/observations, float64; no coefficient truth"
+  ],
+  "differences": [
+    "Adjoint hard discreteCN state, PINN learned soft continuous PDE/IC/BC",
+    "State-network parameters only in PINN; same iterations are not equal FLOPs/walltime",
+    "Adjoint CPU1thread locally with main2workers; PINN CUDAresidual/CPUdensecurvature2threads onKaggle, so no uncontrolled timing superiority claim"
+  ],
+  "budget_seconds": 6500,
+  "external_timeout_seconds": 6900,
+  "validation": {
+    "directional_relative_errors": [
+      7.822923384170898e-11,
+      2.07702683091457e-10,
+      2.1250526759309735e-10
+    ],
+    "data_mse_difference": 0.0,
+    "initial_weights_identical_to_pinn": true,
+    "truth_access": false,
+    "smoke_checkpoint_max_difference": 1.1102230246251565e-16,
+    "smoke_independent_replay_difference": 1.7763568394002505e-15,
+    "smoke": "1Adam+2x1SSB, CPU, no coefficient truth"
+  },
+  "status": "validated_prepared",
+  "initialization_uncertainty": "One seed only, not confirmed across seeds"
+}

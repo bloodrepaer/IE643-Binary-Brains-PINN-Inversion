@@ -1,0 +1,14 @@
+{
+  "recovered_utc": "2026-10-22T08:10:14.497705+00:00",
+  "archive_sha256": "9193d7eb693d347d614776102e8a22c1a23ae17c0eb25368b0c86b6d6b374204",
+  "all_export_hashes_pass": true,
+  "all_source_input_hashes_match": true,
+  "notebook_source_changed_cells": [],
+  "duplicate_case02_bitwise_identical_reused": true,
+  "research_case_to_evaluate": "case_05",
+  "smokes_excluded": true,
+  "local_pilot_change": "Canonical data path only",
+  "status": "complete_locally_validated_evaluated",
+  "evaluated_utc": "2026-10-22T08:12:36.152693+00:00",
+  "coefficient_truth_accessed_only_after_all_supplied_checks": true
+}

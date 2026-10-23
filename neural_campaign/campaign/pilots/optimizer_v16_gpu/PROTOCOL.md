@@ -1,0 +1,15 @@
+# Draft v16: controlled optimizer comparison at3969observed sensors
+
+Status: VALIDATED AND SUBMITTED private version1; first status QUEUED. Retain separate draft as provenance.
+
+Motivation uses supplied observations/physics only: v15 corrected much of the collocation/state consistency gap, but retained fits remain capped; original-objective descent probes show tight local step-scale sensitivity, and final-checkpoint central directional differences agree with AD within6.4e-9. This does not prove SSBroyden failure or that another optimizer will improve inverse recovery. No coefficient error chooses settings.
+
+Predeclared single case: A_smooth nested3969sensors,5%noise,eighttimes,Fo.1,seed42. Four fresh arms form method x optimizer: neuralPINN/SSBroyden,neuralPINN/L-BFGS-B,neuraladjoint/SSBroyden,neuraladjoint/L-BFGS-B. Retain same bounded3x32float64coefficient,32x3hardGaussianstate,full31752observations,unitnormalizedphysics,exactalpha1gamma8.966e-11,16384originalrandommixedPDEpoints forPINNs,refresh and1000Adam+10x400quasiNewton limits. Freshcontrols ononehost,alloutcomes retained. No50-sensor cases.
+
+Keep unchanged SSB control, including tested strongWolfe/Hessian policies. Proposed limited-memory optimizer uses L-BFGS-B without parameterbounds (D is already bounded by representation),history50,maxls30,gtol1e-12,ftol0,maxiter400 per outerround. Norm stopping conventions and dense-versus-limited-memory curvature are intrinsic differences and must be recorded. Memory resets at each collocation refresh forL-BFGS;SSB retains its existing positive-definite curvature policy. This compares optimizer implementations, not an isolated memory-reset mechanism. Validate exact shared Adam/control behavior before running.
+
+Proposed per-arm9000sinternal9600external,total36800internal39600external. Different methods/optimizers require different evaluations and resources; reportactual costs and partialstatus,never unqualifiedspeedwins. Verify typed FREE quota and no duplicate/currentGPUjob before submission. Reuse privatev14supplied input unchanged;newadapterembedded inkernel,not answerkeys. Four extra researchfitsoutside1510.
+
+Required before submission: implement versioned trainer/evaluator without changing frozen or v12..v15 modules; gradients/control identity on supplieddata;short full-count pipelines forALL4arms;isolated packagedsmoke;independentknownICBC/PDE and own4arm checkpoint/boundedD/commonCN/sharedSHA/gamma checks BEFORE any truthscore. Preserve failures. No broadmigration orPINNwin claimed from optimizationloss alone.
+
+Implementation limitation: the unchanged common trainer allocates dense identity bookkeeping and performs its positive-definite check also forL-BFGS-B; the limited-memory optimizer does not use that matrix for its updates. Report actual memory/time, no memory-scaling or unqualified speed claim.

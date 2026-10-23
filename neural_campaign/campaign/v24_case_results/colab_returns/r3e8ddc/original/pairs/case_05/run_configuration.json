@@ -1,0 +1,14 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05",
+  "source_input_identity": "4cfa71cd3a8676fc70e1a31b4d531bd8e36879c3a04d1ea4180374a533467fc3:2aee62caf4e12c21fd2d6716daf39b455bbc67f986158b270efbd630f4dac7e6",
+  "settings": {
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096,
+    "seed": 42,
+    "budget": 12600,
+    "external_budget": 12900
+  },
+  "smoke": false
+}

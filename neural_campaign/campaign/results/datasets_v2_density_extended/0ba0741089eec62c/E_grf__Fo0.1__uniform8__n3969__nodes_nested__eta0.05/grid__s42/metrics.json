@@ -1,0 +1,76 @@
+{
+  "key": "E_grf__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+  "sigma": 0.0012712434,
+  "n_readings": 31752,
+  "rms_replay_over_sigma": 0.9986132288066821,
+  "alpha": 31.752,
+  "flag": "reached_sigma",
+  "D_const": 0.2566943192596839,
+  "rms_const_over_sigma": 1.6785912905507463,
+  "n_evals": 366,
+  "wall_s": 67.63162559998455,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.05087958547522365,
+  "rmse_logD": 0.0505592924212654,
+  "rel_L2_D_high_sensitivity": 0.030619728191196887,
+  "rel_L2_D_low_sensitivity": 0.05582536462896622,
+  "rel_L2_D_constant_guess": 0.3316739397156946,
+  "rms_vs_clean_over_sigma": 0.07025226667240878,
+  "alpha_selection": "discrepancy_path",
+  "method": "grid",
+  "seed": 42,
+  "shared_setup_s": 0.7073085000156425,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 31752.0,
+      "rms": 0.001799551727166087,
+      "rms_over_sigma": 1.415583929219288,
+      "iters": 29
+    },
+    {
+      "alpha": 10040.864026566638,
+      "rms": 0.0016271364762739868,
+      "rms_over_sigma": 1.2799566757034782,
+      "iters": 25
+    },
+    {
+      "alpha": 3175.2000000000003,
+      "rms": 0.001458696485136809,
+      "rms_over_sigma": 1.1474564864107133,
+      "iters": 26
+    },
+    {
+      "alpha": 1004.0864026566637,
+      "rms": 0.0013377025853454595,
+      "rms_over_sigma": 1.0522788832928922,
+      "iters": 37
+    },
+    {
+      "alpha": 317.52,
+      "rms": 0.0012864629743300953,
+      "rms_over_sigma": 1.0119721953562122,
+      "iters": 44
+    },
+    {
+      "alpha": 100.40864026566638,
+      "rms": 0.0012728185187913838,
+      "rms_over_sigma": 1.0012390379304104,
+      "iters": 61
+    },
+    {
+      "alpha": 31.752,
+      "rms": 0.0012694804762731844,
+      "rms_over_sigma": 0.9986132288066821,
+      "iters": 74
+    }
+  ],
+  "parameter_count": 256,
+  "dtype": "float64",
+  "coefficient_config": null,
+  "chi2_red_solver": 0.9972283807477069,
+  "rms_replay": 0.0012694804762731844,
+  "rms_replay_relative_signal": 0.06042973385052454
+}

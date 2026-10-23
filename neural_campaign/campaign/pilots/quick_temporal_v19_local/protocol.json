@@ -1,0 +1,31 @@
+{
+  "created": "2026-10-20T18:54:01.969587+00:00",
+  "cases": [
+    "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+    "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "B_gaussian_bump__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+    "B_gaussian_bump__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "D_layered__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+    "D_layered__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "E_grf__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+    "E_grf__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "F_defects__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+    "F_defects__Fo0.1__uniform8__n3969__nodes_nested__eta0.05"
+  ],
+  "arms": [
+    "temporal_pinn",
+    "adjoint_nn"
+  ],
+  "adam": 50,
+  "outer": 1,
+  "inner": 50,
+  "n_pde": 4096,
+  "per_arm_internal_s": 120,
+  "per_arm_external_s": 180,
+  "temporal_step": 0.01,
+  "device": "cpu",
+  "threads": 2,
+  "seed": 42,
+  "scope": "20 fresh short-budget fits, outside broad1510 and v18. No truth selection; all outcomes retained.",
+  "limitation": "Early optimization screen, not converged superiority or full Thakur reproduction."
+}

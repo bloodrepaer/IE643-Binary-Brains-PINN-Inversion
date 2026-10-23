@@ -1,0 +1,2 @@
+key,variant,artifact,n_sensors,eta,rel_L2_D,rmse_logD,replay_sigma,sensor_fit_sigma
+A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,zhang_v2_heat_transfer,results\A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05\pinn__s42\metrics.json,50,0.05,1.0,117.32243252704623,106.10228664105603,1.3874507633385935

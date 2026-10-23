@@ -1,0 +1,9 @@
+key,artifact,variant,tau_low,tau_high,pde_rms,pde_max_abs
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\lbfgsb_pinn\pinn\metrics.json,dense_optimizer_v16,0.0,0.001,0.0003323592388910718,0.002782337371987964
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\lbfgsb_pinn\pinn\metrics.json,dense_optimizer_v16,0.001,0.01,0.00026962222472236194,0.002432510833391799
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\lbfgsb_pinn\pinn\metrics.json,dense_optimizer_v16,0.01,0.1,0.00039270598496133886,0.0012238181969319584
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\lbfgsb_pinn\pinn\metrics.json,dense_optimizer_v16,0.1,1.0,0.00033302955505656455,0.001309314957978966
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\ssb_pinn\pinn\metrics.json,dense_optimizer_v16,0.0,0.001,0.0009738902602823792,0.006893366886636443
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\ssb_pinn\pinn\metrics.json,dense_optimizer_v16,0.001,0.01,0.0013109367973268447,0.007567170652159838
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\ssb_pinn\pinn\metrics.json,dense_optimizer_v16,0.01,0.1,0.002267950456064806,0.030667851547249526
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\ssb_pinn\pinn\metrics.json,dense_optimizer_v16,0.1,1.0,0.0008516118752870285,0.0060216258823755225

@@ -1,0 +1,61 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+  "method": "adjoint_nn",
+  "variant": "calibrated_hard_physics_v12",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0011884324,
+  "D_const": 0.273423335540499,
+  "rms_const_over_sigma": 2.868012214608188,
+  "rms_replay_over_sigma": 1.0291862003318837,
+  "rms_unet_over_sigma": 1.0291862003318837,
+  "wall_s": 84.34399999998277,
+  "adam_completed": 50,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 50,
+      "requested_iterations": 50,
+      "reason": "iteration_cap",
+      "loss": 1.5172383843989391e-06,
+      "gradient_max_abs": 3.927519344127848e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 111
+    }
+  ],
+  "history": [
+    {
+      "data": 1.507751609558037e-06,
+      "pde": 0.0,
+      "reg": 9.48677484090205e-09
+    }
+  ],
+  "final_parts": {
+    "data": 1.507751609558037e-06,
+    "pde": 0.0,
+    "reg": 9.48677484090205e-09
+  },
+  "objective": 1.5172383843989391e-06,
+  "function_evaluations": 161,
+  "initial_coefficient_sha256": "a632f38b4c38a3d0a6e2424d542ed03f051505ea4fe4265ae06acaad4f786041",
+  "gamma": 8.896555846034532e-10,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.492385217377766e-07,
+  "settings": {
+    "data": "datasets_v2_density_extended",
+    "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+    "out": "campaign\\pilots\\quick_temporal_v19_local\\artifacts\\A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05\\adjoint_nn",
+    "method": "adjoint_nn",
+    "device": "cpu",
+    "budget": 120.0,
+    "adam": 50,
+    "outer": 1,
+    "inner": 50,
+    "n_pde": 4096
+  },
+  "parameter_count": 2241
+}

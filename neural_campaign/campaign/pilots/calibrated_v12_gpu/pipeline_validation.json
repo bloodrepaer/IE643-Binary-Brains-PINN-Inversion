@@ -1,0 +1,13 @@
+[
+  {
+    "method": "pinn",
+    "D_max_difference": 0.0,
+    "replay_metric_difference": 0.0,
+    "post_training_ic_relative_error": 2.492385217377766e-07
+  },
+  {
+    "method": "adjoint_nn",
+    "D_max_difference": 0.0,
+    "replay_metric_difference": 0.0
+  }
+]

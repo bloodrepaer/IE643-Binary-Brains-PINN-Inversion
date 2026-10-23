@@ -1,0 +1,15 @@
+{
+  "id": "mihirgune123/ie643-neural-ic-adaptive-pilot",
+  "title": "IE643 neural IC adaptive pilot",
+  "code_file": "run_ic_pilot.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "dataset_sources": [
+    "mihirgune123/ie643-neural-diffusion-data"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

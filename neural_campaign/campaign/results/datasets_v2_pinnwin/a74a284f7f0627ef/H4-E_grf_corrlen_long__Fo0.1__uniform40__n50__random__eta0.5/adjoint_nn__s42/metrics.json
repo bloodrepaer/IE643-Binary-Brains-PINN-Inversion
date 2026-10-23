@@ -1,0 +1,55 @@
+{
+  "key": "H4-E_grf_corrlen_long__Fo0.1__uniform40__n50__random__eta0.5",
+  "sigma": 0.01394479,
+  "n_readings": 2000,
+  "rms_replay_over_sigma": 0.9997095652198548,
+  "alpha": 632.4555320336759,
+  "flag": "reached_sigma",
+  "D_const": 0.25326406391849127,
+  "rms_const_over_sigma": 1.003585632208176,
+  "n_evals": 245,
+  "wall_s": 97.78335799998604,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.33256378218215543,
+  "rmse_logD": 0.370354132503813,
+  "rel_L2_D_high_sensitivity": 0.2881131653157091,
+  "rel_L2_D_low_sensitivity": 0.3570655623934704,
+  "rel_L2_D_constant_guess": 0.3413001370925645,
+  "rms_vs_clean_over_sigma": 0.19348682037580536,
+  "alpha_selection": "discrepancy_path",
+  "method": "adjoint_nn",
+  "seed": 42,
+  "shared_setup_s": 1.2802360000205226,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 2000.0,
+      "rms": 0.013972968112537615,
+      "rms_over_sigma": 1.00202069106366,
+      "iters": 53,
+      "success": true,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+    },
+    {
+      "alpha": 632.4555320336759,
+      "rms": 0.01394073994798218,
+      "rms_over_sigma": 0.9997095652198548,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    }
+  ],
+  "parameter_count": 2241,
+  "dtype": "float64",
+  "coefficient_config": {
+    "width": 32,
+    "depth": 3,
+    "d_min": 0.001,
+    "d_max": 10.0
+  },
+  "chi2_red_solver": 0.9994192147920711,
+  "rms_replay": 0.01394073994798218,
+  "rms_replay_relative_signal": 0.4289516566224896
+}

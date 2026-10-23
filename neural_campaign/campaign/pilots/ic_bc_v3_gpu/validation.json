@@ -1,0 +1,61 @@
+{
+  "updated": "2026-10-18T23:34:15.132862+00:00",
+  "validation_seed": 20261019,
+  "selection_uses_true_D": false,
+  "results": [
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+      "ic_relative_L2": 2.492385217377766e-07,
+      "replay_sigma": 2.8074322994474574,
+      "replay_metric_difference": 1.3322676295501878e-15,
+      "sensor_fit_sigma": 0.8336256517116742,
+      "D_spatial_std": 0.0026311690422023298,
+      "D_mean": 0.26696144820684914,
+      "D_fitted_constant": 0.2696131593826259,
+      "constant_replay_sigma": 2.8067433876909242,
+      "training_seconds": 1517.082391485,
+      "bc_rms": 2.2146307242162814e-18,
+      "bc_rms_over_sensor_sigma": 1.8634890164693264e-15,
+      "pinn_v0_replay_sigma": 7.298396846260903,
+      "adjoint_nn_v0_replay_sigma": 0.941967490048654,
+      "replay_improvement_over_constant_percent": -0.024544878579013663
+    }
+  ],
+  "time_bins": [
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+      "tau_low": 0,
+      "tau_high": 0.001,
+      "pde_rms": 0.0064393713198344655,
+      "pde_max_abs": 0.04633753518338324
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+      "tau_low": 0.001,
+      "tau_high": 0.01,
+      "pde_rms": 0.0068329126293051054,
+      "pde_max_abs": 0.03285806681624592
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+      "tau_low": 0.01,
+      "tau_high": 0.1,
+      "pde_rms": 0.03466240897743116,
+      "pde_max_abs": 0.35039194351371905
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+      "tau_low": 0.1,
+      "tau_high": 1,
+      "pde_rms": 0.03351278368226112,
+      "pde_max_abs": 0.3896958408079586
+    }
+  ],
+  "consistency_screen_passed": false,
+  "decision": "Hold broad PINN migration: at least one IC, boundary or replay consistency screen fails.",
+  "screening_limits": {
+    "ic_relative_L2": 1e-06,
+    "replay_sigma": 1.1,
+    "bc_rms_over_sensor_sigma": 1
+  }
+}

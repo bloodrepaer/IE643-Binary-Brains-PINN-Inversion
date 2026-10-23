@@ -1,0 +1,9 @@
+
+=== [B_gaussian_bump__Fo0.1__uniform8__n20__random__eta0] (device=cpu) Fixed Lambdas: data=40.0, pde=20.0, bc=10.0, ic=20.0, reg=0.0002 (tikhonov) ===
+  Epoch [0001/1500] L_tot=1.801e+01 | L_data=7.938e-05 | L_pde=2.412e-02 | L_reg=2.333e-04
+  Epoch [0300/1500] L_tot=1.597e+00 | L_data=8.873e-07 | L_pde=8.146e-03 | L_reg=4.033e+01
+  Epoch [0600/1500] L_tot=3.799e-01 | L_data=2.938e-07 | L_pde=8.922e-03 | L_reg=4.392e+01
+  Epoch [0900/1500] L_tot=5.037e-01 | L_data=1.440e-07 | L_pde=4.108e-03 | L_reg=4.521e+01
+  Epoch [1200/1500] L_tot=1.978e-01 | L_data=7.443e-08 | L_pde=7.753e-03 | L_reg=5.145e+01
+  Epoch [1500/1500] L_tot=2.055e-01 | L_data=4.797e-08 | L_pde=5.451e-03 | L_reg=4.004e+01
+  --> Result [B_gaussian_bump__Fo0.1__uniform8__n20__random__eta0]: rel_L2(D)=0.4828 | MAE(D)=0.0464 | chi2_solver=9875838729451470848.000 | chi2_u_net=50364242506809344.000 (Under-fitting (>1: over-smoothed)) | D_range=[0.025, 0.198] | time=55.8s

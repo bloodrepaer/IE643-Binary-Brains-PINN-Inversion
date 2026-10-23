@@ -1,0 +1,191 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+  "sigma": 0.0011884324,
+  "n_readings": 400,
+  "rms_replay_over_sigma": 2.406041732095375,
+  "alpha": 1.0,
+  "flag": "fixed_alpha_budget",
+  "D_const": 0.28836625734791344,
+  "rms_const_over_sigma": 2.725602806485053,
+  "n_evals": 1,
+  "wall_s": 1836.3485772930003,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rms_unet_over_sigma": 0.758226306196155,
+  "loss_history": [
+    {
+      "stage": "adam",
+      "step": 1,
+      "total": 1481.2018364047333,
+      "data": 1481.2018364045707,
+      "pde": 6.596249440804331e-29,
+      "ic": 1.6261236175250663e-13,
+      "bc": 8.537665684422599e-34,
+      "reg": 0.0
+    },
+    {
+      "stage": "adam",
+      "step": 1500,
+      "total": 411.14393217937095,
+      "data": 280.51688681274,
+      "pde": 0.13029964066226327,
+      "ic": 1.6261236175250663e-13,
+      "bc": 5.096936425885706e-34,
+      "reg": 0.3274047042050837
+    },
+    {
+      "stage": "adam",
+      "step": 3000,
+      "total": 378.12405028016525,
+      "data": 233.937501408301,
+      "pde": 0.1437378369705499,
+      "ic": 1.6261236175250663e-13,
+      "bc": 1.279385914688194e-33,
+      "reg": 0.44871190115173915
+    },
+    {
+      "stage": "adam",
+      "step": 4500,
+      "total": 344.64576537727413,
+      "data": 211.1173370885298,
+      "pde": 0.13290861725032604,
+      "ic": 1.6261236175250663e-13,
+      "bc": 3.4678378713212466e-34,
+      "reg": 0.6198110382556716
+    },
+    {
+      "stage": "adam",
+      "step": 6000,
+      "total": 324.30325614977346,
+      "data": 189.40305014768126,
+      "pde": 0.13417638119396003,
+      "ic": 1.6261236175250663e-13,
+      "bc": 8.701062059651101e-34,
+      "reg": 0.7238248079695391
+    },
+    {
+      "stage": "adam",
+      "step": 7500,
+      "total": 334.27395727350756,
+      "data": 178.90960205644177,
+      "pde": 0.15446867756790425,
+      "ic": 1.6261236175250663e-13,
+      "bc": 9.528926936172258e-34,
+      "reg": 0.8956776489989129
+    },
+    {
+      "stage": "adam",
+      "step": 9000,
+      "total": 305.8811058354326,
+      "data": 166.18161062018166,
+      "pde": 0.13861974909462485,
+      "ic": 1.6261236175250663e-13,
+      "bc": 7.318011947140197e-34,
+      "reg": 1.0797461204634988
+    },
+    {
+      "stage": "adam",
+      "step": 10500,
+      "total": 297.6231349095692,
+      "data": 167.06403209869418,
+      "pde": 0.12934616130623436,
+      "ic": 1.6261236175250663e-13,
+      "bc": 8.076405558863461e-34,
+      "reg": 1.2129415044779885
+    },
+    {
+      "stage": "adam",
+      "step": 12000,
+      "total": 278.0530802762476,
+      "data": 157.544188333603,
+      "pde": 0.11918694288346869,
+      "ic": 1.6261236175250663e-13,
+      "bc": 1.2631340699986453e-33,
+      "reg": 1.3219490590133036
+    },
+    {
+      "stage": "adam",
+      "step": 13500,
+      "total": 288.13705574225276,
+      "data": 149.473589639235,
+      "pde": 0.13727936702769797,
+      "ic": 1.6261236175250663e-13,
+      "bc": 1.7713670859356427e-33,
+      "reg": 1.3840990751571463
+    },
+    {
+      "stage": "adam",
+      "step": 15000,
+      "total": 290.6618954805441,
+      "data": 148.75076611353882,
+      "pde": 0.14043265785786394,
+      "ic": 1.6261236175250663e-13,
+      "bc": 1.0406475675121729e-33,
+      "reg": 1.4784715089787137
+    },
+    {
+      "stage": "lbfgs",
+      "total": 218.31493365906678,
+      "round": 1,
+      "requested_iterations": 750,
+      "iterations": 750,
+      "function_evaluations": 818,
+      "gradient_max_abs": 254.710293508336,
+      "temperature_gradient_norm": 823.5785431373961,
+      "coefficient_gradient_norm": 256.3226226019374,
+      "data": 114.98142628157308,
+      "pde": 0.10147272084198512,
+      "ic": 1.6261236175250663e-13,
+      "bc": 1.1438499759691364e-33,
+      "reg": 1.8607865353459907
+    }
+  ],
+  "physics_weight": 1000.0,
+  "condition_weight": 1000.0,
+  "alpha_selection": "fixed_cli",
+  "device": "cuda",
+  "device_name": "Tesla T4",
+  "state_model": "gaussian_ic_bc_locald",
+  "pde_sampler": "mixed",
+  "sampling_history": [],
+  "lbfgs_rounds": 1,
+  "optimizer_diagnostics": [
+    {
+      "round": 1,
+      "requested_iterations": 750,
+      "iterations": 750,
+      "function_evaluations": 818,
+      "gradient_max_abs": 254.710293508336,
+      "temperature_gradient_norm": 823.5785431373961,
+      "coefficient_gradient_norm": 256.3226226019374
+    }
+  ],
+  "warm_start_sha256": null,
+  "initial_condition_relative_L2": 2.4923852173792347e-07,
+  "initial_condition_rms": 2.8403072235707186e-08,
+  "adam_steps": 15000,
+  "lbfgs_steps": 750,
+  "method": "pinn",
+  "seed": 42,
+  "shared_setup_s": 1.0643802150002557,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 1.0,
+      "rms": 0.002859417950174264,
+      "rms_over_sigma": 2.406041732095375
+    }
+  ],
+  "parameter_count": 2241,
+  "dtype": "float64",
+  "coefficient_config": {
+    "width": 32,
+    "depth": 3,
+    "d_min": 0.001,
+    "d_max": 10.0
+  },
+  "chi2_red_solver": 5.789036816584512,
+  "rms_replay": 0.002859417950174264,
+  "rms_replay_relative_signal": 0.13608899286146584
+}

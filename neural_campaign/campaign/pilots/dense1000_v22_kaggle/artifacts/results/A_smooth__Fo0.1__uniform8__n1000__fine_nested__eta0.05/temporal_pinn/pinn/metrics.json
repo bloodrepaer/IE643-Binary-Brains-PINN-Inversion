@@ -1,0 +1,215 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.05",
+  "method": "pinn",
+  "variant": "dense1000_matched_temporal_v22",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0011884324,
+  "D_const": 0.2658031041258034,
+  "rms_const_over_sigma": 2.9325327530537377,
+  "rms_replay_over_sigma": 1.9235994332936137,
+  "rms_unet_over_sigma": 0.9368962988902189,
+  "wall_s": 3302.713684478,
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.953780395044446e-06,
+      "gradient_max_abs": 8.967687906722116e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 736
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4500806565883275e-06,
+      "gradient_max_abs": 2.533555323827292e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 688
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4035829864295492e-06,
+      "gradient_max_abs": 3.3847804710665473e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 749
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.356545806202788e-06,
+      "gradient_max_abs": 1.5257767428069945e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 716
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.340078740326771e-06,
+      "gradient_max_abs": 1.2203646289083456e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 697
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.325412354416919e-06,
+      "gradient_max_abs": 1.8646584988064149e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 702
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.310787096521076e-06,
+      "gradient_max_abs": 7.232040851778418e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 659
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.3042325926752659e-06,
+      "gradient_max_abs": 2.0338977332835704e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 684
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.2947410776063283e-06,
+      "gradient_max_abs": 3.054108954574679e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 693
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.2887762588673108e-06,
+      "gradient_max_abs": 9.00091973750691e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 684
+    }
+  ],
+  "history": [
+    {
+      "data": 1.4522274078013752e-06,
+      "pde": 5.000873425076895e-07,
+      "reg": 1.465644735381229e-09
+    },
+    {
+      "data": 1.3640219244860435e-06,
+      "pde": 8.444117240441668e-08,
+      "reg": 1.6175596978671374e-09
+    },
+    {
+      "data": 1.3422303813125304e-06,
+      "pde": 5.891992619001808e-08,
+      "reg": 2.4326789270006848e-09
+    },
+    {
+      "data": 1.3230849712420338e-06,
+      "pde": 3.05374239681778e-08,
+      "reg": 2.9234109925762395e-09
+    },
+    {
+      "data": 1.310629413867533e-06,
+      "pde": 2.585219303241503e-08,
+      "reg": 3.597133426823112e-09
+    },
+    {
+      "data": 1.2941279177145148e-06,
+      "pde": 2.7688944023297852e-08,
+      "reg": 3.5954926791061498e-09
+    },
+    {
+      "data": 1.2773378256184938e-06,
+      "pde": 2.9510342902730354e-08,
+      "reg": 3.938927999851766e-09
+    },
+    {
+      "data": 1.2688384999018582e-06,
+      "pde": 3.128653687426142e-08,
+      "reg": 4.107555899146294e-09
+    },
+    {
+      "data": 1.2561281734525559e-06,
+      "pde": 3.4073292123577095e-08,
+      "reg": 4.539612030195342e-09
+    },
+    {
+      "data": 1.249467426440486e-06,
+      "pde": 3.4582385174409145e-08,
+      "reg": 4.726447252415618e-09
+    }
+  ],
+  "final_parts": {
+    "data": 1.249467426440486e-06,
+    "pde": 3.4582385174409145e-08,
+    "reg": 4.726447252415618e-09
+  },
+  "objective": 1.2887762588673108e-06,
+  "function_evaluations": 8008,
+  "initial_coefficient_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+  "gamma": 3.558622338413813e-10,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.4923852173792347e-07,
+  "settings": {
+    "data": "data",
+    "key": "A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.05",
+    "out": "results/A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.05/temporal_pinn",
+    "method": "pinn",
+    "device": "cuda",
+    "budget": 4200.0,
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096
+  },
+  "parameter_count": 4514,
+  "arm": "temporal_pinn",
+  "n_sensors": 1000,
+  "n_readings": 8000,
+  "n_pde": 4096,
+  "time_step_tau": 0.01,
+  "optimizer": "ssb",
+  "time_integrator": "soft_backward_euler",
+  "interpretation": "SharedBEtime-step/dataset/coefficient/init/optimizer;softADstateversushardFDintrinsic;allcaps/partialsretained",
+  "common_cn_replay_sigma": 1.9235994332936137,
+  "common_be_replay_sigma": 2.005176655727149
+}

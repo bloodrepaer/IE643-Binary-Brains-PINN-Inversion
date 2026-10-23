@@ -1,0 +1,59 @@
+{
+  "smokes_not_results": true,
+  "coefficient_truth_used": false,
+  "manufactured_discrete_mode": "PASS",
+  "observation_remapping": "PASS",
+  "nonuniform_D_discrete_residual_max": 5.741934705483231e-16,
+  "field_gradient_errors": [
+    8.215783985140555e-08,
+    3.3123789652673785e-07
+  ],
+  "cases": [
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "gradient_errors": [
+        5.5854994507541326e-08,
+        3.818408766418113e-08
+      ],
+      "pipeline": "PASS",
+      "initial_sha": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b"
+    },
+    {
+      "key": "B_gaussian_bump__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "gradient_errors": [
+        7.773021422177741e-08,
+        3.41957315059377e-08
+      ],
+      "pipeline": "PASS",
+      "initial_sha": "f01d76aa33d18c9ffd367b0305f55ba6a1afb5185c4dc99f8120441aa4979a20"
+    },
+    {
+      "key": "D_layered__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "gradient_errors": [
+        1.1007896622051452e-08,
+        4.89805639533912e-09
+      ],
+      "pipeline": "PASS",
+      "initial_sha": "1925fd4712d5fb54c6fbf59bb486716c5d4d54daacd5d915c4c9d49a3736c27e"
+    },
+    {
+      "key": "E_grf__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "gradient_errors": [
+        1.0989050126195314e-07,
+        1.5091413376839163e-07
+      ],
+      "pipeline": "PASS",
+      "initial_sha": "53a50ddd6f562ad6eaa5a69d84b6cac609e8bd14b4cf33f8b02ca70db17869f9"
+    },
+    {
+      "key": "F_defects__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "gradient_errors": [
+        1.5447974496650172e-06,
+        1.033303089929115e-07
+      ],
+      "pipeline": "PASS",
+      "initial_sha": "625b85760844c31464836ce2d139439890fb80090d6a9175e1bae4ecc021f3cc"
+    }
+  ],
+  "complete": true
+}

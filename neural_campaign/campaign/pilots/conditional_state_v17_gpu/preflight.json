@@ -1,0 +1,84 @@
+{
+  "complete": true,
+  "uses_true_D": false,
+  "smoke_not_scientific_result": true,
+  "source_sha256": "8b5f851cfea7a9d633e7d33bb4197e7cb93d3e1face050ce6fc4f76cf44a3369",
+  "results": [
+    {
+      "arm": "ssb_pinn",
+      "state_gradient_directions": [
+        {
+          "relative_error": 1.1023590418220216e-10,
+          "finite_difference": -0.001577932745187513,
+          "automatic": -0.0015779327450135682
+        },
+        {
+          "relative_error": 1.143275640096995e-09,
+          "finite_difference": 0.0003846072228058661,
+          "automatic": 0.00038460722236615405
+        }
+      ],
+      "frozen_coefficient_sha256": "ee1631fc5cefdb6836cddd482d3290e8b481f29981a497dbae97b72cc0e33f06",
+      "coefficient_unchanged": true,
+      "full_count_pipeline_passed": true,
+      "wall_s": 27.82900000002701
+    },
+    {
+      "arm": "lbfgsb_pinn",
+      "state_gradient_directions": [
+        {
+          "relative_error": 3.0027752134181445e-12,
+          "finite_difference": 7.472726933415791e-05,
+          "automatic": 7.472726933393352e-05
+        },
+        {
+          "relative_error": 4.940076117388829e-12,
+          "finite_difference": -4.9057197671626546e-05,
+          "automatic": -4.905719767186889e-05
+        }
+      ],
+      "frozen_coefficient_sha256": "226bd3a1a25c16f6cd23f183f8b7938ecab0d707a9cb64a369620291033ac0dc",
+      "coefficient_unchanged": true,
+      "full_count_pipeline_passed": true,
+      "wall_s": 21.98399999999674
+    },
+    {
+      "arm": "ssb_adjoint",
+      "state_gradient_directions": [
+        {
+          "relative_error": 1.010855490511917e-07,
+          "finite_difference": 0.01493858903245382,
+          "automatic": 0.014938590542529447
+        },
+        {
+          "relative_error": 1.2129499838458596e-07,
+          "finite_difference": 0.0346039641385687,
+          "automatic": 0.034603959941280925
+        }
+      ],
+      "frozen_coefficient_sha256": "e8fe46b8bcc0087085fd39958417ce35fcec317d48df534727e9befcf43ec23f",
+      "coefficient_unchanged": true,
+      "full_count_pipeline_passed": true,
+      "wall_s": 23.79700000002049
+    },
+    {
+      "arm": "lbfgsb_adjoint",
+      "state_gradient_directions": [
+        {
+          "relative_error": 1.1855665961355119e-09,
+          "finite_difference": -0.006710387995267908,
+          "automatic": -0.00671038800322352
+        },
+        {
+          "relative_error": 1.3376003718805147e-09,
+          "finite_difference": 0.0009670552206242355,
+          "automatic": 0.0009670552193307021
+        }
+      ],
+      "frozen_coefficient_sha256": "7e7cc3086c8dd2c053846ecb195aa1a116c5f15cee06c57f811f3896e900a8c3",
+      "coefficient_unchanged": true,
+      "full_count_pipeline_passed": true,
+      "wall_s": 23.25
+    }
+  ]
+}

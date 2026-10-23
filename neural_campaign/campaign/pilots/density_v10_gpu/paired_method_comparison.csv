@@ -1,0 +1,7 @@
+key,n_sensors,method,coefficient_relative_L2,replay_sigma,sensor_fit_sigma
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,3969,pinn_v10,0.3252023870747152,3.4065547033722057,1.155645767070022
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,3969,adjoint_nn,0.0904811521585205,1.0321043426874597,
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,3969,grid,0.0588929592585352,0.9970292553860418,
+A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,50,pinn_v10,0.3050091422924276,2.406041732095375,0.758226306196155
+A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,50,adjoint_nn,0.1629872257106568,0.990668444798854,
+A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,50,grid,0.1333453847887103,0.9810581617417234,

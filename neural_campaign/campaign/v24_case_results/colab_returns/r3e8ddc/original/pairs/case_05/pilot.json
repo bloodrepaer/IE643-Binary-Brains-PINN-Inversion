@@ -1,0 +1,10 @@
+{
+  "cases": [
+    "A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05"
+  ],
+  "variants": [
+    "noise_density_temporal_v24_1000_7500"
+  ],
+  "data_collection": "/content/ie643_v24_colab_work/data",
+  "initial_coefficient_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b"
+}

@@ -1,0 +1,30 @@
+{
+  "data": "C:\\Users\\gunem\\mihir_projects\\IE643courseproject\\v2\\datasets_v2_rk4_zero",
+  "keys": [
+    "D_layered__Fo0.1__uniform8__n5__random__eta0.01"
+  ],
+  "out": "C:\\Users\\gunem\\mihir_projects\\IE643courseproject\\v2\\campaign\\results\\datasets_v2_rk4_zero\\95ad177cc29d5111",
+  "methods": [
+    "adjoint_nn"
+  ],
+  "width": 32,
+  "depth": 3,
+  "seed": 42,
+  "threads": 1,
+  "device": "cpu",
+  "physics_mode": "matched",
+  "data_batch": 4096,
+  "control": 16,
+  "n_steps": null,
+  "reg": "tikhonov",
+  "maxiter": 150,
+  "alphas": null,
+  "pinn_alpha": 1.0,
+  "adam_steps": 15000,
+  "lbfgs_steps": 750,
+  "n_collocation": 2048,
+  "n_boundary": 256,
+  "lr": 0.001,
+  "physics_weight": 1000.0,
+  "condition_weight": 1000.0
+}

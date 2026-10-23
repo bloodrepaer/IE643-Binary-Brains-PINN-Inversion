@@ -1,0 +1,97 @@
+{
+  "version": 24,
+  "status": "all_12_primary_cells_complete_evaluated",
+  "authorized_utc": "2026-10-21T17:39:17.000721+00:00",
+  "densities": [
+    1000,
+    3000,
+    5000,
+    7500
+  ],
+  "noise_fractions": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "field": "A_smooth",
+  "Fo": 0.1,
+  "n_times": 8,
+  "optimization_seed": 42,
+  "inherited_cells": [
+    {
+      "n_sensors": 1000,
+      "eta": 0.01,
+      "pilot": "noise_density_v23",
+      "case": "case_01",
+      "status": "complete_evaluated"
+    },
+    {
+      "n_sensors": 1000,
+      "eta": 0.05,
+      "pilot": "dense1000_v22_kaggle",
+      "status": "complete_evaluated"
+    },
+    {
+      "n_sensors": 1000,
+      "eta": 0.1,
+      "pilot": "noise_density_v23",
+      "case": "case_02",
+      "status": "complete_evaluated"
+    }
+  ],
+  "fresh_pairs": 9,
+  "fresh_fits": 18,
+  "max_parallel_pairs_global": 2,
+  "other_experiments": "v20held;v23cases03..07superseded;10000existingresultretainedexternalreference",
+  "phase1": "Density1000/3000/5000/7500at5%noise",
+  "phase2": "Human explicitly authorizes noise testing NOW alongside density completion; prior density-review wait superseded",
+  "dispatch_order": [
+    "case_02",
+    "case_05",
+    "case_08",
+    "case_01",
+    "case_04",
+    "case_07",
+    "case_03",
+    "case_06",
+    "case_09"
+  ],
+  "execution_owner": "user_case05_agent_other_pending",
+  "automatic_kaggle_dispatch": false,
+  "notebook": "colab/IE643_GPU_Density_Sweep.ipynb",
+  "completed_fresh_cases": [
+    "case_01",
+    "case_02",
+    "case_03",
+    "case_04",
+    "case_05",
+    "case_06",
+    "case_07",
+    "case_08",
+    "case_09"
+  ],
+  "next_density_case": "case_05",
+  "agent_authorized_cases": [
+    "case_08",
+    "case_01",
+    "case_04",
+    "case_07",
+    "case_03",
+    "case_06",
+    "case_09"
+  ],
+  "user_colab_current_case": "case_05",
+  "noise_dispatch_order": [
+    "case_01",
+    "case_04",
+    "case_07",
+    "case_03",
+    "case_06",
+    "case_09"
+  ],
+  "active_agent_cases": [],
+  "next_queued_agent_case": null,
+  "agent_dispatch_queue_exhausted": true,
+  "agent_scope_complete": true,
+  "coverage_complete": true
+}

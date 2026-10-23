@@ -1,0 +1,7 @@
+{
+  "remote_both_initial_hash": "3a0627b543b29505783a818a8eb41e0af4a8b4e37b5359aa39b98f3093d04ec5",
+  "local_preflight_hash": "b88e254e048252c2160b134b6288cb2de910423379501d7509b08fbad85fd741",
+  "local_reconstructed_using_remote_sensor_fitted_constant_hash": "02b62a58a15f997aa4bb945d40aa5bc4b5702e2332e19bfc17cc4dc279771e7a",
+  "remote_hash_reproduced": false,
+  "note": "Hash agreement across retained arms was independently checked. Cross-platform sensor-fitted constant may differ at roundoff; no change to training or selection."
+}

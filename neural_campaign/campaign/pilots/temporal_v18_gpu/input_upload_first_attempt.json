@@ -1,0 +1,6 @@
+{
+  "time": "2026-10-20T12:50:10.356857+00:00",
+  "result": "local Kaggle CLI upload-cache path error before first file upload; dataset not created",
+  "cause": "Relative dataset path was inserted into upload-cache filename",
+  "repair": "Use resolved absolute dataset path, no data/scientific source change"
+}

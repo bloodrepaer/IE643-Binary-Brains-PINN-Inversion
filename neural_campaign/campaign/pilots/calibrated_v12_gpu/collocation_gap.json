@@ -1,0 +1,132 @@
+{
+  "updated": "2026-10-19T18:34:36.269122+00:00",
+  "uses_true_D": false,
+  "validation_seed": 20261023,
+  "sampling": "half uniform time, half log time; uniform space",
+  "caveat": "Compare ratios only with the declared training measure. Adaptive pilots change that measure; v12 uses the same half-uniform/half-log-time measure as this independent probe. Finite-sample ratios do not establish causation or convergence.",
+  "results": {
+    "pilot": "calibrated_v12_gpu",
+    "key": "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+    "heldout_points": 16384,
+    "heldout_rms": 0.009355834791016369,
+    "heldout_max": 0.4330780737699685,
+    "top_one_percent_energy": 0.8925001638949746,
+    "replay_sigma": 1.7642777911615706,
+    "sensor_fit_sigma": 1.6491566894427008,
+    "training_points": 4096,
+    "training_rms": 0.0007360745788894586,
+    "heldout_to_training_rms": 12.710444103547012
+  },
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.0161021937753492e-05,
+      "gradient_max_abs": 5.2745196191511995e-05,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 777
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 9.255033345436506e-06,
+      "gradient_max_abs": 0.00033363179893596006,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 748
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 7.379109889066133e-06,
+      "gradient_max_abs": 0.0003144168473606857,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 731
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 6.86111338141381e-06,
+      "gradient_max_abs": 0.00015436318405981847,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 733
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 6.276693350262959e-06,
+      "gradient_max_abs": 0.0001673138242657057,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 734
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.846044129100918e-06,
+      "gradient_max_abs": 0.0003074320401460625,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 745
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.4638096233228635e-06,
+      "gradient_max_abs": 6.179964249464896e-05,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 737
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.16524205346427e-06,
+      "gradient_max_abs": 0.00014030110542976215,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 744
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 4.805932390433646e-06,
+      "gradient_max_abs": 4.7745052630017014e-05,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 736
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 4.461086933805003e-06,
+      "gradient_max_abs": 0.00010988294348504503,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 746
+    }
+  ]
+}

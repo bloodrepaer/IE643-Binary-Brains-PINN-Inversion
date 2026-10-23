@@ -1,0 +1,6 @@
+{
+  "source": "audit_resolution_stationarity.py",
+  "sha256": "fc83486b0c5c32dd7b25eb4fc1dd3f7910f53da4d35a24433c2aee20f500c696",
+  "uses_true_D": false,
+  "refitting": false
+}

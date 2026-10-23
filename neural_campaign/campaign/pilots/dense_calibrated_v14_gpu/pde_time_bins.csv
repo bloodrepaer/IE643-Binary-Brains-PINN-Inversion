@@ -1,0 +1,9 @@
+key,artifact,variant,tau_low,tau_high,pde_rms,pde_max_abs
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\n3969\pinn\metrics.json,dense_calibrated_v14,0.0,0.001,0.0007309300140193769,0.004090449968528809
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\n3969\pinn\metrics.json,dense_calibrated_v14,0.001,0.01,0.0014258106825563606,0.012662994988276055
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\n3969\pinn\metrics.json,dense_calibrated_v14,0.01,0.1,0.03264887911053974,0.6743385193300873
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\n3969\pinn\metrics.json,dense_calibrated_v14,0.1,1.0,0.009010611958187045,0.26194805130291926
+A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05,results\n400\pinn\metrics.json,dense_calibrated_v14,0.0,0.001,0.0006741881673327892,0.003770236943864802
+A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05,results\n400\pinn\metrics.json,dense_calibrated_v14,0.001,0.01,0.0010925431917443052,0.014477885625448633
+A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05,results\n400\pinn\metrics.json,dense_calibrated_v14,0.01,0.1,0.03631864854885797,0.9419729955039944
+A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05,results\n400\pinn\metrics.json,dense_calibrated_v14,0.1,1.0,0.0064422893564322695,0.22034208423598797

@@ -1,0 +1,24 @@
+{
+  "pid": 31708,
+  "started_utc": "2026-10-20T13:00:16.778509+00:00",
+  "updated": "2026-10-20T18:21:19.030860+00:00",
+  "status": "running",
+  "active": [
+    "D_layered__Fo0.1__uniform8__n3969__nodes_nested__eta0.05"
+  ],
+  "finished": [
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "status": "exited",
+      "returncode": 0,
+      "finished": "2026-10-20T14:01:44.090537+00:00"
+    },
+    {
+      "key": "B_gaussian_bump__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+      "status": "exited",
+      "returncode": 0,
+      "finished": "2026-10-20T18:21:18.994563+00:00"
+    }
+  ],
+  "budget_seconds": 21600
+}

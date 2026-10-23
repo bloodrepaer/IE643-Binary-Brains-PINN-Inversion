@@ -1,0 +1,10 @@
+{
+  "all_local_source_hashes_match": true,
+  "all_supplied_input_bytes_match": true,
+  "research_pairs": [
+    "case_02"
+  ],
+  "smokes_excluded": true,
+  "local_data_path_only_change": true,
+  "initial_local_path_lookup_failure": "Colab runner lives under colab/ locally; corrected without source changes"
+}

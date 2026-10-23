@@ -1,0 +1,7 @@
+{
+  "data_dir": "/kaggle/input/pinn-v2-dataset",
+  "files": [],
+  "selected_dataset": "synthetic_tier_B_fallback",
+  "pretrained_ckpt": null,
+  "array_shapes": {}
+}

@@ -1,0 +1,8 @@
+{
+  "reviewed": "2026-10-21T09:55:31.161265+00:00",
+  "returncode": 1073807364,
+  "fit_checkpoint_present": false,
+  "last_completed_logged_round": 8,
+  "cause": "unverified process exit; not established numerical failure",
+  "action": "Preserve logs and empty prepared output path; no automatic retry; missing arm not method loss"
+}

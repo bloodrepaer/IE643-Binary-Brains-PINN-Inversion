@@ -1,0 +1,15 @@
+{
+  "id": "mihirgune123/ie643-dense1000-be-adjoint",
+  "title": "IE643 dense1000 BE adjoint",
+  "code_file": "dense1000_kernel.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "mihirgune123/ie643-dense1000-matched-data"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

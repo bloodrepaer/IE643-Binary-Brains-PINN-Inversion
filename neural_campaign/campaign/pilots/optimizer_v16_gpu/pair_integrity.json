@@ -1,0 +1,27 @@
+{
+  "results": [
+    {
+      "arm": "lbfgsb_adjoint",
+      "checkpoint_difference": 1.887379141862766e-15,
+      "replay_sigma": 0.9949339530354531
+    },
+    {
+      "arm": "lbfgsb_pinn",
+      "checkpoint_difference": 4.996003610813204e-16,
+      "replay_sigma": 2.944905074865966
+    },
+    {
+      "arm": "ssb_adjoint",
+      "checkpoint_difference": 1.2878587085651816e-14,
+      "replay_sigma": 0.9806585987534586
+    },
+    {
+      "arm": "ssb_pinn",
+      "checkpoint_difference": 1.7763568394002505e-15,
+      "replay_sigma": 2.036014497620443
+    }
+  ],
+  "coefficient_truth_used": false,
+  "shared_initialization_objective_verified": true,
+  "coverage_complete": true
+}

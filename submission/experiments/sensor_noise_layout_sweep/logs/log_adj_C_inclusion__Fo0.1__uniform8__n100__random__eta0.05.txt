@@ -1,0 +1,9 @@
+[1/1] C_inclusion__Fo0.1__uniform8__n100__random__eta0.05  (800 readings, sigma=1.59e-03)
+    alpha=8.000e+02  RMS/sigma=  1.348  iters=86
+    alpha=2.530e+02  RMS/sigma=  1.077  iters=78
+    alpha=8.000e+01  RMS/sigma=  1.002  iters=80
+    alpha=2.530e+01  RMS/sigma=  0.959  iters=74
+    -> RMS_replay/σ=0.959  flag=reached_sigma  53s, 352 PDE solves
+       relL2(D)=0.247  (constant guess 0.751)  high/low sensitivity 0.257/0.246
+
+Results in /home/claude/sweep/adj/  (summary.csv, one folder per dataset)

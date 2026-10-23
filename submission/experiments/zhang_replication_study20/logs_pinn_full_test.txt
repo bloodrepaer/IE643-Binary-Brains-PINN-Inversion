@@ -1,0 +1,1 @@
+pinn_full_test: eps_D=0.9376 rmse_logD=2.6190 eps_u=2.212e+00 rms/sig=33.525 nit=4000 wall=469.6s rss=0.83GB

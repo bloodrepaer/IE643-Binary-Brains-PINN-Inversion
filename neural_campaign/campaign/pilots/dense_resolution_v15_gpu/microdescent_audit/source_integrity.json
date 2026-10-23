@@ -1,0 +1,7 @@
+{
+  "source": "audit_dense_microdescent.py",
+  "sha256": "893492a7bbda897c51be2c2166909686d0d08c591ce54e7711925683c6f14ec3",
+  "uses_true_D": false,
+  "optimizer_steps_accepted": 0,
+  "checkpoint_selected": false
+}

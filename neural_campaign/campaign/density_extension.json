@@ -1,0 +1,35 @@
+{
+  "collection": "datasets_v2_density_extended",
+  "configurations": 180,
+  "sensor_counts": [
+    5,
+    20,
+    50,
+    100,
+    200,
+    400,
+    800,
+    1600,
+    3200,
+    3969
+  ],
+  "etas": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "tiers": [
+    "A_smooth",
+    "B_gaussian_bump",
+    "C_inclusion",
+    "D_layered",
+    "E_grf",
+    "F_defects"
+  ],
+  "added_jobs": 540,
+  "total_jobs": 1510,
+  "added": "2026-10-18T20:17:55.547417+00:00",
+  "note": "Existing workers retain their loaded queue; new jobs are available on their next restart. Completed results were retained.",
+  "private_kaggle_dataset_version": "density-expanded upload completed and processing ready",
+  "expanded_private_upload_approval": "Explicit human answer: Approve the expanded private upload"
+}

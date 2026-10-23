@@ -1,0 +1,18 @@
+{
+  "updated": "2026-10-19T02:05:50.822700+00:00",
+  "uses_true_D": false,
+  "validation_seed": 20261023,
+  "sampling": "half uniform time, half log time; uniform space",
+  "caveat": "Adaptive training points have a different sampling measure; RMS ratios are descriptive, not unbiased generalization estimates.",
+  "results": {
+    "pilot": "ic_bc_v3_gpu",
+    "key": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+    "heldout_points": 16384,
+    "heldout_rms": 0.03508015175635783,
+    "heldout_max": 0.9910777955311608,
+    "top_one_percent_energy": 0.5280741908884837,
+    "replay_sigma": 2.807432299447456,
+    "sensor_fit_sigma": 0.833625651711674
+  },
+  "optimizer_diagnostics": []
+}

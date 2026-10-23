@@ -1,0 +1,218 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.01",
+  "method": "pinn",
+  "variant": "noise_density_temporal_v24_1000_7500",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.00023768648,
+  "D_const": 0.2658031041258034,
+  "rms_const_over_sigma": 13.628276881200698,
+  "rms_replay_over_sigma": 2.834845381819202,
+  "rms_unet_over_sigma": 0.994698574791337,
+  "wall_s": 6057.776804687001,
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 6.667923909747357e-07,
+      "gradient_max_abs": 9.968677327622624e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 705
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.611507842031572e-07,
+      "gradient_max_abs": 3.7641900918183084e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 717
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 9.368965423706488e-08,
+      "gradient_max_abs": 3.411978201607565e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 731
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 7.393389443231261e-08,
+      "gradient_max_abs": 2.696443868951143e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 696
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 6.424411653820534e-08,
+      "gradient_max_abs": 3.566136605784802e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 680
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 6.054450489799056e-08,
+      "gradient_max_abs": 7.834676257576006e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 681
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.911871716675983e-08,
+      "gradient_max_abs": 1.0953507226450195e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 761
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.8862072927917934e-08,
+      "gradient_max_abs": 3.1659734003188333e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 767
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.7631062458098183e-08,
+      "gradient_max_abs": 3.0917095860928805e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 679
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 5.7402820212409145e-08,
+      "gradient_max_abs": 4.0961700837202104e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 658
+    }
+  ],
+  "history": [
+    {
+      "data": 1.4577273660831308e-07,
+      "pde": 5.210073310211544e-07,
+      "reg": 1.2323345268182882e-11
+    },
+    {
+      "data": 7.842242965168818e-08,
+      "pde": 8.271508363694484e-08,
+      "reg": 1.3270914524168178e-11
+    },
+    {
+      "data": 6.639876244274089e-08,
+      "pde": 2.7269235579163565e-08,
+      "reg": 2.165621516042617e-11
+    },
+    {
+      "data": 6.154851908206436e-08,
+      "pde": 1.2361188282737016e-08,
+      "reg": 2.4187067511243675e-11
+    },
+    {
+      "data": 5.875440199584602e-08,
+      "pde": 5.462956978151525e-09,
+      "reg": 2.675756420779672e-11
+    },
+    {
+      "data": 5.7419006011054754e-08,
+      "pde": 3.094747071045882e-09,
+      "reg": 3.075181588991973e-11
+    },
+    {
+      "data": 5.704764297700387e-08,
+      "pde": 2.0404825233128873e-09,
+      "reg": 3.0591666443077725e-11
+    },
+    {
+      "data": 5.685295308176643e-08,
+      "pde": 1.9777217025237233e-09,
+      "reg": 3.139814362778353e-11
+    },
+    {
+      "data": 5.6466449149298224e-08,
+      "pde": 1.132435337501006e-09,
+      "reg": 3.2177971298952726e-11
+    },
+    {
+      "data": 5.633585301659891e-08,
+      "pde": 1.0346535192720162e-09,
+      "reg": 3.23136765382193e-11
+    }
+  ],
+  "final_parts": {
+    "data": 5.633585301659891e-08,
+    "pde": 1.0346535192720162e-09,
+    "reg": 3.23136765382193e-11
+  },
+  "objective": 5.7402820212409145e-08,
+  "function_evaluations": 8075,
+  "initial_coefficient_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+  "gamma": 2.84689787073105e-12,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.492385217377766e-07,
+  "settings": {
+    "data": "data",
+    "key": "A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.01",
+    "out": "results/A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.01/temporal_pinn",
+    "method": "pinn",
+    "device": "cpu",
+    "budget": 12600.0,
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096
+  },
+  "parameter_count": 4514,
+  "arm": "temporal_pinn",
+  "n_sensors": 5000,
+  "n_readings": 40000,
+  "eta": 0.01,
+  "n_pde": 4096,
+  "time_step_tau": 0.01,
+  "optimizer": "ssb",
+  "time_integrator": "soft_backward_euler",
+  "sensor_fit_rms": 0.00023642640290316965,
+  "common_cn_replay_sigma": 2.834845381819202,
+  "common_cn_replay_rms": 0.0006738044201488622,
+  "common_be_replay_sigma": 1.7968019860800057,
+  "common_be_replay_rms": 0.00042707553932836556
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "arm": "ssb_pinn",
+    "initial_sha": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+    "gamma": 8.966042676779573e-11,
+    "n_pde": 16384,
+    "status": "complete"
+  },
+  {
+    "arm": "lbfgsb_pinn",
+    "initial_sha": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+    "gamma": 8.966042676779573e-11,
+    "n_pde": 16384,
+    "status": "complete"
+  },
+  {
+    "arm": "ssb_adjoint",
+    "initial_sha": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+    "gamma": 8.966042676779573e-11,
+    "n_pde": 4096,
+    "status": "complete"
+  },
+  {
+    "arm": "lbfgsb_adjoint",
+    "initial_sha": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+    "gamma": 8.966042676779573e-11,
+    "n_pde": 4096,
+    "status": "complete"
+  }
+]

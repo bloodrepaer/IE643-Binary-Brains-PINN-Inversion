@@ -1,0 +1,213 @@
+{
+  "key": "F_defects__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+  "method": "pinn",
+  "variant": "temporal_density_v18",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0013268946,
+  "D_const": 0.24297680435863905,
+  "rms_const_over_sigma": 1.4768488660334627,
+  "rms_replay_over_sigma": 1.4011873338295266,
+  "rms_unet_over_sigma": 0.9815488345530289,
+  "wall_s": 3013.3451217449983,
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.9033862695065663e-06,
+      "gradient_max_abs": 4.9134485062435235e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 742
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.8202808231359591e-06,
+      "gradient_max_abs": 4.23814846619674e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 675
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.7893844716878328e-06,
+      "gradient_max_abs": 9.671686460339902e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 752
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.75872588028683e-06,
+      "gradient_max_abs": 5.785950677929434e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 749
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.7429426634032433e-06,
+      "gradient_max_abs": 9.627918294300092e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 703
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.7367815931823171e-06,
+      "gradient_max_abs": 8.856362914417284e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 701
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.7306729446508208e-06,
+      "gradient_max_abs": 1.2410712055267737e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 673
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.7276521810007488e-06,
+      "gradient_max_abs": 8.011684314000515e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 658
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.7232549669050047e-06,
+      "gradient_max_abs": 5.000486613221807e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 642
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.7221639134694742e-06,
+      "gradient_max_abs": 1.1360591905521346e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 614
+    }
+  ],
+  "history": [
+    {
+      "data": 1.8436989690572361e-06,
+      "pde": 5.962774825245907e-08,
+      "reg": 5.955219687098406e-11
+    },
+    {
+      "data": 1.7682701483036933e-06,
+      "pde": 5.187663942625747e-08,
+      "reg": 1.3403540600850717e-10
+    },
+    {
+      "data": 1.7502673771490263e-06,
+      "pde": 3.8880461726565334e-08,
+      "reg": 2.366328122412077e-10
+    },
+    {
+      "data": 1.7378850807059516e-06,
+      "pde": 2.0464535478105304e-08,
+      "reg": 3.7626410277305933e-10
+    },
+    {
+      "data": 1.7278037372919101e-06,
+      "pde": 1.4777735462110102e-08,
+      "reg": 3.6119064922303915e-10
+    },
+    {
+      "data": 1.723902478244864e-06,
+      "pde": 1.2416238120621512e-08,
+      "reg": 4.628768168317969e-10
+    },
+    {
+      "data": 1.7180910496027638e-06,
+      "pde": 1.2079073304508899e-08,
+      "reg": 5.0282174354825e-10
+    },
+    {
+      "data": 1.7147145829542214e-06,
+      "pde": 1.2390275852855123e-08,
+      "reg": 5.473221936722904e-10
+    },
+    {
+      "data": 1.710471762396011e-06,
+      "pde": 1.219625064767943e-08,
+      "reg": 5.869538613142239e-10
+    },
+    {
+      "data": 1.709580682963226e-06,
+      "pde": 1.2029001622991944e-08,
+      "reg": 5.54228883256085e-10
+    }
+  ],
+  "final_parts": {
+    "data": 1.709580682963226e-06,
+    "pde": 1.2029001622991944e-08,
+    "reg": 5.54228883256085e-10
+  },
+  "objective": 1.7221639134694742e-06,
+  "function_evaluations": 7909,
+  "initial_coefficient_sha256": "625b85760844c31464836ce2d139439890fb80090d6a9175e1bae4ecc021f3cc",
+  "gamma": 1.1176985519444094e-10,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.4923852173792347e-07,
+  "settings": {
+    "data": "data",
+    "key": "F_defects__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "out": "results/F_defects__Fo0.1__uniform8__n3969__nodes_nested__eta0.05/scaled_pde_pinn",
+    "method": "pinn",
+    "device": "cuda",
+    "budget": 3600.0,
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096
+  },
+  "parameter_count": 4514,
+  "arm": "scaled_pde_pinn",
+  "n_sensors": 3969,
+  "n_pde": 4096,
+  "optimizer": "ssb",
+  "time_step_tau": 0.01,
+  "physics_measure": "uniform tau0 in [0,0.99], uniform space",
+  "physics_loss": "h_squared_continuous_residual",
+  "interpretation": "Adapted temporal-consistency loss test, not a full reproduction of Thakur architecture/training. All outcomes retained; capped/partial fits are not converged optima or method losses."
+}

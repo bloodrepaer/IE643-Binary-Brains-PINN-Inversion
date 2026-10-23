@@ -1,0 +1,10 @@
+[
+  {
+    "arm": "control",
+    "status": "complete"
+  },
+  {
+    "arm": "augmented",
+    "status": "complete"
+  }
+]

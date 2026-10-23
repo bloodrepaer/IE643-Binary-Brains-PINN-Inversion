@@ -1,0 +1,133 @@
+{
+  "key": "D_layered__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+  "method": "adjoint_nn",
+  "variant": "temporal_density_v18",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "budget_timeout",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0019378989,
+  "D_const": 0.220212117200091,
+  "rms_const_over_sigma": 7.044399857342858,
+  "rms_replay_over_sigma": 0.9842303392851086,
+  "rms_unet_over_sigma": 0.9842303392851086,
+  "wall_s": 2278.5,
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 3.749436219523348e-06,
+      "gradient_max_abs": 1.2105105983421805e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 782
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 3.732818527800308e-06,
+      "gradient_max_abs": 1.5391320855862302e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 761
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 3.714125254144754e-06,
+      "gradient_max_abs": 1.5036645021161218e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 743
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 3.703618281923624e-06,
+      "gradient_max_abs": 5.1773155165320704e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 716
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 3.6972638086375996e-06,
+      "gradient_max_abs": 6.656663680516336e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 671
+    }
+  ],
+  "history": [
+    {
+      "data": 3.735169945587589e-06,
+      "pde": 0.0,
+      "reg": 1.4266273935759122e-08
+    },
+    {
+      "data": 3.7152421293443425e-06,
+      "pde": 0.0,
+      "reg": 1.7576398455965633e-08
+    },
+    {
+      "data": 3.6903425132695877e-06,
+      "pde": 0.0,
+      "reg": 2.3782740875166394e-08
+    },
+    {
+      "data": 3.6753504754883937e-06,
+      "pde": 0.0,
+      "reg": 2.8267806435230416e-08
+    },
+    {
+      "data": 3.666474374431664e-06,
+      "pde": 0.0,
+      "reg": 3.0789434205935505e-08
+    }
+  ],
+  "final_parts": {
+    "data": 3.666474374431664e-06,
+    "pde": 0.0,
+    "reg": 3.0789434205935505e-08
+  },
+  "objective": 3.6972638086375996e-06,
+  "function_evaluations": 5276,
+  "initial_coefficient_sha256": "1925fd4712d5fb54c6fbf59bb486716c5d4d54daacd5d915c4c9d49a3736c27e",
+  "gamma": 2.3840429067992655e-10,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.492385217377766e-07,
+  "settings": {
+    "data": "C:\\Users\\gunem\\mihir_projects\\IE643courseproject\\v2\\campaign\\pilots\\temporal_v18_gpu\\supplied_data",
+    "key": "D_layered__Fo0.1__uniform8__n3969__nodes_nested__eta0.05",
+    "out": "C:\\Users\\gunem\\mihir_projects\\IE643courseproject\\v2\\campaign\\pilots\\temporal_v18_gpu\\local_results\\D_layered__Fo0.1__uniform8__n3969__nodes_nested__eta0.05\\adjoint_nn",
+    "method": "adjoint_nn",
+    "device": "cpu",
+    "budget": 2277.75,
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096
+  },
+  "parameter_count": 2241,
+  "arm": "adjoint_nn",
+  "n_sensors": 3969,
+  "n_pde": 4096,
+  "optimizer": "ssb",
+  "time_step_tau": 0.01,
+  "physics_measure": "uniform tau0 in [0,0.99], uniform space",
+  "physics_loss": "hard_discrete_state",
+  "interpretation": "Adapted temporal-consistency loss test, not a full reproduction of Thakur architecture/training. All outcomes retained; capped/partial fits are not converged optima or method losses."
+}

@@ -1,0 +1,15 @@
+{
+  "id": "mihirgune123/ie643-zhang-transfer-pilot",
+  "title": "IE643 Zhang transfer pilot",
+  "code_file": "zhang_transfer_kernel.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "dataset_sources": [
+    "mihirgune123/ie643-zhang-transfer-data"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

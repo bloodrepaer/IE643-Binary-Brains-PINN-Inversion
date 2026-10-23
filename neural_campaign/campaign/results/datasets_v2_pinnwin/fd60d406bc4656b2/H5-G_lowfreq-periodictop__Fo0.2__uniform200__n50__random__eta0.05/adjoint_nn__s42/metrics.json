@@ -1,0 +1,79 @@
+{
+  "key": "H5-G_lowfreq-periodictop__Fo0.2__uniform200__n50__random__eta0.05",
+  "sigma": 0.0041401599,
+  "n_readings": 10000,
+  "rms_replay_over_sigma": 1.0226129134371333,
+  "alpha": 3162.2776601683795,
+  "flag": "floor_above_sigma",
+  "D_const": 0.24170997681832854,
+  "rms_const_over_sigma": 1.4089755909172237,
+  "n_evals": 870,
+  "wall_s": 389.464682299993,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.0629287257439609,
+  "rmse_logD": 0.06825777961211331,
+  "rel_L2_D_high_sensitivity": 0.025869131496468408,
+  "rel_L2_D_low_sensitivity": 0.07980646447727899,
+  "rel_L2_D_constant_guess": 0.18787712826921615,
+  "rms_vs_clean_over_sigma": 0.20088460672968017,
+  "alpha_selection": "discrepancy_path",
+  "method": "adjoint_nn",
+  "seed": 42,
+  "shared_setup_s": 1.2118105000117794,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 10000.0,
+      "rms": 0.004374479089017088,
+      "rms_over_sigma": 1.05659665198368,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 3162.2776601683795,
+      "rms": 0.00423378097743459,
+      "rms_over_sigma": 1.0226129134371333,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 1000.0,
+      "rms": 0.004190855205706285,
+      "rms_over_sigma": 1.012244769992165,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 316.2277660168379,
+      "rms": 0.004177790779258714,
+      "rms_over_sigma": 1.0090892333068378,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 100.0,
+      "rms": 0.004173828711361858,
+      "rms_over_sigma": 1.0081322490374969,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    }
+  ],
+  "parameter_count": 2241,
+  "dtype": "float64",
+  "coefficient_config": {
+    "width": 32,
+    "depth": 3,
+    "d_min": 0.001,
+    "d_max": 10.0
+  },
+  "chi2_red_solver": 1.045737170728382,
+  "rms_replay": 0.00423378097743459,
+  "rms_replay_relative_signal": 0.05164460828095921
+}

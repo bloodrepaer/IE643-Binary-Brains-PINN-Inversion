@@ -1,0 +1,21 @@
+{
+  "archive_sha256": "743cc3787262dd38eba88b800a781718a9441efb61d0b33144e71d933a85ca8c",
+  "crc_pass": true,
+  "path_symlink_conflict_checks": true,
+  "entries": [
+    "pde16384.log",
+    "adjoint_control.log",
+    "pde4096_control.log",
+    "environment.json",
+    "job_status.json",
+    "results/pde16384/pinn/D_hat.npz",
+    "results/pde16384/pinn/model.pt",
+    "results/pde16384/pinn/metrics.json",
+    "results/pde4096_control/pinn/D_hat.npz",
+    "results/pde4096_control/pinn/model.pt",
+    "results/pde4096_control/pinn/metrics.json",
+    "results/adjoint_control/adjoint_nn/D_hat.npz",
+    "results/adjoint_control/adjoint_nn/model.pt",
+    "results/adjoint_control/adjoint_nn/metrics.json"
+  ]
+}

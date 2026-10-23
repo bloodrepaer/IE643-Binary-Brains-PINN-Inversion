@@ -1,0 +1,13 @@
+{
+  "uses_true_D": false,
+  "identical_GPU_adam_histories": true,
+  "same_fixed_coefficient_reference": true,
+  "v7_function_evaluations": 819,
+  "v8_function_evaluations": 819,
+  "v7_seconds": 1549.1787987769999,
+  "v8_seconds": 1586.8149162470002,
+  "heldout_pde_reduction_percent": 34.81510991554845,
+  "state_CN_sigma_v7": 0.7229436440372587,
+  "state_CN_sigma_v8": 0.773712948673965,
+  "interpretation": "Refreshed samples and optimizer history improve residual generalization but not this sensor-state metric. No valid inverse migration established."
+}

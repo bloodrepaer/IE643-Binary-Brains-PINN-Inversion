@@ -1,0 +1,73 @@
+{
+  "updated": "2026-10-21T23:14:50.597802+00:00",
+  "validation_seed": 20261019,
+  "selection_uses_true_D": false,
+  "results": [
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01",
+      "artifact": "results\\A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01\\temporal_pinn\\pinn\\metrics.json",
+      "variant": "noise_density_temporal_v24_1000_7500",
+      "ic_relative_L2": 2.492385217377766e-07,
+      "replay_sigma": 2.761996409820734,
+      "replay_metric_difference": 3.4638958368304884e-14,
+      "sensor_fit_sigma": 0.9925622026102379,
+      "D_spatial_std": 0.11899764549366945,
+      "D_mean": 0.2779867189003223,
+      "D_fitted_constant": 0.2658031041258034,
+      "constant_replay_sigma": 13.75012854152685,
+      "training_seconds": 5111.803822487001,
+      "bc_rms": 3.137723866241633e-18,
+      "bc_rms_over_sensor_sigma": 1.3201103681798109e-14,
+      "pinn_v0_replay_sigma": null,
+      "adjoint_nn_v0_replay_sigma": null,
+      "replay_improvement_over_constant_percent": 79.91294116648284,
+      "consistency_screen_passed": false
+    }
+  ],
+  "time_bins": [
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01",
+      "artifact": "results\\A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01\\temporal_pinn\\pinn\\metrics.json",
+      "variant": "noise_density_temporal_v24_1000_7500",
+      "tau_low": 0,
+      "tau_high": 0.001,
+      "pde_rms": 1.0029384179835068,
+      "pde_max_abs": 4.774093267075793
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01",
+      "artifact": "results\\A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01\\temporal_pinn\\pinn\\metrics.json",
+      "variant": "noise_density_temporal_v24_1000_7500",
+      "tau_low": 0.001,
+      "tau_high": 0.01,
+      "pde_rms": 0.6779395263921064,
+      "pde_max_abs": 4.113172169968124
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01",
+      "artifact": "results\\A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01\\temporal_pinn\\pinn\\metrics.json",
+      "variant": "noise_density_temporal_v24_1000_7500",
+      "tau_low": 0.01,
+      "tau_high": 0.1,
+      "pde_rms": 0.2056557418677355,
+      "pde_max_abs": 3.0355342594312997
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01",
+      "artifact": "results\\A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01\\temporal_pinn\\pinn\\metrics.json",
+      "variant": "noise_density_temporal_v24_1000_7500",
+      "tau_low": 0.1,
+      "tau_high": 1,
+      "pde_rms": 0.004523253525184157,
+      "pde_max_abs": 0.05754448278228019
+    }
+  ],
+  "coverage_complete": true,
+  "consistency_screen_passed": false,
+  "decision": "Hold broad PINN migration: at least one IC, boundary or replay consistency screen fails.",
+  "screening_limits": {
+    "ic_relative_L2": 1e-06,
+    "replay_sigma": 1.1,
+    "bc_rms_over_sensor_sigma": 1
+  }
+}

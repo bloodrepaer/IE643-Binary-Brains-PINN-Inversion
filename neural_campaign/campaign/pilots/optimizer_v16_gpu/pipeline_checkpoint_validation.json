@@ -1,0 +1,30 @@
+[
+  {
+    "arm": "lbfgsb_adjoint",
+    "checkpoint_difference": 0.0,
+    "IC_relative_L2": null,
+    "status": "complete",
+    "n_pde": 4096
+  },
+  {
+    "arm": "lbfgsb_pinn",
+    "checkpoint_difference": 0.0,
+    "IC_relative_L2": 2.492385217377766e-07,
+    "status": "complete",
+    "n_pde": 16384
+  },
+  {
+    "arm": "ssb_adjoint",
+    "checkpoint_difference": 0.0,
+    "IC_relative_L2": null,
+    "status": "complete",
+    "n_pde": 4096
+  },
+  {
+    "arm": "ssb_pinn",
+    "checkpoint_difference": 0.0,
+    "IC_relative_L2": 2.492385217377766e-07,
+    "status": "complete",
+    "n_pde": 16384
+  }
+]

@@ -1,0 +1,16 @@
+{
+ "key": "C_inclusion__Fo0.1__uniform8__n50__random__eta0.05",
+ "method": "adjoint",
+ "alpha": 12.649110640673516,
+ "flag": "reached_sigma",
+ "wall_s": 25.577006137000353,
+ "n_evals": 137,
+ "eps_u_solver": 0.002512046767701829,
+ "sigma": 0.001585453,
+ "n_readings": 400,
+ "peak_rss_gb": 0.2598915100097656,
+ "eps_D": 0.6609545321381429,
+ "rmse_logD": 0.3826146724036713,
+ "rms_replay_over_sigma": 0.9786166113459777,
+ "eps_u": 0.07565856193939012
+}

@@ -1,0 +1,215 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n10000__fine_nested__eta0.05",
+  "method": "pinn",
+  "variant": "dense10000_matched_temporal_v21",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0011884324,
+  "D_const": 0.2658031041258034,
+  "rms_const_over_sigma": 2.9545981549872904,
+  "rms_replay_over_sigma": 1.0831386254067468,
+  "rms_unet_over_sigma": 0.993064900075795,
+  "wall_s": 3225.824529031,
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 2.0797431723325444e-06,
+      "gradient_max_abs": 8.835543894538254e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 696
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4959633949999208e-06,
+      "gradient_max_abs": 1.771789383372552e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 709
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4359951879334817e-06,
+      "gradient_max_abs": 1.8834097072549182e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 690
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4199117131660487e-06,
+      "gradient_max_abs": 1.6236118060701338e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 662
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4136779438734223e-06,
+      "gradient_max_abs": 2.2182882051355963e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 693
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4112512422734225e-06,
+      "gradient_max_abs": 4.614745031466976e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 678
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.409825640208146e-06,
+      "gradient_max_abs": 1.0060748911750318e-06,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 664
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4087963512973123e-06,
+      "gradient_max_abs": 7.071772435193385e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 673
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4079128172183879e-06,
+      "gradient_max_abs": 5.101824472201142e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 643
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.4071555161663908e-06,
+      "gradient_max_abs": 2.396430838579831e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 701
+    }
+  ],
+  "history": [
+    {
+      "data": 1.5337654418341226e-06,
+      "pde": 5.458294251393778e-07,
+      "reg": 1.483053590439898e-10
+    },
+    {
+      "data": 1.4297977598090735e-06,
+      "pde": 6.598977518787671e-08,
+      "reg": 1.7586000297056352e-10
+    },
+    {
+      "data": 1.4166484818887187e-06,
+      "pde": 1.9080694005848295e-08,
+      "reg": 2.660120389145773e-10
+    },
+    {
+      "data": 1.4117121233799724e-06,
+      "pde": 7.857846720978818e-09,
+      "reg": 3.417430650973847e-10
+    },
+    {
+      "data": 1.4087700054560553e-06,
+      "pde": 4.527905946791822e-09,
+      "reg": 3.800324705750351e-10
+    },
+    {
+      "data": 1.4074004716882676e-06,
+      "pde": 3.4612009667508854e-09,
+      "reg": 3.895696184042081e-10
+    },
+    {
+      "data": 1.406206674130416e-06,
+      "pde": 3.2168778640261558e-09,
+      "reg": 4.0208821370394567e-10
+    },
+    {
+      "data": 1.405322921112319e-06,
+      "pde": 3.0683057993178395e-09,
+      "reg": 4.05124385675416e-10
+    },
+    {
+      "data": 1.4046570766288517e-06,
+      "pde": 2.854037012970671e-09,
+      "reg": 4.0170357656550907e-10
+    },
+    {
+      "data": 1.4037738758042133e-06,
+      "pde": 2.9743471760447962e-09,
+      "reg": 4.072931861327081e-10
+    }
+  ],
+  "final_parts": {
+    "data": 1.4037738758042133e-06,
+    "pde": 2.9743471760447962e-09,
+    "reg": 4.072931861327081e-10
+  },
+  "objective": 1.4071555161663908e-06,
+  "function_evaluations": 7809,
+  "initial_coefficient_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+  "gamma": 3.558622338413813e-11,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.4923852173792347e-07,
+  "settings": {
+    "data": "data",
+    "key": "A_smooth__Fo0.1__uniform8__n10000__fine_nested__eta0.05",
+    "out": "results/A_smooth__Fo0.1__uniform8__n10000__fine_nested__eta0.05/temporal_pinn",
+    "method": "pinn",
+    "device": "cuda",
+    "budget": 4200.0,
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096
+  },
+  "parameter_count": 4514,
+  "arm": "temporal_pinn",
+  "n_sensors": 10000,
+  "n_readings": 80000,
+  "n_pde": 4096,
+  "time_step_tau": 0.01,
+  "optimizer": "ssb",
+  "time_integrator": "soft_backward_euler",
+  "interpretation": "SharedBEtime-step/dataset/coefficient/init/optimizer;softADstateversushardFDintrinsic;allcaps/partialsretained",
+  "common_cn_replay_sigma": 1.0831386254067468,
+  "common_be_replay_sigma": 1.0302975564778956
+}

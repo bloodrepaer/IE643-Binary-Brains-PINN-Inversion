@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "attempt": "aab8fdafa794",
+  "returncode": 0,
+  "error": null,
+  "adam_completed": 1000,
+  "completed_rounds": 10,
+  "files": {
+    "artifacts/results/A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.05/temporal_pinn/pinn/model.pt": "5782ca53380a1942b84285eb73804884a0c9e1b4ecdc8f6f4b9e4ffd86bc1341",
+    "artifacts/results/A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.05/temporal_pinn/pinn/D_hat.npz": "2b3043ee4f30427b8d2773062f54bf1f85e2ce0afd07efb3fa4f826e354f1575",
+    "artifacts/results/A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.05/temporal_pinn/pinn/metrics.json": "009c2ac0d50bdedd4567d74895d5181132323eb91d2637ddfc1d0f143315d4ac"
+  }
+}

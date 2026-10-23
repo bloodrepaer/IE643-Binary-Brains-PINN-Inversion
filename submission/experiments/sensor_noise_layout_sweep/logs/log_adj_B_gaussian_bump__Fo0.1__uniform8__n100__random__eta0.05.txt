@@ -1,0 +1,9 @@
+[1/1] B_gaussian_bump__Fo0.1__uniform8__n100__random__eta0.05  (800 readings, sigma=1.54e-03)
+    alpha=8.000e+02  RMS/sigma=  1.817  iters=29
+    alpha=2.530e+02  RMS/sigma=  1.269  iters=23
+    alpha=8.000e+01  RMS/sigma=  1.036  iters=23
+    alpha=2.530e+01  RMS/sigma=  0.968  iters=31
+    -> RMS_replay/σ=0.968  flag=reached_sigma  18s, 135 PDE solves
+       relL2(D)=0.189  (constant guess 0.582)  high/low sensitivity 0.123/0.229
+
+Results in /home/claude/sweep/adj/  (summary.csv, one folder per dataset)

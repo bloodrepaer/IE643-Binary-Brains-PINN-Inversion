@@ -1,0 +1,3 @@
+key,variant,artifact,n_sensors,eta,rel_L2_D,rmse_logD,replay_sigma,sensor_fit_sigma
+A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,gaussian_ic_bc_locald,results\A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05\A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05\pinn__s42\metrics.json,3969,0.05,0.3252023870747152,0.4149986937081733,3.4065547033722057,1.155645767070022
+A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,gaussian_ic_bc_locald,results\A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05\A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05\pinn__s42\metrics.json,50,0.05,0.3050091422924276,0.4068501151296805,2.406041732095375,0.758226306196155

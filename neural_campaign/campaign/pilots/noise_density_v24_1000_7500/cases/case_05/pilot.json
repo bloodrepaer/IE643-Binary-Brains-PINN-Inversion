@@ -1,0 +1,32 @@
+{
+  "version": 24,
+  "status": "queued",
+  "cases": [
+    "A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05"
+  ],
+  "data_collection": "datasets_v2_noise_density_v24_1000_7500",
+  "initial_coefficient_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+  "adam": 1000,
+  "outer": 10,
+  "inner": 400,
+  "n_pde": 4096,
+  "time_step_tau": 0.01,
+  "seed": 42,
+  "per_arm_internal_s": 12600,
+  "per_arm_external_s": 12900,
+  "total_pair_internal_s": 25800,
+  "hardware": "Both arms sequentialCPU2threads on same freeKaggleCPU host; cross-cell/reference hosts differ",
+  "budget_rationale": "GPUquota1265s cannot cover full fit. CPUcap3x4200 gives fulliteration opportunity without truncating; caps/timeouts retained. Pairloop25800s bounded, no paidcompute.",
+  "reference_pilots": [
+    "dense1000_v22_kaggle",
+    "noise_density_v23"
+  ],
+  "variants": [
+    "noise_density_temporal_v24_1000_7500"
+  ],
+  "key": "A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05",
+  "n_sensors": 5000,
+  "eta": 0.05,
+  "kernel": "mihirgune123/ie643-noise-density-v24-case-05",
+  "coverage_complete": false
+}

@@ -1,0 +1,208 @@
+{
+  "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+  "method": "adjoint_nn",
+  "variant": "dense_calibrated_v14",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "complete",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0011884324,
+  "D_const": 0.27342333554050013,
+  "rms_const_over_sigma": 2.8680122146081812,
+  "rms_replay_over_sigma": 0.9447322238763064,
+  "rms_unet_over_sigma": 0.9447322238763064,
+  "wall_s": 2600.1928157969996,
+  "adam_completed": 1000,
+  "optimizer_diagnostics": [
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.3639377506520937e-06,
+      "gradient_max_abs": 8.753021280463108e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 1,
+      "function_evaluations": 714
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.3404095694093405e-06,
+      "gradient_max_abs": 1.7815691450090424e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 2,
+      "function_evaluations": 702
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.3252531658058348e-06,
+      "gradient_max_abs": 1.5022462472316258e-07,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 3,
+      "function_evaluations": 661
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.318008545893172e-06,
+      "gradient_max_abs": 3.91368498487381e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 4,
+      "function_evaluations": 648
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.3140607567172177e-06,
+      "gradient_max_abs": 7.36704024973582e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 5,
+      "function_evaluations": 720
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.3126382440421297e-06,
+      "gradient_max_abs": 4.3322909638033925e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 6,
+      "function_evaluations": 721
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.311666499816811e-06,
+      "gradient_max_abs": 3.327643281886583e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 7,
+      "function_evaluations": 685
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.3109474032361277e-06,
+      "gradient_max_abs": 1.7106092739845356e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 8,
+      "function_evaluations": 650
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.310464335720742e-06,
+      "gradient_max_abs": 6.718077324192377e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 9,
+      "function_evaluations": 658
+    },
+    {
+      "iterations": 400,
+      "requested_iterations": 400,
+      "reason": "iteration_cap",
+      "loss": 1.310169180739627e-06,
+      "gradient_max_abs": 5.474070340575049e-08,
+      "resets": 0,
+      "hessian_retained": true,
+      "round": 10,
+      "function_evaluations": 627
+    }
+  ],
+  "history": [
+    {
+      "data": 1.347908377413291e-06,
+      "pde": 0.0,
+      "reg": 1.6029373238802795e-08
+    },
+    {
+      "data": 1.316039369384547e-06,
+      "pde": 0.0,
+      "reg": 2.437020002479358e-08
+    },
+    {
+      "data": 1.2934713185684033e-06,
+      "pde": 0.0,
+      "reg": 3.1781847237431574e-08
+    },
+    {
+      "data": 1.2826092748382149e-06,
+      "pde": 0.0,
+      "reg": 3.5399271054956995e-08
+    },
+    {
+      "data": 1.2764465259201436e-06,
+      "pde": 0.0,
+      "reg": 3.7614230797074086e-08
+    },
+    {
+      "data": 1.274184445439408e-06,
+      "pde": 0.0,
+      "reg": 3.845379860272156e-08
+    },
+    {
+      "data": 1.2726701303445202e-06,
+      "pde": 0.0,
+      "reg": 3.899636947229078e-08
+    },
+    {
+      "data": 1.2716132398703235e-06,
+      "pde": 0.0,
+      "reg": 3.933416336580424e-08
+    },
+    {
+      "data": 1.2709207932631758e-06,
+      "pde": 0.0,
+      "reg": 3.954354245756603e-08
+    },
+    {
+      "data": 1.2704551845156798e-06,
+      "pde": 0.0,
+      "reg": 3.9713996223947265e-08
+    }
+  ],
+  "final_parts": {
+    "data": 1.2704551845156798e-06,
+    "pde": 0.0,
+    "reg": 3.9713996223947265e-08
+  },
+  "objective": 1.310169180739627e-06,
+  "function_evaluations": 7786,
+  "initial_coefficient_sha256": "6ae59811dca094e5c0a2004bc7d5ad90f6653b3f7ed407627d9c244c4424f957",
+  "gamma": 8.896555846034532e-10,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.4923852173787153e-07,
+  "settings": {
+    "data": "data",
+    "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+    "out": "results/n400",
+    "method": "adjoint_nn",
+    "device": "cpu",
+    "budget": 6500.0,
+    "adam": 1000,
+    "outer": 10,
+    "inner": 400,
+    "n_pde": 4096
+  },
+  "parameter_count": 2241,
+  "n_sensors": 400,
+  "parent_protocol": "calibrated_hard_physics_v12",
+  "density_limitations": "Fixed likelihood alpha1; gamma conversion and fitted constant initialization depend on each input. Full observation objective, no density-dependent minibatching."
+}

@@ -1,0 +1,43 @@
+{
+  "key": "F_defects__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+  "method": "pinn",
+  "variant": "calibrated_hard_physics_v12",
+  "state_model": "gaussian_ic_bc_locald",
+  "status": "budget_timeout",
+  "seed": 42,
+  "n_steps": 200,
+  "sigma": 0.0013268946,
+  "D_const": 0.24167535133843424,
+  "rms_const_over_sigma": 1.5134571801883585,
+  "rms_replay_over_sigma": 1.4814503552297658,
+  "rms_unet_over_sigma": 1.3370928726005369,
+  "wall_s": 121.98399999999674,
+  "adam_completed": 50,
+  "optimizer_diagnostics": [],
+  "history": [],
+  "final_parts": {
+    "data": 3.172407194401142e-06,
+    "pde": 1.4013132249692875e-06,
+    "reg": 5.4577954291932526e-11
+  },
+  "objective": 4.573774997324722e-06,
+  "function_evaluations": 116,
+  "initial_coefficient_sha256": "8253fca21af32fd722f121c4063833debd67c2ea39dd1757d57af56a9c9fe563",
+  "gamma": 1.1090363881668404e-09,
+  "alpha": 1.0,
+  "scale": 0.99610137,
+  "initial_ic_relative_error": 2.492385217377766e-07,
+  "settings": {
+    "data": "datasets_v2_density_extended",
+    "key": "F_defects__Fo0.1__uniform8__n400__nodes_nested__eta0.05",
+    "out": "campaign\\pilots\\quick_temporal_v19_local\\artifacts\\F_defects__Fo0.1__uniform8__n400__nodes_nested__eta0.05\\temporal_pinn",
+    "method": "pinn",
+    "device": "cpu",
+    "budget": 120.0,
+    "adam": 50,
+    "outer": 1,
+    "inner": 50,
+    "n_pde": 4096
+  },
+  "parameter_count": 4514
+}

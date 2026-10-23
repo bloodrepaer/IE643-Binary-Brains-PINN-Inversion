@@ -1,0 +1,105 @@
+{
+  "key": "F_defects__Fo0.1__uniform8__n100__nodes_nested__eta0.01",
+  "sigma": 0.00026537891,
+  "n_readings": 800,
+  "rms_replay_over_sigma": 0.9945846365145888,
+  "alpha": 8.0,
+  "flag": "reached_sigma",
+  "D_const": 0.2375868818485839,
+  "rms_const_over_sigma": 5.723719167090218,
+  "n_evals": 469,
+  "wall_s": 84.93176859998493,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.10771496803211315,
+  "rmse_logD": 0.10313331513745223,
+  "rel_L2_D_high_sensitivity": 0.13664612119430014,
+  "rel_L2_D_low_sensitivity": 0.06523952823430641,
+  "rel_L2_D_constant_guess": 0.24373980950950913,
+  "rms_vs_clean_over_sigma": 0.4026589301883749,
+  "defect_dice": 0.9016393442622951,
+  "defects_detected": 3,
+  "n_defects": 3,
+  "D0_hat": 0.25089500935561154,
+  "D0_true": 0.25,
+  "background_rel_err": 0.07332191747424481,
+  "defects": [
+    {
+      "cx": 0.7623789921901029,
+      "cy": 0.6039114508947928,
+      "r": 0.07,
+      "factor": 0.3333333333333333,
+      "type": "low",
+      "contrast_recovery": 0.8027548173848331,
+      "detected": true,
+      "localisation_error_in_radii": 0.16349221228853036,
+      "sensitivity_rel": 37.806180503100904
+    },
+    {
+      "cx": 0.43651273612613517,
+      "cy": 0.30289116621637197,
+      "r": 0.07,
+      "factor": 3.0,
+      "type": "high",
+      "contrast_recovery": 0.7404694451411609,
+      "detected": true,
+      "localisation_error_in_radii": 0.14177964546561866,
+      "sensitivity_rel": 8.151946077783375
+    },
+    {
+      "cx": 0.22465228604105478,
+      "cy": 0.538979584104161,
+      "r": 0.07,
+      "factor": 0.3333333333333333,
+      "type": "low",
+      "contrast_recovery": 0.6826746928942651,
+      "detected": true,
+      "localisation_error_in_radii": 0.14974210620221012,
+      "sensitivity_rel": 2.1286546786550873
+    }
+  ],
+  "alpha_selection": "discrepancy_path",
+  "method": "grid",
+  "seed": 42,
+  "shared_setup_s": 0.6929368000128306,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 800.0,
+      "rms": 0.0005112253772315122,
+      "rms_over_sigma": 1.9263979086789988,
+      "iters": 38
+    },
+    {
+      "alpha": 252.98221281347034,
+      "rms": 0.00038588962748324797,
+      "rms_over_sigma": 1.4541081184003959,
+      "iters": 50
+    },
+    {
+      "alpha": 80.0,
+      "rms": 0.00031358245671669275,
+      "rms_over_sigma": 1.1816404578521058,
+      "iters": 69
+    },
+    {
+      "alpha": 25.298221281347033,
+      "rms": 0.0002790948599498472,
+      "rms_over_sigma": 1.0516844008058033,
+      "iters": 87
+    },
+    {
+      "alpha": 8.0,
+      "rms": 0.00026394178674098775,
+      "rms_over_sigma": 0.9945846365145888,
+      "iters": 150
+    }
+  ],
+  "parameter_count": 256,
+  "dtype": "float64",
+  "coefficient_config": null,
+  "chi2_red_solver": 0.9891985991908568,
+  "rms_replay": 0.00026394178674098775,
+  "rms_replay_relative_signal": 0.01337274746868891
+}

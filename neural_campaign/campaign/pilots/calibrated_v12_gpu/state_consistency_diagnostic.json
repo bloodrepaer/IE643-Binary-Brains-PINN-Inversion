@@ -1,0 +1,23 @@
+{
+  "uses_true_D": false,
+  "training_or_selection": false,
+  "checkpoint_sha256_unchanged": "322426cc5eeaaa6051334078717c8d02b483ad3bbd234e752000f183f857e62b",
+  "training_normalized_PDE_loss_absolute_reproduction_error": 2.064642808932357e-20,
+  "state_vs_CN_sensor_sigma": 0.3996915878361955,
+  "PINN_sensor_fit_sigma": 1.6491566894427019,
+  "CN_replay_sigma": 1.7642777911615686,
+  "collocation_gap": {
+    "pilot": "calibrated_v12_gpu",
+    "key": "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05",
+    "heldout_points": 16384,
+    "heldout_rms": 0.009355834791016369,
+    "heldout_max": 0.4330780737699685,
+    "top_one_percent_energy": 0.8925001638949746,
+    "replay_sigma": 1.7642777911615706,
+    "sensor_fit_sigma": 1.6491566894427008,
+    "training_points": 4096,
+    "training_rms": 0.0007360745788894586,
+    "heldout_to_training_rms": 12.710444103547012
+  },
+  "scope": "Independent post-fit diagnostic only; fixed retained coefficient/state, same early-weighted mixed sampling measure. No attribution to one causal mechanism or convergence claim."
+}

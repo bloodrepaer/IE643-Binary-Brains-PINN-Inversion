@@ -1,0 +1,13 @@
+{
+  "distinct_sensors": 10000,
+  "readings": 80000,
+  "old_observation_rows_exact": 31752,
+  "added_sensors": 6031,
+  "same_noise_sigma": 0.0011884324,
+  "source_truth_used_for_generation_only": true,
+  "training_input_contains_coefficient_truth": false,
+  "initial_coefficient": "Unchanged v18 observation-fitted initial network, shared with parent and both new arms",
+  "clean_parent_difference": 0.0,
+  "original_float32_snapshot_roundoff": 3.7147439430063045e-09,
+  "added_clean_snapshot_precision": "Original stored float32; maximum verified rounding difference at parent nodes recorded"
+}

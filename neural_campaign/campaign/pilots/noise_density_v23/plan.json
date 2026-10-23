@@ -1,0 +1,41 @@
+{
+  "version": 23,
+  "status": "superseded_except_two_active_1000_cases",
+  "authorized_utc": "2026-10-21T17:08:39.601651+00:00",
+  "field": "A_smooth",
+  "Fo": 0.1,
+  "n_times": 8,
+  "densities": [
+    1000,
+    3969,
+    10000
+  ],
+  "noise_fractions": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "optimization_seed": 42,
+  "subset_seed": 20261023,
+  "precondition": "Finish recovery/independent validation/reporting of v22 before new sweep training or data generation",
+  "existing_reference_cases": [
+    {
+      "n_sensors": 1000,
+      "eta": 0.05,
+      "pilot": "dense1000_v22_kaggle",
+      "status": "complete_evaluated"
+    },
+    {
+      "n_sensors": 10000,
+      "eta": 0.05,
+      "pilot": "dense10000_v21_gpu",
+      "status": "complete_evaluated"
+    }
+  ],
+  "planned_fresh_pairs": 7,
+  "planned_fresh_fits": 14,
+  "truth_for_training_or_selection": false,
+  "capacity": "Check fresh typed free quota after v22. No paid compute, no truncated shortcut screen. Select documented bounded free CPU execution if adequate; otherwise await GPU capacity. Do not submit without capacity/protocol/preflight.",
+  "other_work": "v20 remains human-paused; no other fields, UI or frozen654dispatch authorized",
+  "replacement": "noise_density_v24_1000_7500"
+}

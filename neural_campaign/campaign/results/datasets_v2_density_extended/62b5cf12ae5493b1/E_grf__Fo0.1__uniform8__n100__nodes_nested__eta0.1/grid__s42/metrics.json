@@ -1,0 +1,76 @@
+{
+  "key": "E_grf__Fo0.1__uniform8__n100__nodes_nested__eta0.1",
+  "sigma": 0.0025424867,
+  "n_readings": 800,
+  "rms_replay_over_sigma": 0.9889449613138118,
+  "alpha": 0.8,
+  "flag": "reached_sigma",
+  "D_const": 0.26206134057221664,
+  "rms_const_over_sigma": 1.261329967894043,
+  "n_evals": 315,
+  "wall_s": 59.520766099973116,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.28331208911174943,
+  "rmse_logD": 0.23805892149145055,
+  "rel_L2_D_high_sensitivity": 0.21921143558500553,
+  "rel_L2_D_low_sensitivity": 0.3259846992305173,
+  "rel_L2_D_constant_guess": 0.32883150897646574,
+  "rms_vs_clean_over_sigma": 0.25273123583859297,
+  "alpha_selection": "discrepancy_path",
+  "method": "grid",
+  "seed": 42,
+  "shared_setup_s": 0.9353367000003345,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 800.0,
+      "rms": 0.0030998846218777886,
+      "rms_over_sigma": 1.2192333678196974,
+      "iters": 32
+    },
+    {
+      "alpha": 252.98221281347034,
+      "rms": 0.0029822148278367895,
+      "rms_over_sigma": 1.172951987452595,
+      "iters": 28
+    },
+    {
+      "alpha": 80.0,
+      "rms": 0.002836080291427137,
+      "rms_over_sigma": 1.1154749763006184,
+      "iters": 22
+    },
+    {
+      "alpha": 25.298221281347033,
+      "rms": 0.002701153776910301,
+      "rms_over_sigma": 1.062406256406494,
+      "iters": 24
+    },
+    {
+      "alpha": 8.0,
+      "rms": 0.0026057760808335514,
+      "rms_over_sigma": 1.0248927087144848,
+      "iters": 33
+    },
+    {
+      "alpha": 2.5298221281347035,
+      "rms": 0.0025494184316532153,
+      "rms_over_sigma": 1.0027263590614715,
+      "iters": 46
+    },
+    {
+      "alpha": 0.8,
+      "rms": 0.002514379411172381,
+      "rms_over_sigma": 0.9889449613138118,
+      "iters": 62
+    }
+  ],
+  "parameter_count": 256,
+  "dtype": "float64",
+  "coefficient_config": null,
+  "chi2_red_solver": 0.9780121365079768,
+  "rms_replay": 0.002514379411172381,
+  "rms_replay_relative_signal": 0.13084722660197393
+}

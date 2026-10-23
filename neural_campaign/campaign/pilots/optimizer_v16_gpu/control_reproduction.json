@@ -1,0 +1,20 @@
+{
+  "uses_true_D": false,
+  "results": [
+    {
+      "arm": "ssb_pinn",
+      "reference_v15": "pde16384",
+      "network_tensors_bitwise": true,
+      "D_arrays_bitwise": true,
+      "objective_histories_bitwise": true
+    },
+    {
+      "arm": "ssb_adjoint",
+      "reference_v15": "adjoint_control",
+      "network_tensors_bitwise": true,
+      "D_arrays_bitwise": true,
+      "objective_histories_bitwise": true
+    }
+  ],
+  "limitation": "Same fixed observations and seed, not independent population confirmation"
+}

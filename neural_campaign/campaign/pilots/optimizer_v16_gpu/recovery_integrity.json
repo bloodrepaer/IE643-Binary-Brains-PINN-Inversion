@@ -1,0 +1,24 @@
+{
+  "archive_sha256": "699d35997b7c7c0c04797bda0125060f4f243b8ca039907922385860c7cbbbac",
+  "CRC_path_symlink_conflict_checks": "PASS",
+  "entries": [
+    "ssb_adjoint.log",
+    "lbfgsb_adjoint.log",
+    "ssb_pinn.log",
+    "lbfgsb_pinn.log",
+    "environment.json",
+    "job_status.json",
+    "results/ssb_pinn/pinn/metrics.json",
+    "results/ssb_pinn/pinn/D_hat.npz",
+    "results/ssb_pinn/pinn/model.pt",
+    "results/lbfgsb_pinn/pinn/metrics.json",
+    "results/lbfgsb_pinn/pinn/D_hat.npz",
+    "results/lbfgsb_pinn/pinn/model.pt",
+    "results/lbfgsb_adjoint/adjoint_nn/metrics.json",
+    "results/lbfgsb_adjoint/adjoint_nn/D_hat.npz",
+    "results/lbfgsb_adjoint/adjoint_nn/model.pt",
+    "results/ssb_adjoint/adjoint_nn/metrics.json",
+    "results/ssb_adjoint/adjoint_nn/D_hat.npz",
+    "results/ssb_adjoint/adjoint_nn/model.pt"
+  ]
+}

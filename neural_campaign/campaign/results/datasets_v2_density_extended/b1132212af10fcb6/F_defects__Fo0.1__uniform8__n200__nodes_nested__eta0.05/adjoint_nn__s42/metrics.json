@@ -1,0 +1,144 @@
+{
+  "key": "F_defects__Fo0.1__uniform8__n200__nodes_nested__eta0.05",
+  "sigma": 0.0013268946,
+  "n_readings": 1600,
+  "rms_replay_over_sigma": 1.0271291974336023,
+  "alpha": 5.059644256269407,
+  "flag": "floor_above_sigma",
+  "D_const": 0.24090548423384872,
+  "rms_const_over_sigma": 1.5046884936980227,
+  "n_evals": 1346,
+  "wall_s": 224.74020940001355,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.23207084674549827,
+  "rmse_logD": 0.19648221335081054,
+  "rel_L2_D_high_sensitivity": 0.2538111942032582,
+  "rel_L2_D_low_sensitivity": 0.21608741286213934,
+  "rel_L2_D_constant_guess": 0.2412250496719546,
+  "rms_vs_clean_over_sigma": 0.31336590663692226,
+  "defect_dice": 0.3803680981595092,
+  "defects_detected": 3,
+  "n_defects": 3,
+  "D0_hat": 0.24623611531017356,
+  "D0_true": 0.25,
+  "background_rel_err": 0.17923367293661707,
+  "defects": [
+    {
+      "cx": 0.7623789921901029,
+      "cy": 0.6039114508947928,
+      "r": 0.07,
+      "factor": 0.3333333333333333,
+      "type": "low",
+      "contrast_recovery": 0.5768927552951362,
+      "detected": true,
+      "localisation_error_in_radii": 0.07791794220468057,
+      "sensitivity_rel": 34.26657663958135
+    },
+    {
+      "cx": 0.43651273612613517,
+      "cy": 0.30289116621637197,
+      "r": 0.07,
+      "factor": 3.0,
+      "type": "high",
+      "contrast_recovery": 0.4530255498844947,
+      "detected": true,
+      "localisation_error_in_radii": 0.6102585109931707,
+      "sensitivity_rel": 10.613935604330443
+    },
+    {
+      "cx": 0.22465228604105478,
+      "cy": 0.538979584104161,
+      "r": 0.07,
+      "factor": 0.3333333333333333,
+      "type": "low",
+      "contrast_recovery": 0.2685414301993781,
+      "detected": true,
+      "localisation_error_in_radii": 0.2731439715635203,
+      "sensitivity_rel": 1.6010973616549893
+    }
+  ],
+  "alpha_selection": "discrepancy_path",
+  "method": "adjoint_nn",
+  "seed": 42,
+  "shared_setup_s": 0.6700857999967411,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 1600.0,
+      "rms": 0.0017539061451440736,
+      "rms_over_sigma": 1.3218127085181246,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 505.9644256269407,
+      "rms": 0.0016083013243626337,
+      "rms_over_sigma": 1.21207918425671,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 160.0,
+      "rms": 0.0014955167269422676,
+      "rms_over_sigma": 1.1270802721951445,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 50.596442562694065,
+      "rms": 0.0014127680063122368,
+      "rms_over_sigma": 1.0647175791598191,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 16.0,
+      "rms": 0.0013812707142020287,
+      "rms_over_sigma": 1.0409799800240567,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 5.059644256269407,
+      "rms": 0.0013628921855769807,
+      "rms_over_sigma": 1.0271291974336023,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 1.6,
+      "rms": 0.0013536296907230604,
+      "rms_over_sigma": 1.0201486167198663,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 0.5059644256269407,
+      "rms": 0.0013452084984240161,
+      "rms_over_sigma": 1.0138020747269723,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    }
+  ],
+  "parameter_count": 2241,
+  "dtype": "float64",
+  "coefficient_config": {
+    "width": 32,
+    "depth": 3,
+    "d_min": 0.001,
+    "d_max": 10.0
+  },
+  "chi2_red_solver": 1.054994388220596,
+  "rms_replay": 0.0013628921855769807,
+  "rms_replay_relative_signal": 0.06736215786768383
+}

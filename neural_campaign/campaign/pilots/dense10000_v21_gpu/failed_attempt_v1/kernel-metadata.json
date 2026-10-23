@@ -1,0 +1,15 @@
+{
+  "id": "mihirgune123/ie643-dense10000-matched-pair",
+  "title": "IE643 dense10000 matched pair",
+  "code_file": "dense10000_kernel.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "dataset_sources": [
+    "mihirgune123/ie643-dense10000-matched-data"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

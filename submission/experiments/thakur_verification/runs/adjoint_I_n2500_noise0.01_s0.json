@@ -1,0 +1,15 @@
+{
+ "method": "adjoint",
+ "n_inv": 65,
+ "case": "I",
+ "noise": 0.01,
+ "n_spatial": 2500,
+ "n_readings": 250000,
+ "L_D": 0.48302521210830124,
+ "relL2_D": 0.062043205073903866,
+ "alpha": 25000.0,
+ "flag": "floor_above_sigma",
+ "rms": 0.010112455589822178,
+ "n_evals": 190,
+ "wall_s": 93.34571123123169
+}

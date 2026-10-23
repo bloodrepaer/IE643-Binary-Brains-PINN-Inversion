@@ -1,0 +1,87 @@
+{
+  "key": "D_layered__Fo0.1__uniform8__n50__random__eta0.1",
+  "sigma": 0.0038757977,
+  "n_readings": 400,
+  "rms_replay_over_sigma": 0.9707536989173086,
+  "alpha": 1.2649110640673518,
+  "flag": "reached_sigma",
+  "D_const": 0.19138347145299356,
+  "rms_const_over_sigma": 4.010209055446768,
+  "n_evals": 1036,
+  "wall_s": 363.1194679000182,
+  "n_steps": 200,
+  "control": 16,
+  "reg": "tikhonov",
+  "rel_L2_D": 0.26521716898154496,
+  "rmse_logD": 0.3139771063407319,
+  "rel_L2_D_high_sensitivity": 0.20160732385377605,
+  "rel_L2_D_low_sensitivity": 0.28256452080562583,
+  "rel_L2_D_constant_guess": 0.6648664168951625,
+  "rms_vs_clean_over_sigma": 0.28035020260797644,
+  "alpha_selection": "discrepancy_path",
+  "method": "adjoint_nn",
+  "seed": 42,
+  "shared_setup_s": 0.4779676000471227,
+  "physics_mode": "matched",
+  "alpha_path": [
+    {
+      "alpha": 400.0,
+      "rms": 0.007165772410322695,
+      "rms_over_sigma": 1.848850988874547,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 126.49110640673517,
+      "rms": 0.0057290464874027655,
+      "rms_over_sigma": 1.4781593186359456,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 40.0,
+      "rms": 0.0047162179312428,
+      "rms_over_sigma": 1.2168380024692207,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 12.649110640673516,
+      "rms": 0.004166594317791438,
+      "rms_over_sigma": 1.0750288431698687,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 4.0,
+      "rms": 0.00390604365462199,
+      "rms_over_sigma": 1.00780380116898,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    },
+    {
+      "alpha": 1.2649110640673518,
+      "rms": 0.0037624449535301973,
+      "rms_over_sigma": 0.9707536989173086,
+      "iters": 150,
+      "success": false,
+      "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT"
+    }
+  ],
+  "parameter_count": 2241,
+  "dtype": "float64",
+  "coefficient_config": {
+    "width": 32,
+    "depth": 3,
+    "d_min": 0.001,
+    "d_max": 10.0
+  },
+  "chi2_red_solver": 0.9423627439616366,
+  "rms_replay": 0.0037624449535301973,
+  "rms_replay_relative_signal": 0.11040147275546416
+}

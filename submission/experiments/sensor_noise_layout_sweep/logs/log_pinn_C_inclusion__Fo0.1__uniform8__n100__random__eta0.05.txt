@@ -1,0 +1,9 @@
+
+=== [C_inclusion__Fo0.1__uniform8__n100__random__eta0.05] (device=cpu) Fixed Lambdas: data=40.0, pde=20.0, bc=10.0, ic=20.0, reg=0.0003 (tv) ===
+  Epoch [0001/1500] L_tot=1.258e+01 | L_data=1.007e-04 | L_pde=1.384e-02 | L_reg=1.341e-02
+  Epoch [0300/1500] L_tot=8.832e-01 | L_data=6.682e-06 | L_pde=5.821e-03 | L_reg=2.845e+00
+  Epoch [0600/1500] L_tot=4.960e-01 | L_data=4.613e-06 | L_pde=4.102e-03 | L_reg=2.931e+00
+  Epoch [0900/1500] L_tot=3.035e-01 | L_data=2.860e-06 | L_pde=6.774e-03 | L_reg=3.120e+00
+  Epoch [1200/1500] L_tot=3.274e-01 | L_data=2.578e-06 | L_pde=3.334e-03 | L_reg=3.002e+00
+  Epoch [1500/1500] L_tot=2.738e-01 | L_data=2.758e-06 | L_pde=4.643e-03 | L_reg=3.506e+00
+  --> Result [C_inclusion__Fo0.1__uniform8__n100__random__eta0.05]: rel_L2(D)=0.6870 | MAE(D)=0.0486 | chi2_solver=6.161 | chi2_u_net=1.061 (Optimal (~1: matches noise floor)) | D_range=[0.029, 0.185] | time=64.8s

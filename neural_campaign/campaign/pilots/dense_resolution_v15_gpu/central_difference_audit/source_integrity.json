@@ -1,0 +1,7 @@
+{
+  "source": "audit_dense_centraldifference.py",
+  "sha256": "d122824762bac379f6759b98678542ad41efc9024525c1538143c9979cadf25e",
+  "uses_true_D": false,
+  "optimizer_steps_accepted": 0,
+  "checkpoint_selected": false
+}

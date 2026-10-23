@@ -1,0 +1,15 @@
+{
+  "uses_true_D": false,
+  "training": false,
+  "checkpoint_selection": false,
+  "checkpoint_sha256": "1bac4ce3c1788ae0eb07c572caa12c577cb26075226f4142af0e6f9132ad3b98",
+  "steps": [
+    -1e-08,
+    -1e-07
+  ],
+  "directions": [
+    "joint"
+  ],
+  "measure": "Saved final training cloud, original full-data/unit-PDE/gamma objective",
+  "caveat": "All probes retained; no accepted step or fitted model. Local profiles do not prove long-run convergence or an optimal optimizer."
+}

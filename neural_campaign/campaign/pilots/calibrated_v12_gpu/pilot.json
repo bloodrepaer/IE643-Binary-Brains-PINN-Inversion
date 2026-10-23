@@ -1,0 +1,88 @@
+{
+  "experiment": "Calibrated hard-physics matched neural pair v12",
+  "kernel": "mihirgune123/ie643-calibrated-neural-pair",
+  "status": "complete_independently_evaluated",
+  "cases": [
+    "A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05"
+  ],
+  "data_collection": "datasets_v2_density_extended",
+  "variant": "calibrated_hard_physics_v12",
+  "methods": [
+    "pinn",
+    "adjoint_nn"
+  ],
+  "seed": 42,
+  "alpha": 1,
+  "regularization": "Identical discrete .5sum link(logDdiff)^2, gamma=2sigma_w^2/(N*U^2) converts fixedalpha1 sum likelihood to normalized mean data objective",
+  "gamma": 7.117244676827626e-09,
+  "coefficient": "Same boundedlogD3x32 tanh,float64, D in[.001,10], same supplied-sensor-fitted constant initialization",
+  "state": "PINN32x3 coupled supplied Gaussian image hardICBC base; adjoint CN/Rannacher state",
+  "loss": "mean((u-y)/U)^2 + gamma R, PINN adds unit mean((u_tau-TdivDgradu)/U)^2",
+  "U": "max absolute supplied IC/observed temperature",
+  "collocation": "4096; half uniform tau,half loguniform tau1e-4..1; intentionally early-weighted measure,refreshed every100Adam steps and eachouterSSBround; identical shared samplerstream",
+  "adam_steps": 1000,
+  "outer_rounds": 10,
+  "inner_iterations": 400,
+  "optimizer": "SSBroyden same tested implementation/line search,Hessian symmetry/Cholesky policy,CPU dense curvature; Adam1e-3 halved every250",
+  "per_arm_internal_seconds": 6500,
+  "per_arm_external_seconds": 6900,
+  "total_internal_seconds": 13500,
+  "external_seconds": 14400,
+  "selection_uses_true_D": false,
+  "answer_keys_uploaded": false,
+  "scope": "One shared A50nested5%noise case,one seed,not1510 or broadmigration; preserve v11 failures",
+  "rationale": "v11 allowed nearzeroD and between-cloudICBCviolations; borrowed gamma had wrong objective scaling. Use existing boundedcoefficientprior and validatedsuppliedICBCansatz, dimensionally consistent normalized data/residual, exact likelihood-to-mean regularization conversion. No hyperparameter sweep/truth selection.",
+  "limitations": [
+    "Changes several linked design choices versusv11,not one-factor causalablation",
+    "HardGaussian localDheatbase is an ansatz,not exactvariableDsolution; fullADspatialcoefficientderivativesretained",
+    "Statewidth32x3 chosen tokeep denseSSBcurvature4514params; unlikev6largerstate",
+    "Unit residualweight andfixedalpha1 are declared choices,not provenoptimal; two necessaryscreensdo not provecoefficientrecovery",
+    "Mixedearlytime objective not unbiaseduniform spacetime objective",
+    "Botharms on sameKagglehost/CPU2threads, PINNalsoCUDAresidual; reportresourcequalification/actualevals/time,no unqualifiedspeedclaim"
+  ],
+  "source_sha256": {
+    "calibrated_neural_pair.py": "6f4c420ee402e0f9375fa27bd66fcd5ea698e9ce0c84db94dd015435fff42c82",
+    "pinn_zhang_transfer.py": "1cd154938a8fa3bbddc88f037385bd35cf0e16627306e5d80bc522d78aaf0dfd",
+    "pinn_papers.py": "895739b0e3c541cdb7bc3449d8bb445ce8277c2858e86e6f01db992e1996ede0",
+    "compare_neural.py": "43cc6e0a32ae15fd417d0773c8e9bb1bc9e2e916e61b455d46545385e6a82e81",
+    "adjoint_inversion.py": "7004400e7832bb30db42c607caf323eadcb599b30f3678af90cfcbe63de41b95",
+    "adjoint_nn.py": "5d0dc868b2a39bc42f4fc42793a9dd46121c465eda017e29ee6afdf061fa75b7",
+    "neural_diffusivity.py": "d4102584f213e2047ab84dc4e99168dbf518891b4ab77a9539e3fc8376cb7f57",
+    "integrators.py": "74c161c22f7d9289fbe8787cdf82ec866e399e5d86bc32ad5f1d97ba7301c10b"
+  },
+  "kernel_version": 1,
+  "input_dataset_version": 1,
+  "submitted": "2026-10-19T10:14:02.474135+00:00",
+  "runner_sha256": "766e6f1617cd074b0f70f5665da69e71a656225e265fc14189893c4783aac475",
+  "implementation_validation": "implementation_validation.json",
+  "pipeline_validation": "pipeline_validation.json",
+  "last_status_check": "2026-10-19T18:06:05.380898+00:00",
+  "compute_fallback": {
+    "status": "withdrawn_not_submitted",
+    "reason": "Quota exhaustion premise incorrect: SDK timedelta serialization drops whole days. Typed allowance108000s,remaining84581.122s at11:41UTC. No cancellation or CPU submission performed.",
+    "kernel_metadata": "campaign\\pilots\\calibrated_v12_gpu\\cpu_fallback_kernel\\kernel-metadata.json",
+    "same_numeric_source_hashes": true,
+    "source_sha256": {
+      "calibrated_neural_pair.py": "6f4c420ee402e0f9375fa27bd66fcd5ea698e9ce0c84db94dd015435fff42c82",
+      "pinn_zhang_transfer.py": "1cd154938a8fa3bbddc88f037385bd35cf0e16627306e5d80bc522d78aaf0dfd",
+      "pinn_papers.py": "895739b0e3c541cdb7bc3449d8bb445ce8277c2858e86e6f01db992e1996ede0",
+      "compare_neural.py": "43cc6e0a32ae15fd417d0773c8e9bb1bc9e2e916e61b455d46545385e6a82e81",
+      "adjoint_inversion.py": "7004400e7832bb30db42c607caf323eadcb599b30f3678af90cfcbe63de41b95",
+      "adjoint_nn.py": "5d0dc868b2a39bc42f4fc42793a9dd46121c465eda017e29ee6afdf061fa75b7",
+      "neural_diffusivity.py": "d4102584f213e2047ab84dc4e99168dbf518891b4ab77a9539e3fc8376cb7f57",
+      "integrators.py": "74c161c22f7d9289fbe8787cdf82ec866e399e5d86bc32ad5f1d97ba7301c10b"
+    },
+    "runner_sha256": "26905b5e9dc9e4fc43d5ccf79b3c20c53e29d8f3e45538da1ada248a5e0a065c",
+    "requires": "Verified queued GPU session cancellation before CPU version submission; do not duplicate active/prepared work",
+    "budget_policy": "Original6500s perarm13500s total/14400s external retained; disclose CPU budget caps"
+  },
+  "last_status": "COMPLETE",
+  "first_observed_running": "2026-10-19T16:34:16.541292+00:00",
+  "evaluated": "2026-10-19T18:06:05.380898+00:00",
+  "coverage": "both arms complete,1000Adam+4000SSB per arm,no budget timeout",
+  "decision": "Hold broad PINN migration: known IC/BC pass but common replay fails1.1sigma screen; matched neural adjoint better coefficient error/replay.",
+  "recovery_sha256": {
+    "calibrated_pair_results.zip": "3e9de42ca236fa9be27ec0920d68658312a46c964af5ab10a8c12ccf56e86ef5",
+    "ie643-calibrated-neural-pair.log": "85213add5ace9acce3e69cf3f8c5a0499940b78f65e793b7fa3c3cd720b324d1"
+  }
+}

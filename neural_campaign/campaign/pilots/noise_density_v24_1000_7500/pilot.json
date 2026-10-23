@@ -1,0 +1,309 @@
+{
+  "version": 24,
+  "status": "all_12_primary_cells_complete_evaluated",
+  "cases": [
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.01",
+      "n_sensors": 3000,
+      "eta": 0.01,
+      "status": "complete_evaluated",
+      "arms": [
+        "temporal_pinn",
+        "be_adjoint_nn"
+      ],
+      "kernel": "mihirgune123/ie643-noise-density-v24-case-01",
+      "kernel_version": 1,
+      "kernel_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\kernels\\case_01",
+      "runner_sha256": "00e050cf2835afb61fabd77691b169b9199856c4c7af849e3965402adb5ed9b6",
+      "case_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\cases\\case_01",
+      "priority_rank": 4,
+      "execution_owner": "agent_kaggle_cpu",
+      "human_reassigned_utc": "2026-10-21T21:11:45.339789+00:00",
+      "runner_file_bytes_sha256": "d0aa7b1e02035918a27df12311bce809bfe5fd52e525c197c921ee6765fb09c5",
+      "submitted_utc": "2026-10-21T21:12:45.007326+00:00",
+      "last_status_checked": "2026-10-21T23:15:55.181537+00:00",
+      "coverage_complete": true,
+      "evaluated_utc": "2026-10-21T23:15:55.181537+00:00"
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.05",
+      "n_sensors": 3000,
+      "eta": 0.05,
+      "status": "complete_colab_locally_evaluated",
+      "arms": [
+        "temporal_pinn",
+        "be_adjoint_nn"
+      ],
+      "kernel": "mihirgune123/ie643-noise-density-v24-case-02",
+      "kernel_version": 1,
+      "kernel_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\kernels\\case_02",
+      "runner_sha256": "bc7cc2bbe9c35b11dc60d5ba0789e6a88b0abb10f9768c456fbdb0f0535eec9f",
+      "case_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\cases\\case_02",
+      "priority_rank": 1,
+      "execution_owner": "user_colab",
+      "results": "colab_returns\\r672fef\\check",
+      "coverage_complete": true
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n3000__fine_nested__eta0.1",
+      "n_sensors": 3000,
+      "eta": 0.1,
+      "status": "complete_evaluated",
+      "arms": [
+        "temporal_pinn",
+        "be_adjoint_nn"
+      ],
+      "kernel": "mihirgune123/ie643-noise-density-v24-case-03",
+      "kernel_version": 1,
+      "kernel_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\kernels\\case_03",
+      "runner_sha256": "2ef5a3612c3ad27dcf1665439e3ccf903f38344a104588f953cca7f8d80eabf7",
+      "case_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\cases\\case_03",
+      "priority_rank": 7,
+      "execution_owner": "agent_kaggle_cpu",
+      "human_reassigned_utc": "2026-10-21T21:11:45.339789+00:00",
+      "runner_file_bytes_sha256": "8b4381fea64d0bafb6311ad7cd67001136b3e217c6aa60f795c234cf41bb1c6b",
+      "submitted_utc": "2026-10-22T01:46:37.566435+00:00",
+      "last_status_checked": "2026-10-22T04:46:35.166554+00:00",
+      "coverage_complete": true,
+      "evaluated_utc": "2026-10-22T04:46:35.166554+00:00"
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.01",
+      "n_sensors": 5000,
+      "eta": 0.01,
+      "status": "complete_evaluated",
+      "arms": [
+        "temporal_pinn",
+        "be_adjoint_nn"
+      ],
+      "kernel": "mihirgune123/ie643-noise-density-v24-case-04",
+      "kernel_version": 1,
+      "kernel_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\kernels\\case_04",
+      "runner_sha256": "89cc2d2290803331df9a3d4b6e26193721e552418d2242486ae13e73d9c040ca",
+      "case_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\cases\\case_04",
+      "priority_rank": 5,
+      "execution_owner": "agent_kaggle_cpu",
+      "human_reassigned_utc": "2026-10-21T21:11:45.339789+00:00",
+      "runner_file_bytes_sha256": "d09cb8659e0123cb166bccf526bda5a8c4a79c0083b265c6b019db6eefd05b12",
+      "submitted_utc": "2026-10-21T23:15:55.181537+00:00",
+      "last_status_checked": "2026-10-22T01:46:37.566435+00:00",
+      "coverage_complete": true,
+      "evaluated_utc": "2026-10-22T01:46:37.566435+00:00"
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.05",
+      "n_sensors": 5000,
+      "eta": 0.05,
+      "status": "complete_colab_locally_evaluated",
+      "arms": [
+        "temporal_pinn",
+        "be_adjoint_nn"
+      ],
+      "kernel": "mihirgune123/ie643-noise-density-v24-case-05",
+      "kernel_version": 1,
+      "kernel_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\kernels\\case_05",
+      "runner_sha256": "c7ab7882cfe9764c1c1a9990930a566236018d8849560ee47c8f6a6a53efec97",
+      "case_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\cases\\case_05",
+      "priority_rank": 2,
+      "execution_owner": "user_colab",
+      "results": "colab_returns\\r3e8ddc\\check",
+      "coverage_complete": true,
+      "evaluated_utc": "2026-10-22T08:12:36.152693+00:00"
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n5000__fine_nested__eta0.1",
+      "n_sensors": 5000,
+      "eta": 0.1,
+      "status": "complete_evaluated",
+      "arms": [
+        "temporal_pinn",
+        "be_adjoint_nn"
+      ],
+      "kernel": "mihirgune123/ie643-noise-density-v24-case-06",
+      "kernel_version": 1,
+      "kernel_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\kernels\\case_06",
+      "runner_sha256": "95fdf4ab5f40b5eb9716ebb6fd5ffc7e4eab8d8561b6445192cbb28a67a7a98e",
+      "case_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\cases\\case_06",
+      "priority_rank": 8,
+      "execution_owner": "agent_kaggle_cpu",
+      "human_reassigned_utc": "2026-10-21T21:11:45.339789+00:00",
+      "runner_file_bytes_sha256": "17651077ecb1c4045ea470700eb838dd50be00b67b104054c314d6b0f83d918b",
+      "submitted_utc": "2026-10-22T02:16:40.462501+00:00",
+      "last_status_checked": "2026-10-22T04:46:35.166554+00:00",
+      "coverage_complete": true,
+      "evaluated_utc": "2026-10-22T04:46:35.166554+00:00"
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.01",
+      "n_sensors": 7500,
+      "eta": 0.01,
+      "status": "complete_evaluated",
+      "arms": [
+        "temporal_pinn",
+        "be_adjoint_nn"
+      ],
+      "kernel": "mihirgune123/ie643-noise-density-v24-case-07",
+      "kernel_version": 1,
+      "kernel_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\kernels\\case_07",
+      "runner_sha256": "d9ee9da655a0b96f915a6902c938bcf2ede385e034979413fd7e0fc90a404550",
+      "case_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\cases\\case_07",
+      "priority_rank": 6,
+      "execution_owner": "agent_kaggle_cpu",
+      "human_reassigned_utc": "2026-10-21T21:11:45.339789+00:00",
+      "runner_file_bytes_sha256": "c250b3d80c223b6c59e7df7df0ca446ba18b3ad3f0986754e3b18c890ba30c36",
+      "submitted_utc": "2026-10-21T23:45:56.118318+00:00",
+      "last_status_checked": "2026-10-22T02:16:40.462501+00:00",
+      "coverage_complete": true,
+      "evaluated_utc": "2026-10-22T02:16:40.462501+00:00"
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.05",
+      "n_sensors": 7500,
+      "eta": 0.05,
+      "status": "complete_evaluated",
+      "arms": [
+        "temporal_pinn",
+        "be_adjoint_nn"
+      ],
+      "kernel": "mihirgune123/ie643-noise-density-v24-case-08",
+      "kernel_version": 1,
+      "kernel_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\kernels\\case_08",
+      "runner_sha256": "ec96425ad17277d87d3e686fb0cccab6b60bbdd487a04435d533329e640a41a7",
+      "case_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\cases\\case_08",
+      "priority_rank": 3,
+      "execution_owner": "agent_kaggle_cpu",
+      "human_reassigned_utc": "2026-10-21T21:09:43.771244+00:00",
+      "runner_file_bytes_sha256": "529d0f5244d56814be2c24d071b105f06d0bae77d1a1ec45a831f45124df87e0",
+      "submitted_utc": "2026-10-21T21:10:11.955262+00:00",
+      "last_status_checked": "2026-10-21T23:45:56.118318+00:00",
+      "coverage_complete": true,
+      "evaluated_utc": "2026-10-21T23:45:56.118318+00:00",
+      "consistency_qualified_coefficient_advantage": true
+    },
+    {
+      "key": "A_smooth__Fo0.1__uniform8__n7500__fine_nested__eta0.1",
+      "n_sensors": 7500,
+      "eta": 0.1,
+      "status": "complete_evaluated",
+      "arms": [
+        "temporal_pinn",
+        "be_adjoint_nn"
+      ],
+      "kernel": "mihirgune123/ie643-noise-density-v24-case-09",
+      "kernel_version": 1,
+      "kernel_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\kernels\\case_09",
+      "runner_sha256": "0e6d52bca2f18c7db11a6584a8c351043b8fad712d7c1ff18423590867d43281",
+      "case_dir": "campaign\\pilots\\noise_density_v24_1000_7500\\cases\\case_09",
+      "priority_rank": 9,
+      "execution_owner": "agent_kaggle_cpu",
+      "human_reassigned_utc": "2026-10-21T21:11:45.339789+00:00",
+      "runner_file_bytes_sha256": "a6f8eec82564fdb294ee5fd2b0a7be07c374218ca9615a42cce1c1b032b4975b",
+      "submitted_utc": "2026-10-22T04:46:35.166554+00:00",
+      "last_status_checked": "2026-10-22T08:01:47.646906+00:00",
+      "coverage_complete": true,
+      "evaluated_utc": "2026-10-22T08:01:47.646906+00:00"
+    }
+  ],
+  "data_collection": "datasets_v2_noise_density_v24_1000_7500",
+  "initial_coefficient_sha256": "e961924dffcf56c5322f2bda40af3090568a1fc3df4d4684f67b47cd2fff029b",
+  "adam": 1000,
+  "outer": 10,
+  "inner": 400,
+  "n_pde": 4096,
+  "time_step_tau": 0.01,
+  "seed": 42,
+  "per_arm_internal_s": 12600,
+  "per_arm_external_s": 12900,
+  "total_pair_internal_s": 25800,
+  "hardware": "Both arms sequentialCPU2threads on same freeKaggleCPU host; cross-cell/reference hosts differ",
+  "budget_rationale": "GPUquota1265s cannot cover full fit. CPUcap3x4200 gives fulliteration opportunity without truncating; caps/timeouts retained. Pairloop25800s bounded, no paidcompute.",
+  "reference_pilots": [
+    "dense1000_v22_kaggle",
+    "noise_density_v23"
+  ],
+  "source_sha256": {
+    "adjoint_inversion.py": "7004400e7832bb30db42c607caf323eadcb599b30f3678af90cfcbe63de41b95",
+    "adjoint_nn.py": "5d0dc868b2a39bc42f4fc42793a9dd46121c465eda017e29ee6afdf061fa75b7",
+    "calibrated_neural_pair.py": "6f4c420ee402e0f9375fa27bd66fcd5ea698e9ce0c84db94dd015435fff42c82",
+    "compare_neural.py": "43cc6e0a32ae15fd417d0773c8e9bb1bc9e2e916e61b455d46545385e6a82e81",
+    "integrators.py": "74c161c22f7d9289fbe8787cdf82ec866e399e5d86bc32ad5f1d97ba7301c10b",
+    "neural_diffusivity.py": "d4102584f213e2047ab84dc4e99168dbf518891b4ab77a9539e3fc8376cb7f57",
+    "pinn_papers.py": "895739b0e3c541cdb7bc3449d8bb445ce8277c2858e86e6f01db992e1996ede0",
+    "pinn_zhang_transfer.py": "1cd154938a8fa3bbddc88f037385bd35cf0e16627306e5d80bc522d78aaf0dfd",
+    "temporal_density_pair.py": "29821f4a3b816e5adcc2fc3187d131e62ba86e9616cf1808569beb1755a9d583",
+    "matched_temporal_adjoint.py": "481e31d27c8d0c16e228a423b880f9a8c3d2d631eb242b182f93bbffcb45a18d",
+    "noise_density_1000_7500_pair.py": "055ba4d739cd2cf24d10495b6739f31abfd6db558c77afe2af0bd28b774b5278"
+  },
+  "input_dataset": "mihirgune123/ie643-noise-density-v24-inputs",
+  "input_dataset_status": "ready",
+  "max_parallel_cpu_pairs_global": 2,
+  "inherited_active_cases": [
+    "noise_density_v23/cases/case_01",
+    "noise_density_v23/cases/case_02"
+  ],
+  "dispatch_order": [
+    "case_02",
+    "case_05",
+    "case_08",
+    "case_01",
+    "case_04",
+    "case_07",
+    "case_03",
+    "case_06",
+    "case_09"
+  ],
+  "human_priority": "Finishdensityat5%noisefirst:3000,5000,7500;thennoiselevels1%,10%. Existingv23activejobsallowedfinish.",
+  "validation": "Full18arm2directiongradientmax9.804e-8/oneAdam-oneSSB/checkpointPASS; ALL9own2armBE-CNfixturesafterindependentICBC-PDE-CNPASSBEFOREtruth; ZIP-expandedbotharmsPASS/exactparts/D/allinputsourcehashes",
+  "validated_utc": "2026-10-21T17:58:04.030131+00:00",
+  "input_dataset_version": 1,
+  "input_ready_utc": "2026-10-21T17:59:50.514243+00:00",
+  "automatic_kaggle_dispatch": false,
+  "colab_notebook": "colab/IE643_GPU_Density_Sweep.ipynb",
+  "colab_notebook_sha256": "253bc8d50a9031eb379b3cec6065c785bbb90c9fa75fd0d6b8cc4ee4b777f3cd",
+  "colab_payload_sha256": "9c2f3b998576f4f1e59d782086c11e9fc6beac60d608d2a9c4ba9ae897fbbd69",
+  "colab_ready_utc": "2026-10-21T18:31:47.541954+00:00",
+  "updated": "2026-10-22T08:12:36.152693+00:00",
+  "colab_returns": [
+    {
+      "archive_sha256": "7744813d08ba87f4da34b45d71af3a3e9e37617fe17a069d934d405ba8fb740c",
+      "path": "colab_returns\\r672fef",
+      "cases": [
+        "case_02"
+      ],
+      "status": "complete_locally_validated_evaluated",
+      "evaluated_utc": "2026-10-21T20:20:58.494877+00:00"
+    },
+    {
+      "archive_sha256": "9193d7eb693d347d614776102e8a22c1a23ae17c0eb25368b0c86b6d6b374204",
+      "path": "colab_returns\\r3e8ddc",
+      "cases": [
+        "case_05"
+      ],
+      "status": "complete_locally_validated_evaluated",
+      "evaluated_utc": "2026-10-22T08:12:36.152693+00:00"
+    }
+  ],
+  "agent_authorized_cases": [
+    "case_08",
+    "case_01",
+    "case_04",
+    "case_07",
+    "case_03",
+    "case_06",
+    "case_09"
+  ],
+  "noise_dispatch_order": [
+    "case_01",
+    "case_04",
+    "case_07",
+    "case_03",
+    "case_06",
+    "case_09"
+  ],
+  "automatic_dispatch_scope": "ONLY six predeclared noise pairs and current case08; max2KaggleCPUjobs,case05excluded",
+  "active_case_ids": [],
+  "completed_fresh_pairs": 9,
+  "coverage_complete": true,
+  "agent_scope_complete": true,
+  "missing_user_cases": []
+}

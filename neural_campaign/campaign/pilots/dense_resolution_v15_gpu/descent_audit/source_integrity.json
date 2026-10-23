@@ -1,0 +1,7 @@
+{
+  "source": "audit_dense_descent.py",
+  "sha256": "225bc36d93199d878ebb4bc67ffb0c8d2c1f319f75bff220eb2e02d33ac85dbf",
+  "uses_true_D": false,
+  "optimizer_steps_accepted": 0,
+  "checkpoint_selected": false
+}

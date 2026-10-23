@@ -1,0 +1,16 @@
+{
+ "key": "F_defects__Fo0.1__uniform8__n20__boundary__eta0.05",
+ "method": "adjoint",
+ "alpha": 16.0,
+ "flag": "reached_sigma",
+ "wall_s": 26.08105131299999,
+ "n_evals": 111,
+ "eps_u_solver": 0.0029825753818395763,
+ "sigma": 0.0013268946,
+ "n_readings": 160,
+ "peak_rss_gb": 0.24481582641601562,
+ "eps_D": 0.22500931193432977,
+ "rmse_logD": 0.19895734280860902,
+ "rms_replay_over_sigma": 0.9714189996925302,
+ "eps_u": 0.06754530353005053
+}
