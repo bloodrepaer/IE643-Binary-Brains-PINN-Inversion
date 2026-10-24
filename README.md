@@ -1,7 +1,7 @@
 ﻿# PINN-based inverse estimation of a spatially varying diffusion coefficient
 
-**IE 643 course project Â· Team Binary_Brains**
-Jash Taparia (24b2451) Â· Mihir Gune (24b2443)
+**IE 643 course project  Team Binary_Brains**
+Jash Taparia (24b2451)  Mihir Gune (24b2443)
 
 We recover an unknown diffusivity map D(x, y) in the 2D heat equation
 
