@@ -1,5 +1,0 @@
-key,tau_low,tau_high,pde_rms,pde_max_abs
-A_smooth__Fo0.1__uniform8__n50__random__eta0.05,0.0,0.001,0.012061387815278247,0.07199241217389662
-A_smooth__Fo0.1__uniform8__n50__random__eta0.05,0.001,0.01,0.010693731102667695,0.06365665085492456
-A_smooth__Fo0.1__uniform8__n50__random__eta0.05,0.01,0.1,0.03734055756120179,0.3881342838187121
-A_smooth__Fo0.1__uniform8__n50__random__eta0.05,0.1,1.0,0.029414089004566213,0.2841313334020457

@@ -1,8 +1,0 @@
-{
-  "reason": "Kaggle automatically expands input data.zip into data directory; FileNotFoundError before any fit",
-  "no_training_outputs": true,
-  "reviewed_retry": "Accept either expanded data directory or CRC/path/symlink-checked zip; unchanged scientific adapter/data/parameters",
-  "canonical_kernel": "mihirgune123/ie643-temporal-consistency-five-dense-fields",
-  "requested_slug_was_different": "Kaggle derived actual slug from title; use returned canonical slug, no duplicatekernel",
-  "failed_runner_sha256": "9195dd096c5f0962d095e53edb26eb6d0ec236e6935c7e0dd11b4c2d45194bdd"
-}

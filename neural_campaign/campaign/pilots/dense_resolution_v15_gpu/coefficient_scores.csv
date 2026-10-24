@@ -1,4 +1,0 @@
-key,variant,artifact,n_sensors,eta,rel_L2_D,rmse_logD,replay_sigma,sensor_fit_sigma
-A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,dense_resolution_v15,results\adjoint_control\adjoint_nn\metrics.json,3969,0.05,0.2000805475885302,0.19369360739865524,0.9806585987534586,0.9806585987534586
-A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,dense_resolution_v15,results\pde16384\pinn\metrics.json,3969,0.05,0.35742348072157853,0.41383205994980105,2.036014497620444,2.0245580300109407
-A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,dense_resolution_v15,results\pde4096_control\pinn\metrics.json,3969,0.05,0.40372035661375455,0.4886132777802984,2.4746266398496255,2.259555942912427

@@ -1,3 +1,0 @@
-key,variant,artifact,n_sensors,eta,rel_L2_D,rmse_logD,replay_sigma,sensor_fit_sigma
-A_smooth__Fo0.1__uniform8__n50__random__eta0.05,augmented,augmented\metrics.json,50,0.05,0.3242389560273712,0.4366855979182697,2.592037215168253,0.8268674238814776
-A_smooth__Fo0.1__uniform8__n50__random__eta0.05,control,control\metrics.json,50,0.05,0.3212292632325037,0.4237343380617504,2.669319668012964,0.6488790916466604

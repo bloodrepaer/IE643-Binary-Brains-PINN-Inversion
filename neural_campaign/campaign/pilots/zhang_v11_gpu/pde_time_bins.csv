@@ -1,5 +1,0 @@
-key,artifact,variant,tau_low,tau_high,pde_rms,pde_max_abs
-A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,results\A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05\pinn__s42\metrics.json,zhang_v2_heat_transfer,0.0,0.001,0.0209545148326629,0.9178606012413835
-A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,results\A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05\pinn__s42\metrics.json,zhang_v2_heat_transfer,0.001,0.01,0.003991699057362353,0.10058398188456434
-A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,results\A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05\pinn__s42\metrics.json,zhang_v2_heat_transfer,0.01,0.1,0.013625818066568355,0.4774198467440869
-A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,results\A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05\pinn__s42\metrics.json,zhang_v2_heat_transfer,0.1,1.0,0.0022017639770525455,0.05510596787467977

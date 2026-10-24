@@ -11,7 +11,7 @@ from sparse, noisy sensor readings of u. Two methods are built and compared on t
 - **Classical PDE-constrained inversion (adjoint method)**, in `adjoint_inversion.py`.
 - **Physics-informed neural network (PINN)**, in `pinn_inversion.py`.
 
-The full write-up is the stage-wise project report (a Claude Docs document; download it as PDF or Word from the doc). Two companion guides explain the theory and the defence of each claim with paper quotations.
+The full write-up is the stage-wise project report in `../report/` (LaTeX source; the PDF is submitted separately).
 
 ---
 
@@ -35,11 +35,7 @@ The full write-up is the stage-wise project report (a Claude Docs document; down
 | `models/classical/tikhonov_all389/` | Classical estimate D̂ (`D_hat.npz`), metrics and a summary figure for **all 389 datasets**; `summary_all.csv` lists them. |
 | `models/classical/results_*` | Classical runs with TV regularisation and on the defect family. |
 | `models/classical/sweep/` | Classical runs of the same 44 datasets. |
-| `experiments/zhang_replication_study20/` | Replication of Zhang et al. (2026) and the 20-dataset PINN vs adjoint study. |
-| `experiments/solver_bias_test/` | Test of the hypothesis that generating data with CN and inverting with CN biases the result (refuted). |
-| `experiments/thakur_verification/` | Re-implementation and audit of Thakur et al. (2024). |
-| `experiments/pinn_projected_variants/` | PINN variants (projected D network, longer training, no interior taper). |
-| `docs/` | Links to the report, theory guide and defence guide. |
+| `experiments/zhang_replication_study20/` | The 20-dataset PINN vs adjoint head-to-head study (quantitative and qualitative evaluation). |
 
 The dataset folder `datasets_v2_rk4_zero/` (about 175 MB) is not included; it is regenerated exactly by step 2 below (fixed crc32 seeds).
 
@@ -91,8 +87,7 @@ The interface displays relL2(D), replay RMS/σ and the maps (true, classical, PI
 - On the 20-dataset study the classical adjoint has the lower relL2(D) on 20 of 20 datasets: median 0.23 vs 0.47 for the PINN (best constant: 0.38). The adjoint beats the constant baseline on 20 of 20, the PINN on 8 of 20. Median replay RMS/σ is 0.97 (adjoint) vs 3.7 (PINN). Median wall time on CPU: 46 s vs 125 s.
 - Sensor × noise × layout sweep (44 datasets, inclusion and bump families; `experiments/sensor_noise_layout_sweep/`): the adjoint has the lower error on 41 of 44, median relL2 0.36 vs 0.61 (best constant 0.68). On the bump both methods improve with more sensors and less noise. On the inclusion the PINN stays at 0.68–0.76 whatever the sensor count, because its data term is an average.
 - The PINN's 3 wins are all on the inclusion with 5 random or boundary-only sensors. There it stays at the best-constant level (about 0.75) while the adjoint overshoots, up to 1.53 with 20 boundary sensors. In other words, the PINN degrades gracefully when the data cannot identify D, but it is not a better reconstruction.
-- The suspected solver bias (CN data + CN inversion) does not exist: changing the data solver moves the classical error by at most 0.004.
-- Where a PINN should win, from the literature and our tests: uncertain or unknown initial/boundary data, very large data sets where a mesh solve is the bottleneck, and amortised use; none of these is in the course set-up, which gives the classical method the exact initial and boundary conditions.
+- Where the PINN is better (unknown boundary condition or source; very dense sensors) is shown in `../neural_campaign/` and summarised in the top-level README.
 
 Full tables and figures are in the report.
 

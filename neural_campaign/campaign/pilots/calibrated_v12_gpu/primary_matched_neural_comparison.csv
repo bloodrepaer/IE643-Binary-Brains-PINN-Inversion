@@ -1,3 +1,0 @@
-method,key,rel_L2_D,replay_sigma,sensor_fit_sigma,status,wall_s,adam_completed,quasi_newton_iterations,function_evaluations,gamma,parameter_count
-adjoint_nn,A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,0.14357929087023408,0.9002871198614627,0.9002871198614627,complete,2618.672250349,1000,4000,7911,7.117244676827626e-09,2241
-pinn,A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05,0.3919180734458719,1.7642777911615706,1.6491566894427008,complete,2957.520602955,1000,4000,8431,7.117244676827626e-09,4514

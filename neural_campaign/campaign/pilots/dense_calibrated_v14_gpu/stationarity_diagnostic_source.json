@@ -1,7 +1,0 @@
-{
-  "source": "audit_dense_stationarity.py",
-  "sha256": "7c9ff34bc717b619d358f9112c5c8dd048d4700d51164f218efdaaf763adaa52",
-  "uses_true_D": false,
-  "training": false,
-  "selection": false
-}

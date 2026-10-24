@@ -1,6 +1,0 @@
-pilot,key,term,raw_loss,weight,weighted_loss,temperature_gradient_norm,coefficient_gradient_norm,gradient_norm
-ic_convergence_v5_gpu,A_smooth__Fo0.1__uniform8__n50__random__eta0.05,data,215.08057244558785,1.0,215.08057244558785,28823.832542428594,0.0,28823.832542428594
-ic_convergence_v5_gpu,A_smooth__Fo0.1__uniform8__n50__random__eta0.05,pde,0.13964680248339015,1000.0,139.64680248339016,28489.66341119886,231.0853080211796,28490.600585157685
-ic_convergence_v5_gpu,A_smooth__Fo0.1__uniform8__n50__random__eta0.05,ic,1.6261236175231506e-13,1000.0,1.6261236175231506e-10,0.0,0.0,0.0
-ic_convergence_v5_gpu,A_smooth__Fo0.1__uniform8__n50__random__eta0.05,bc,6.164964133697883e-34,1000.0,6.164964133697883e-31,0.0,0.0,0.0
-ic_convergence_v5_gpu,A_smooth__Fo0.1__uniform8__n50__random__eta0.05,reg,0.04297481182638632,1.0,0.04297481182638632,0.0,1.6271253380228174,1.6271253380228174

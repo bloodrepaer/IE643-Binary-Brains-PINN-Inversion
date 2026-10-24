@@ -1,9 +1,0 @@
-{
-  "created": "2026-10-20T11:08:28.865635+00:00",
-  "uses_true_D": false,
-  "refitting": false,
-  "scope": "Both completed retained PINN arms, exact original final-cloud objective components, parameter-block gradients and state/common-CN sensor gap; no optimization steps or settings selection",
-  "source": "audit_optimizer_stationarity.py",
-  "sha256": "449102c5c879687033da177a910455f4685caca14e97ee95992dd11d34b17323",
-  "limitations": "Finite sample and raw parameter-space gradients; no convergence/unique-cause/feasibility proof"
-}

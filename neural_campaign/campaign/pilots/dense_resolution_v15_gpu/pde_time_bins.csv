@@ -1,9 +1,0 @@
-key,artifact,variant,tau_low,tau_high,pde_rms,pde_max_abs
-A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\pde16384\pinn\metrics.json,dense_resolution_v15,0.0,0.001,0.0009738902602823792,0.006893366886636443
-A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\pde16384\pinn\metrics.json,dense_resolution_v15,0.001,0.01,0.0013109367973268447,0.007567170652159838
-A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\pde16384\pinn\metrics.json,dense_resolution_v15,0.01,0.1,0.002267950456064806,0.030667851547249526
-A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\pde16384\pinn\metrics.json,dense_resolution_v15,0.1,1.0,0.0008516118752870285,0.0060216258823755225
-A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\pde4096_control\pinn\metrics.json,dense_resolution_v15,0.0,0.001,0.0007309300140193769,0.004090449968528809
-A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\pde4096_control\pinn\metrics.json,dense_resolution_v15,0.001,0.01,0.0014258106825563606,0.012662994988276055
-A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\pde4096_control\pinn\metrics.json,dense_resolution_v15,0.01,0.1,0.03264887911053974,0.6743385193300873
-A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05,results\pde4096_control\pinn\metrics.json,dense_resolution_v15,0.1,1.0,0.009010611958187045,0.26194805130291926
