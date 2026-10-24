@@ -1,8 +1,8 @@
 # Videos
 
-| Video | Length | File or link |
+| File | Contents | Length |
 |---|---|---|
-| Code walkthrough | up to 10 min | `code_walkthrough.mp4` or [Google Drive link - to be added] |
-| Demo of the interface | about 5 min | `demo.mp4` or [Google Drive link - to be added] |
+| `demo_app.mp4` | Demo of the Streamlit interface in `submission/app/`: loading or uploading data, running the classical adjoint and the PINN, the displayed metrics (relL2(D), replay RMS/sigma), recovered maps, downloading and reloading trained models. | about 5 min |
+| `code_walkthrough.mp4` | Walkthrough of the code: data generation and forward solver, classical adjoint inversion, PINN networks and loss function, optimiser and learning-rate schedule, evaluation metrics. | up to 10 min |
 
-GitHub rejects single files over 100 MB. If a video is larger, upload it to the team's Google Drive folder (`Binary_Brains_IE643_CourseProject_IntensiveAssessment`, shared as "anyone with the link") and paste the link in the table above instead of committing the file.
+Both videos are also in the course Google Drive folder `Binary_Brains_IE643_CourseProject_IntensiveAssessment`.
