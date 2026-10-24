@@ -8,6 +8,12 @@ H=Path('campaign/pilots/dense1000_v22_kaggle')
 DATA=Path('datasets_v2_dense1000')
 PARENT=Path('datasets_v2_dense10000')
 KEY='A_smooth__Fo0.1__uniform8__n1000__fine_nested__eta0.05'
+HERE=Path(__file__).resolve().parent
+CORE=HERE.parent/'core'
+
+def src(name):
+    """Locate a module in this folder or in core/."""
+    return HERE/name if (HERE/name).exists() else CORE/name
 
 def main():
     assert not H.exists() and not DATA.exists(), 'Preserve existing versions'
@@ -42,9 +48,9 @@ def main():
         files=dict(sensors_csv=f'sensors/{KEY}.csv',problem=e['files']['problem']))
     (supplied/'manifest.json').write_text(json.dumps([minimal],indent=2))
     for name in ('dense10000_pair.py','validate_dense10000.py','evaluate_dense10000.py'):
-        s=Path(name).read_text().replace('80000','8000').replace('10000','1000').replace('v21','v22')
+        s=src(name).read_text().replace('80000','8000').replace('10000','1000').replace('v21','v22')
         s=s.replace('dense1000_v22_gpu','dense1000_v22_kaggle')
-        Path(name.replace('10000','1000')).write_text(s)
+        (HERE/name.replace('10000','1000')).write_text(s)
     manifest={p.relative_to(supplied).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in supplied.rglob('*') if p.is_file()}
     (H/'input_manifest.json').write_text(json.dumps(manifest,indent=2))
     proof=dict(created_utc=datetime.now(timezone.utc).isoformat(),distinct_sensors=1000,readings=8000,
@@ -57,7 +63,7 @@ def main():
         'neural_diffusivity.py','pinn_papers.py','pinn_zhang_transfer.py','temporal_density_pair.py',
         'matched_temporal_adjoint.py','dense1000_pair.py']
     package=H/'dataset';package.mkdir()
-    for name in modules:shutil.copy2(name,package/name)
+    for name in modules:shutil.copy2(src(name),package/name)
     shutil.copy2(H/'input_manifest.json',package/'input_manifest.json')
     with zipfile.ZipFile(package/'data.zip','w',zipfile.ZIP_DEFLATED) as z:
         for p in supplied.rglob('*'):
@@ -73,7 +79,7 @@ def main():
         kernel_version=1,last_kernel_status='NOT_SUBMITTED',kernel=None,
         fairness='Separate Kaggle sessions: PINNCUDA+CPUcurvature and BECPU,2threads; accuracy only, no equal-host timing claim',
         total_external_s=9000,total_internal_s=8400,
-        density_limitation=proof['limitation'],source_sha256={n:hashlib.sha256(Path(n).read_bytes()).hexdigest() for n in modules})
+        density_limitation=proof['limitation'],source_sha256={n:hashlib.sha256(src(n).read_bytes()).hexdigest() for n in modules})
     (H/'pilot.json').write_text(json.dumps(p,indent=2))
     print('Prepared',KEY,'without answerkey access; package bytes',(package/'data.zip').stat().st_size)
 

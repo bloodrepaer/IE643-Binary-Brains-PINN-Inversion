@@ -16,7 +16,7 @@ from sparse, noisy sensor readings of u. We compare a **physics-informed neural 
 | Folder | Contents |
 |---|---|
 | `submission/` | **Main code, ready to run.** Forward solver, dataset generator, classical adjoint inversion, PINN, Streamlit interface (`submission/app/`, with screenshots in `submission/app/screenshots/`), trained models for both methods, the sensor/noise/layout sweep and the 20-dataset evaluation. See `submission/README.md`. |
-| `neural_campaign/` | **Deliverable 4 evidence.** Both methods with the same neural network for D; the "where should a PINN win?" hypothesis suites; the dense-sensor sweep (1,000 to 10,000 sensors); trained checkpoints and score tables. |
+| `extended_studies/` | **Deliverable 4 evidence**, in four studies: (1) grid vs neural representation of D in the adjoint; (2) neural adjoint vs neural PINN with the same network for D; (3) the "where should a PINN win?" hypothesis suites; (4) the dense-sensor sweep (1,000 to 10,000 sensors). Trained checkpoints, score tables and run records. See `extended_studies/README.md`. |
 | `report/` | LaTeX source of the stage-wise report (course template). |
 | `videos/` | Code-walkthrough and demo videos (links in `videos/README.md`). |
 
@@ -24,13 +24,13 @@ from sparse, noisy sensor readings of u. We compare a **physics-informed neural 
 
 | # | Deliverable | Where |
 |---|---|---|
-| 1 | Synthetic dataset and forward solver | `submission/integrators.py` (5-point flux form; RK4, Crank-Nicolson with Rannacher start, forward Euler), `submission/domain.py` (six ground-truth D families), `submission/generate_dataset_v2.py` (389 datasets), `submission/compare_integrators.py`, `submission/README_dataset_and_classical.md`. More dataset generators: `neural_campaign/generate_pinn_favoured.py`, `generate_pinn_favoured2.py`, `make_density_datasets.py`, `extend_sensor_density.py`, `prepare_noise_density_1000_7500.py`, `prepare_dense10000.py`. |
-| 2 | PINN inverse model | `submission/pinn_inversion.py`; checkpoints in `submission/models/pinn/`. Boundary-aware PINN: `neural_campaign/pinn_inversion_bc.py`. Neural-coefficient PINN: `neural_campaign/compare_neural.py`, `temporal_density_pair.py`. |
-| 3 | Classical inversion baseline | `submission/adjoint_inversion.py` (exact discrete adjoint of Crank-Nicolson, L-BFGS-B, discrepancy principle), `submission/test_adjoint.py`; estimates for all 389 datasets in `submission/models/classical/tikhonov_all389/`. Neural adjoint: `neural_campaign/adjoint_nn.py`, `matched_temporal_adjoint.py`. |
-| 4 | Where PINN inversion beats classical | Unknown boundary condition or source: `neural_campaign/README_pinn_favoured.md`, `results_pinnwin_scores.csv`, `results_pinnwin2_scores.csv`. Very dense sensors: `neural_campaign/campaign/pilots/noise_density_v24_1000_7500/SWEEP_REPORT.md` and `campaign/pilots/dense10000_v21_gpu/RESULTS.md`. Too few sensors: `submission/experiments/sensor_noise_layout_sweep/`. |
-| 5 | Sensor density, location and noise experiments | `submission/experiments/sensor_noise_layout_sweep/` (both methods; 5 to 100 sensors, 0 to 10 % noise, 4 layouts), `submission/models/classical/tikhonov_all389/summary_all.csv` (389 configurations), `neural_campaign/campaign/density_*.csv` (5 to 3,969 sensors). |
-| 6 | Quantitative and qualitative evaluation | Metrics in every `metrics.json` and summary CSV; maps in each `summary.png`; `submission/experiments/zhang_replication_study20/` (20-dataset head-to-head); `neural_campaign/analysis/figures/`, `neural_campaign/campaign/figures/`. |
-| - | Trained models | `submission/models/` (PINN checkpoints, classical estimates), `submission/app/pretrained/` (both methods, 20 datasets), `neural_campaign/campaign/results/` and `campaign/v24_case_results/` (neural adjoint and neural PINN checkpoints). |
+| 1 | Synthetic dataset and forward solver | `submission/integrators.py` (5-point flux form; RK4, Crank-Nicolson with Rannacher start, forward Euler), `submission/domain.py` (six ground-truth D families), `submission/generate_dataset_v2.py` (389 datasets), `submission/compare_integrators.py`, `submission/README_dataset_and_classical.md`. More dataset generators: `extended_studies/study3_pinn_favoured/generate_pinn_favoured.py`, `generate_pinn_favoured2.py`; `extended_studies/study1_representation/make_density_datasets.py`, `extend_sensor_density.py`; `extended_studies/study4_dense_sensors/prepare_noise_density_1000_7500.py`, `prepare_dense10000.py`. |
+| 2 | PINN inverse model | `submission/pinn_inversion.py`; checkpoints in `submission/models/pinn/`. Boundary-aware PINN: `extended_studies/core/pinn_inversion_bc.py`. Neural-coefficient PINN: `extended_studies/core/compare_neural.py`, `extended_studies/study4_dense_sensors/temporal_density_pair.py`. |
+| 3 | Classical inversion baseline | `submission/adjoint_inversion.py` (exact discrete adjoint of Crank-Nicolson, L-BFGS-B, discrepancy principle), `submission/test_adjoint.py`; estimates for all 389 datasets in `submission/models/classical/tikhonov_all389/`. Neural adjoint: `extended_studies/core/adjoint_nn.py`, `extended_studies/study4_dense_sensors/matched_temporal_adjoint.py`. |
+| 4 | Where PINN inversion beats classical | Unknown boundary condition or source: `extended_studies/study3_pinn_favoured/README.md`, `results/results_pinnwin_scores.csv`, `results/results_pinnwin2_scores.csv`. Very dense sensors: `extended_studies/campaign/pilots/noise_density_v24_1000_7500/SWEEP_REPORT.md` and `campaign/pilots/dense10000_v21_gpu/RESULTS.md`. Too few sensors: `submission/experiments/sensor_noise_layout_sweep/`. |
+| 5 | Sensor density, location and noise experiments | `submission/experiments/sensor_noise_layout_sweep/` (both methods; 5 to 100 sensors, 0 to 10 % noise, 4 layouts), `submission/models/classical/tikhonov_all389/summary_all.csv` (389 configurations), `extended_studies/campaign/density_*.csv` (5 to 3,969 sensors). |
+| 6 | Quantitative and qualitative evaluation | Metrics in every `metrics.json` and summary CSV; maps in each `summary.png`; `submission/experiments/zhang_replication_study20/` (20-dataset head-to-head); `extended_studies/analysis/figures/`, `extended_studies/campaign/figures/`. |
+| - | Trained models | `submission/models/` (PINN checkpoints, classical estimates), `submission/app/pretrained/` (both methods, 20 datasets), `extended_studies/campaign/results/` and `campaign/v24_case_results/` (neural adjoint and neural PINN checkpoints). |
 | - | Interface with user input/upload | `submission/app/streamlit_app.py`: generate a dataset, pick a benchmark dataset or upload sensor readings (CSV); run either method; view maps and metrics; download or reload models. Sample inputs: `submission/app/sample_inputs/`. Screenshots: `submission/app/screenshots/`. |
 | - | Displayed performance metric | relL2(D), replay RMS/sigma and the best-constant baseline, shown in the interface's results tab. |
 | - | Stage-wise report | `report/`. |
@@ -52,13 +52,15 @@ python pinn_inversion.py --single-run --data-root . --output-dir results_pinn --
 python -m streamlit run app/streamlit_app.py    # interface at http://localhost:8501
 ```
 
-Neural-coefficient code (run from `neural_campaign/`, with `datasets_v2_rk4_zero` copied or regenerated there):
+Extended studies (run from `extended_studies/`; `run.py` makes the shared `core/` modules importable):
 
 ```bash
-python -m unittest test_neural -v
-python compare_neural.py --keys B_gaussian_bump__Fo0.1__uniform8__n50__random__eta0.05 --out results_neural_B
-python generate_pinn_favoured.py         # hypothesis-suite datasets H1-H5
-python generate_pinn_favoured2.py        # H6, H7, H9
+cd extended_studies
+python run.py core/test_neural.py -v
+python run.py core/generate_dataset_v2.py      # datasets_v2_rk4_zero/ for this folder
+python run.py core/compare_neural.py --keys B_gaussian_bump__Fo0.1__uniform8__n50__random__eta0.05 --out results_neural_B
+python run.py study3_pinn_favoured/generate_pinn_favoured.py     # hypothesis-suite datasets H1-H5
+python run.py study3_pinn_favoured/generate_pinn_favoured2.py    # H6, H7, H9
 ```
 
 The generated datasets are not stored in the repository (about 550 MB in total); the scripts above regenerate every one.

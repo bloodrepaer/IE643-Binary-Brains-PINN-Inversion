@@ -33,12 +33,12 @@ Design rules (so a PINN win, if it appears, can be attributed and is not rigged)
     The true BC / source is stored only in ground_truth/ for scoring.
     A stronger classical baseline would add the boundary values or the source
     as extra unknowns; the report should say the adjoint here does not.
-  * The PINN needs code changes to EXPLOIT H2/H3 (see README_pinn_favoured.md):
+  * The PINN needs code changes to EXPLOIT H2/H3 (see study3_pinn_favoured/README.md):
     drop the hard Dirichlet window and the BC loss when "known" is false, and
     use a learnable or robust (L1/Huber) residual when the source is unknown.
 
-Run (from v2/, ~5-10 min, deterministic):
-    python generate_pinn_favoured.py                     # -> datasets_v2_pinnwin/
+Run (from extended_studies/, ~5-10 min, deterministic):
+    python run.py study3_pinn_favoured/generate_pinn_favoured.py     # -> datasets_v2_pinnwin/
 """
 import csv, json, os, time
 import numpy as np

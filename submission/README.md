@@ -87,7 +87,7 @@ The interface displays relL2(D), replay RMS/sigma and the maps (true, classical,
 - On the 20-dataset study the classical adjoint has the lower relL2(D) on 20 of 20 datasets: median 0.23 vs 0.47 for the PINN (best constant: 0.38). The adjoint beats the constant baseline on 20 of 20, the PINN on 8 of 20. Median replay RMS/sigma is 0.97 (adjoint) vs 3.7 (PINN). Median wall time on CPU: 46 s vs 125 s.
 - Sensor x noise x layout sweep (44 datasets, inclusion and bump families; `experiments/sensor_noise_layout_sweep/`): the adjoint has the lower error on 41 of 44, median relL2 0.36 vs 0.61 (best constant 0.68). On the bump both methods improve with more sensors and less noise. On the inclusion the PINN stays at 0.68-0.76 whatever the sensor count, because its data term is an average.
 - The PINN's 3 wins are all on the inclusion with 5 random or boundary-only sensors. There it stays at the best-constant level (about 0.75) while the adjoint overshoots, up to 1.53 with 20 boundary sensors. In other words, the PINN degrades gracefully when the data cannot identify D, but it is not a better reconstruction.
-- Where the PINN is better (unknown boundary condition or source; very dense sensors) is shown in `../neural_campaign/` and summarised in the top-level README.
+- Where the PINN is better (unknown boundary condition or source; very dense sensors) is shown in `../extended_studies/` and summarised in the top-level README.
 
 Full tables and figures are in the report.
 

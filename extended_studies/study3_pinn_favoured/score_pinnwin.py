@@ -8,16 +8,20 @@ For every dataset and method with a D_hat.npz:
                      term, so this replay uses f = 0 and is flagged (replay_note).
   truth_replay       the same number for the TRUE D: the floor a perfect D would reach
   const_relL2        the best constant D (adjoint's stage-0 result), the "learned nothing" line
-Writes results_pinnwin_scores.csv.
+Writes results/results_pinnwin_scores.csv (results/results_pinnwin2_scores.csv for datasets_v2_pinnwin2),
+next to this script.
 """
 import copy, json, os, sys
+from pathlib import Path
 import numpy as np, pandas as pd
 import adjoint_inversion as ai
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "datasets_v2_pinnwin"
 RES = ({"Adjoint": "results_pinnwin_adjoint", "PINN": "results_pinnwin_pinn"} if ROOT == "datasets_v2_pinnwin" else
        {"Adjoint": "results_pinnwin2_adjoint", "Adjoint (32x32 control)": "results_pinnwin2_adjoint_c32", "PINN": "results_pinnwin2_pinn"})
-OUTCSV = "results_pinnwin_scores.csv" if ROOT == "datasets_v2_pinnwin" else "results_pinnwin2_scores.csv"
+_RESULTS = Path(__file__).resolve().parent / "results"
+_RESULTS.mkdir(exist_ok=True)
+OUTCSV = str(_RESULTS / ("results_pinnwin_scores.csv" if ROOT == "datasets_v2_pinnwin" else "results_pinnwin2_scores.csv"))
 man = json.load(open(os.path.join(ROOT, "manifest.json")))
 rows, cache = [], {}
 for e in man:

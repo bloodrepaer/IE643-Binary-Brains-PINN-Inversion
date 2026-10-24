@@ -12,7 +12,7 @@ import shutil
 import zlib
 import numpy as np
 
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parents[1]  # the extended_studies/ root
 SOURCE=ROOT/"datasets_v2_rk4_zero"
 DEST=ROOT/"datasets_v2_density_extended"
 COUNTS=[5,20,50,100,200,400,800,1600,3200,3969]
