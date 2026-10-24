@@ -147,16 +147,29 @@ def _to_data_grid(D, dom):
 
 def parse_sensor_csv(raw: bytes):
     """Uploaded readings: CSV with header x,y,t,u and optionally sigma (long format, one row per reading)."""
-    text = raw.decode("utf-8-sig")
+    try:
+        text = raw.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        raise ValueError("this file is not a text CSV; save it as CSV (comma-separated) with a header x,y,t,u[,sigma]")
     rows = list(csv.reader(io.StringIO(text)))
+    if not rows:
+        raise ValueError("the file is empty")
     head = [h.strip().lower() for h in rows[0]]
     need = ["x", "y", "t", "u"]
     miss = [c for c in need if c not in head]
     if miss:
         raise ValueError(f"CSV is missing column(s) {miss}; expected a header with x,y,t,u[,sigma]")
     idx = {c: head.index(c) for c in head}
-    arr = np.array([[float(r[idx[c]]) for c in need + (["sigma"] if "sigma" in idx else [])]
-                    for r in rows[1:] if r and any(s.strip() for s in r)])
+    try:
+        arr = np.array([[float(r[idx[c]]) for c in need + (["sigma"] if "sigma" in idx else [])]
+                        for r in rows[1:] if r and any(s.strip() for s in r)], dtype=float)
+    except (ValueError, IndexError) as e:
+        raise ValueError(f"every row needs numbers in x, y, t, u (problem: {e})")
+    if arr.ndim != 2 or len(arr) == 0:
+        raise ValueError("the CSV has a header but no data rows")
+    if not np.all(np.isfinite(arr)):
+        bad = int(np.argwhere(~np.isfinite(arr))[0][0]) + 2
+        raise ValueError(f"empty, NaN or infinite value in the data (first at line {bad})")
     out = dict(x=arr[:, 0], y=arr[:, 1], t=arr[:, 2], u=arr[:, 3])
     if arr.shape[1] == 5:
         out["sigma"] = float(np.median(arr[:, 4]))
