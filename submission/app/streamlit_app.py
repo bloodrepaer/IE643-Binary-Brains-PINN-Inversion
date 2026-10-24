@@ -283,6 +283,14 @@ with tab_data:
         c[3].metric("Noise σ", f"{ds.sigma:.2e}" if ds.sigma > 0 else "0 (noise-free)")
         c[4].metric("True D known", "yes" if tr is not None else "no")
         _img(fig_png(data_figure(ss.data, ds, tr)))
+        dl1, dl2 = st.columns(2)
+        try:
+            dl1.download_button("Download sensor readings (CSV)", core.sensor_csv_bytes(ss.data),
+                                f"{e['key']}_sensors.csv", "text/csv", key="dl_sensors")
+            dl2.download_button("Download full dataset (.zip)", core.dataset_zip(ss.data),
+                                f"{e['key']}_dataset.zip", "application/zip", key="dl_dataset")
+        except Exception as err:
+            st.warning(f"Dataset download unavailable: {err}")
         snaps = ss.data.get("snapshots")
         if snaps is not None:
             k = st.slider("Simulated temperature field at time step", 0, len(snaps["t"]) - 1, len(snaps["t"]) // 4)

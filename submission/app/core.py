@@ -201,8 +201,10 @@ def load_upload(sensors: dict, T: float, sigma: float | None = None, bc_name="ze
     sig = sensors.get("sigma") if sigma is None else sigma
     if sig is None:
         raise ValueError("No sigma column and no noise level given")
-    if T < sensors["t"].max() - 1e-12:
-        raise ValueError(f"T = {T} is smaller than the latest reading time {sensors['t'].max():.4g}")
+    t_max = float(sensors["t"].max())
+    if T < t_max * (1 - 1e-3):
+        raise ValueError(f"T = {T} is smaller than the latest reading time {t_max:.4g}")
+    T = max(float(T), t_max)          # tolerate rounding of t in the CSV
     dom, dom_inv = Domain2D(Nx=N_DATA, Ny=N_DATA), Domain2D(Nx=N_INV, Ny=N_INV)
     bc = G.make_bc(bc_name, T)
     stamp = time.strftime("%H%M%S")
@@ -249,6 +251,36 @@ def load_upload(sensors: dict, T: float, sigma: float | None = None, bc_name="ze
     entry["Fo"] = Fo; entry["D_const"] = c["D_const"]
     json.dump([entry], open(out / "manifest.json", "w"), indent=1)
     return data
+
+
+def sensor_csv_bytes(data) -> bytes:
+    """The dataset's sensor readings as CSV (x,y,t,u,sigma), the same format the upload box accepts."""
+    return (Path(data["root"]) / data["entry"]["files"]["sensors_csv"]).read_bytes()
+
+
+def dataset_zip(data) -> bytes:
+    """One dataset as a zip in the project's format (datasets_v2_rk4_zero/ with manifest, problem,
+    sensors and, if known, ground truth), readable by the app's benchmark loader and by the solvers."""
+    root, e = Path(data["root"]), data["entry"]
+    stem = e["problem"]
+    files = [e["files"]["sensors_csv"], e["files"]["sensors_npz"],
+             f"problem/{stem}.json", f"problem/{stem}.npz", f"problem/{stem}__ic.csv"]
+    if e["files"].get("ground_truth"):
+        files.append(e["files"]["ground_truth"])
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        for rel in files:
+            if (root / rel).exists():
+                z.write(root / rel, f"datasets_v2_rk4_zero/{rel}")
+        z.writestr("datasets_v2_rk4_zero/manifest.json", json.dumps([e], indent=1, default=str))
+        z.writestr("datasets_v2_rk4_zero/README.txt",
+                   f"Dataset {e['key']}\n"
+                   "sensors/<key>.csv   readings: x, y, t, u, sigma (one row per reading)\n"
+                   "sensors/<key>.npz   the same plus clean values, sensor ids, time indices\n"
+                   "problem/            PDE, domain, final time T, initial condition, boundary values\n"
+                   "ground_truth/       true D (answer key, scoring only), if known\n"
+                   "manifest.json       this dataset's configuration and seeds\n")
+    return buf.getvalue()
 
 
 # =============================================================================
