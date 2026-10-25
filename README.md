@@ -17,7 +17,7 @@ from sparse, noisy sensor readings of u. We compare a **physics-informed neural 
 |---|---|
 | `submission/` | **Main code, ready to run.** Forward solver, dataset generator, classical adjoint inversion, PINN, Streamlit interface (`submission/app/`, with screenshots in `submission/app/screenshots/`), trained models for both methods, the sensor/noise/layout sweep and the 20-dataset evaluation. See `submission/README.md`. |
 | `extended_studies/` | **Deliverable 4 evidence**, in four studies: (1) grid vs neural representation of D in the adjoint; (2) neural adjoint vs neural PINN with the same network for D; (3) the "where should a PINN win?" hypothesis suites; (4) the dense-sensor sweep (1,000 to 10,000 sensors). Trained checkpoints, score tables and run records. See `extended_studies/README.md`. |
-| `report/` | LaTeX source of the stage-wise report (course template). |
+| `report/` | Intensive Assessment Project Report|
 | `videos/` | Code-walkthrough and demo videos (links in `videos/README.md`). |
 
 ## 2. Deliverables and where they are
@@ -63,7 +63,7 @@ python run.py study3_pinn_favoured/generate_pinn_favoured.py     # hypothesis-su
 python run.py study3_pinn_favoured/generate_pinn_favoured2.py    # H6, H7, H9
 ```
 
-The generated datasets are not stored in the repository (about 550 MB in total); the scripts above regenerate every one.
+The generated datasets are not stored in the repository (about 550 MB in total); the scripts above regenerate every one. They are present in the Github Release Section
 
 **Run time in the interface (laptop CPU):** a classical inversion on a noisy dataset takes about 1 to 2 minutes with the default settings. On noise-free data (0 % noise) it is much slower, about 10 minutes, because there is no noise level at which to stop. A PINN run takes a few minutes at 1,500 epochs; use 200 to 300 epochs for a quick check.
 
