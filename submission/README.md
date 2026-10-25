@@ -11,7 +11,7 @@ from sparse, noisy sensor readings of u. Two methods are built and compared on t
 - **Classical PDE-constrained inversion (adjoint method)**, in `adjoint_inversion.py`.
 - **Physics-informed neural network (PINN)**, in `pinn_inversion.py`.
 
-The full write-up is the stage-wise project report in `../report/` (LaTeX source; the PDF is submitted separately).
+The full write-up is the project report, `../report/Binary_Brains_IE643_Report.pdf`.
 
 ---
 
@@ -28,7 +28,8 @@ The full write-up is the stage-wise project report in `../report/` (LaTeX source
 | `test_adjoint.py` | Gradient checks (adjoint vs finite differences, Taylor test slopes ~ 2). |
 | `run_parallel.py` | Runs the classical inversion over all datasets in parallel chunks. |
 | `pinn_inversion.py` | The PINN: u-network with Fourier features and hard-coded IC/BC structure, m = log D network, five-term loss, AdamW + cosine schedule. Single-run, 10-case benchmark and lambda-sweep modes. |
-| `README_dataset_and_classical.md` | Detailed documentation of the dataset and the classical method. |
+| `README_datasets.md` | Every dataset collection: how the data are made, the ground-truth fields, experiment axes, file format. |
+| `README_methods.md` | Both inversion methods in detail: classical adjoint and PINN, usage, verification, scoring. |
 | `app/` | Streamlit interface (see `app/README.md`). Includes pretrained PINN and adjoint results for 20 datasets. |
 | `models/pinn/benchmark/` | Trained PINN checkpoints (`pinn_best.pt`, `pinn_final.pt`), recovered D, loss histories and metrics for the 10-case benchmark and the lambda-sweep. |
 | `models/pinn/sweep/` | PINN runs (checkpoints, D_hat, metrics) of the 44-dataset sensor-density / noise / layout sweep. |

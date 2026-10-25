@@ -32,8 +32,6 @@ Several files here are copies of the main code, kept so this folder runs and pac
 | `adjoint_inversion.py` | One refactor: the gradient computation is split into `field_objective(m, alpha)`, which returns the gradient with respect to the full-grid log D. `objective(theta)` calls it and applies the control-grid map, so the grid adjoint is unchanged; the neural adjoint applies its own chain rule instead. The plot title also uses `metrics["method"]` when present. |
 | `pinn_inversion.py` | Same executable code; differs in comments and docstrings, the spelling of numeric constants (`1e-3` vs `0.001`) and two unused variables in the sweep plot |
 
-`../archive/` holds two more byte-identical copies (`compare_integrators.py`, `check_problem_spec.py`) that no study uses.
-
 ## Tests
 
 ```bash

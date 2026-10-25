@@ -33,7 +33,6 @@ extended_studies/
   study3_pinn_favoured/      hypothesis suites H1-H7, H9 (and H10u)
   study4_dense_sensors/      dense-sensor sweep, versions v12 to v24
   analysis/                  figure and rescoring scripts, figures
-  archive/                   code kept for completeness, not used by any study
   campaign/                  all result data: summary CSVs, per-job results, study-4 pilots, figures
 ```
 
