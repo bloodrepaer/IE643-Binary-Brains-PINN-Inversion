@@ -119,10 +119,3 @@ These are the per-case outputs exactly as returned. `r24c0N_v1/` holds the Kaggl
 | `paired_coefficients.png`, `paired_fields.png` | Grid vs neural-adjoint estimates |
 | `fit_vs_replay.png` | Sensor fit vs replay |
 
-## Superseded and incomplete records
-
-These files are kept for completeness. Newer files in the same folders replace them.
-
-- `pilots/dense10000_v21_gpu/failed_attempt_v1/`: the first kernel package. It failed before training (Windows path separators in its input manifest) and produced no results; the repaired package is in `kernel/`.
-- `pilots/noise_density_v23/cases/`: cases 03 to 07 were planned but never run; v24 superseded them.
-- `pilots/noise_density_v24_1000_7500/`: the files ending in `_partial` (`SWEEP_REPORT_PARTIAL.md`, `paired_cell_summary_partial.csv`, `primary_matched_neural_comparison_partial.csv`, `density_trend_partial.png`, `noise_trend_partial.png`) and `aggregation_first_attempt_missing_v22_eta.csv` are intermediate versions written before all 12 cells were complete. The files without the suffix supersede them.
