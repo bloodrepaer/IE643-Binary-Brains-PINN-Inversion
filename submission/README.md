@@ -96,6 +96,4 @@ Full tables and figures are in the report.
 1. Raissi, Perdikaris, Karniadakis (2019). Physics-informed neural networks. J. Comput. Phys. 378, 686-707.
 2. Zhang, Alla, Karniadakis (2026). Adjoint method versus physics-informed neural networks in PDE-constrained inverse problems. arXiv 2606.12337.
 3. Thakur et al. (2024). Inverse resolution of spatially varying diffusion coefficient using physics-informed neural networks. arXiv 2403.03970.
-4. Tancik et al. (2020). Fourier features let networks learn high frequency functions in low dimensional domains. NeurIPS.
-5. Rahaman et al. (2019). On the spectral bias of neural networks. ICML.
-6. Wang, Teng, Perdikaris (2021). Understanding and mitigating gradient flow pathologies in PINNs. SIAM J. Sci. Comput.
+
