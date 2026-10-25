@@ -2,7 +2,6 @@
 
 Scripts that rescored the PINN runs of the main benchmark with the common CN solver and drew the comparison figures, with their outputs.
 
-These scripts ran in a separate workspace and use absolute paths from it (`/home/claude/work`, `/home/claude/v2`) and an intermediate file (`fields.npz`) that is not kept. They are a record of how the figures and tables below were made; to re-run one, change the paths at its top to your copies of `datasets_v2_rk4_zero/`, the PINN results and this folder.
 
 ## Scripts
 
