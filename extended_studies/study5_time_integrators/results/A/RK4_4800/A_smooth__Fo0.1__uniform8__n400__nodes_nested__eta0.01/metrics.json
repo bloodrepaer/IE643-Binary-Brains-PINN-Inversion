@@ -1,0 +1,53 @@
+{
+ "block": "A",
+ "solver": "RK4",
+ "n_steps": 4800,
+ "key": "A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.01",
+ "n_sensors": 400,
+ "n_readings": 3200,
+ "eta": 0.01,
+ "sigma": 0.00023768649,
+ "rel_L2_D": 0.05172047698626896,
+ "rmse_logD": 0.06996054579755814,
+ "replay_own_over_sigma": 0.9849306051735912,
+ "replay_common_CN4800_over_sigma": 0.984930448213443,
+ "const_rel_L2_D": 0.3786356717935287,
+ "D_const": 0.2733401705476625,
+ "alpha": 101.19288512538813,
+ "flag": "reached_sigma",
+ "n_alphas": 4,
+ "total_iters": 286,
+ "n_evals": 332,
+ "wall_s": 1106.859606473,
+ "D_min": 0.051783697225018716,
+ "D_max": 0.5135461238222764,
+ "D_cap": 1.0,
+ "hit_cap": false,
+ "path": [
+  {
+   "alpha": 3200.0,
+   "rms": 0.00046137079330191294,
+   "rms_over_sigma": 1.941089682050978,
+   "iters": 50
+  },
+  {
+   "alpha": 1011.9288512538814,
+   "rms": 0.0003050975049472176,
+   "rms_over_sigma": 1.283613153390492,
+   "iters": 56
+  },
+  {
+   "alpha": 320.0,
+   "rms": 0.0002501092504921894,
+   "rms_over_sigma": 1.052265320137419,
+   "iters": 69
+  },
+  {
+   "alpha": 101.19288512538813,
+   "rms": 0.00023410469843728672,
+   "rms_over_sigma": 0.9849306051735912,
+   "iters": 111
+  }
+ ],
+ "max_dt_rho": 2.482424242424243
+}

@@ -1,0 +1,16 @@
+01:00:51 CN_4800  A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.01: relL2 0.0924  replay own 0.929  common 0.929  reached_sigma  1330s
+01:23:03 BE_4800  A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.01: relL2 0.0925  replay own 0.930  common 0.930  reached_sigma  1258s
+01:44:03 CN_4800  A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05: relL2 0.1334  replay own 0.981  common 0.981  reached_sigma  565s
+01:53:29 BE_4800  A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05: relL2 0.1333  replay own 0.981  common 0.981  reached_sigma  538s
+02:02:29 CN_4800  A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.1: relL2 0.1755  replay own 1.000  common 1.000  reached_sigma  479s
+02:10:30 BE_4800  A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.1: relL2 0.1755  replay own 1.000  common 1.000  reached_sigma  446s
+02:17:58 CN_4800  A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.01: relL2 0.0517  replay own 0.985  common 0.985  reached_sigma  1142s
+02:37:01 BE_4800  A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.01: relL2 0.0518  replay own 0.985  common 0.986  reached_sigma  1035s
+03:01:01 CN_4800  A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05: relL2 0.0841  replay own 0.992  common 0.992  reached_sigma  690s
+03:12:32 BE_4800  A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05: relL2 0.0842  replay own 0.992  common 0.992  reached_sigma  626s
+03:23:00 CN_4800  A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.1: relL2 0.1169  replay own 0.988  common 0.988  reached_sigma  823s
+03:36:43 BE_4800  A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.1: relL2 0.1170  replay own 0.988  common 0.988  reached_sigma  753s
+03:49:27 CN_4800  A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.01: relL2 0.0460  replay own 1.017  common 1.017  floor_above_sigma  2776s
+04:35:51 CN_4800  A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05: relL2 0.0589  replay own 0.997  common 0.997  reached_sigma  1017s
+04:09:46 BE_4800  A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.01: relL2 0.0460  replay own 1.017  common 1.018  floor_above_sigma  2587s
+04:52:50 BE_4800  A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05: relL2 0.0589  replay own 0.997  common 0.997  reached_sigma  937s

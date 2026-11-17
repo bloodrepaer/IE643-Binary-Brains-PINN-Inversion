@@ -9,3 +9,8 @@ extended_studies/datasets_v2_*/
 extended_studies/results_*/
 extended_studies/figures/
 extended_studies/campaign/v24_case_results/colab_returns/*/original/prechecks/
+extended_studies/datasets_novelty_*/
+extended_studies/novelty/results/
+extended_studies/novelty/results_full/
+extended_studies/novelty/_scratch/
+extended_studies/novelty_*.log

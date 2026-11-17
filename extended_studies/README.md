@@ -4,7 +4,7 @@ This folder holds the evidence for Deliverable 4 of the project. It builds on th
 
 The main comparison in `submission/` changes two things at once: the **method** (the adjoint enforces the PDE exactly, as a hard constraint; the PINN enforces it only as a soft penalty in the loss) and the **representation of D** (a 16 x 16 control grid for the adjoint, a neural network for the PINN). The studies below separate these two factors, then look for the conditions under which the PINN comes out ahead.
 
-## The four studies
+## The five studies
 
 | # | Question | Methods compared | Datasets | Folder | Main results |
 |---|---|---|---|---|---|
@@ -12,13 +12,15 @@ The main comparison in `submission/` changes two things at once: the **method** 
 | 2 | With the same network for D, does hard vs soft physics matter? | neural adjoint vs neural PINN (identical D-network and initial weights) | 8 | `study2_matched_neural/` | `campaign/primary_neural_comparison.csv` |
 | 3 | Does the PINN win when the physics is partly unknown, or the data are unusual? | grid adjoint vs PINN | 81 (hypothesis suites H1-H7, H9) | `study3_pinn_favoured/` | `study3_pinn_favoured/results/` |
 | 4 | Does the PINN win with very dense sensors? | temporal neural PINN vs backward-Euler neural adjoint (same D-network) | 1,000 to 10,000 sensors, 1/5/10 % noise | `study4_dense_sensors/` | `campaign/pilots/*/RESULTS.md`, `campaign/pilots/noise_density_v24_1000_7500/SWEEP_REPORT.md` |
+| 5 | Was study 4's result caused by the dense sensors or by its backward-Euler solver? | grid adjoint with RK4, Crank-Nicolson or backward-Euler time stepping (everything else standard) | A_smooth, 50 / 400 / 3,969 sensors, 1/5/10 % noise (63 runs) | `study5_time_integrators/` | `study5_time_integrators/RESULTS.md`, `results_table.csv` |
 
 Short answers:
 
 1. On the main benchmark the representation makes no difference to accuracy (median relL2(D) 0.225 grid vs 0.226 neural), but the grid reaches the noise level more often (324 vs 236 of 389). With extended sensor density the grid is more accurate (0.158 vs 0.187).
 2. With the same network, the hard constraint wins all 8 cases (median relL2(D) 0.24 vs 0.61). The PINN fits the sensors to about 0.95 sigma but its D, replayed through the solver, misses them by 3 to 16 sigma.
 3. The PINN wins 21 of 22 datasets in which the boundary condition or a heat source is hidden and the adjoint is forced to assume zero (median relL2(D) 0.38 vs 5.0). With the physics known, the adjoint wins 58 of 59 (median 0.12 vs 0.41).
-4. At 7,500 sensors and 5 % noise the PINN reaches 8.6 % coefficient error against 25.1 % for the neural adjoint and passes both replay screens. This is 1 of the 12 cells of the sweep.
+4. At 7,500 sensors and 5 % noise the PINN reaches 8.6 % coefficient error against 25.1 % for the neural adjoint and passes both replay screens. This is 1 of the 12 cells of the sweep. Study 5 shows that this comparison depends on the adjoint's coarse backward-Euler step.
+5. With an accurate time step (4,800 steps) RK4, Crank-Nicolson and backward Euler give the same adjoint estimate to within 0.0002 in relL2(D). Backward Euler at study 4's 100 steps is less accurate than Crank-Nicolson in 8 of 9 cells, by up to 1.97x, and the gap grows with density. The standard Crank-Nicolson adjoint reaches 4.6 / 5.9 / 7.1 % on 3,969 sensors at 1 / 5 / 10 % noise, below the PINN's 5.6 / 8.6 / 22.6 % at 7,500 sensors in study 4.
 
 ## Folder map
 
@@ -32,6 +34,8 @@ extended_studies/
   study2_matched_neural/     neural adjoint vs neural PINN
   study3_pinn_favoured/      hypothesis suites H1-H7, H9 (and H10u)
   study4_dense_sensors/      dense-sensor sweep, versions v12 to v24
+  study5_time_integrators/   RK4 vs Crank-Nicolson vs backward Euler inside the classical adjoint
+  novelty/                   novelty-phase pipeline: hybrid PINN -> adjoint, temperature-dependent D, data quality
   analysis/                  figure and rescoring scripts, figures
   campaign/                  all result data: summary CSVs, per-job results, study-4 pilots, figures
 ```

@@ -1,0 +1,2 @@
+04:53:01 CN_4800  A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.1: relL2 0.0709  replay own 0.999  common 0.999  reached_sigma  1021s
+05:10:04 BE_4800  A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.1: relL2 0.0710  replay own 0.999  common 0.999  reached_sigma  944s

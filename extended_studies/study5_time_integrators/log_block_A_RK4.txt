@@ -1,0 +1,9 @@
+00:47:08 RK4_4800  A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.01: relL2 0.0924  replay own 0.929  common 0.929  reached_sigma  1326s
+01:09:16 RK4_4800  A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.05: relL2 0.1334  replay own 0.981  common 0.981  reached_sigma  561s
+01:18:39 RK4_4800  A_smooth__Fo0.1__uniform8__n50__nodes_nested__eta0.1: relL2 0.1755  replay own 1.000  common 1.000  reached_sigma  465s
+01:26:26 RK4_4800  A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.01: relL2 0.0517  replay own 0.985  common 0.985  reached_sigma  1107s
+01:44:55 RK4_4800  A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.05: relL2 0.0841  replay own 0.992  common 0.992  reached_sigma  729s
+01:57:06 RK4_4800  A_smooth__Fo0.1__uniform8__n400__nodes_nested__eta0.1: relL2 0.1169  replay own 0.988  common 0.988  reached_sigma  830s
+02:47:13 RK4_4800  A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.01: relL2 0.0460  replay own 1.017  common 1.017  floor_above_sigma  2908s
+03:36:02 RK4_4800  A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.05: relL2 0.0589  replay own 0.997  common 0.997  reached_sigma  963s
+03:52:07 RK4_4800  A_smooth__Fo0.1__uniform8__n3969__nodes_nested__eta0.1: relL2 0.0709  replay own 0.999  common 0.999  reached_sigma  1033s
