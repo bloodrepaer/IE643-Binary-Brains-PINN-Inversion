@@ -141,7 +141,9 @@ def replay_nonlinear(D0_inv, g_fn, ds, n_steps_cfl=0.9):
     from scipy.interpolate import RegularGridInterpolator
     tg = np.linspace(0, ds.T, n_out + 1)
     xg = np.linspace(0, 1, N)
-    pred = RegularGridInterpolator((tg, xg, xg), U)(np.c_[ds.t, ds.x, ds.y])
+    # sensor coordinates can sit a rounding error outside [0, T] x [0, 1]^2; clip them onto the grid
+    q = np.c_[np.clip(ds.t, 0.0, ds.T), np.clip(ds.x, 0.0, 1.0), np.clip(ds.y, 0.0, 1.0)]
+    pred = RegularGridInterpolator((tg, xg, xg), U)(q)
     sig = ds.sigma if ds.sigma > 0 else 1e-3 * np.sqrt(np.mean(ds.u ** 2))
     return float(np.sqrt(np.mean((pred - ds.u) ** 2)) / sig)
 
