@@ -41,6 +41,7 @@ UNKNOWN_PHYSICS = [k for k in (
     "H3u-A_smooth-q0.1", "H3u-A_smooth-q0.3", "H3u-A_smooth-q1",
     "H3u-E_grf-q0.1", "H3u-E_grf-q0.3", "H3u-E_grf-q1")]
 UNKNOWN_SUFFIX = "__Fo0.1__uniform16__n50__random__eta0.05"
+SEEDS = (43, 44, 45, 46)                       # S1: extra seeds; seed 42 is the E1 run itself
 EPOCHS = {"quick": 300, "full": 1500}
 
 
@@ -54,6 +55,20 @@ def registry(exp, size):
         rows = [("bench", k, ["adjoint", "pinn", "hybrid_path", "hybrid_balance", "hybrid_prior", "reverse"]) for k in bench]
         rows += [("pinnwin", k + UNKNOWN_SUFFIX, ["adjoint", "pinn", "hybrid_path", "hybrid_balance", "hybrid_prior"]) for k in unk]
         return rows
+    if exp == "S1":                                   # seed spread of the PINN and of the one hybrid that ever wins
+        bench = QUICK_BENCH[:1] if size == "quick" else DATASETS20
+        seeds = SEEDS[:1] if size == "quick" else SEEDS
+        h3u = [k for k in UNKNOWN_PHYSICS if k.startswith("H3u")]
+        h3u = h3u[:1] if size == "quick" else h3u
+        arms = [a for sd in seeds for a in (f"pinn_s{sd}", f"hybrid_balance_s{sd}")]
+        rows = [("bench", k, arms) for k in bench]
+        rows += [("pinnwin", k + UNKNOWN_SUFFIX, [f"pinn_s{sd}" for sd in seeds]) for k in h3u]
+        return rows
+    if exp == "E1s":                                  # hidden source: the classical joint (D, f) inversion
+        import hybrid_src as HS
+        keys = [k for k in UNKNOWN_PHYSICS if k.startswith("H3u")]
+        keys = keys[1:2] if size == "quick" else keys
+        return [("pinnwin", k + UNKNOWN_SUFFIX, list(HS.E1S_ARMS)) for k in keys]
     if exp == "E1c":                                  # equal budget: the PINN alone given the hybrids' compute (3 x epochs)
         bench = QUICK_BENCH[:1] if size == "quick" else DATASETS20
         return [("bench", k, ["pinn_3x"]) for k in bench]
@@ -80,14 +95,14 @@ def score(ds, D, extra):
     return m
 
 
-def pinn_known(collection, key, epochs, init_D=None):
+def pinn_known(collection, key, epochs, init_D=None, seed=42):
     import pinn_plus as PP
-    cfg = PP.make_cfg(collection, key, epochs=epochs)
+    cfg = PP.make_cfg(collection, key, epochs=epochs, seed=seed)
     out = PP.train(cfg, PP.PlusOptions(init_D=init_D), verbose=False)
     return out["D_hat"], out["wall_s"], out["device"]
 
 
-def pinn_unknown_bc(collection, key, epochs):
+def pinn_unknown_bc(collection, key, epochs, seed=42):
     """Study 3's boundary-aware PINN (core/pinn_inversion_bc.py): free walls when the BC is unknown.
     Its built-in replay and plot are switched off so the timing is training only."""
     import tempfile
@@ -102,6 +117,7 @@ def pinn_unknown_bc(collection, key, epochs):
         cfg.output_dir = tmp
         cfg.exp_id = key
         cfg.epochs = epochs
+        cfg.seed = int(seed)
         t0 = time.time()
         PB.train_single_experiment(cfg, run_tag="r")
         wall = time.time() - t0
@@ -143,9 +159,43 @@ def run_E1(arm, collection, key, size):
     raise ValueError(arm)
 
 
+def run_S1(arm, collection, key, size):
+    import hybrid as H
+    ds = C.dataset(collection, key)
+    epochs = EPOCHS[size]
+    if arm.startswith("pinn_s"):
+        seed = int(arm[len("pinn_s"):])
+        fn = pinn_known if collection != "pinnwin" else pinn_unknown_bc
+        D, wall, dev = fn(collection, key, epochs, seed=seed)
+        return score(ds, D, dict(stage_wall_s=wall, total_wall_s=wall, epochs=epochs, seed=seed, device=dev)), dict(D_hat=D)
+    if arm.startswith("hybrid_balance_s"):
+        seed = int(arm[len("hybrid_balance_s"):])
+        mp, ap = C.load_run("S1", f"pinn_s{seed}", key)
+        r = H.run_warm(ds, ap["D_hat"], "balance")
+        m = score(ds, r["D"], dict(seed=seed, stage_wall_s=r["wall_s"] + r["projection_s"], pinn_wall_s=mp["stage_wall_s"],
+                                   total_wall_s=mp["stage_wall_s"] + r["wall_s"] + r["projection_s"],
+                                   alpha=r["alpha"], alpha_start=r["alpha_start"], flag=r["flag"]))
+        return m, dict(D_hat=r["D"].reshape(ds.N, ds.N))
+    raise ValueError(arm)
+
+
 def run_job(exp, arm, collection, key, size):
     if exp == "E1":
         return run_E1(arm, collection, key, size)
+    if exp == "S1":
+        return run_S1(arm, collection, key, size)
+    if exp == "E1s":
+        import hybrid_src as HS
+        return HS.run_job(arm, collection, key)
+    if exp == "S1":                                   # seed spread of the PINN and of the one hybrid that ever wins
+        bench = QUICK_BENCH[:1] if size == "quick" else DATASETS20
+        seeds = SEEDS[:1] if size == "quick" else SEEDS
+        h3u = [k for k in UNKNOWN_PHYSICS if k.startswith("H3u")]
+        h3u = h3u[:1] if size == "quick" else h3u
+        arms = [a for sd in seeds for a in (f"pinn_s{sd}", f"hybrid_balance_s{sd}")]
+        rows = [("bench", k, arms) for k in bench]
+        rows += [("pinnwin", k + UNKNOWN_SUFFIX, [f"pinn_s{sd}" for sd in seeds]) for k in h3u]
+        return rows
     if exp == "E1c":
         ds = C.dataset(collection, key)
         D, wall, dev = pinn_known(collection, key, 3 * EPOCHS[size])
