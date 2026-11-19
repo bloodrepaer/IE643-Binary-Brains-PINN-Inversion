@@ -364,22 +364,20 @@ def F9():
 # ---------------------------------------------------------------------------------------------
 def F10():
     t = pd.read_csv(C.EXT / "study5_time_integrators" / "results_table.csv")
-    fig, axes = plt.subplots(1, 3, figsize=(13, 4.2), sharey=True)
-    for ax, eta in zip(axes, (0.01, 0.05, 0.1)):
+    fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.3), sharey=True)
+    for ax, eta in zip(axes, (0.01, 0.1)):
         q = t[t.eta == eta]
-        for (solver, steps), col, ls, lab in ((("CN", 4800), COL["bound"], ":", "fine time step (4,800)"),
-                                              (("CN", 100), COL["adjoint"], "-", "Crank-Nicolson, 100 steps"),
-                                              (("BE", 100), COL["other"], "-", "backward Euler, 100 steps")):
+        for (solver, steps), col, ls, lab in ((("CN", 4800), COL["bound"], ":", "fine step (4,800)"),
+                                              (("CN", 100), COL["adjoint"], "-", "Crank-Nicolson, 100"),
+                                              (("BE", 100), COL["other"], "-", "backward Euler, 100")):
             r = q[(q.solver == solver) & (q.n_steps == steps)].sort_values("n_sensors")
-            ax.plot(r.n_sensors, r.rel_L2_D, ls, marker="o", color=col, label=lab, ms=8)
+            ax.plot(r.n_sensors, r.rel_L2_D, ls, marker="o", color=col, label=lab, ms=7)
         ax.set_xscale("log"); ax.set_xticks([50, 400, 3969]); ax.set_xticklabels(["50", "400", "3,969"]); ax.minorticks_off()
         ax.set_title(f"noise {eta:.0%}"); ax.set_xlabel("sensors")
-    axes[0].set_ylabel("classical adjoint relL2(D)")
-    axes[0].annotate("Crank-Nicolson at 100 steps\nlies on the fine-step line", xy=(400, 0.0517), xytext=(70, 0.035),
-                     fontsize=11, color=INK2, arrowprops=dict(arrowstyle="-", color=INK2, lw=0.8))
-    axes[0].set_ylim(0.025, None)
+    axes[0].set_ylabel("adjoint relL2(D)")
+    axes[0].set_ylim(0.03, None)
     h, l = axes[0].get_legend_handles_labels()
-    fig.legend(h, l, loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.1), fontsize=12)
+    fig.legend(h, l, loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.13), fontsize=11, columnspacing=1.0, handlelength=1.6)
     save(fig, "F10_time_integrator")
 
 
@@ -427,7 +425,64 @@ def F11():
     save(fig, "F11_hidden_source")
 
 
-FIGS = dict(F3=F3, F4=F4, F5=F5, F6=F6, F7=F7, F8=F8, F9=F9, F10=F10, F11=F11)
+# ---------------------------------------------------------------------------------------------
+# F12: same observations -> recovered field, spatial error map, relL2 and replay for every method
+# ---------------------------------------------------------------------------------------------
+ERRMAP = LinearSegmentedColormap.from_list(
+    "blue_grey_red", ["#184f95", "#2a78d6", "#86b6ef", "#f0efec", "#f19a99", "#e34948", "#9e2726"])
+
+
+def F12(wide=True):
+    import hybrid_src as HS  # noqa: F401
+    blocks = [
+        ("Known source and walls  (A smooth, 50 sensors, 5 % noise)", "bench", "A_smooth" + STD,
+         [("CN adjoint", "E1", "adjoint"), ("PINN", "E1", "pinn"), ("combined PINN -> adjoint", "E1", "hybrid_balance")]),
+        ("Hidden heat source  (same field + a heater; same sensors)", "pinnwin", "H3u-A_smooth-q0.3" + UNK,
+         [("CN adjoint, f = 0 assumed", "E1", "adjoint"), ("PINN", "E1", "pinn"),
+          ("CN adjoint + source f", "E1s", "adjoint_src_pos")]),
+    ]
+    fig = plt.figure(figsize=(27, 6.9))
+    outer = fig.add_gridspec(1, 2, wspace=0.10)
+    vmin, vmax, emax = 0.0, 0.62, 1.2
+    for b, (btitle, coll, key, arms) in enumerate(blocks):
+        last = b == 1
+        gs = outer[b].subgridspec(2, 5 if last else 4, width_ratios=[1, 1, 1, 1] + ([0.06] if last else []),
+                                  wspace=0.05, hspace=0.04)
+        ds = C.dataset(coll, key)
+        Dt = ds.ground_truth()[0]
+        sens = np.unique(np.c_[ds.x, ds.y].round(6), axis=0).T
+        ax = fig.add_subplot(gs[0, 0])
+        im = show_D(ax, Dt, vmin, vmax, "truth", sensors=sens)
+        ax.text(0.0, 1.22, btitle, transform=ax.transAxes, fontsize=16, fontweight="bold", ha="left")
+        if b == 0:
+            ax.text(-0.06, 0.5, "recovered D", transform=ax.transAxes, rotation=90, va="center", ha="right", fontsize=14)
+        ax = fig.add_subplot(gs[1, 0]); ax.axis("off")
+        ax.text(0.5, 0.5, "error map\nlog(D_est / D_true)\n\nblue: too low\nred: too high",
+                ha="center", va="center", fontsize=13, color=INK2, linespacing=1.4, transform=ax.transAxes)
+        for j, (name, exp, arm) in enumerate(arms, start=1):
+            D = D_of(exp, arm, key)
+            m = json.loads((C.RESULTS / exp / arm / key / "metrics.json").read_text())
+            ax = fig.add_subplot(gs[0, j])
+            show_D(ax, np.clip(D, vmin, vmax * 3), vmin, vmax, name)
+            ax.text(0.03, 0.04, f"relL2 {m['rel_L2_D']:.2f}  replay {m['replay_over_sigma']:.2f}σ",
+                    transform=ax.transAxes, fontsize=12.5, color=INK,
+                    bbox=dict(boxstyle="round,pad=0.2", fc="white", ec="none", alpha=0.9))
+            ax = fig.add_subplot(gs[1, j])
+            E = np.log(np.maximum(D, 1e-6) / Dt)
+            ime = ax.imshow(E.T, origin="lower", extent=[0, 1, 0, 1], cmap=ERRMAP, vmin=-emax, vmax=emax,
+                            interpolation="nearest")
+            ax.scatter(*sens, s=5, c="white", edgecolors=INK, linewidths=0.4, zorder=3)
+            ax.set_xticks([]); ax.set_yticks([]); ax.grid(False)
+            for sp_ in ax.spines.values():
+                sp_.set_visible(False)
+        if last:
+            cb = fig.colorbar(im, cax=fig.add_subplot(gs[0, 4])); cb.set_label("D"); cb.outline.set_visible(False)
+            cb = fig.colorbar(ime, cax=fig.add_subplot(gs[1, 4]), extend="both")
+            cb.set_label("log error (clipped ±1.2)"); cb.outline.set_visible(False)
+    save(fig, "F12_fields_errors_replay")
+
+
+FIGS = dict(F3=F3, F4=F4, F5=F5, F6=F6, F7=F7, F8=F8, F9=F9, F10=F10, F11=F11, F12=F12)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
