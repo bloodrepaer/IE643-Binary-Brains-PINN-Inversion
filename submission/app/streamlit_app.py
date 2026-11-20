@@ -1,12 +1,14 @@
 """
 IE 643 -- interface for recovering a spatially varying diffusivity D(x, y) from sensor readings.
 
-    streamlit run app/streamlit_app.py        (from the v2/ folder)
+    streamlit run app/streamlit_app.py        (from the submission/ folder)
 
-1 Data      benchmark dataset | generate a new synthetic dataset | upload your own readings
-2 Run       classical adjoint and/or PINN (the project's own solvers, unchanged)
-3 Results   displayed metric (RMS_replay / sigma), field metrics if the true D is known,
-            recovered maps, error maps, convergence; download trained models and D_hat
+1 Data      novelty demo datasets (every method precomputed) | benchmark dataset |
+            generate a new synthetic dataset | upload your own readings
+2 Run       classical adjoint (Crank-Nicolson or backward Euler), PINN (standard or boundary-aware),
+            and the novelty methods: combined PINN -> adjoint, joint adjoint + source, joint adjoint + walls
+3 Results   all methods side by side on the same data: true vs recovered D, spatial error map,
+            relL2(D) and replay RMS / sigma; source / wall estimates; downloads
 4 Load      open a saved model (.npz classical, .pt PINN) and view / export its D map
 """
 import io, json, sys, time
@@ -21,6 +23,7 @@ import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import core  # noqa: E402
+import novelty_core as NC  # noqa: E402
 
 st.set_page_config(page_title="Diffusivity inversion", page_icon="🌡️", layout="wide")
 
@@ -58,6 +61,26 @@ PROTO_LABELS = {"uniform8": "8 evenly spaced times", "uniform4": "4 evenly space
                 "log8": "8 times, dense early", "early8": "8 times in the first quarter", "late8": "8 times in the second half",
                 "final1": "final snapshot only"}
 C_CLASSICAL, C_PINN = "#2a78d6", "#eb6834"
+C_COMBINED, C_JOINT, C_BOUND, C_BE = "#1baf7a", "#6250d6", "#8a8984", "#b05f00"
+ERRMAP = matplotlib.colors.LinearSegmentedColormap.from_list(
+    "blue_grey_red", ["#184f95", "#2a78d6", "#86b6ef", "#f0efec", "#f19a99", "#e34948", "#9e2726"])
+
+
+def color_of(name):
+    """One colour per method family, the same in every figure."""
+    import re
+    n = name.lower()
+    if n.startswith("bound"):
+        return C_BOUND
+    if "combined" in n:
+        return C_COMBINED
+    if re.search(r"\bjoint\b", n):          # not the "joint" inside "adjoint"
+        return C_JOINT
+    if "backward" in n:
+        return C_BE
+    if "pinn" in n:
+        return C_PINN
+    return C_CLASSICAL
 
 ss = st.session_state
 ss.setdefault("data", None)
@@ -116,32 +139,87 @@ def data_figure(data, ds, tr):
     return fig
 
 
-def results_figure(D_true, res, xy):
+def results_figure(D_true, res, xy, emax=1.2):
+    """True D, every method's recovered D (same colour scale) and its spatial error map log(D_hat / D)
+    (same diverging scale for every method), with relL2(D) and replay RMS / sigma in each title."""
     names = list(res)
     ncol = len(names) + (1 if D_true is not None else 0)
-    fig, axs = plt.subplots(2 if D_true is not None else 1, ncol, figsize=(4.2 * ncol, 7.6 if D_true is not None else 3.9), squeeze=False)
-    allD = [r["D"] for r in res.values()] + ([D_true] if D_true is not None else [])
-    vmin, vmax = min(float(d.min()) for d in allD), max(float(d.max()) for d in allD)
+    nrow = 2 if D_true is not None else 1
+    fig, axs = plt.subplots(nrow, ncol, figsize=(3.5 * ncol, 3.25 * nrow + 0.4), squeeze=False)
+    if D_true is not None:
+        vmin, vmax = float(D_true.min()), float(D_true.max()) * 1.05
+    else:
+        allD = np.concatenate([r["D"].ravel() for r in res.values()])
+        vmin, vmax = np.percentile(allD, [2, 98])
     c = 0
     if D_true is not None:
         im = axs[0, 0].imshow(D_true.T, origin="lower", extent=[0, 1, 0, 1], cmap="viridis", vmin=vmin, vmax=vmax)
-        map_axes(axs[0, 0], "true D"); fig.colorbar(im, ax=axs[0, 0], fraction=0.046)
+        if len(xy) < 2000:
+            axs[0, 0].plot(xy[:, 0], xy[:, 1], "w.", ms=3, mec="k", mew=0.3)
+        map_axes(axs[0, 0], "true D (answer key)\n+ sensors"); fig.colorbar(im, ax=axs[0, 0], fraction=0.046)
         axs[1, 0].axis("off")
-        axs[1, 0].text(0.0, 0.5, "bottom row:\nlog(D̂ / D)\nred = too high\nblue = too low\nwhite = correct", fontsize=10, va="center")
+        axs[1, 0].text(0.0, 0.5, "row 2: spatial error\nlog(D̂ / D)\n\nred = too high\nblue = too low\nwhite = correct\n"
+                       f"(clipped at ±{emax:g})", fontsize=10, va="center")
         c = 1
     for j, n in enumerate(names):
-        r = res[n]; a = axs[0, c + j]
+        r = res[n]; m = r["metrics"]; a = axs[0, c + j]
         im = a.imshow(r["D"].T, origin="lower", extent=[0, 1, 0, 1], cmap="viridis", vmin=vmin, vmax=vmax)
-        if len(xy) < 2000:
-            a.plot(xy[:, 0], xy[:, 1], "w.", ms=2.5)
-        t = n
-        if "relL2_D" in r["metrics"]:
-            t += f"\nrelL2(D) = {r['metrics']['relL2_D']:.3f}"
-        map_axes(a, t); fig.colorbar(im, ax=a, fraction=0.046)
+        sub = []
+        if m.get("relL2_D") is not None:
+            sub.append(f"relL2 {m['relL2_D']:.3f}")
+        if m.get("rms_replay_over_sigma") is not None:
+            sub.append(f"replay {m['rms_replay_over_sigma']:.2f}σ")
+        a.set_title(n + ("\n" + " · ".join(sub) if sub else ""), fontsize=9.5, color=color_of(n))
+        a.set_xticks([0, 0.5, 1]); a.set_yticks([0, 0.5, 1]); a.set_aspect("equal")
+        fig.colorbar(im, ax=a, fraction=0.046, extend="max" if r["D"].max() > vmax else "neither")
         if D_true is not None:
-            e = np.log(r["D"] / D_true); lim = max(0.05, float(np.percentile(np.abs(e), 99)))
-            im = axs[1, c + j].imshow(e.T, origin="lower", extent=[0, 1, 0, 1], cmap="RdBu_r", vmin=-lim, vmax=lim)
-            map_axes(axs[1, c + j], f"{n}: log(D̂/D)"); fig.colorbar(im, ax=axs[1, c + j], fraction=0.046)
+            e = np.log(np.maximum(r["D"], 1e-9) / D_true)
+            im = axs[1, c + j].imshow(e.T, origin="lower", extent=[0, 1, 0, 1], cmap=ERRMAP, vmin=-emax, vmax=emax)
+            if len(xy) < 2000:
+                axs[1, c + j].plot(xy[:, 0], xy[:, 1], "k.", ms=1.5)
+            map_axes(axs[1, c + j], "error map")
+            fig.colorbar(im, ax=axs[1, c + j], fraction=0.046, extend="both")
+    fig.tight_layout()
+    return fig
+
+
+def source_figure(data, res):
+    """True heat source (if known) and every estimated source."""
+    items = [(n, r["f"]) for n, r in res.items() if r.get("f") is not None]
+    if not items:
+        return None
+    tf = NC.true_source(data)
+    if tf is not None:
+        items = [("true source (answer key)", tf)] + items
+    if not items:
+        return None
+    vmax = max(float(np.max(f)) for _, f in items) or 1.0
+    fig, axs = plt.subplots(1, len(items), figsize=(3.5 * len(items), 3.3), squeeze=False)
+    for a, (n, f) in zip(axs[0], items):
+        im = a.imshow(np.asarray(f).T, origin="lower", extent=[0, 1, 0, 1], cmap="magma", vmin=min(0, float(np.min(f))), vmax=vmax)
+        map_axes(a, n); fig.colorbar(im, ax=a, fraction=0.046)
+    fig.tight_layout()
+    return fig
+
+
+def walls_figure(data, res):
+    """Mean wall temperature of each edge over time: truth (if known) and every estimate."""
+    items = [(n, r["G_bd"]) for n, r in res.items() if r.get("G_bd") is not None and not n.lower().startswith("bound")]
+    if not items:
+        return None
+    tG = NC.true_walls_bd(data)
+    fig, axs = plt.subplots(1, 4, figsize=(15, 3.2), sharey=True)
+    for k, edge in enumerate(("left", "right", "bottom", "top")):
+        ax = axs[k]
+        if tG is not None:
+            t, E = NC.walls_by_edge(data, tG)
+            ax.plot(t, E[edge], "k-", lw=2.2, label="true walls")
+        for n, G in items:
+            t, E = NC.walls_by_edge(data, G)
+            ax.plot(t, E[edge], "--", lw=1.6, color=color_of(n), label=n)
+        ax.set_title(f"{edge} wall", fontsize=10); ax.set_xlabel("t"); ax.grid(alpha=0.3)
+    axs[0].set_ylabel("wall temperature")
+    axs[0].legend(fontsize=7.5)
     fig.tight_layout()
     return fig
 
@@ -153,7 +231,7 @@ def profile_figure(D_true, res):
         if D_true is not None:
             ax.plot(g, D_true[sl], "k-", lw=2, label="true D")
         for n, r in res.items():
-            ax.plot(g, r["D"][sl], "--", lw=1.8, color=C_CLASSICAL if n.startswith("classical") else C_PINN, label=n)
+            ax.plot(g, r["D"][sl], "--", lw=1.8, color=color_of(n), label=n)
         ax.set_title(lab, fontsize=10); ax.set_xlabel("position"); ax.set_ylabel("D"); ax.grid(alpha=0.3); ax.legend(fontsize=8)
     fig.tight_layout()
     return fig
@@ -163,8 +241,18 @@ def profile_figure(D_true, res):
 # header
 # ---------------------------------------------------------------------------------------------
 st.title("Recover a diffusivity map D(x, y) from sensor readings")
-st.caption("u_t = ∇·(D ∇u) on the unit square, Dirichlet boundaries, known initial temperature. "
-           "Compare the classical PDE-constrained (adjoint) inversion with a physics-informed neural network (PINN).")
+st.caption("u_t = ∇·(D ∇u) + f on the unit square, Dirichlet walls, known initial temperature. "
+           "Compare the classical PDE-constrained (adjoint) inversion, a physics-informed neural network (PINN) "
+           "and the novelty methods (combined PINN→adjoint, joint inversion of hidden physics) on the same readings.")
+with st.expander("What is known, measured and estimated"):
+    st.markdown("""
+| | standard setting | unknown-physics setting |
+|---|---|---|
+| **Known** (given to every method) | initial temperature u₀, wall temperatures g, source f = 0, noise level σ | u₀, σ |
+| **Measured** | noisy readings d_k = u(x_k, y_k, t_k) + ε at the sensors | same |
+| **Estimated** | the full field D(x, y) | D(x, y) **and** the hidden walls g or heat source f |
+
+Data are simulated with RK4 on a 129×129 grid; every inversion uses a 65×65 grid (no "inverse crime").""")
 
 tab_data, tab_run, tab_res, tab_load, tab_help = st.tabs(
     ["1 · Data", "2 · Run inversion", "3 · Results & downloads", "4 · Load a saved model", "Help"])
@@ -174,10 +262,42 @@ tab_data, tab_run, tab_res, tab_load, tab_help = st.tabs(
 # ---------------------------------------------------------------------------------------------
 with tab_data:
     src = st.radio("Where do the sensor readings come from?",
-                   ["Generate a new synthetic dataset", "Pick a benchmark dataset", "Upload my own readings"],
+                   ["Novelty demo datasets (all methods precomputed)", "Generate a new synthetic dataset",
+                    "Pick a benchmark dataset", "Upload my own readings"],
                    horizontal=True, key="src")
 
-    if src == "Generate a new synthetic dataset":
+    if src.startswith("Novelty demo"):
+        if not NC.demo_available():
+            st.warning("The demo bundle `app/demo/` is missing. Rebuild it from `extended_studies/` with "
+                       "`python run.py novelty/build_app_bundle.py`.")
+        else:
+            st.write("The 34 datasets of the novelty experiments, with every method's estimate precomputed "
+                     "(CN adjoint, PINN, combined PINN→adjoint, joint classical inversion, and the true-physics bound). "
+                     "The precomputed estimates are re-scored live with the same scorer; you can also re-run any "
+                     "method in **2 · Run inversion**.")
+            c1, c2 = st.columns([1, 2])
+            grp = c1.selectbox("Setting", list(NC.DEMO_GROUPS), format_func=NC.DEMO_GROUPS.get, key="demo_grp")
+            keys = NC.demo_keys(grp)
+            default = {"benchmark": "A_smooth__Fo0.1__uniform8__n50__random__eta0.05",
+                       "hidden_source": "H3u-A_smooth-q0.3__Fo0.1__uniform16__n50__random__eta0.05",
+                       "hidden_walls": "H2u-A_smooth-heatedleft-a1__Fo0.1__uniform16__n50__random__eta0.05"}[grp]
+            dkey = c2.selectbox("Dataset", keys, index=keys.index(default) if default in keys else 0, key="demo_key")
+            pre = st.checkbox("Load the precomputed results of every method (instant)", value=True, key="demo_pre")
+            extra = st.checkbox("…including the other combined variants (warm start only, PINN as prior)", value=False,
+                                key="demo_extra", disabled=grp != "benchmark")
+            if st.button("Use this dataset", type="primary", key="demo_use"):
+                ss.data = NC.load_demo(grp, dkey)
+                ss.results, ss.figs, ss.baseline = {}, {}, None
+                with st.spinner("Scoring the best constant D and the precomputed estimates …"):
+                    t0 = time.perf_counter()
+                    ss.baseline = core.constant_baseline(ss.data)
+                    ss.baseline["wall_s"] = time.perf_counter() - t0
+                    if pre:
+                        ss.results = NC.demo_results(ss.data, include_extra=extra)
+                st.success("Loaded." + (" Precomputed results are in **3 · Results & downloads**." if pre
+                                        else " Go to **2 · Run inversion**."))
+
+    elif src == "Generate a new synthetic dataset":
         st.write("Simulates the heat equation with a chosen true D (RK4 on a 129×129 grid), then samples noisy "
                  "sensors, exactly like the project's dataset generator. Takes 5–40 s.")
         c1, c2, c3 = st.columns(3)
@@ -306,27 +426,61 @@ with tab_run:
     if ss.data is None:
         st.info("Choose or create a dataset in **1 · Data** first.")
     else:
+        phys = NC.physics_of(ss.data)
         st.write(f"Dataset: `{ss.data['key']}`")
-        c1, c2 = st.columns(2)
+        if phys != "standard":
+            st.info({"hidden_source": "This dataset has a **hidden heat source**: the problem file says f = 0. "
+                                      "A method that assumes the file is right must explain the extra heat with D.",
+                     "hidden_walls": "This dataset has **hidden wall temperatures**: the problem file says the walls "
+                                     "are at 0. A method that assumes the file is right must explain the heat with D."}[phys])
+        c1, c2, c3 = st.columns(3)
         with c1:
             st.subheader("Classical adjoint")
             use_c = st.checkbox("Run the classical inversion", value=True)
-            K = st.select_slider("Control grid (D has K×K unknowns)", [8, 12, 16, 24, 32], value=16)
-            reg_c = st.radio("Regulariser", ["tikhonov", "tv"], horizontal=True,
+            solver = st.radio("Time integrator", ["Crank–Nicolson (project)", "backward Euler (controlled comparison)"],
+                              help="Everything else is identical. Backward Euler decays too slowly (1/(1+x) vs e^-x), "
+                                   "so it mimics a smaller D and biases the inversion when its error exceeds the noise.")
+            steps = st.selectbox("Time steps", ["project default (≥ 200)", 100, 200, 400])
+            K = st.select_slider("Control grid (D has K×K unknowns)", [8, 12, 16, 24, 32], value=16,
+                                 disabled=not solver.startswith("Crank"))
+            reg_c = st.radio("Regulariser", ["tikhonov", "tv"], horizontal=True, disabled=not solver.startswith("Crank"),
                              help="Tikhonov favours smooth fields; total variation (TV) favours sharp edges.")
             maxiter = st.slider("L-BFGS iterations per α", 30, 300, 150, 10)
             st.caption("α is chosen by the discrepancy principle (fit the data to the noise level). Typically 20–120 s.")
         with c2:
             st.subheader("PINN")
-            use_p = st.checkbox("Run the PINN", value=True)
+            use_p = st.checkbox("Run the PINN", value=phys == "standard")
+            variant = st.radio("Variant", ["standard (walls as given)", "boundary-aware (learns the walls)"],
+                               index=0 if phys == "standard" else 1,
+                               help="The boundary-aware PINN (Study 3) does not trust the problem file's walls.")
             epochs = st.select_slider("Training epochs", [100, 300, 750, 1500, 3000, 6000], value=1500)
             reg_p = st.radio("Regulariser ", ["auto", "tikhonov", "tv", "none"], horizontal=True,
+                             disabled=variant.startswith("boundary"),
                              help="auto = the project's defaults: Tikhonov 2e-4 for smooth tiers (A, B, E), TV 3e-4 otherwise.")
             lam = st.number_input("Regularisation weight (blank = default)", value=None, format="%.1e", placeholder="default")
             pseed = st.number_input("Random seed", value=42, step=1)
             st.caption(f"About {epochs / 1500 * 2:.0f}–{epochs / 1500 * 4:.0f} min on a CPU (1,500 epochs ≈ 2–4 min).")
-        if st.button("Run", type="primary", disabled=not (use_c or use_p)):
-            ss.results, ss.figs = {}, {}
+        with c3:
+            st.subheader("Novelty methods")
+            have_pinn = any("pinn" in n.lower() and "combined" not in n.lower() for n in ss.results)
+            use_h = st.checkbox("Combined PINN → adjoint", value=False,
+                                help="The PINN's D, projected onto the adjoint's 16×16 controls, starts the CN adjoint; "
+                                     "the α path starts where the PINN estimate's misfit and regulariser balance. "
+                                     "Uses the PINN from this run, or the last PINN result in the session.")
+            if use_h and not (use_p or have_pinn):
+                st.warning("Tick **Run the PINN** too: the combined method starts from the PINN's estimate.")
+            use_js = st.checkbox("Joint: adjoint + hidden heat source f ≥ 0", value=phys == "hidden_source",
+                                 help="The CN adjoint estimates D and a source field together (exact adjoint gradients).")
+            use_jw = st.checkbox("Joint: adjoint + hidden wall temperatures", value=phys == "hidden_walls",
+                                 help="The CN adjoint estimates D and each wall's temperature over time.")
+            jw_from_pinn = st.checkbox("…start the walls from the boundary-aware PINN's walls", value=False,
+                                       disabled=not use_jw)
+            st.caption("Each joint inversion takes about 3–8 min; the combined method about 1–3 min after the PINN.")
+        keep = st.checkbox("Keep the results already in the session (e.g. the precomputed ones) and add these",
+                           value=True)
+        if st.button("Run", type="primary", disabled=not (use_c or use_p or use_h or use_js or use_jw)):
+            if not keep:
+                ss.results, ss.figs = {}, {}
             with st.status("Running …", expanded=True) as status:
                 try:
                     if core.truth(ss.data) is not None and ss.baseline is None:
@@ -334,55 +488,108 @@ with tab_run:
                         t0 = time.perf_counter()
                         ss.baseline = core.constant_baseline(ss.data)
                         ss.baseline["wall_s"] = time.perf_counter() - t0
+                    n_steps = None if isinstance(steps, str) else int(steps)
                     if use_c:
-                        st.write("Classical adjoint inversion …")
-                        ss.results["classical adjoint"] = core.run_classical(ss.data, K, reg_c, maxiter)
-                        st.write(f"✓ classical done in {ss.results['classical adjoint']['metrics']['wall_s']:.0f} s")
+                        if solver.startswith("Crank") and n_steps is None:
+                            st.write("Classical adjoint (Crank–Nicolson) …")
+                            name = "CN adjoint (live)"
+                            ss.results[name] = core.run_classical(ss.data, K, reg_c, maxiter)
+                        else:
+                            sv = "CN" if solver.startswith("Crank") else "BE"
+                            st.write(f"Classical adjoint ({'Crank–Nicolson' if sv == 'CN' else 'backward Euler'}) …")
+                            name = f"{sv if sv == 'CN' else 'backward Euler'} adjoint (live)"
+                            ss.results[name] = NC.run_classical_solver(ss.data, sv, n_steps)
+                        st.write(f"✓ done in {ss.results[name]['metrics']['wall_s']:.0f} s")
+                    pinn_name = None
                     if use_p:
-                        st.write("Training the PINN …")
-                        ss.results["PINN"] = core.run_pinn(ss.data, epochs, None if reg_p == "auto" else reg_p,
-                                                           None if (lam is None or reg_p == "auto") else lam, int(pseed))
-                        st.write(f"✓ PINN done in {ss.results['PINN']['metrics']['wall_s']:.0f} s")
+                        if variant.startswith("boundary"):
+                            st.write("Training the boundary-aware PINN …")
+                            pinn_name = "PINN, boundary-aware (live)"
+                            ss.results[pinn_name] = NC.run_pinn_bc(ss.data, epochs)
+                        else:
+                            st.write("Training the PINN …")
+                            pinn_name = "PINN (live)"
+                            ss.results[pinn_name] = core.run_pinn(ss.data, epochs, None if reg_p == "auto" else reg_p,
+                                                                  None if (lam is None or reg_p == "auto") else lam, int(pseed))
+                        st.write(f"✓ PINN done in {ss.results[pinn_name]['metrics']['wall_s']:.0f} s")
+                    if use_h:
+                        if pinn_name is None:
+                            cands = [n for n in ss.results if "pinn" in n.lower() and "combined" not in n.lower()]
+                            pinn_name = cands[-1] if cands else None
+                        if pinn_name is None:
+                            st.write("✗ combined method skipped: no PINN estimate")
+                        else:
+                            st.write(f"Combined method, starting from **{pinn_name}** …")
+                            pr = ss.results[pinn_name]
+                            ss.results["combined PINN→adjoint (live)"] = NC.run_combined(
+                                ss.data, pr["D"], float(pr["metrics"].get("wall_s") or 0.0))
+                            st.write(f"✓ combined done (adjoint stage "
+                                     f"{ss.results['combined PINN→adjoint (live)']['metrics']['adjoint_wall_s']:.0f} s)")
+                    if use_js:
+                        st.write("Joint inversion: D + heat source …")
+                        ss.results["joint: adjoint + source (live)"] = NC.run_joint_source(ss.data)
+                        st.write("✓ joint (source) done")
+                    if use_jw:
+                        start = None
+                        if jw_from_pinn:
+                            cands = [r for n, r in ss.results.items() if r.get("G_bd") is not None and "pinn" in n.lower()]
+                            start = cands[-1]["G_bd"] if cands else None
+                            if start is None:
+                                st.write("(no boundary-aware PINN walls in the session: starting from zero walls)")
+                        st.write("Joint inversion: D + wall temperatures …")
+                        nm = "combined: joint from PINN walls (live)" if start is not None else "joint: adjoint + walls (live)"
+                        ss.results[nm] = NC.run_joint_walls(ss.data, start)
+                        st.write("✓ joint (walls) done")
                     status.update(label="Done — see **3 · Results & downloads**", state="complete")
                 except Exception as e:
                     status.update(label=f"Failed: {e}", state="error")
                     st.exception(e)
+        if ss.results and st.button("Clear all results"):
+            ss.results, ss.figs = {}, {}
 
 # ---------------------------------------------------------------------------------------------
 # 3 RESULTS
 # ---------------------------------------------------------------------------------------------
 with tab_res:
     if not ss.results:
-        st.info("Run an inversion in **2 · Run inversion** first.")
+        st.info("Run an inversion in **2 · Run inversion** first, or load a novelty demo dataset with its precomputed results.")
     else:
         ds = core.dataset(ss.data); tr = core.truth(ss.data); D_true = tr["D"] if tr else None
         res = ss.results
-        st.subheader("Performance")
-        cols = st.columns(len(res))
-        for col, (n, r) in zip(cols, res.items()):
-            m = r["metrics"]
-            with col:
-                st.markdown(f"**{n}**")
-                if "relL2_D" in m:
-                    st.metric("relL2(D) — lower is better", f"{m['relL2_D']:.3f}",
-                              help="‖D̂ − D‖ / ‖D‖ on the 65×65 grid. 0 is perfect.")
-                if m.get("rms_replay_over_sigma") is not None:
-                    st.metric("RMS replay / σ — about 1 is ideal", f"{m['rms_replay_over_sigma']:.2f}",
-                              help="D̂ is run through the Crank–Nicolson solver and compared with the readings. "
-                                   "≈1: explains the data to the noise level; >1: does not explain the data; <1: fits the noise.")
-                else:
-                    st.metric("RMS replay (noise-free data)", f"{m['rms_replay']:.2e}")
-                st.caption(f"{m['wall_s']:.0f} s")
+        st.subheader("Performance — every method on the same readings, grid, source and boundary settings")
+        per_row = 4
+        names = list(res)
+        for r0 in range(0, len(names), per_row):
+            cols = st.columns(per_row)
+            for col, n in zip(cols, names[r0:r0 + per_row]):
+                m = res[n]["metrics"]
+                with col:
+                    st.markdown(f"<span style='color:{color_of(n)}'>■</span> **{n}**", unsafe_allow_html=True)
+                    if m.get("relL2_D") is not None:
+                        st.metric("relL2(D) — lower is better", f"{m['relL2_D']:.3f}",
+                                  help="‖D̂ − D‖ / ‖D‖ on the 65×65 grid. 0 is perfect.")
+                    if m.get("rms_replay_over_sigma") is not None:
+                        st.metric("replay RMS / σ — about 1 is ideal", f"{m['rms_replay_over_sigma']:.2f}",
+                                  help="D̂ is re-simulated (with the source or walls this method estimated, if any) and "
+                                       "compared with the readings. ≈1: explains the data to the noise level.")
+                    else:
+                        st.metric("replay RMS (noise-free data)", f"{m['rms_replay']:.2e}")
+                    w = m.get("wall_s")
+                    st.caption(("precomputed · " if m.get("precomputed") else "") +
+                               (f"{w:.0f} s" if w is not None and np.isfinite(w) else ""))
         rows = {}
         for n, r in res.items():
             m = r["metrics"]
             rows[n] = {"relL2(D) ↓": m.get("relL2_D"), "RMS of log D error ↓": m.get("rmse_logD"),
-                       "RMS replay / σ (≈1)": m.get("rms_replay_over_sigma"), "RMS replay": m["rms_replay"],
-                       "D̂ range": f"{m['D_min']:.3f} – {m['D_max']:.3f}", "wall time (s)": round(m["wall_s"], 1)}
+                       "replay RMS / σ (≈1)": m.get("rms_replay_over_sigma"),
+                       "replayed with": m.get("replay_physics", "problem file"),
+                       "D̂ range": f"{m['D_min']:.3f} – {m['D_max']:.3f}",
+                       "wall time (s)": None if m.get("wall_s") is None else round(float(m["wall_s"]), 1)}
         if ss.baseline is not None:
             b = ss.baseline
             rows["best constant D (baseline)"] = {"relL2(D) ↓": b.get("relL2_D"), "RMS of log D error ↓": b.get("rmse_logD"),
-                                                  "RMS replay / σ (≈1)": b.get("rms_replay_over_sigma"), "RMS replay": b["rms_replay"],
+                                                  "replay RMS / σ (≈1)": b.get("rms_replay_over_sigma"),
+                                                  "replayed with": "problem file",
                                                   "D̂ range": f"{b['D_const']:.3f} (uniform)",
                                                   "wall time (s)": round(b.get("wall_s", float("nan")), 1)}
         _df(pd.DataFrame(rows).T)
@@ -390,31 +597,50 @@ with tab_res:
             beat = [n for n, r in res.items() if r["metrics"].get("relL2_D", 9) < ss.baseline["relL2_D"]]
             st.caption("The baseline is the best single uniform D for these readings; a useful map should beat it. "
                        f"Beating it here: {', '.join(beat) if beat else 'none'}.")
-        if "PINN" in res and res["PINN"]["metrics"].get("chi2_u_net") is not None:
-            st.caption(f"PINN's own network fit to the readings (χ², not the score): {res['PINN']['metrics']['chi2_u_net']:.2f}. "
-                       "The network can fit the readings while its D is wrong, which is why the replay metric above is used.")
+        # good fit at the sensors but wrong field: the instructor's point, made explicit
+        if D_true is not None:
+            ref = ss.baseline["relL2_D"] if ss.baseline is not None and "relL2_D" in ss.baseline else 0.5
+            fooled = [n for n, r in res.items() if (r["metrics"].get("rms_replay_over_sigma") or 9) < 1.3
+                      and (r["metrics"].get("relL2_D") or 0) > max(ref, 0.5)]
+            for n in fooled:
+                m = res[n]["metrics"]
+                st.warning(f"**{n}** explains the readings to the noise level (replay {m['rms_replay_over_sigma']:.2f}σ) "
+                           f"but its D is far from the truth (relL2 {m['relL2_D']:.2f}). A good fit at the sensors does not "
+                           "prove the field is recovered: check the error map below.")
 
-        st.subheader("Recovered maps")
+        st.subheader("True vs recovered full fields and spatial error maps")
         show(results_figure(D_true, res, sensor_xy(ds)), "maps")
+        fsrc = source_figure(ss.data, res)
+        if fsrc is not None:
+            st.subheader("Heat source: true vs estimated")
+            show(fsrc, "sources")
+        fw = walls_figure(ss.data, res)
+        if fw is not None:
+            st.subheader("Wall temperatures: true vs estimated")
+            show(fw, "walls")
+        st.subheader("Profiles through the centre")
         show(profile_figure(D_true, res), "profiles")
         c1, c2 = st.columns(2)
-        if "classical adjoint" in res:
+        cl = [n for n, r in res.items() if r.get("path") and r.get("sensitivity") is not None]
+        if cl:
             with c1:
-                r = res["classical adjoint"]
+                r = res[cl[-1]]
                 fig, axs = plt.subplots(1, 2, figsize=(9, 3.4))
                 al = [p["alpha"] for p in r["path"]]; rs = [p["rms_over_sigma"] for p in r["path"]]
                 axs[0].semilogx(al, rs, "o-", color=C_CLASSICAL); axs[0].axhline(1, color="k", ls="--", lw=1)
                 axs[0].xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
                 axs[0].axvline(r["metrics"]["alpha"], color=C_PINN, lw=1); axs[0].invert_xaxis()
-                axs[0].set(xlabel="α (regularisation weight)", ylabel="RMS misfit / σ", title="choosing α: stop when misfit ≈ noise")
+                axs[0].set(xlabel="α (regularisation weight)", ylabel="RMS misfit / σ",
+                           title=f"{cl[-1]}: stop when misfit ≈ noise")
                 axs[0].grid(alpha=0.3)
                 lS = np.log10(r["sensitivity"].T + 1e-300)
                 im = axs[1].imshow(lS, origin="lower", extent=[0, 1, 0, 1], cmap="viridis", vmin=lS.max() - 4, vmax=lS.max())
                 map_axes(axs[1], "where data inform D: log10 ∫|∇u|² dt"); fig.colorbar(im, ax=axs[1], fraction=0.046)
                 fig.tight_layout(); show(fig, "classical_diagnostics")
-        if "PINN" in res and res["PINN"]["history"] is not None:
+        pl = [n for n, r in res.items() if r.get("history") is not None]
+        if pl:
             with c2:
-                h = res["PINN"]["history"]
+                h = res[pl[-1]]["history"]
                 fig, ax = plt.subplots(figsize=(5, 3.4))
                 for col, lab in (("loss_total", "total"), ("loss_data", "data"), ("loss_pde", "PDE residual"), ("loss_ic", "initial cond.")):
                     if col in h:
@@ -425,13 +651,19 @@ with tab_res:
         st.subheader("Downloads")
         z = core.results_zip(ss.data, res, ss.figs)
         st.download_button("Everything (models, D̂, metrics, figures) .zip", z, "inversion_results.zip", "application/zip", type="primary")
-        c = st.columns(len(res))
-        for col, (n, r) in zip(c, res.items()):
-            with col:
-                st.download_button(f"Trained model: {n}", Path(r["model_file"]).read_bytes(), Path(r["model_file"]).name)
-                g = np.linspace(0, 1, core.N_INV); X, Y = np.meshgrid(g, g, indexing="ij")
-                s = io.StringIO(); np.savetxt(s, np.c_[X.ravel(), Y.ravel(), r["D"].ravel()], delimiter=",", header="x,y,D", comments="", fmt="%.8g")
-                st.download_button(f"D̂ map (CSV): {n}", s.getvalue(), f"D_hat_{'classical' if n.startswith('classical') else 'pinn'}.csv", "text/csv")
+        g = np.linspace(0, 1, core.N_INV); X, Y = np.meshgrid(g, g, indexing="ij")
+        for r0 in range(0, len(names), per_row):
+            cols = st.columns(per_row)
+            for col, n in zip(cols, names[r0:r0 + per_row]):
+                r = res[n]
+                tag = "".join(ch if ch.isalnum() else "_" for ch in n).strip("_").lower()
+                with col:
+                    if r.get("model_file"):
+                        st.download_button(f"Model: {n}", Path(r["model_file"]).read_bytes(), Path(r["model_file"]).name,
+                                           key=f"dlm_{tag}")
+                    s_ = io.StringIO(); np.savetxt(s_, np.c_[X.ravel(), Y.ravel(), r["D"].ravel()], delimiter=",",
+                                                   header="x,y,D", comments="", fmt="%.8g")
+                    st.download_button(f"D̂ map (CSV): {n}", s_.getvalue(), f"D_hat_{tag}.csv", "text/csv", key=f"dld_{tag}")
 
 # ---------------------------------------------------------------------------------------------
 # 4 LOAD A SAVED MODEL
@@ -512,8 +744,8 @@ with tab_load:
 # ---------------------------------------------------------------------------------------------
 with tab_help:
     st.markdown("""
-**Problem.** The temperature u(x, y, t) on the unit square obeys u_t = ∇·(D(x, y)∇u), with the edges held at known values
-and a known initial temperature. Sensors record u at a few points and times, with noise. The task is to recover D.
+**Problem.** The temperature u(x, y, t) on the unit square obeys u_t = ∇·(D(x, y)∇u) + f, with the edges held at known
+values, a known initial temperature and (in the standard setting) no source. Sensors record u at a few points and times, with noise. The task is to recover D.
 
 **Methods.**
 - *Classical adjoint* (`adjoint_inversion.py`): D = exp(m), m on a K×K control grid. Every evaluation solves the heat
@@ -522,9 +754,22 @@ and a known initial temperature. Sensors record u at a few points and times, wit
 - *PINN* (`pinn_inversion.py`): one network for u(x, y, t) and one for log D(x, y), trained on the readings plus the
   PDE residual, boundary and initial conditions. The saved model is the network checkpoint (`pinn_best.pt`).
 
+**Novelty methods** (`novelty_core.py`, solver code in `methods/`; all on the same dataset folder as above).
+- *Combined PINN → adjoint*: the PINN's log D, projected onto the adjoint's 16×16 controls, starts the CN adjoint; the α
+  path starts where the PINN estimate's data misfit and regulariser balance ("hybrid_balance" in the novelty study).
+- *Joint: adjoint + source*: the CN adjoint estimates D and a heat source f ≥ 0 on 16×16 controls, both with exact
+  discrete-adjoint gradients. For datasets whose problem file omits a heater.
+- *Joint: adjoint + walls*: the CN adjoint estimates D and each wall's temperature over time (17 knots). For datasets
+  whose problem file has the wrong wall temperatures. Can start from the boundary-aware PINN's walls (combined).
+- *Backward-Euler adjoint*: identical to the classical adjoint except for the time step. Its error relative to the
+  noise biases D (it mimics a smaller D); with Crank–Nicolson the bias disappears.
+- *Boundary-aware PINN*: the Study 3 PINN that learns the wall values instead of assuming them.
+
 **Metrics.**
-- *RMS replay / σ* (always available): D̂ is run through the same solver and compared with the readings. About 1 means
-  the map explains the data to the noise level.
+- *RMS replay / σ* (always available): D̂ is run through the same solver (with the source or walls the method itself
+  estimated, if any) and compared with the readings. About 1 means the map explains the data to the noise level.
+  It does **not** prove that D is right: an adjoint that wrongly assumes no source can replay at 1σ with a meaningless
+  D, which is why the full field and its error map are always shown.
 - *relL2(D)* and *RMS of log D error* (when the true D is known): distance from the true map. Lower is better.
 - *Best constant D*: the single uniform value that fits the readings best — the floor any useful map should beat.
 

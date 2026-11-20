@@ -1,0 +1,47 @@
+[
+ {
+  "exp": "E1",
+  "arm": "adjoint",
+  "label": "CN adjoint (assumes f = 0)",
+  "file": "E1_adjoint.npz",
+  "rel_L2_D": 4.791309785896885,
+  "replay_over_sigma": 2.2998502778175984,
+  "wall_s": 359.4602285330002
+ },
+ {
+  "exp": "E1",
+  "arm": "pinn",
+  "label": "PINN (boundary-aware)",
+  "file": "E1_pinn.npz",
+  "rel_L2_D": 0.9469990700318016,
+  "replay_over_sigma": 23.153311296096447,
+  "wall_s": 65.102059841156
+ },
+ {
+  "exp": "E1",
+  "arm": "hybrid_balance",
+  "label": "combined PINN\u2192adjoint (f = 0)",
+  "file": "E1_hybrid_balance.npz",
+  "rel_L2_D": 4.891161450600618,
+  "replay_over_sigma": 2.2990930102296314,
+  "wall_s": 475.3590642591553
+ },
+ {
+  "exp": "E1s",
+  "arm": "adjoint_src_pos",
+  "label": "joint: CN adjoint + source f \u2265 0",
+  "file": "E1s_adjoint_src_pos.npz",
+  "rel_L2_D": 0.14657988967553584,
+  "replay_over_sigma": 0.9959077420468194,
+  "wall_s": 173.81812860499986
+ },
+ {
+  "exp": "E1s",
+  "arm": "adjoint_truesrc",
+  "label": "bound: adjoint given the true source",
+  "file": "E1s_adjoint_truesrc.npz",
+  "rel_L2_D": 0.11784341076246779,
+  "replay_over_sigma": 0.9801890003118775,
+  "wall_s": 70.693046568
+ }
+]

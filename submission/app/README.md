@@ -2,12 +2,15 @@
 
 This is an interactive interface for the project's two inverse solvers. It covers deliverable "an interface where the user can input or upload project-specific inputs", the displayed performance metric and the qualitative results.
 
-You give it sensor readings of the heat equation u_t = ∇·(D(x,y)∇u) on the unit square. It recovers the unknown diffusivity map D(x,y) two ways:
+You give it sensor readings of the heat equation u_t = ∇·(D(x,y)∇u) + f on the unit square. It recovers the unknown diffusivity map D(x,y) with:
 
-- the **classical PDE-constrained (adjoint) inversion** in `adjoint_inversion.py`;
-- the **PINN** in `pinn_inversion.py`.
+- the **classical PDE-constrained (adjoint) inversion** in `adjoint_inversion.py`, with a Crank–Nicolson or (for the controlled solver comparison) backward-Euler time step;
+- the **PINN** in `pinn_inversion.py`, or the boundary-aware PINN that learns the wall temperatures;
+- the **novelty methods**: the **combined PINN → adjoint** method, and **joint classical inversion** of D with a hidden heat source or hidden wall temperatures.
 
-It reports metrics for both, draws the recovered maps and lets you download the trained models.
+Every method runs on the same readings, grid, initial and boundary conditions and source. The results tab shows them side by side: true vs recovered D, a spatial error map log(D̂/D), relL2(D) and replay RMS/σ. It flags any method that fits the sensors to the noise level while its D is wrong. You can download every estimate and model.
+
+**Quickest demo:** tab 1 → *Novelty demo datasets* → pick *Hidden heat source* → **Use this dataset** → tab 3. All five methods appear at once, from precomputed runs re-scored live.
 
 ---
 
@@ -55,6 +58,17 @@ ie643_inversion_app/
 ├── app/
 │   ├── streamlit_app.py      user interface (tabs below)
 │   ├── core.py               backend: data I/O, running both solvers, scoring, model save/load
+│   ├── novelty_core.py       backend for the novelty methods, the demo bundle and own-physics replay
+│   ├── methods/              solver code of the novelty methods (copies of extended_studies/ files)
+│   │   ├── hybrid.py                  combined PINN -> adjoint (warm start, balanced alpha path)
+│   │   ├── hybrid_src.py              joint adjoint: D + heat source f
+│   │   ├── hybrid_bc.py               joint adjoint: D + wall temperatures; boundary-aware PINN walls
+│   │   ├── time_integrators.py        CN and backward-Euler adjoints (Study 5)
+│   │   └── pinn_inversion_bc.py       boundary-aware PINN (Study 3)
+│   ├── demo/                 novelty demo bundle (built by extended_studies/novelty/build_app_bundle.py)
+│   │   ├── benchmark/datasets_v2_rk4_zero/        20 known-physics datasets (slim: no stored temperature field)
+│   │   ├── hidden_physics/datasets_v2_rk4_zero/   8 hidden-wall + 6 hidden-source datasets
+│   │   └── results/<key>/                          every method's precomputed estimate + methods.json
 │   ├── sample_inputs/        files to try the upload paths with
 │   │   ├── example_sensors.csv              400 readings (50 sensors × 8 times, 5 % noise)
 │   │   ├── example_true_D_65x65.csv         the matching true D (optional, for scoring)
@@ -94,7 +108,9 @@ python generate_dataset_v2.py
 
 ### Tab 1 · Data
 
-Choose one of three sources:
+Choose one of four sources:
+
+0. **Novelty demo datasets.** These are the 34 datasets of the novelty experiments: 20 with known physics, 6 with a hidden heat source and 8 with hidden wall temperatures. Tick *Load the precomputed results* to see every method at once. The stored estimates are re-scored live by the same scorer.
 
 1. **Generate a new synthetic dataset.** This is the same pipeline as the project generator:
    - The forward solve is RK4 on a 129×129 grid.
@@ -122,20 +138,23 @@ The app then shows:
 
 ### Tab 2 · Run inversion
 
-Tick either method or both.
+Tick any combination. New results are added next to the ones already in the session, for example the precomputed ones.
 
-| Classical adjoint | PINN |
-|---|---|
-| control grid K×K (8–32) | epochs (100–6,000) |
-| Tikhonov or TV regulariser | regulariser (auto, Tikhonov, TV or none) |
-| L-BFGS iterations per α | regularisation weight |
-| α picked by the discrepancy principle | random seed |
+| Classical adjoint | PINN | Novelty methods |
+|---|---|---|
+| time integrator: Crank–Nicolson (project) or backward Euler | variant: standard or boundary-aware (learns the walls) | **combined PINN → adjoint**: starts from the PINN of this run, or the last PINN in the session |
+| time steps (project default ≥ 200, or 100 / 200 / 400) | epochs (100–6,000) | **joint: adjoint + heat source f ≥ 0** |
+| control grid K×K (8–32), Tikhonov or TV (CN only) | regulariser and its weight | **joint: adjoint + wall temperatures**, optionally starting from the boundary-aware PINN's walls |
+| α picked by the discrepancy principle | random seed | same α rule as the adjoint |
+
+On a hidden-physics dataset the tab says what the problem file leaves out, and pre-ticks the matching joint inversion and the boundary-aware PINN.
 
 ### Tab 3 · Results & downloads
 
 **Performance panel.** For each method it shows:
 - **relL2(D)** = ‖D̂ − D‖ / ‖D‖. Lower is better. Shown only if the true D is known.
-- **RMS replay / σ.** The estimated map D̂ is run through the same Crank–Nicolson solver and compared with the readings. About 1 means D̂ explains the data to the noise level. This metric is always available, even for real data with no answer key.
+- **RMS replay / σ.** The estimated map D̂ is run through the same Crank–Nicolson solver and compared with the readings. If the method estimated a source or walls, they are used in the replay. About 1 means D̂ explains the data to the noise level. This metric is always available, even for real data with no answer key.
+- **Fit is not recovery.** A warning appears for any method that replays at about 1σ but has a D far from the truth. For example, the adjoint that assumes no source on a hidden-source dataset replays at 0.99σ with relL2 3.1.
 
 A table adds:
 - the RMS of the log-D error;
@@ -144,7 +163,8 @@ A table adds:
 - the **best constant D** baseline, i.e. the single uniform value that fits the readings best. A useful map should beat it.
 
 **Qualitative results:**
-- true vs recovered maps on a shared colour scale, with log(D̂/D) error maps;
+- true vs recovered maps of every method on one shared colour scale, each with its spatial error map log(D̂/D) on one shared diverging scale, and relL2 and replay in each title;
+- for the joint inversions, the true vs estimated heat source and the true vs estimated wall temperatures of each edge over time;
 - profiles through the centre;
 - the α-selection curve and a data-sensitivity map (where the readings carry information about D);
 - the PINN loss curves.

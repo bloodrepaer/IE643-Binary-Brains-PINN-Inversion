@@ -431,9 +431,10 @@ def results_zip(data, results: dict, figures: dict) -> bytes:
         z.write(Path(data["root"]) / data["entry"]["files"]["sensors_csv"], "dataset/sensors.csv")
         metrics = {}
         for name, r in results.items():
-            tag = "classical" if name.startswith("classical") else "pinn"
+            tag = "".join(ch if ch.isalnum() else "_" for ch in name).strip("_").lower()
             metrics[name] = r["metrics"]
-            z.write(r["model_file"], f"models/{os.path.basename(r['model_file'])}")
+            if r.get("model_file"):
+                z.write(r["model_file"], f"models/{tag}__{os.path.basename(r['model_file'])}")
             s = io.StringIO()
             np.savetxt(s, np.c_[X.ravel(), Y.ravel(), r["D"].ravel()], delimiter=",", header="x,y,D", comments="", fmt="%.8g")
             z.writestr(f"D_hat_{tag}.csv", s.getvalue())

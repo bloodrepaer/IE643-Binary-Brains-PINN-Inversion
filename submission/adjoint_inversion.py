@@ -265,9 +265,20 @@ class AdjointSolver:
 
     # --- objective + gradient ----------------------------------------------------
     def objective(self, theta, alpha, want_grad=True):
+        value = self.field_objective(self.m_of(theta), alpha, want_grad)
+        if not want_grad:
+            return value
+        J, g_m = value
+        return J, self.P.T @ g_m
+
+    def field_objective(self, m, alpha, want_grad=True):
+        """Reduced objective and gradient with respect to full-grid log D.
+
+        Keeping the adjoint independent of the parameterisation lets a neural
+        coefficient apply its own vector-Jacobian product after this sweep.
+        """
         self.n_evals += 1
         dz = self.disc
-        m = self.m_of(theta)
         D = np.exp(m)
         W, c, LII, solve = self.forward(D)
         r = self.predict(W) - self.d
@@ -302,7 +313,7 @@ class AdjointSolver:
         np.add.at(g_D, dz.p, g_c * dz.w_link * 2 * Dq**2 / den)
         np.add.at(g_D, dz.q, g_c * dz.w_link * 2 * Dp**2 / den)
         g_m = D * g_D + alpha * gR
-        return J, self.P.T @ g_m
+        return J, g_m
 
     # --- inversion driver -------------------------------------------------------
     def best_constant(self):
@@ -458,7 +469,8 @@ def plot(ds, solver, out, metrics, S, D_true, path_png):
         ax[0, 0].set_title("true D (answer key)"); plt.colorbar(im, ax=ax[0, 0])
     im = ax[0, 1].imshow(Dh.T, origin="lower", extent=ext, cmap="plasma", vmin=vmin, vmax=vmax)
     ax[0, 1].plot(ds.x, ds.y, "w.", ms=3)
-    ax[0, 1].set_title(f"estimated D (adjoint, {solver.reg}, {solver.K}x{solver.K})"); plt.colorbar(im, ax=ax[0, 1])
+    method_label = metrics.get("method", f"adjoint, {solver.reg}, {solver.K}x{solver.K}")
+    ax[0, 1].set_title(f"estimated D ({method_label})"); plt.colorbar(im, ax=ax[0, 1])
     if D_true is not None:
         err = np.log(Dh / D_true)
         lim = np.abs(err).max()

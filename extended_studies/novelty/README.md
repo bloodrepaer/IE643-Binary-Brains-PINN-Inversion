@@ -8,6 +8,8 @@ The course's novelty phase asks for new ideas beyond the intensive assessment, w
 |---|---|---|---|---|
 | **E1** | Does combining the PINN and the adjoint beat both? (the novelty plan) | 20-dataset evaluation set (known physics) + 14 unknown-boundary / unknown-source datasets from Study 3 | `adjoint`, `pinn`, `hybrid_path`, `hybrid_balance`, `hybrid_prior`, `reverse` | lower relL2(D) than **both** methods alone, with the PINN's training time included in the cost |
 | **E1b** | Can the PINN supply the physics the adjoint is missing? | 8 hidden-wall datasets (Study 3, H2u) | `pinn_bc` (boundary-aware PINN), `hybrid_bc` (PINN's wall temperatures fixed in the adjoint), `hybrid_bc_joint5` (adjoint estimates D and walls, walls start from the PINN's), the fair classical rival `adjoint_joint5` (same joint inversion, walls start at zero), `adjoint_joint1` (walls uniform along each edge, the truth's structure), `adjoint_truebc` (true walls: a bound) | `hybrid_bc*` lower relL2 than both `pinn_bc` and `adjoint_joint5` |
+| **E1s** | Does the PINN's hidden-source advantage survive a fair classical rival? | 6 hidden-source datasets (Study 3, H3u) | `adjoint_src` (adjoint estimates D and a source f, free sign), `adjoint_src_pos` (f ≥ 0), `adjoint_truesrc` (true source: a bound) | joint inversion lower relL2 than the boundary-aware PINN |
+| **S1** | How much of every PINN number is seed luck? | the 20 known-physics datasets + 6 H3u | `pinn` and `hybrid_balance` at seeds 43–46 (seed 42 = E1) | — |
 | **E1c** | Equal budget: is the hybrid better than just training the PINN longer? | the 20 known-physics datasets | `pinn_3x` (3 × the epochs, about the hybrids' cost) | compared with E1's `pinn`, `adjoint` and hybrids |
 | **D1** | Does the PINN improve with more sensors? | 6 fields × 20 / 100 / 400 / 1,600 / 3,969 sensors × 1 / 5 / 10 % noise (90, extended density collection) | `pinn` (project PINN); the CN grid and CN neural adjoints of the campaign on the same datasets | error falls with sensor count |
 | **D2** | Is the PINN's flat curve a training-budget limit? | A_smooth, E_grf at 100 / 3,969 sensors, 1 % noise | `pinn_long` (4 × the epochs) | — |
@@ -55,6 +57,28 @@ The truth is D(x, y, u) = D₀(x, y) · exp(s(u)), with s(u) = γθu / (1 + θu)
 ### E3b: designed sensors (`sensor_design.py`)
 
 Greedy D-optimal design on the adjoint's sensitivities J (readings × 256 controls). J is computed at the prior constant D = Fo / T, the diffusivity the experiment was planned for, so no readings and no true D are used. All layouts are row subsets of the 3,969-node dataset, so they share one noise draw.
+
+## Results (full size)
+
+Median relL2(D); replay RMS/σ in brackets (re-simulated with the method's own estimated source or walls). Every method sees the same readings, grid, initial/boundary conditions and source. The win rule: more than 1 % lower error.
+
+| Setting | CN adjoint | PINN | combined PINN→adjoint | joint classical | true-physics bound |
+|---|---|---|---|---|---|
+| known physics (20) | **0.226** (0.97) | 0.468 (3.56) | **0.225** (0.96) | – | – |
+| hidden walls (8) | 4.36 (15.0) | 0.338 (2.48) | 0.296 (0.92) | **0.264** (0.98) | 0.201 |
+| hidden source (6) | 3.29 (0.99) | 0.534 (5.63) | 3.57 (0.99) | **0.169** (0.97) | 0.156 |
+
+The hidden-walls "combined" entry is `hybrid_bc_joint5`, the joint inversion started from the PINN's walls.
+
+- **E1, the combined method.** It ends at the same final α as the cold adjoint on 20 of 20 datasets, because the strongly regularised start of the α path washes out any initial field. So it matches the adjoint and does not beat it. It costs about 3× more, because our 2-D adjoint is cheap. `hybrid_balance` beats both parents consistently (at least 4 of 5 seeds) on 4 of 20 sharp or noisy datasets. `hybrid_prior` hurts (0.323). `reverse` is no better than the PINN (0.476).
+- **E1b / E1s, unknown physics.** The adjoint fails only because it enforces the wrong PDE. Once it estimates the missing walls or source jointly with D, it beats the PINN on 7 of 8 and 6 of 6 datasets and comes close to the bound. With the hidden source, the adjoint that assumes f = 0 replays at 0.99σ with relL2 3.29: **a good fit at the sensors is not a recovered field.**
+- **S1, seeds.** Seed 42 was the PINN's best of five (per-seed medians 0.468–0.554), and its seed-to-seed spread is about 0.06. The PINN beats the adjoint in 3 of 100 dataset–seed pairs, all on one inclusion dataset.
+- **D1–D3, density.** From 20 to 3,969 sensors (1 % noise) the PINN improves only from 0.481 to 0.404, while the adjoint goes from 0.156 to 0.070. Training 16× longer takes the PINN from 0.384 to 0.132. Given the exact u, its D-step reaches 0.094. The limit is the PINN's fitting and differentiating of its own û, not the data.
+- **E2, temperature dependence.** A learned g(u) is worse on 4 of 6 datasets and invents temperature dependence. With Arrhenius data the adjoint still wins on 14 of 16 datasets; the PINN wins only at S = 2 with dense, clean data.
+- **E3, PINN practice.** Held-out sensor validation picks a better model on 7 of 8 datasets. RAR is worse on 8 of 8. Pseudo-data wrecks the adjoint (0.317 → 3.38). Sensor placement matters for the adjoint.
+- **Study 5 (`../study5_time_integrators/`).** Backward Euler biases D upward when its time-step error exceeds the noise (2.5σ at 1 % noise). On data generated by backward Euler itself it inverts as well as Crank–Nicolson. This explains the PINN's intensive-phase "dense-sensor win".
+
+Detailed tables: `summary/*.md`. Write-ups: `summary/S1.md`, and `../study5_time_integrators/BE_MECHANISM.md`. Poster figures: `poster_figs/`. Poster source in the official template: `poster/`.
 
 ## Fairness rules
 
@@ -116,6 +140,11 @@ A GPU speeds up the PINN arms; the adjoint arms are CPU code (SciPy) either way.
 | `pinn_plus.py` | the project PINN with switchable extensions (third network, held-out rows, RAR, augmentation, warm start) |
 | `hybrid.py` | projection to the adjoint controls, warm-started and prior-regularised adjoint, cold adjoint with timing |
 | `hybrid_bc.py` | E1b: adjoint with settable / optimisable wall temperatures, joint (D, walls) inversion, the boundary-aware PINN's walls |
+| `hybrid_src.py` | E1s: adjoint with a source term, joint (D, f) inversion with exact discrete-adjoint gradient (checked against finite differences) |
+| `summarise_seeds.py` | S1 seed-spread tables (`summary/S1.md`) |
+| `make_poster_figures.py` | poster figures F3–F12 (`poster_figs/`); F1, F2 are TikZ in `poster_figs/tikz/` |
+| `build_app_bundle.py` | copies slim datasets and every method's estimate into `submission/app/demo/` for the interface |
+| `poster/` | the A0/A1 poster in the official IE 643 template (LaTeX source, figures) |
 | `arrhenius.py` | temperature-dependent data generator and nonlinear replay |
 | `sensor_design.py` | random / grid / D-optimal sensor layouts as datasets |
 | `experiments_more.py` | E2 and E3 job definitions |

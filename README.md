@@ -16,8 +16,8 @@ from sparse, noisy sensor readings of u. We compare a **physics-informed neural 
 | Folder | Contents |
 |---|---|
 | `submission/` | **Main code, ready to run.** Forward solver, dataset generator, classical adjoint inversion, PINN, Streamlit interface (`submission/app/`, with screenshots in `submission/app/screenshots/`), trained models for both methods, the sensor/noise/layout sweep and the 20-dataset evaluation. See `submission/README.md`. |
-| `extended_studies/` | **Deliverable 4 evidence**, in four studies: (1) grid vs neural representation of D in the adjoint; (2) neural adjoint vs neural PINN with the same network for D; (3) the "where should a PINN win?" hypothesis suites; (4) the dense-sensor sweep (1,000 to 10,000 sensors). Trained checkpoints, score tables and run records. See `extended_studies/README.md`. |
-| `report/` | Intensive Assessment project report (`Binary_Brains_IE643_Report.pdf`). |
+| `extended_studies/` | **Deliverable 4 evidence and the novelty phase.** Study 5 (`study5_time_integrators/`): the controlled Crank-Nicolson vs backward-Euler comparison. `novelty/`: the combined PINN→adjoint method, joint classical inversion of hidden walls or sources, seed spread, and the poster source. The earlier studies are in four parts: (1) grid vs neural representation of D in the adjoint; (2) neural adjoint vs neural PINN with the same network for D; (3) the "where should a PINN win?" hypothesis suites; (4) the dense-sensor sweep (1,000 to 10,000 sensors). Trained checkpoints, score tables and run records. See `extended_studies/README.md`. |
+| `report/` | Intensive Assessment project report (`Binary_Brains_IE643_Report.pdf`); Novelty Assessment poster (`Binary_Brains_IE643_CourseProject_Poster.pdf`, A1) and 2-page report (`Binary_Brains_IE643_NoveltyAssessment_report.pdf`). |
 | `videos/` | Code-walkthrough and demo videos (links in `videos/README.md`). |
 
 ## 2. Deliverables and where they are
@@ -27,11 +27,11 @@ from sparse, noisy sensor readings of u. We compare a **physics-informed neural 
 | 1 | Synthetic dataset and forward solver | `submission/integrators.py` (5-point flux form; RK4, Crank-Nicolson with Rannacher start, forward Euler), `submission/domain.py` (six ground-truth D families), `submission/generate_dataset_v2.py` (389 datasets), `submission/compare_integrators.py`, `submission/README_datasets.md` (all dataset collections). More dataset generators: `extended_studies/study3_pinn_favoured/generate_pinn_favoured.py`, `generate_pinn_favoured2.py`; `extended_studies/study1_representation/make_density_datasets.py`, `extend_sensor_density.py`; `extended_studies/study4_dense_sensors/prepare_noise_density_1000_7500.py`, `prepare_dense10000.py`. |
 | 2 | PINN inverse model | `submission/pinn_inversion.py` (details in `submission/README_methods.md`); checkpoints in `submission/models/pinn/`. Boundary-aware PINN: `extended_studies/core/pinn_inversion_bc.py`. Neural-coefficient PINN: `extended_studies/core/compare_neural.py`, `extended_studies/study4_dense_sensors/temporal_density_pair.py`. |
 | 3 | Classical inversion baseline | `submission/adjoint_inversion.py` (exact discrete adjoint of Crank-Nicolson, L-BFGS-B, discrepancy principle; details in `submission/README_methods.md`), `submission/test_adjoint.py`; estimates for all 389 datasets in `submission/models/classical/tikhonov_all389/`. Neural adjoint: `extended_studies/core/adjoint_nn.py`, `extended_studies/study4_dense_sensors/matched_temporal_adjoint.py`. |
-| 4 | Where PINN inversion beats classical | Unknown boundary condition or source: `extended_studies/study3_pinn_favoured/README.md`, `results/results_pinnwin_scores.csv`, `results/results_pinnwin2_scores.csv`. Very dense sensors: `extended_studies/campaign/pilots/noise_density_v24_1000_7500/SWEEP_REPORT.md` and `campaign/pilots/dense10000_v21_gpu/RESULTS.md`. Too few sensors: `submission/experiments/sensor_noise_layout_sweep/`. |
+| 4 | Where PINN inversion beats classical | **Updated in the novelty phase (see section 4):** the apparent wins below were explained by an unestimated wall or source (`extended_studies/novelty/`, E1b/E1s) and a backward-Euler solver error (`extended_studies/study5_time_integrators/`). Original evidence: unknown boundary condition or source: `extended_studies/study3_pinn_favoured/README.md`, `results/results_pinnwin_scores.csv`, `results/results_pinnwin2_scores.csv`. Very dense sensors: `extended_studies/campaign/pilots/noise_density_v24_1000_7500/SWEEP_REPORT.md` and `campaign/pilots/dense10000_v21_gpu/RESULTS.md`. Too few sensors: `submission/experiments/sensor_noise_layout_sweep/`. |
 | 5 | Sensor density, location and noise experiments | `submission/experiments/sensor_noise_layout_sweep/` (both methods; 5 to 100 sensors, 0 to 10 % noise, 4 layouts), `submission/models/classical/tikhonov_all389/summary_all.csv` (389 configurations), `extended_studies/campaign/density_*.csv` (5 to 3,969 sensors). |
 | 6 | Quantitative and qualitative evaluation | Metrics in every `metrics.json` and summary CSV; maps in each `summary.png`; `submission/experiments/zhang_replication_study20/` (20-dataset head-to-head); `extended_studies/analysis/figures/`, `extended_studies/campaign/figures/`. |
 | - | Trained models | `submission/models/` (PINN checkpoints, classical estimates), `submission/app/pretrained/` (both methods, 20 datasets), `extended_studies/campaign/results/` and `campaign/v24_case_results/` (neural adjoint and neural PINN checkpoints). |
-| - | Interface with user input/upload | `submission/app/streamlit_app.py`: generate a dataset, pick a benchmark dataset or upload sensor readings (CSV); run either method; view maps and metrics; download or reload models. Sample inputs: `submission/app/sample_inputs/`. Screenshots: `submission/app/screenshots/`. |
+| - | Interface with user input/upload | `submission/app/streamlit_app.py`: novelty demo datasets with every method precomputed, generate a dataset, pick a benchmark dataset or upload sensor readings (CSV); run the CN or backward-Euler adjoint, the PINN (standard or boundary-aware), the combined PINN→adjoint method and joint inversion of a hidden source or walls; compare true vs recovered D, error maps, relL2 and replay side by side; download or reload models. Sample inputs: `submission/app/sample_inputs/`. Screenshots: `submission/app/screenshots/`. |
 | - | Displayed performance metric | relL2(D), replay RMS/sigma and the best-constant baseline, shown in the interface's results tab. |
 | - | Stage-wise report | `report/Binary_Brains_IE643_Report.pdf`. |
 | - | Code-walkthrough and demo videos | `videos/`. |
@@ -69,16 +69,34 @@ The generated datasets are not stored in the repository (about 550 MB in total);
 
 ## 4. Main results
 
+### Novelty assessment (final)
+
+Every method sees the same readings, grid, initial and boundary conditions and source. The table gives median relL2(D), with replay RMS/σ in brackets.
+
+| Setting | CN adjoint | PINN | combined PINN→adjoint | joint classical | true-physics bound |
+|---|---|---|---|---|---|
+| known physics (20 datasets) | **0.226** (0.97) | 0.468 (3.56) | **0.225** (0.96) | – | – |
+| hidden wall temperatures (8) | 4.36 (15.0) | 0.338 (2.48) | 0.296 (0.92) | **0.264** (0.98) | 0.201 |
+| hidden heat source (6) | 3.29 (0.99) | 0.534 (5.63) | 3.57 (0.99) | **0.169** (0.97) | 0.156 |
+
+- **Known physics.** The Crank–Nicolson adjoint is about 2× more accurate than the PINN and explains the data to the noise level. Over 5 seeds the PINN is better in 3 of 100 dataset–seed pairs.
+- **Combined method.** It always beats the PINN but not the adjoint: it ends at the adjoint's final regularisation on 20 of 20 datasets, at about 3× the cost.
+- **Unknown physics.** The PINN's apparent wins vanish once the classical method estimates the missing walls or source jointly with D (7 of 8 and 6 of 6 datasets).
+- **Dense sensors.** The earlier dense-sensor win came from a backward-Euler step in the baseline adjoint. Its time-step error is 2.5σ at 1 % noise and inflates D. With Crank–Nicolson the adjoint wins (`extended_studies/study5_time_integrators/`).
+- **Fit is not recovery.** With a hidden source, the adjoint that assumes none fits the sensors at 0.99σ with relL2 3.29. The interface therefore always shows the full field and its error map.
+
+Details: `extended_studies/novelty/README.md`, the poster and the 2-page report in `report/`.
+
+### Intensive assessment (original numbers; the last two rows are superseded above)
+
 | Study | Classical adjoint | PINN |
 |---|---|---|
 | 20 representative datasets (known IC/BC): lower relL2(D) | 20 / 20 | 0 / 20 |
 | ... median relL2(D), lower is better | 0.23 | 0.47 (best constant 0.38) |
 | 44-dataset sensor x noise x layout sweep: lower relL2(D) | 41 / 44 | 3 / 44 |
-| Unknown boundary condition or source (22 datasets; adjoint must assume zero) | median 5.0 | **0.38, lower in 21 / 22** |
+| Unknown boundary condition or source (22 datasets; adjoint must assume zero) | median 5.0 | 0.38, lower in 21 / 22 |
 | Known physics, same hypothesis suites (59 datasets) | median 0.12, lower in 58 / 59 | median 0.41 |
-| Very dense sensors (smooth field, 5 % noise, 7,500 sensors; shared D-network) | 25.1 % | **8.6 %** |
-
-**Where the PINN is better:** (1) the boundary condition or a heat source is unknown; (2) very dense sensor data; (3) too few sensors to identify D, where it stays at the best-constant level instead of inventing structure. With exact initial and boundary conditions and up to a few hundred sensors, the classical adjoint is more accurate, fits the data to the noise level and is faster.
+| Very dense sensors (smooth field, 5 % noise, 7,500 sensors; backward-Euler neural adjoint) | 25.1 % | 8.6 % |
 
 ## 5. Metrics
 

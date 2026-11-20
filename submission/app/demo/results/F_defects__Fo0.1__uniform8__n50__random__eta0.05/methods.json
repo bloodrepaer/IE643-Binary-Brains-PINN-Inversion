@@ -1,0 +1,47 @@
+[
+ {
+  "exp": "E1",
+  "arm": "adjoint",
+  "label": "CN adjoint",
+  "file": "E1_adjoint.npz",
+  "rel_L2_D": 0.18207033850563945,
+  "replay_over_sigma": 0.963900372216002,
+  "wall_s": 29.245651903999715
+ },
+ {
+  "exp": "E1",
+  "arm": "pinn",
+  "label": "PINN",
+  "file": "E1_pinn.npz",
+  "rel_L2_D": 0.3503757951672855,
+  "replay_over_sigma": 3.084330930737522,
+  "wall_s": 85.24814915657043
+ },
+ {
+  "exp": "E1",
+  "arm": "hybrid_balance",
+  "label": "combined PINN\u2192adjoint",
+  "file": "E1_hybrid_balance.npz",
+  "rel_L2_D": 0.1818552364285396,
+  "replay_over_sigma": 0.961238282928056,
+  "wall_s": 107.1417158475706
+ },
+ {
+  "exp": "E1",
+  "arm": "hybrid_path",
+  "label": "combined, warm start only",
+  "file": "E1_hybrid_path.npz",
+  "rel_L2_D": 0.18207033770873116,
+  "replay_over_sigma": 0.9639003728397576,
+  "wall_s": 112.32871091657034
+ },
+ {
+  "exp": "E1",
+  "arm": "hybrid_prior",
+  "label": "combined, PINN as prior",
+  "file": "E1_hybrid_prior.npz",
+  "rel_L2_D": 0.2253073370836397,
+  "replay_over_sigma": 0.9592486204112957,
+  "wall_s": 108.40603137957169
+ }
+]

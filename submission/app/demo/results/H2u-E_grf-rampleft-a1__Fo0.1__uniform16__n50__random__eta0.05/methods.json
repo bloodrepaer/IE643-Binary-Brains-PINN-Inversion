@@ -1,0 +1,47 @@
+[
+ {
+  "exp": "E1",
+  "arm": "adjoint",
+  "label": "CN adjoint (assumes zero walls)",
+  "file": "E1_adjoint.npz",
+  "rel_L2_D": 4.326406041917162,
+  "replay_over_sigma": 16.652006714258242,
+  "wall_s": 154.3114442269998
+ },
+ {
+  "exp": "E1b",
+  "arm": "pinn_bc",
+  "label": "PINN (boundary-aware)",
+  "file": "E1b_pinn_bc.npz",
+  "rel_L2_D": 0.3757205462795742,
+  "replay_over_sigma": 1.3625179185053282,
+  "wall_s": 56.59800887107849
+ },
+ {
+  "exp": "E1b",
+  "arm": "hybrid_bc_joint5",
+  "label": "combined: joint inversion from the PINN's walls",
+  "file": "E1b_hybrid_bc_joint5.npz",
+  "rel_L2_D": 0.28588509301501175,
+  "replay_over_sigma": 0.9135309456962364,
+  "wall_s": 251.97296685707988
+ },
+ {
+  "exp": "E1b",
+  "arm": "adjoint_joint1",
+  "label": "joint: CN adjoint + wall temperatures",
+  "file": "E1b_adjoint_joint1.npz",
+  "rel_L2_D": 0.26222299435268476,
+  "replay_over_sigma": 0.9722127353726422,
+  "wall_s": 254.992725873999
+ },
+ {
+  "exp": "E1b",
+  "arm": "adjoint_truebc",
+  "label": "bound: adjoint given the true walls",
+  "file": "E1b_adjoint_truebc.npz",
+  "rel_L2_D": 0.20299147971538212,
+  "replay_over_sigma": 0.9885151974682304,
+  "wall_s": 177.87424305400054
+ }
+]

@@ -1,0 +1,36 @@
+{
+  "pde": "u_t = div(D(x,y) grad u) + f(x,y,t)",
+  "unknown": "D(x,y) > 0, time-independent",
+  "source_f": "0",
+  "domain": {
+    "Lx": 1.0,
+    "Ly": 1.0,
+    "T": 0.3636363636363637,
+    "Fourier_number": 0.1
+  },
+  "initial_condition": {
+    "expression": "1.0*exp(-((x-0.3)**2+(y-0.3)**2)/(2*0.05**2)) + 0.7*exp(-((x-0.7)**2+(y-0.65)**2)/(2*0.06**2))",
+    "note": "boundary nodes of u0 are set to g(0)"
+  },
+  "boundary_condition": {
+    "type": "unknown",
+    "scenario": "unknown",
+    "edges": {
+      "left": "0.0",
+      "right": "0.0",
+      "bottom": "0.0",
+      "top": "0.0"
+    },
+    "edge_location": {
+      "left": "x=0",
+      "right": "x=Lx",
+      "bottom": "y=0",
+      "top": "y=Ly"
+    },
+    "corner_rule": "corners take the left/right edge value",
+    "known": false,
+    "note": "The true boundary values are NOT given. 'edges' holds the zero-Dirichlet value a method that requires a BC must assume; a method that can leave the BC free should do so."
+  },
+  "arrays": "H2u-A_smooth-heatedleft-a1__Fo0.1.npz: u0 on both grids; g(t) at every boundary node of the inversion grid at t_bc (the 401 solver output times)",
+  "source_known": true
+}
